@@ -54,7 +54,7 @@ class MeshUnion:
         return fe
 
     def prepare_groups(self, features, tensor_mask):
-        self.groups.values().clamp_(0, 1)
+        self.groups.coalesce().values().clamp_(0, 1)
 
         padded_cols = features.shape[1]
 

@@ -87,9 +87,15 @@ class DistributedClassifierModel(ClassifierModel):
             pred_class = out.data.max(1)[1]
             label_class = self.labels
             self.export_segmentation(pred_class.cpu(), label_class)
-            correct, class_correct, class_examples = self.seg_accuracy_class(pred_class)
+            if (self.opt.dataset_mode == 'classification'):
+                correct = pred_class.eq(label_class).sum()
+                class_correct = 1
+                class_examples = 1
+            elif self.opt.dataset_mode == 'segmentation':          
+                correct, class_correct, class_examples = self.seg_accuracy_class(pred_class)
 
         return correct, len(label_class), class_correct, class_examples
+
 
     def seg_accuracy_class(self, predicted):
         correct = 0
