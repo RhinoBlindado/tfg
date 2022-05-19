@@ -1,0 +1,8 @@
+# For sensitive reasons (and space reasons) can't have the data out of local storage.
+/data/*
+
+# For storage reasons also can't have the auxiliar programs
+/programs/* 
+
+# Do not save cache'd info
+__pycache__/
