@@ -39,6 +39,7 @@ class MeshPool(nn.Module):
         return out_features
 
     def __pool_main(self, mesh_index):
+        warning = False
         mesh = self.__meshes[mesh_index]
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
         # recycle = []
@@ -49,6 +50,9 @@ class MeshPool(nn.Module):
         while mesh.edges_count > self.__out_target:
             value, edge_id = heappop(queue)
             edge_id = int(edge_id)
+            if(len(queue) < 100 and not warning):
+                print("!WARNING! Queue below 100 edges")
+                warning = True
             if mask[edge_id]:
                 self.__pool_edge(mesh, edge_id, mask, edge_groups)
         mesh.clean(mask, edge_groups)
