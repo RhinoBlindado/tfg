@@ -47,8 +47,8 @@ if __name__ == '__main__':
             model.save_network('latest')
             model.save_network(epoch)
 
-        print('End of epoch %d / %d \t Time Taken: %d sec' %
-              (epoch, opt.niter + opt.niter_decay, time.time() - epoch_start_time))
+        print('End of epoch %d / %d \t, Time Taken: %d sec, Loss: %.3f' %
+              (epoch, opt.niter + opt.niter_decay, time.time() - epoch_start_time, model.loss))
         model.update_learning_rate()
         if opt.verbose_plot:
             writer.plot_model_wts(model, epoch)

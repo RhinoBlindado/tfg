@@ -5,6 +5,7 @@ from models.layers.mesh_union import MeshUnion
 import numpy as np
 from heapq import heappop, heapify
 
+
 class MeshPool(nn.Module):
     
     def __init__(self, target, multi_thread=False):
@@ -38,19 +39,20 @@ class MeshPool(nn.Module):
         return out_features
 
     def __pool_main(self, mesh_index):
+        warning = False
         mesh = self.__meshes[mesh_index]
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
-        #print("Pool init: queue size {}, mesh edges {}, target {}".format(len(queue), mesh.edges_count, self.__out_target))
         # recycle = []
         # last_queue_len = len(queue)
         last_count = mesh.edges_count + 1
         mask = np.ones(mesh.edges_count, dtype=np.bool)
         edge_groups = MeshUnion(mesh.edges_count, self.__fe.device)
         while mesh.edges_count > self.__out_target:
-            if (len(queue) == 0):
-                print("Out of edges for {}, current size {}".format(mesh.filename, mesh.edges_count))
             value, edge_id = heappop(queue)
             edge_id = int(edge_id)
+            if(len(queue) < 100 and not warning):
+                print("!WARNING! Queue below 100 edges")
+                warning = True
             if mask[edge_id]:
                 self.__pool_edge(mesh, edge_id, mask, edge_groups)
         mesh.clean(mask, edge_groups)
@@ -180,7 +182,7 @@ class MeshPool(nn.Module):
             MeshPool.__remove_group(mesh, edge_groups, edge_key)
         mesh.edges_count -= 3
         vertex = list(vertex)
-        assert len(vertex) == 1, "mesh {}".format(mesh.filename)
+        assert(len(vertex) == 1)
         mesh.remove_vertex(vertex[0])
 
     def __build_queue(self, features, edges_count):

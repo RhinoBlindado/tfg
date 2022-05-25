@@ -4,6 +4,9 @@ from models import create_model
 from util.writer import Writer
 
 
+def getTestLoss(model):
+    pass
+
 def run_test(epoch=-1):
     print('Running Test')
     opt = TestOptions().parse()
@@ -15,9 +18,9 @@ def run_test(epoch=-1):
     writer.reset_counter()
     for i, data in enumerate(dataset):
         model.set_input(data)
-        ncorrect, nexamples = model.test()
+        ncorrect, nexamples, loss = model.test()
         writer.update_counter(ncorrect, nexamples)
-    writer.print_acc(epoch, writer.acc)
+    writer.print_acc(epoch, writer.acc, loss)
     return writer.acc
 
 
