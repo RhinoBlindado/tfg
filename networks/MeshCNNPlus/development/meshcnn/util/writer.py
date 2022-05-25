@@ -59,6 +59,13 @@ class Writer:
         print(message)
         with open(self.testacc_log, "a") as log_file:
             log_file.write('%s\n' % message)
+            if(False):
+                for classIdx in range(len(class_acc)):
+                    message = 'TEST ACC CLASS {} ({:.5} %): [{:.5} %]\n' \
+                        .format(classIdx, 100 * self.nexamplesPerClass[classIdx] / self.nexamples,
+                                class_acc[classIdx] * 100)
+                    print(message)
+                    log_file.write('%s\n' % message)
 
     def plot_acc(self, acc, epoch):
         if self.display:

@@ -20,6 +20,7 @@ Author: Rana Hanocka
 '''
 
 class Process:
+        
     def __init__(self, obj_file, target_faces, export_name):
         mesh = self.load_obj(obj_file)
         self.simplify(mesh, target_faces)
@@ -44,17 +45,26 @@ class Process:
 
     def simplify(self, mesh, target_faces):
         bpy.context.view_layer.objects.active = mesh
+        
         mod = mesh.modifiers.new(name='Decimate', type='DECIMATE')
         bpy.context.object.modifiers['Decimate'].use_collapse_triangulate = True
-        #
+        
         nfaces = len(mesh.data.polygons)
+        print(nfaces, target_faces)
+        
         if nfaces < target_faces:
             self.subsurf(mesh)
             nfaces = len(mesh.data.polygons)
+            
         ratio = target_faces / float(nfaces)
         mod.ratio = float('%s' % ('%.6g' % (ratio)))
-        print('faces: ', mod.face_count, mod.ratio)
         bpy.ops.object.modifier_apply(modifier=mod.name)
+
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.dissolve_degenerate()
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        print('Edges: ', int(len(mesh.data.polygons)*1.5))
 
 
     def export_obj(self, mesh, export_name):
@@ -70,6 +80,7 @@ class Process:
                                  use_vertex_groups=False, use_blen_objects=True, group_by_object=False,
                                  group_by_material=False, keep_vertex_order=True, global_scale=1, path_mode='AUTO',
                                  axis_forward='-Z', axis_up='Y')
+    
 
 obj_file = sys.argv[-3]
 target_faces = int(sys.argv[-2])

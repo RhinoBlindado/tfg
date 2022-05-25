@@ -87,6 +87,7 @@ class DistributedClassifierModel(ClassifierModel):
             pred_class = out.data.max(1)[1]
             label_class = self.labels
             self.export_segmentation(pred_class.cpu(), label_class)
+            # Added this so it can be used with classification too.
             if (self.opt.dataset_mode == 'classification'):
                 correct = pred_class.eq(label_class).sum()
                 class_correct = 1

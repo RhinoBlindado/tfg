@@ -54,6 +54,8 @@ class MeshUnion:
         return fe
 
     def prepare_groups(self, features, tensor_mask):
+        # Changed this bit of code because it was failing before.
+        # Probably due to an update of Pytorch.
         self.groups.coalesce().values().clamp_(0, 1)
 
         padded_cols = features.shape[1]

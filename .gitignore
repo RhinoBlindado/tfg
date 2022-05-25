@@ -6,3 +6,9 @@
 
 # Do not save cache'd info
 __pycache__/
+
+# Don't save ZIPs
+*.zip
+
+# Don't save output, not yet
+/output/
