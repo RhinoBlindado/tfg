@@ -1,5 +1,6 @@
 import argparse
 import os
+from re import T
 from util import util
 import torch
 
@@ -19,7 +20,7 @@ class BaseOptions:
         self.parser.add_argument('--batch_size', type=int, default=16, help='input batch size')
         self.parser.add_argument('--arch', type=str, default='mconvnet', help='selects network to use') #todo add choices
         self.parser.add_argument('--resblocks', type=int, default=0, help='# of res blocks')
-        self.parser.add_argument('--fc_n',nargs='+', type=int, default=[100], help='# of fc before nclasses') #todo make generic
+       #self.parser.add_argument('--fc_n', type=int, default=100, help='# of fc before nclasses') #todo make generic
         self.parser.add_argument('--ncf', nargs='+', default=[16, 32, 32], type=int, help='conv filters')
         self.parser.add_argument('--pool_res', nargs='+', default=[1140, 780, 580], type=int, help='pooling res')
         self.parser.add_argument('--norm', type=str, default='batch',help='instance normalization or batch normalization or group normalization')
@@ -35,8 +36,11 @@ class BaseOptions:
         self.parser.add_argument('--seed', type=int, help='if specified, uses seed')
         # visualization params
         self.parser.add_argument('--export_folder', type=str, default='', help='exports intermediate collapses to this folder')
-        #
         self.initialized = True
+
+        # New Additions
+        # - Can now add multiple Fully Connected layers to the network.
+        self.parser.add_argument('--fc_n',nargs='+', type=int, default=[100], help='# of fc before nclasses')
 
     def parse(self):
         if not self.initialized:

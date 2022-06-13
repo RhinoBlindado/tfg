@@ -78,10 +78,18 @@ class Writer:
         self.ncorrect = 0
         self.nexamples = 0
 
-    def update_counter(self, ncorrect, nexamples):
+    def update_counter(self, ncorrect, nexamples,  ncorrectPerClass=None, nexamplesPerClass=None ):
         self.ncorrect += ncorrect
         self.nexamples += nexamples
+        if (self.ncorrectPerClass == None):
+            self.ncorrectPerClass = ncorrectPerClass
+            self.nexamplesPerClass = nexamplesPerClass
+        else:
+            self.ncorrectPerClass += ncorrectPerClass
+            self.nexamplesPerClass += nexamplesPerClass
 
+
+            
     @property
     def acc(self):
         return float(self.ncorrect) / self.nexamples

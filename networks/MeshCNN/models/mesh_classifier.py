@@ -35,7 +35,7 @@ class ClassifierModel:
         self.criterion = networks.define_loss(opt).to(self.device)
 
         if self.is_train:
-            self.optimizer = torch.optim.Adam(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
+            self.optimizer = torch.optim.Adam(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999), amsgrad=opt.amsgrad)
             self.scheduler = networks.get_scheduler(self.optimizer, opt)
             print_network(self.net)
 
