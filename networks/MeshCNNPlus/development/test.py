@@ -27,8 +27,11 @@ def test_model(model, opt, dataset, epoch=-1):
         ncorrect, nexamples, loss, ncorrectPerClass, nexamplesPerClass = model.test()
         writer.update_counter(ncorrect, nexamples,  ncorrectPerClass, nexamplesPerClass )
         if(opt.dataset_mode == 'clasification'):
-            writer.classAcc = None
-    writer.print_acc(epoch, writer.acc, loss, writer.classAcc)
+            cAcc = None
+        else:
+            cAcc = writer.classAcc
+        
+    writer.print_acc(epoch, writer.acc, loss, cAcc)
     return writer.acc
 
 def run_test(rank, numGPUs, opt):
