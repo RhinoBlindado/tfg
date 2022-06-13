@@ -36,12 +36,13 @@ class BaseOptions:
         self.parser.add_argument('--seed', type=int, help='if specified, uses seed')
         # visualization params
         self.parser.add_argument('--export_folder', type=str, default='', help='exports intermediate collapses to this folder')
-        self.parser.add_argument('--plus', type=bool, default=False, help='Using MeshCNN or MeshCNNPlus')
         self.initialized = True
 
         # New Additions
         # - Can now add multiple Fully Connected layers to the network.
         self.parser.add_argument('--fc_n',nargs='+', type=int, default=[100], help='# of fc before nclasses')
+        # - Check if it's MeshCNN or MeshCNNPlus
+        self.parser.add_argument('--plus', type=bool, default=False, help='Using MeshCNN or MeshCNNPlus')
 
     def parse(self):
         if not self.initialized:
