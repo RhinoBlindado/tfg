@@ -26,6 +26,8 @@ def test_model(model, opt, dataset, epoch=-1):
         model.set_input(data)
         ncorrect, nexamples, loss, ncorrectPerClass, nexamplesPerClass = model.test()
         writer.update_counter(ncorrect, nexamples,  ncorrectPerClass, nexamplesPerClass )
+        if(opt.dataset_mode == 'clasification'):
+            writer.classAcc = None
     writer.print_acc(epoch, writer.acc, loss, writer.classAcc)
     return writer.acc
 
