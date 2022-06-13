@@ -50,7 +50,7 @@ class MeshPool(nn.Module):
         while mesh.edges_count > self.__out_target:
             value, edge_id = heappop(queue)
             edge_id = int(edge_id)
-            if(len(queue) < 100 and not warning):
+            if (len(queue) < 100 and not warning):
                 print("!WARNING! Queue below 100 edges")
                 warning = True
             if mask[edge_id]:

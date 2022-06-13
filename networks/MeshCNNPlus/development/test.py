@@ -24,9 +24,9 @@ def test_model(model, opt, dataset, epoch=-1):
     writer.reset_counter()
     for i, data in enumerate(dataset):
         model.set_input(data)
-        ncorrect, nexamples, ncorrectPerClass, nexamplesPerClass = model.test()
+        ncorrect, nexamples, loss, ncorrectPerClass, nexamplesPerClass = model.test()
         writer.update_counter(ncorrect, nexamples,  ncorrectPerClass, nexamplesPerClass )
-    writer.print_acc(epoch, writer.acc, writer.classAcc)
+    writer.print_acc(epoch, writer.acc, loss, writer.classAcc)
     return writer.acc
 
 def run_test(rank, numGPUs, opt):

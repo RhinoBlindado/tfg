@@ -35,7 +35,7 @@ class DistributedClassifierModel(ClassifierModel):
         self.criterion = define_loss(opt).to(self.device)
 
         if self.is_train:
-            self.optimizer = torch.optim.AdamW(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
+            self.optimizer = torch.optim.Adam(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999), amsgrad=opt.amsgrad)
             self.scheduler = networks.get_scheduler(self.optimizer, opt)
             print_network(self.net)
 
@@ -83,6 +83,7 @@ class DistributedClassifierModel(ClassifierModel):
         """
         with torch.no_grad():
             out = self.forward()
+            self.loss = self.criterion(out, self.labels)
             # compute number of correct
             pred_class = out.data.max(1)[1]
             label_class = self.labels
@@ -95,7 +96,7 @@ class DistributedClassifierModel(ClassifierModel):
             elif self.opt.dataset_mode == 'segmentation':          
                 correct, class_correct, class_examples = self.seg_accuracy_class(pred_class)
 
-        return correct, len(label_class), class_correct, class_examples
+        return correct, len(label_class), self.loss, class_correct, class_examples
 
 
     def seg_accuracy_class(self, predicted):

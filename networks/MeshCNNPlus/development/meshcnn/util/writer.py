@@ -52,14 +52,14 @@ class Writer:
             for name, param in model.net.named_parameters():
                 self.display.add_histogram(name, param.clone().cpu().data.numpy(), epoch)
 
-    def print_acc(self, epoch, acc, loss):
+    def print_acc(self, epoch, acc, loss, class_acc = None):
         """ prints test accuracy to terminal / file """
         message = 'epoch: {}, TEST ACC: [{:.2f}%], LOSS: {:.3f}\n' \
             .format(epoch, acc * 100, loss)
         print(message)
         with open(self.testacc_log, "a") as log_file:
             log_file.write('%s\n' % message)
-            if(False):
+            if(class_acc is not None):
                 for classIdx in range(len(class_acc)):
                     message = 'TEST ACC CLASS {} ({:.5} %): [{:.5} %]\n' \
                         .format(classIdx, 100 * self.nexamplesPerClass[classIdx] / self.nexamples,
@@ -78,7 +78,7 @@ class Writer:
         self.ncorrect = 0
         self.nexamples = 0
 
-    def update_counter(self, ncorrect, nexamples,  ncorrectPerClass=None, nexamplesPerClass=None ):
+    def update_counter(self, ncorrect, nexamples,  ncorrectPerClass=None, nexamplesPerClass=None):
         self.ncorrect += ncorrect
         self.nexamples += nexamples
         if (self.ncorrectPerClass == None):
