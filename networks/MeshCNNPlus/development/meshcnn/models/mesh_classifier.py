@@ -2,6 +2,7 @@ import torch
 from . import networks
 from os.path import join
 from util.util import seg_accuracy, print_network
+from tabulate import tabulate as tb
 
 
 class ClassifierModel:
@@ -51,6 +52,7 @@ class ClassifierModel:
         self.mesh = data['mesh']
         if self.opt.dataset_mode == 'segmentation' and not self.is_train:
             self.soft_label = torch.from_numpy(data['soft_label'])
+        self.classIdx = dict(map(reversed, data['classIdx'][0].items()))
 
 
     def forward(self):
@@ -102,7 +104,7 @@ class ClassifierModel:
         lr = self.optimizer.param_groups[0]['lr']
         print('learning rate = %.7f' % lr)
 
-    def test(self):
+    def test(self, soleTest):
         """tests model
         returns: number correct and total number
         """
@@ -112,13 +114,20 @@ class ClassifierModel:
             # compute number of correct
             pred_class = out.data.max(1)[1]
             label_class = self.labels
-            self.export_segmentation(pred_class.cpu())
-            correct = self.get_accuracy(pred_class, label_class)
+
+            if(soleTest):
+                meshes = []
+                print()
+                for i, mesh in enumerate(self.mesh):
+                    meshes.append([mesh.filename, self.classIdx[int(pred_class[i])], self.classIdx[int(label_class[i])]])
+                print(tb(meshes, headers=["Mesh", "Prediction", "Actual"]))
+
+                self.export_segmentation(pred_class.cpu())
+                correct = self.get_accuracy(pred_class, label_class)
         return correct, len(label_class), self.loss
 
     def getTestLoss(self):
         out = self.forward()
-
 
     def get_accuracy(self, pred, labels):
         """computes accuracy for classification / segmentation """
