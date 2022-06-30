@@ -15,12 +15,21 @@ def run_test(epoch=-1):
     model = create_model(opt)
     writer = Writer(opt)
     # test
+
+    if(epoch==-1):
+        soleTest=True
+    else:
+        soleTest=False
+
     writer.reset_counter()
+    totalLoss = 0
     for i, data in enumerate(dataset):
         model.set_input(data)
-        ncorrect, nexamples, loss = model.test()
+        ncorrect, nexamples, loss = model.test(soleTest)
         writer.update_counter(ncorrect, nexamples)
-    writer.print_acc(epoch, writer.acc, loss)
+        totalLoss += loss
+    totalLoss /= len(dataset)
+    writer.print_acc(epoch, writer.acc, totalLoss)
     return writer.acc
 
 
