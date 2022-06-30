@@ -25,6 +25,8 @@ export TFHUB_CACHE_DIR=.
 # Activando el enviroment de Conda:
 conda activate /mnt/homeGPU/vlugli/condaEnvs/meshcnnplus
 
+python ./networks/MeshCNNPlus/development/meshcnn/train.py \
+--dataroot ./data/datasets/Nodule-98-30K \
 --name Nodule-98-30K-2 \
 --ninput_edges 30000 \
 --ncf 32 64 256 256 \

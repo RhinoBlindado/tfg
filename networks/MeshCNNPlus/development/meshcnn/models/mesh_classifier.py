@@ -117,13 +117,12 @@ class ClassifierModel:
 
             if(soleTest):
                 meshes = []
-                print()
                 for i, mesh in enumerate(self.mesh):
                     meshes.append([mesh.filename, self.classIdx[int(pred_class[i])], self.classIdx[int(label_class[i])]])
                 print(tb(meshes, headers=["Mesh", "Prediction", "Actual"]))
 
-                self.export_segmentation(pred_class.cpu())
-                correct = self.get_accuracy(pred_class, label_class)
+            self.export_segmentation(pred_class.cpu())
+            correct = self.get_accuracy(pred_class, label_class)
         return correct, len(label_class), self.loss
 
     def getTestLoss(self):
