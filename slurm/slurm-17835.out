@@ -1,0 +1,88 @@
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: 0
+epoch_count: 1
+export_folder: 
+fc_n: [100]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.001
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-3
+ncf: [32, 64, 128]
+ninput_edges: 30000
+niter: 50
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 2
+num_groups: 16
+num_threads: 2
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0.2
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 78
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.066 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+(epoch: 1, iters: 10, time: 2.672, data: 0.218) loss: 0.757 
+(epoch: 1, iters: 20, time: 2.636, data: 0.000) loss: 0.641 
+(epoch: 1, iters: 30, time: 2.525, data: 0.000) loss: 0.569 
+(epoch: 1, iters: 40, time: 2.656, data: 0.000) loss: 0.774 
+(epoch: 1, iters: 50, time: 2.632, data: 0.016) loss: 0.697 
+(epoch: 1, iters: 60, time: 2.510, data: 0.023) loss: 0.741 
+(epoch: 1, iters: 70, time: 2.479, data: 0.051) loss: 0.662 
+saving the model at the end of epoch 1, iters 78
+End of epoch 1 / 60 	, Time Taken: 204 sec, Loss: 0.667
+learning rate = 0.0010000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-3/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+epoch: 1, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 2, total_steps 79)
+(epoch: 2, iters: 2, time: 2.615, data: 0.000) loss: 0.723 
+(epoch: 2, iters: 12, time: 2.559, data: 0.036) loss: 0.665 
+(epoch: 2, iters: 22, time: 2.510, data: 0.000) loss: 0.751 
+(epoch: 2, iters: 32, time: 2.509, data: 0.000) loss: 0.655 
+(epoch: 2, iters: 42, time: 2.551, data: 0.013) loss: 0.673 
+(epoch: 2, iters: 52, time: 2.482, data: 0.015) loss: 0.703 
+(epoch: 2, iters: 62, time: 2.540, data: 0.013) loss: 0.714 
+(epoch: 2, iters: 72, time: 2.517, data: 0.000) loss: 0.674 
+saving the model at the end of epoch 2, iters 156
+End of epoch 2 / 60 	, Time Taken: 200 sec, Loss: 0.671
+learning rate = 0.0010000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-3/latest_net.pth
+slurmstepd: error: *** JOB 17835 ON dionisio CANCELLED AT 2022-07-01T09:24:49 ***

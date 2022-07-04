@@ -1,0 +1,1925 @@
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-50-30K
+dataset_mode: classification
+dropout: 0
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-50-30K-7
+ncf: [4, 8, 64, 128, 256]
+ninput_edges: 30000
+niter: 100
+niter_decay: 100
+no_vis: False
+norm: group
+num_aug: 2
+num_groups: 1
+num_threads: 2
+phase: train
+plus: True
+pool_res: [20000, 15000, 13000, 8000, 7500]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0.2
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+MeshCNN layers: Using sparse pooling
+loaded mean / std from cache
+#training meshes = 40
+Using distributed classifier model with AdamW optimizer, GPU 0
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.998 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+(epoch: 1, iters: 10, time: 31.113, data: 0.266) loss: 1.075 
+(epoch: 1, iters: 20, time: 31.037, data: 0.021) loss: 0.637 
+(epoch: 1, iters: 30, time: 30.946, data: 0.020) loss: 0.760 
+(epoch: 1, iters: 40, time: 30.942, data: 0.019) loss: 0.688 
+saving the model at the end of epoch 1, iters 40
+End of epoch 1 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 1, TEST ACC: [50.00%], LOSS: 0.687
+
+saving the latest model (epoch 2, total_steps 41)
+(epoch: 2, iters: 10, time: 31.241, data: 0.202) loss: 0.707 
+(epoch: 2, iters: 20, time: 31.127, data: 0.022) loss: 0.695 
+(epoch: 2, iters: 30, time: 31.128, data: 0.025) loss: 0.649 
+(epoch: 2, iters: 40, time: 31.124, data: 0.020) loss: 0.738 
+saving the model at the end of epoch 2, iters 80
+End of epoch 2 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 2, TEST ACC: [50.00%], LOSS: 0.663
+
+saving the latest model (epoch 3, total_steps 81)
+(epoch: 3, iters: 10, time: 31.100, data: 0.216) loss: 0.760 
+(epoch: 3, iters: 20, time: 31.158, data: 0.020) loss: 0.738 
+(epoch: 3, iters: 30, time: 31.177, data: 0.020) loss: 0.677 
+(epoch: 3, iters: 40, time: 31.144, data: 0.020) loss: 0.706 
+saving the model at the end of epoch 3, iters 120
+End of epoch 3 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 3, TEST ACC: [50.00%], LOSS: 0.687
+
+saving the latest model (epoch 4, total_steps 121)
+(epoch: 4, iters: 10, time: 31.103, data: 0.203) loss: 0.671 
+(epoch: 4, iters: 20, time: 31.122, data: 0.035) loss: 0.734 
+(epoch: 4, iters: 30, time: 31.053, data: 0.037) loss: 0.670 
+(epoch: 4, iters: 40, time: 31.203, data: 0.038) loss: 0.717 
+saving the model at the end of epoch 4, iters 160
+End of epoch 4 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 4, TEST ACC: [50.00%], LOSS: 0.716
+
+saving the latest model (epoch 5, total_steps 161)
+(epoch: 5, iters: 10, time: 31.181, data: 0.236) loss: 0.703 
+(epoch: 5, iters: 20, time: 31.130, data: 0.035) loss: 0.687 
+(epoch: 5, iters: 30, time: 31.169, data: 0.036) loss: 0.704 
+(epoch: 5, iters: 40, time: 31.103, data: 0.037) loss: 0.694 
+saving the model at the end of epoch 5, iters 200
+End of epoch 5 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 5, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 6, total_steps 201)
+(epoch: 6, iters: 10, time: 31.079, data: 0.241) loss: 0.708 
+(epoch: 6, iters: 20, time: 31.116, data: 0.036) loss: 0.707 
+(epoch: 6, iters: 30, time: 31.126, data: 0.052) loss: 0.687 
+(epoch: 6, iters: 40, time: 31.120, data: 0.020) loss: 0.704 
+saving the model at the end of epoch 6, iters 240
+End of epoch 6 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 6, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 7, total_steps 241)
+(epoch: 7, iters: 10, time: 31.019, data: 0.208) loss: 0.683 
+(epoch: 7, iters: 20, time: 31.036, data: 0.036) loss: 0.682 
+(epoch: 7, iters: 30, time: 31.145, data: 0.053) loss: 0.680 
+(epoch: 7, iters: 40, time: 31.103, data: 0.036) loss: 0.707 
+saving the model at the end of epoch 7, iters 280
+End of epoch 7 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 7, TEST ACC: [50.00%], LOSS: 0.706
+
+saving the latest model (epoch 8, total_steps 281)
+(epoch: 8, iters: 10, time: 31.184, data: 0.286) loss: 0.696 
+(epoch: 8, iters: 20, time: 31.142, data: 0.021) loss: 0.699 
+(epoch: 8, iters: 30, time: 31.120, data: 0.020) loss: 0.688 
+(epoch: 8, iters: 40, time: 31.212, data: 0.020) loss: 0.695 
+saving the model at the end of epoch 8, iters 320
+End of epoch 8 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 8, TEST ACC: [50.00%], LOSS: 0.693
+
+saving the latest model (epoch 9, total_steps 321)
+(epoch: 9, iters: 10, time: 31.203, data: 0.187) loss: 0.687 
+(epoch: 9, iters: 20, time: 31.043, data: 0.022) loss: 0.695 
+(epoch: 9, iters: 30, time: 31.251, data: 0.020) loss: 0.690 
+(epoch: 9, iters: 40, time: 31.141, data: 0.021) loss: 0.698 
+saving the model at the end of epoch 9, iters 360
+End of epoch 9 / 200 	 Time Taken: 1248 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 9, TEST ACC: [50.00%], LOSS: 0.691
+
+saving the latest model (epoch 10, total_steps 361)
+(epoch: 10, iters: 10, time: 31.099, data: 0.214) loss: 0.689 
+(epoch: 10, iters: 20, time: 31.076, data: 0.020) loss: 0.698 
+(epoch: 10, iters: 30, time: 31.231, data: 0.035) loss: 0.693 
+(epoch: 10, iters: 40, time: 31.077, data: 0.022) loss: 0.690 
+saving the model at the end of epoch 10, iters 400
+End of epoch 10 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 10, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 11, total_steps 401)
+(epoch: 11, iters: 10, time: 31.184, data: 0.253) loss: 0.686 
+(epoch: 11, iters: 20, time: 31.084, data: 0.020) loss: 0.681 
+(epoch: 11, iters: 30, time: 31.121, data: 0.036) loss: 0.677 
+(epoch: 11, iters: 40, time: 31.063, data: 0.020) loss: 0.709 
+saving the model at the end of epoch 11, iters 440
+End of epoch 11 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 11, TEST ACC: [50.00%], LOSS: 0.706
+
+saving the latest model (epoch 12, total_steps 441)
+(epoch: 12, iters: 10, time: 31.051, data: 0.215) loss: 0.704 
+(epoch: 12, iters: 20, time: 31.127, data: 0.021) loss: 0.688 
+(epoch: 12, iters: 30, time: 31.048, data: 0.022) loss: 0.687 
+(epoch: 12, iters: 40, time: 31.019, data: 0.020) loss: 0.692 
+saving the model at the end of epoch 12, iters 480
+End of epoch 12 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 12, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 13, total_steps 481)
+(epoch: 13, iters: 10, time: 31.118, data: 0.235) loss: 0.689 
+(epoch: 13, iters: 20, time: 31.146, data: 0.021) loss: 0.704 
+(epoch: 13, iters: 30, time: 31.050, data: 0.022) loss: 0.704 
+(epoch: 13, iters: 40, time: 31.095, data: 0.020) loss: 0.690 
+saving the model at the end of epoch 13, iters 520
+End of epoch 13 / 200 	 Time Taken: 1244 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 13, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 14, total_steps 521)
+(epoch: 14, iters: 10, time: 31.195, data: 0.218) loss: 0.693 
+(epoch: 14, iters: 20, time: 31.050, data: 0.021) loss: 0.692 
+(epoch: 14, iters: 30, time: 31.072, data: 0.020) loss: 0.691 
+(epoch: 14, iters: 40, time: 31.052, data: 0.020) loss: 0.696 
+saving the model at the end of epoch 14, iters 560
+End of epoch 14 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 14, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 15, total_steps 561)
+(epoch: 15, iters: 10, time: 31.124, data: 0.247) loss: 0.688 
+(epoch: 15, iters: 20, time: 31.159, data: 0.022) loss: 0.686 
+(epoch: 15, iters: 30, time: 31.071, data: 0.020) loss: 0.691 
+(epoch: 15, iters: 40, time: 31.074, data: 0.021) loss: 0.686 
+saving the model at the end of epoch 15, iters 600
+End of epoch 15 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 15, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 16, total_steps 601)
+(epoch: 16, iters: 10, time: 31.185, data: 0.241) loss: 0.684 
+(epoch: 16, iters: 20, time: 31.153, data: 0.020) loss: 0.704 
+(epoch: 16, iters: 30, time: 31.073, data: 0.022) loss: 0.687 
+(epoch: 16, iters: 40, time: 31.276, data: 0.020) loss: 0.704 
+saving the model at the end of epoch 16, iters 640
+End of epoch 16 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 16, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 17, total_steps 641)
+(epoch: 17, iters: 10, time: 31.128, data: 0.238) loss: 0.684 
+(epoch: 17, iters: 20, time: 31.120, data: 0.020) loss: 0.707 
+(epoch: 17, iters: 30, time: 30.971, data: 0.019) loss: 0.677 
+(epoch: 17, iters: 40, time: 31.141, data: 0.020) loss: 0.707 
+saving the model at the end of epoch 17, iters 680
+End of epoch 17 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 17, TEST ACC: [50.00%], LOSS: 0.706
+
+saving the latest model (epoch 18, total_steps 681)
+(epoch: 18, iters: 10, time: 31.027, data: 0.231) loss: 0.688 
+(epoch: 18, iters: 20, time: 31.141, data: 0.040) loss: 0.700 
+(epoch: 18, iters: 30, time: 31.094, data: 0.021) loss: 0.692 
+(epoch: 18, iters: 40, time: 31.051, data: 0.020) loss: 0.695 
+saving the model at the end of epoch 18, iters 720
+End of epoch 18 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 18, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 19, total_steps 721)
+(epoch: 19, iters: 10, time: 31.184, data: 0.215) loss: 0.685 
+(epoch: 19, iters: 20, time: 31.099, data: 0.054) loss: 0.686 
+(epoch: 19, iters: 30, time: 31.116, data: 0.038) loss: 0.687 
+(epoch: 19, iters: 40, time: 31.170, data: 0.036) loss: 0.701 
+saving the model at the end of epoch 19, iters 760
+End of epoch 19 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 19, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 20, total_steps 761)
+(epoch: 20, iters: 10, time: 31.185, data: 0.238) loss: 0.703 
+(epoch: 20, iters: 20, time: 31.076, data: 0.020) loss: 0.685 
+(epoch: 20, iters: 30, time: 31.099, data: 0.021) loss: 0.681 
+(epoch: 20, iters: 40, time: 31.139, data: 0.025) loss: 0.704 
+saving the model at the end of epoch 20, iters 800
+End of epoch 20 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 20, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 21, total_steps 801)
+(epoch: 21, iters: 10, time: 31.144, data: 0.202) loss: 0.697 
+(epoch: 21, iters: 20, time: 31.059, data: 0.021) loss: 0.694 
+(epoch: 21, iters: 30, time: 31.153, data: 0.021) loss: 0.690 
+(epoch: 21, iters: 40, time: 31.054, data: 0.021) loss: 0.701 
+saving the model at the end of epoch 21, iters 840
+End of epoch 21 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 21, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 22, total_steps 841)
+(epoch: 22, iters: 10, time: 31.069, data: 0.256) loss: 0.698 
+(epoch: 22, iters: 20, time: 31.079, data: 0.038) loss: 0.698 
+(epoch: 22, iters: 30, time: 31.113, data: 0.021) loss: 0.688 
+(epoch: 22, iters: 40, time: 31.198, data: 0.021) loss: 0.688 
+saving the model at the end of epoch 22, iters 880
+End of epoch 22 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 22, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 23, total_steps 881)
+(epoch: 23, iters: 10, time: 31.129, data: 0.192) loss: 0.689 
+(epoch: 23, iters: 20, time: 31.097, data: 0.036) loss: 0.701 
+(epoch: 23, iters: 30, time: 31.273, data: 0.022) loss: 0.702 
+(epoch: 23, iters: 40, time: 31.120, data: 0.025) loss: 0.700 
+saving the model at the end of epoch 23, iters 920
+End of epoch 23 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 23, TEST ACC: [50.00%], LOSS: 0.699
+
+saving the latest model (epoch 24, total_steps 921)
+(epoch: 24, iters: 10, time: 31.205, data: 0.202) loss: 0.692 
+(epoch: 24, iters: 20, time: 31.137, data: 0.020) loss: 0.693 
+(epoch: 24, iters: 30, time: 31.137, data: 0.020) loss: 0.693 
+(epoch: 24, iters: 40, time: 31.198, data: 0.022) loss: 0.694 
+saving the model at the end of epoch 24, iters 960
+End of epoch 24 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 24, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 25, total_steps 961)
+(epoch: 25, iters: 10, time: 30.991, data: 0.201) loss: 0.690 
+(epoch: 25, iters: 20, time: 30.993, data: 0.020) loss: 0.699 
+(epoch: 25, iters: 30, time: 31.067, data: 0.020) loss: 0.701 
+(epoch: 25, iters: 40, time: 31.074, data: 0.036) loss: 0.692 
+saving the model at the end of epoch 25, iters 1000
+End of epoch 25 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 25, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 26, total_steps 1001)
+(epoch: 26, iters: 10, time: 31.075, data: 0.201) loss: 0.696 
+(epoch: 26, iters: 20, time: 31.087, data: 0.020) loss: 0.696 
+(epoch: 26, iters: 30, time: 31.049, data: 0.021) loss: 0.689 
+(epoch: 26, iters: 40, time: 31.046, data: 0.034) loss: 0.692 
+saving the model at the end of epoch 26, iters 1040
+End of epoch 26 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 26, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 27, total_steps 1041)
+(epoch: 27, iters: 10, time: 31.160, data: 0.215) loss: 0.691 
+(epoch: 27, iters: 20, time: 31.048, data: 0.020) loss: 0.696 
+(epoch: 27, iters: 30, time: 31.108, data: 0.021) loss: 0.692 
+(epoch: 27, iters: 40, time: 31.160, data: 0.020) loss: 0.691 
+saving the model at the end of epoch 27, iters 1080
+End of epoch 27 / 200 	 Time Taken: 1246 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 27, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 28, total_steps 1081)
+(epoch: 28, iters: 10, time: 31.119, data: 0.308) loss: 0.699 
+(epoch: 28, iters: 20, time: 31.038, data: 0.021) loss: 0.701 
+(epoch: 28, iters: 30, time: 31.157, data: 0.020) loss: 0.684 
+(epoch: 28, iters: 40, time: 31.082, data: 0.020) loss: 0.698 
+saving the model at the end of epoch 28, iters 1120
+End of epoch 28 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 28, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 29, total_steps 1121)
+(epoch: 29, iters: 10, time: 31.053, data: 0.308) loss: 0.698 
+(epoch: 29, iters: 20, time: 31.101, data: 0.037) loss: 0.695 
+(epoch: 29, iters: 30, time: 31.092, data: 0.038) loss: 0.693 
+(epoch: 29, iters: 40, time: 31.068, data: 0.037) loss: 0.694 
+saving the model at the end of epoch 29, iters 1160
+End of epoch 29 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 29, TEST ACC: [50.00%], LOSS: 0.693
+
+saving the latest model (epoch 30, total_steps 1161)
+(epoch: 30, iters: 10, time: 31.140, data: 0.203) loss: 0.693 
+(epoch: 30, iters: 20, time: 31.049, data: 0.020) loss: 0.689 
+(epoch: 30, iters: 30, time: 31.023, data: 0.020) loss: 0.682 
+(epoch: 30, iters: 40, time: 31.028, data: 0.021) loss: 0.698 
+saving the model at the end of epoch 30, iters 1200
+End of epoch 30 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 30, TEST ACC: [50.00%], LOSS: 0.697
+
+saving the latest model (epoch 31, total_steps 1201)
+(epoch: 31, iters: 10, time: 31.098, data: 0.310) loss: 0.693 
+(epoch: 31, iters: 20, time: 31.016, data: 0.037) loss: 0.697 
+(epoch: 31, iters: 30, time: 31.111, data: 0.036) loss: 0.697 
+(epoch: 31, iters: 40, time: 31.011, data: 0.036) loss: 0.694 
+saving the model at the end of epoch 31, iters 1240
+End of epoch 31 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 31, TEST ACC: [60.00%], LOSS: 0.694
+
+saving the latest model (epoch 32, total_steps 1241)
+(epoch: 32, iters: 10, time: 31.004, data: 0.215) loss: 0.695 
+(epoch: 32, iters: 20, time: 30.976, data: 0.022) loss: 0.698 
+(epoch: 32, iters: 30, time: 31.025, data: 0.021) loss: 0.692 
+(epoch: 32, iters: 40, time: 31.124, data: 0.021) loss: 0.697 
+saving the model at the end of epoch 32, iters 1280
+End of epoch 32 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 32, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 33, total_steps 1281)
+(epoch: 33, iters: 10, time: 31.142, data: 0.304) loss: 0.697 
+(epoch: 33, iters: 20, time: 31.068, data: 0.022) loss: 0.703 
+(epoch: 33, iters: 30, time: 31.127, data: 0.024) loss: 0.703 
+(epoch: 33, iters: 40, time: 31.034, data: 0.022) loss: 0.697 
+saving the model at the end of epoch 33, iters 1320
+End of epoch 33 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 33, TEST ACC: [50.00%], LOSS: 0.690
+
+saving the latest model (epoch 34, total_steps 1321)
+(epoch: 34, iters: 10, time: 31.136, data: 0.306) loss: 0.695 
+(epoch: 34, iters: 20, time: 31.046, data: 0.036) loss: 0.694 
+(epoch: 34, iters: 30, time: 31.057, data: 0.036) loss: 0.694 
+(epoch: 34, iters: 40, time: 31.036, data: 0.037) loss: 0.694 
+saving the model at the end of epoch 34, iters 1360
+End of epoch 34 / 200 	 Time Taken: 1244 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 34, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 35, total_steps 1361)
+(epoch: 35, iters: 10, time: 31.057, data: 0.292) loss: 0.689 
+(epoch: 35, iters: 20, time: 31.111, data: 0.020) loss: 0.702 
+(epoch: 35, iters: 30, time: 31.180, data: 0.023) loss: 0.700 
+(epoch: 35, iters: 40, time: 31.014, data: 0.020) loss: 0.696 
+saving the model at the end of epoch 35, iters 1400
+End of epoch 35 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 35, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 36, total_steps 1401)
+(epoch: 36, iters: 10, time: 30.926, data: 0.240) loss: 0.692 
+(epoch: 36, iters: 20, time: 31.034, data: 0.021) loss: 0.692 
+(epoch: 36, iters: 30, time: 31.027, data: 0.022) loss: 0.689 
+(epoch: 36, iters: 40, time: 31.186, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 36, iters 1440
+End of epoch 36 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 36, TEST ACC: [50.00%], LOSS: 0.697
+
+saving the latest model (epoch 37, total_steps 1441)
+(epoch: 37, iters: 10, time: 31.128, data: 0.276) loss: 0.692 
+(epoch: 37, iters: 20, time: 31.024, data: 0.036) loss: 0.696 
+(epoch: 37, iters: 30, time: 31.131, data: 0.038) loss: 0.695 
+(epoch: 37, iters: 40, time: 31.098, data: 0.040) loss: 0.693 
+saving the model at the end of epoch 37, iters 1480
+End of epoch 37 / 200 	 Time Taken: 1244 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 37, TEST ACC: [50.00%], LOSS: 0.694
+
+saving the latest model (epoch 38, total_steps 1481)
+(epoch: 38, iters: 10, time: 31.066, data: 0.203) loss: 0.696 
+(epoch: 38, iters: 20, time: 31.083, data: 0.020) loss: 0.693 
+(epoch: 38, iters: 30, time: 31.129, data: 0.020) loss: 0.690 
+(epoch: 38, iters: 40, time: 31.036, data: 0.020) loss: 0.693 
+saving the model at the end of epoch 38, iters 1520
+End of epoch 38 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 38, TEST ACC: [70.00%], LOSS: 0.693
+
+saving the latest model (epoch 39, total_steps 1521)
+(epoch: 39, iters: 10, time: 31.077, data: 0.242) loss: 0.695 
+(epoch: 39, iters: 20, time: 30.959, data: 0.022) loss: 0.689 
+(epoch: 39, iters: 30, time: 31.010, data: 0.021) loss: 0.689 
+(epoch: 39, iters: 40, time: 30.980, data: 0.021) loss: 0.692 
+saving the model at the end of epoch 39, iters 1560
+End of epoch 39 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 39, TEST ACC: [50.00%], LOSS: 0.694
+
+saving the latest model (epoch 40, total_steps 1561)
+(epoch: 40, iters: 10, time: 31.127, data: 0.298) loss: 0.695 
+(epoch: 40, iters: 20, time: 31.036, data: 0.038) loss: 0.695 
+(epoch: 40, iters: 30, time: 30.959, data: 0.036) loss: 0.698 
+(epoch: 40, iters: 40, time: 30.887, data: 0.038) loss: 0.700 
+saving the model at the end of epoch 40, iters 1600
+End of epoch 40 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 40, TEST ACC: [50.00%], LOSS: 0.689
+
+saving the latest model (epoch 41, total_steps 1601)
+(epoch: 41, iters: 10, time: 31.106, data: 0.305) loss: 0.697 
+(epoch: 41, iters: 20, time: 30.990, data: 0.037) loss: 0.696 
+(epoch: 41, iters: 30, time: 30.973, data: 0.036) loss: 0.692 
+(epoch: 41, iters: 40, time: 31.076, data: 0.037) loss: 0.692 
+saving the model at the end of epoch 41, iters 1640
+End of epoch 41 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 41, TEST ACC: [50.00%], LOSS: 0.694
+
+saving the latest model (epoch 42, total_steps 1641)
+(epoch: 42, iters: 10, time: 30.935, data: 0.207) loss: 0.689 
+(epoch: 42, iters: 20, time: 31.062, data: 0.021) loss: 0.686 
+(epoch: 42, iters: 30, time: 31.014, data: 0.020) loss: 0.701 
+(epoch: 42, iters: 40, time: 30.988, data: 0.020) loss: 0.691 
+saving the model at the end of epoch 42, iters 1680
+End of epoch 42 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 42, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 43, total_steps 1681)
+(epoch: 43, iters: 10, time: 31.087, data: 0.231) loss: 0.692 
+(epoch: 43, iters: 20, time: 31.070, data: 0.020) loss: 0.692 
+(epoch: 43, iters: 30, time: 30.973, data: 0.021) loss: 0.696 
+(epoch: 43, iters: 40, time: 31.020, data: 0.021) loss: 0.696 
+saving the model at the end of epoch 43, iters 1720
+End of epoch 43 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 43, TEST ACC: [50.00%], LOSS: 0.691
+
+saving the latest model (epoch 44, total_steps 1721)
+(epoch: 44, iters: 10, time: 31.033, data: 0.304) loss: 0.712 
+(epoch: 44, iters: 20, time: 31.015, data: 0.020) loss: 0.699 
+(epoch: 44, iters: 30, time: 31.069, data: 0.021) loss: 0.700 
+(epoch: 44, iters: 40, time: 30.964, data: 0.021) loss: 0.694 
+saving the model at the end of epoch 44, iters 1760
+End of epoch 44 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 44, TEST ACC: [40.00%], LOSS: 0.693
+
+saving the latest model (epoch 45, total_steps 1761)
+(epoch: 45, iters: 10, time: 30.942, data: 0.318) loss: 0.693 
+(epoch: 45, iters: 20, time: 31.190, data: 0.020) loss: 0.692 
+(epoch: 45, iters: 30, time: 31.178, data: 0.020) loss: 0.697 
+(epoch: 45, iters: 40, time: 31.032, data: 0.020) loss: 0.700 
+saving the model at the end of epoch 45, iters 1800
+End of epoch 45 / 200 	 Time Taken: 1248 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 45, TEST ACC: [50.00%], LOSS: 0.688
+
+saving the latest model (epoch 46, total_steps 1801)
+(epoch: 46, iters: 10, time: 31.034, data: 0.306) loss: 0.694 
+(epoch: 46, iters: 20, time: 30.940, data: 0.038) loss: 0.691 
+(epoch: 46, iters: 30, time: 30.984, data: 0.036) loss: 0.693 
+(epoch: 46, iters: 40, time: 30.975, data: 0.036) loss: 0.690 
+saving the model at the end of epoch 46, iters 1840
+End of epoch 46 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 46, TEST ACC: [50.00%], LOSS: 0.691
+
+saving the latest model (epoch 47, total_steps 1841)
+(epoch: 47, iters: 10, time: 31.116, data: 0.293) loss: 0.693 
+(epoch: 47, iters: 20, time: 31.182, data: 0.036) loss: 0.693 
+(epoch: 47, iters: 30, time: 31.061, data: 0.037) loss: 0.692 
+(epoch: 47, iters: 40, time: 31.134, data: 0.053) loss: 0.696 
+saving the model at the end of epoch 47, iters 1880
+End of epoch 47 / 200 	 Time Taken: 1245 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 47, TEST ACC: [50.00%], LOSS: 0.691
+
+saving the latest model (epoch 48, total_steps 1881)
+(epoch: 48, iters: 10, time: 31.032, data: 0.212) loss: 0.695 
+(epoch: 48, iters: 20, time: 31.139, data: 0.036) loss: 0.691 
+(epoch: 48, iters: 30, time: 32.839, data: 0.036) loss: 0.695 
+(epoch: 48, iters: 40, time: 31.559, data: 0.052) loss: 0.692 
+saving the model at the end of epoch 48, iters 1920
+End of epoch 48 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 48, TEST ACC: [60.00%], LOSS: 0.694
+
+saving the latest model (epoch 49, total_steps 1921)
+(epoch: 49, iters: 10, time: 31.183, data: 0.197) loss: 0.691 
+(epoch: 49, iters: 20, time: 31.073, data: 0.024) loss: 0.694 
+(epoch: 49, iters: 30, time: 30.976, data: 0.020) loss: 0.691 
+(epoch: 49, iters: 40, time: 31.040, data: 0.020) loss: 0.693 
+saving the model at the end of epoch 49, iters 1960
+End of epoch 49 / 200 	 Time Taken: 1247 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 49, TEST ACC: [60.00%], LOSS: 0.694
+
+saving the latest model (epoch 50, total_steps 1961)
+(epoch: 50, iters: 10, time: 31.616, data: 0.220) loss: 0.696 
+(epoch: 50, iters: 20, time: 31.041, data: 0.022) loss: 0.696 
+(epoch: 50, iters: 30, time: 31.074, data: 0.022) loss: 0.699 
+(epoch: 50, iters: 40, time: 31.014, data: 0.035) loss: 0.697 
+saving the model at the end of epoch 50, iters 2000
+End of epoch 50 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 50, TEST ACC: [50.00%], LOSS: 0.691
+
+saving the latest model (epoch 51, total_steps 2001)
+(epoch: 51, iters: 10, time: 33.697, data: 0.234) loss: 0.694 
+(epoch: 51, iters: 20, time: 32.233, data: 0.020) loss: 0.693 
+(epoch: 51, iters: 30, time: 31.522, data: 0.020) loss: 0.690 
+(epoch: 51, iters: 40, time: 31.383, data: 0.036) loss: 0.698 
+saving the model at the end of epoch 51, iters 2040
+End of epoch 51 / 200 	 Time Taken: 1276 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 51, TEST ACC: [50.00%], LOSS: 0.690
+
+saving the latest model (epoch 52, total_steps 2041)
+(epoch: 52, iters: 10, time: 31.085, data: 0.188) loss: 0.692 
+(epoch: 52, iters: 20, time: 31.150, data: 0.019) loss: 0.694 
+(epoch: 52, iters: 30, time: 33.372, data: 0.020) loss: 0.694 
+(epoch: 52, iters: 40, time: 32.787, data: 0.034) loss: 0.694 
+saving the model at the end of epoch 52, iters 2080
+End of epoch 52 / 200 	 Time Taken: 1253 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 52, TEST ACC: [70.00%], LOSS: 0.694
+
+saving the latest model (epoch 53, total_steps 2081)
+(epoch: 53, iters: 10, time: 31.963, data: 0.309) loss: 0.697 
+(epoch: 53, iters: 20, time: 31.864, data: 0.021) loss: 0.696 
+(epoch: 53, iters: 30, time: 31.726, data: 0.022) loss: 0.693 
+(epoch: 53, iters: 40, time: 31.853, data: 0.020) loss: 0.694 
+saving the model at the end of epoch 53, iters 2120
+End of epoch 53 / 200 	 Time Taken: 1272 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 53, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 54, total_steps 2121)
+(epoch: 54, iters: 10, time: 31.873, data: 0.223) loss: 0.693 
+(epoch: 54, iters: 20, time: 31.862, data: 0.022) loss: 0.694 
+(epoch: 54, iters: 30, time: 31.530, data: 0.022) loss: 0.696 
+(epoch: 54, iters: 40, time: 31.490, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 54, iters 2160
+End of epoch 54 / 200 	 Time Taken: 1269 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 54, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 55, total_steps 2161)
+(epoch: 55, iters: 10, time: 31.702, data: 0.317) loss: 0.690 
+(epoch: 55, iters: 20, time: 31.679, data: 0.037) loss: 0.690 
+(epoch: 55, iters: 30, time: 31.787, data: 0.037) loss: 0.697 
+(epoch: 55, iters: 40, time: 31.679, data: 0.039) loss: 0.691 
+saving the model at the end of epoch 55, iters 2200
+End of epoch 55 / 200 	 Time Taken: 1269 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 55, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 56, total_steps 2201)
+(epoch: 56, iters: 10, time: 31.416, data: 0.230) loss: 0.695 
+(epoch: 56, iters: 20, time: 31.819, data: 0.020) loss: 0.697 
+(epoch: 56, iters: 30, time: 31.653, data: 0.021) loss: 0.691 
+(epoch: 56, iters: 40, time: 31.480, data: 0.023) loss: 0.695 
+saving the model at the end of epoch 56, iters 2240
+End of epoch 56 / 200 	 Time Taken: 1265 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 56, TEST ACC: [60.00%], LOSS: 0.692
+
+saving the latest model (epoch 57, total_steps 2241)
+(epoch: 57, iters: 10, time: 31.851, data: 0.243) loss: 0.695 
+(epoch: 57, iters: 20, time: 31.486, data: 0.021) loss: 0.690 
+(epoch: 57, iters: 30, time: 31.380, data: 0.021) loss: 0.696 
+(epoch: 57, iters: 40, time: 31.391, data: 0.021) loss: 0.692 
+saving the model at the end of epoch 57, iters 2280
+End of epoch 57 / 200 	 Time Taken: 1264 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 57, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 58, total_steps 2281)
+(epoch: 58, iters: 10, time: 31.526, data: 0.323) loss: 0.695 
+(epoch: 58, iters: 20, time: 31.566, data: 0.038) loss: 0.692 
+(epoch: 58, iters: 30, time: 31.809, data: 0.038) loss: 0.689 
+(epoch: 58, iters: 40, time: 31.532, data: 0.036) loss: 0.698 
+saving the model at the end of epoch 58, iters 2320
+End of epoch 58 / 200 	 Time Taken: 1265 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 58, TEST ACC: [50.00%], LOSS: 0.690
+
+saving the latest model (epoch 59, total_steps 2321)
+(epoch: 59, iters: 10, time: 31.607, data: 0.188) loss: 0.696 
+(epoch: 59, iters: 20, time: 31.253, data: 0.021) loss: 0.686 
+(epoch: 59, iters: 30, time: 31.846, data: 0.021) loss: 0.698 
+(epoch: 59, iters: 40, time: 31.764, data: 0.023) loss: 0.692 
+saving the model at the end of epoch 59, iters 2360
+End of epoch 59 / 200 	 Time Taken: 1265 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 59, TEST ACC: [60.00%], LOSS: 0.694
+
+saving the latest model (epoch 60, total_steps 2361)
+(epoch: 60, iters: 10, time: 31.749, data: 0.303) loss: 0.693 
+(epoch: 60, iters: 20, time: 31.742, data: 0.021) loss: 0.697 
+(epoch: 60, iters: 30, time: 31.424, data: 0.021) loss: 0.692 
+(epoch: 60, iters: 40, time: 31.708, data: 0.022) loss: 0.693 
+saving the model at the end of epoch 60, iters 2400
+End of epoch 60 / 200 	 Time Taken: 1269 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 60, TEST ACC: [60.00%], LOSS: 0.694
+
+saving the latest model (epoch 61, total_steps 2401)
+(epoch: 61, iters: 10, time: 31.996, data: 0.294) loss: 0.686 
+(epoch: 61, iters: 20, time: 31.987, data: 0.021) loss: 0.703 
+(epoch: 61, iters: 30, time: 31.064, data: 0.021) loss: 0.700 
+(epoch: 61, iters: 40, time: 31.063, data: 0.020) loss: 0.692 
+saving the model at the end of epoch 61, iters 2440
+End of epoch 61 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 61, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 62, total_steps 2441)
+(epoch: 62, iters: 10, time: 30.967, data: 0.271) loss: 0.697 
+(epoch: 62, iters: 20, time: 31.078, data: 0.022) loss: 0.690 
+(epoch: 62, iters: 30, time: 31.018, data: 0.021) loss: 0.694 
+(epoch: 62, iters: 40, time: 30.926, data: 0.021) loss: 0.694 
+saving the model at the end of epoch 62, iters 2480
+End of epoch 62 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 62, TEST ACC: [50.00%], LOSS: 0.694
+
+saving the latest model (epoch 63, total_steps 2481)
+(epoch: 63, iters: 10, time: 31.028, data: 0.283) loss: 0.697 
+(epoch: 63, iters: 20, time: 30.964, data: 0.020) loss: 0.693 
+(epoch: 63, iters: 30, time: 31.002, data: 0.023) loss: 0.687 
+(epoch: 63, iters: 40, time: 30.962, data: 0.020) loss: 0.699 
+saving the model at the end of epoch 63, iters 2520
+End of epoch 63 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 63, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 64, total_steps 2521)
+(epoch: 64, iters: 10, time: 31.044, data: 0.187) loss: 0.693 
+(epoch: 64, iters: 20, time: 30.964, data: 0.020) loss: 0.698 
+(epoch: 64, iters: 30, time: 31.050, data: 0.020) loss: 0.697 
+(epoch: 64, iters: 40, time: 31.037, data: 0.024) loss: 0.696 
+saving the model at the end of epoch 64, iters 2560
+End of epoch 64 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 64, TEST ACC: [50.00%], LOSS: 0.696
+
+saving the latest model (epoch 65, total_steps 2561)
+(epoch: 65, iters: 10, time: 31.089, data: 0.197) loss: 0.697 
+(epoch: 65, iters: 20, time: 30.995, data: 0.020) loss: 0.699 
+(epoch: 65, iters: 30, time: 30.984, data: 0.036) loss: 0.698 
+(epoch: 65, iters: 40, time: 30.958, data: 0.020) loss: 0.698 
+saving the model at the end of epoch 65, iters 2600
+End of epoch 65 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 65, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 66, total_steps 2601)
+(epoch: 66, iters: 10, time: 30.987, data: 0.251) loss: 0.694 
+(epoch: 66, iters: 20, time: 31.034, data: 0.020) loss: 0.692 
+(epoch: 66, iters: 30, time: 31.024, data: 0.035) loss: 0.691 
+(epoch: 66, iters: 40, time: 30.994, data: 0.021) loss: 0.692 
+saving the model at the end of epoch 66, iters 2640
+End of epoch 66 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 66, TEST ACC: [60.00%], LOSS: 0.695
+
+saving the latest model (epoch 67, total_steps 2641)
+(epoch: 67, iters: 10, time: 31.028, data: 0.233) loss: 0.691 
+(epoch: 67, iters: 20, time: 31.040, data: 0.038) loss: 0.691 
+(epoch: 67, iters: 30, time: 31.091, data: 0.054) loss: 0.695 
+(epoch: 67, iters: 40, time: 30.986, data: 0.036) loss: 0.693 
+saving the model at the end of epoch 67, iters 2680
+End of epoch 67 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 67, TEST ACC: [70.00%], LOSS: 0.694
+
+saving the latest model (epoch 68, total_steps 2681)
+(epoch: 68, iters: 10, time: 30.986, data: 0.202) loss: 0.692 
+(epoch: 68, iters: 20, time: 30.963, data: 0.021) loss: 0.695 
+(epoch: 68, iters: 30, time: 30.989, data: 0.021) loss: 0.689 
+(epoch: 68, iters: 40, time: 31.076, data: 0.021) loss: 0.696 
+saving the model at the end of epoch 68, iters 2720
+End of epoch 68 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 68, TEST ACC: [50.00%], LOSS: 0.697
+
+saving the latest model (epoch 69, total_steps 2721)
+(epoch: 69, iters: 10, time: 30.942, data: 0.238) loss: 0.695 
+(epoch: 69, iters: 20, time: 30.971, data: 0.020) loss: 0.693 
+(epoch: 69, iters: 30, time: 31.011, data: 0.036) loss: 0.692 
+(epoch: 69, iters: 40, time: 30.855, data: 0.020) loss: 0.694 
+saving the model at the end of epoch 69, iters 2760
+End of epoch 69 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 69, TEST ACC: [70.00%], LOSS: 0.693
+
+saving the latest model (epoch 70, total_steps 2761)
+(epoch: 70, iters: 10, time: 30.899, data: 0.225) loss: 0.689 
+(epoch: 70, iters: 20, time: 30.916, data: 0.020) loss: 0.688 
+(epoch: 70, iters: 30, time: 30.973, data: 0.035) loss: 0.687 
+(epoch: 70, iters: 40, time: 31.064, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 70, iters 2800
+End of epoch 70 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 70, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 71, total_steps 2801)
+(epoch: 71, iters: 10, time: 30.884, data: 0.222) loss: 0.700 
+(epoch: 71, iters: 20, time: 30.932, data: 0.024) loss: 0.695 
+(epoch: 71, iters: 30, time: 30.910, data: 0.019) loss: 0.691 
+(epoch: 71, iters: 40, time: 30.870, data: 0.021) loss: 0.691 
+saving the model at the end of epoch 71, iters 2840
+End of epoch 71 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 71, TEST ACC: [60.00%], LOSS: 0.695
+
+saving the latest model (epoch 72, total_steps 2841)
+(epoch: 72, iters: 10, time: 30.914, data: 0.210) loss: 0.690 
+(epoch: 72, iters: 20, time: 30.976, data: 0.020) loss: 0.702 
+(epoch: 72, iters: 30, time: 30.792, data: 0.021) loss: 0.703 
+(epoch: 72, iters: 40, time: 30.958, data: 0.025) loss: 0.696 
+saving the model at the end of epoch 72, iters 2880
+End of epoch 72 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 72, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 73, total_steps 2881)
+(epoch: 73, iters: 10, time: 30.913, data: 0.202) loss: 0.692 
+(epoch: 73, iters: 20, time: 30.984, data: 0.020) loss: 0.691 
+(epoch: 73, iters: 30, time: 31.043, data: 0.020) loss: 0.697 
+(epoch: 73, iters: 40, time: 30.867, data: 0.020) loss: 0.698 
+saving the model at the end of epoch 73, iters 2920
+End of epoch 73 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 73, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 74, total_steps 2921)
+(epoch: 74, iters: 10, time: 30.869, data: 0.233) loss: 0.702 
+(epoch: 74, iters: 20, time: 30.991, data: 0.020) loss: 0.694 
+(epoch: 74, iters: 30, time: 30.879, data: 0.020) loss: 0.704 
+(epoch: 74, iters: 40, time: 30.896, data: 0.021) loss: 0.701 
+saving the model at the end of epoch 74, iters 2960
+End of epoch 74 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 74, TEST ACC: [50.00%], LOSS: 0.684
+
+saving the latest model (epoch 75, total_steps 2961)
+(epoch: 75, iters: 10, time: 30.935, data: 0.211) loss: 0.689 
+(epoch: 75, iters: 20, time: 30.862, data: 0.022) loss: 0.688 
+(epoch: 75, iters: 30, time: 30.837, data: 0.020) loss: 0.693 
+(epoch: 75, iters: 40, time: 30.846, data: 0.021) loss: 0.694 
+saving the model at the end of epoch 75, iters 3000
+End of epoch 75 / 200 	 Time Taken: 1237 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 75, TEST ACC: [60.00%], LOSS: 0.690
+
+saving the latest model (epoch 76, total_steps 3001)
+(epoch: 76, iters: 10, time: 31.060, data: 0.200) loss: 0.708 
+(epoch: 76, iters: 20, time: 30.905, data: 0.037) loss: 0.684 
+(epoch: 76, iters: 30, time: 30.951, data: 0.022) loss: 0.709 
+(epoch: 76, iters: 40, time: 30.915, data: 0.020) loss: 0.691 
+saving the model at the end of epoch 76, iters 3040
+End of epoch 76 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 76, TEST ACC: [60.00%], LOSS: 0.689
+
+saving the latest model (epoch 77, total_steps 3041)
+(epoch: 77, iters: 10, time: 30.844, data: 0.244) loss: 0.699 
+(epoch: 77, iters: 20, time: 30.936, data: 0.052) loss: 0.693 
+(epoch: 77, iters: 30, time: 30.996, data: 0.037) loss: 0.695 
+(epoch: 77, iters: 40, time: 30.913, data: 0.038) loss: 0.692 
+saving the model at the end of epoch 77, iters 3080
+End of epoch 77 / 200 	 Time Taken: 1238 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 77, TEST ACC: [50.00%], LOSS: 0.685
+
+saving the latest model (epoch 78, total_steps 3081)
+(epoch: 78, iters: 10, time: 30.949, data: 0.204) loss: 0.700 
+(epoch: 78, iters: 20, time: 30.985, data: 0.021) loss: 0.693 
+(epoch: 78, iters: 30, time: 31.016, data: 0.020) loss: 0.695 
+(epoch: 78, iters: 40, time: 31.073, data: 0.021) loss: 0.682 
+saving the model at the end of epoch 78, iters 3120
+End of epoch 78 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 78, TEST ACC: [60.00%], LOSS: 0.688
+
+saving the latest model (epoch 79, total_steps 3121)
+(epoch: 79, iters: 10, time: 30.789, data: 0.217) loss: 0.696 
+(epoch: 79, iters: 20, time: 30.934, data: 0.035) loss: 0.695 
+(epoch: 79, iters: 30, time: 30.989, data: 0.021) loss: 0.696 
+(epoch: 79, iters: 40, time: 30.945, data: 0.020) loss: 0.679 
+saving the model at the end of epoch 79, iters 3160
+End of epoch 79 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 79, TEST ACC: [60.00%], LOSS: 0.681
+
+saving the latest model (epoch 80, total_steps 3161)
+(epoch: 80, iters: 10, time: 30.918, data: 0.199) loss: 0.669 
+(epoch: 80, iters: 20, time: 30.939, data: 0.034) loss: 0.735 
+(epoch: 80, iters: 30, time: 31.226, data: 0.022) loss: 0.678 
+(epoch: 80, iters: 40, time: 31.082, data: 0.022) loss: 0.699 
+saving the model at the end of epoch 80, iters 3200
+End of epoch 80 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 80, TEST ACC: [60.00%], LOSS: 0.687
+
+saving the latest model (epoch 81, total_steps 3201)
+(epoch: 81, iters: 10, time: 31.237, data: 0.236) loss: 0.668 
+(epoch: 81, iters: 20, time: 31.147, data: 0.035) loss: 0.646 
+(epoch: 81, iters: 30, time: 31.005, data: 0.036) loss: 0.724 
+(epoch: 81, iters: 40, time: 31.013, data: 0.038) loss: 0.686 
+saving the model at the end of epoch 81, iters 3240
+End of epoch 81 / 200 	 Time Taken: 1244 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 81, TEST ACC: [60.00%], LOSS: 0.685
+
+saving the latest model (epoch 82, total_steps 3241)
+(epoch: 82, iters: 10, time: 30.940, data: 0.225) loss: 0.696 
+(epoch: 82, iters: 20, time: 31.069, data: 0.052) loss: 0.730 
+(epoch: 82, iters: 30, time: 30.942, data: 0.039) loss: 0.696 
+(epoch: 82, iters: 40, time: 31.012, data: 0.036) loss: 0.695 
+saving the model at the end of epoch 82, iters 3280
+End of epoch 82 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 82, TEST ACC: [80.00%], LOSS: 0.693
+
+saving the latest model (epoch 83, total_steps 3281)
+(epoch: 83, iters: 10, time: 30.960, data: 0.215) loss: 0.688 
+(epoch: 83, iters: 20, time: 30.955, data: 0.024) loss: 0.698 
+(epoch: 83, iters: 30, time: 30.941, data: 0.020) loss: 0.690 
+(epoch: 83, iters: 40, time: 31.031, data: 0.021) loss: 0.684 
+saving the model at the end of epoch 83, iters 3320
+End of epoch 83 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 83, TEST ACC: [50.00%], LOSS: 0.688
+
+saving the latest model (epoch 84, total_steps 3321)
+(epoch: 84, iters: 10, time: 31.069, data: 0.189) loss: 0.677 
+(epoch: 84, iters: 20, time: 30.970, data: 0.038) loss: 0.707 
+(epoch: 84, iters: 30, time: 30.948, data: 0.024) loss: 0.686 
+(epoch: 84, iters: 40, time: 30.944, data: 0.020) loss: 0.685 
+saving the model at the end of epoch 84, iters 3360
+End of epoch 84 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 84, TEST ACC: [60.00%], LOSS: 0.692
+
+saving the latest model (epoch 85, total_steps 3361)
+(epoch: 85, iters: 10, time: 30.993, data: 0.236) loss: 0.696 
+(epoch: 85, iters: 20, time: 30.974, data: 0.051) loss: 0.690 
+(epoch: 85, iters: 30, time: 31.148, data: 0.036) loss: 0.688 
+(epoch: 85, iters: 40, time: 31.046, data: 0.037) loss: 0.674 
+saving the model at the end of epoch 85, iters 3400
+End of epoch 85 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 85, TEST ACC: [60.00%], LOSS: 0.683
+
+saving the latest model (epoch 86, total_steps 3401)
+(epoch: 86, iters: 10, time: 30.898, data: 0.189) loss: 0.703 
+(epoch: 86, iters: 20, time: 30.907, data: 0.020) loss: 0.694 
+(epoch: 86, iters: 30, time: 31.033, data: 0.020) loss: 0.710 
+(epoch: 86, iters: 40, time: 30.886, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 86, iters 3440
+End of epoch 86 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 86, TEST ACC: [60.00%], LOSS: 0.692
+
+saving the latest model (epoch 87, total_steps 3441)
+(epoch: 87, iters: 10, time: 30.900, data: 0.225) loss: 0.716 
+(epoch: 87, iters: 20, time: 30.944, data: 0.036) loss: 0.706 
+(epoch: 87, iters: 30, time: 30.919, data: 0.020) loss: 0.673 
+(epoch: 87, iters: 40, time: 31.066, data: 0.020) loss: 0.668 
+saving the model at the end of epoch 87, iters 3480
+End of epoch 87 / 200 	 Time Taken: 1240 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 87, TEST ACC: [60.00%], LOSS: 0.677
+
+saving the latest model (epoch 88, total_steps 3481)
+(epoch: 88, iters: 10, time: 31.063, data: 0.202) loss: 0.619 
+(epoch: 88, iters: 20, time: 30.879, data: 0.036) loss: 0.682 
+(epoch: 88, iters: 30, time: 31.173, data: 0.022) loss: 0.649 
+(epoch: 88, iters: 40, time: 30.946, data: 0.020) loss: 0.733 
+saving the model at the end of epoch 88, iters 3520
+End of epoch 88 / 200 	 Time Taken: 1239 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 88, TEST ACC: [50.00%], LOSS: 0.708
+
+saving the latest model (epoch 89, total_steps 3521)
+(epoch: 89, iters: 10, time: 31.262, data: 0.186) loss: 0.626 
+(epoch: 89, iters: 20, time: 31.106, data: 0.020) loss: 0.611 
+(epoch: 89, iters: 30, time: 30.892, data: 0.021) loss: 0.743 
+(epoch: 89, iters: 40, time: 30.921, data: 0.022) loss: 0.703 
+saving the model at the end of epoch 89, iters 3560
+End of epoch 89 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 89, TEST ACC: [60.00%], LOSS: 0.677
+
+saving the latest model (epoch 90, total_steps 3561)
+(epoch: 90, iters: 10, time: 31.139, data: 0.198) loss: 0.641 
+(epoch: 90, iters: 20, time: 30.978, data: 0.020) loss: 0.784 
+(epoch: 90, iters: 30, time: 31.078, data: 0.020) loss: 1.065 
+(epoch: 90, iters: 40, time: 30.957, data: 0.037) loss: 0.807 
+saving the model at the end of epoch 90, iters 3600
+End of epoch 90 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 90, TEST ACC: [50.00%], LOSS: 0.777
+
+saving the latest model (epoch 91, total_steps 3601)
+(epoch: 91, iters: 10, time: 31.013, data: 0.238) loss: 0.711 
+(epoch: 91, iters: 20, time: 31.122, data: 0.020) loss: 0.674 
+(epoch: 91, iters: 30, time: 30.973, data: 0.020) loss: 0.707 
+(epoch: 91, iters: 40, time: 30.988, data: 0.034) loss: 0.702 
+saving the model at the end of epoch 91, iters 3640
+End of epoch 91 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 91, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 92, total_steps 3641)
+(epoch: 92, iters: 10, time: 30.948, data: 0.215) loss: 0.704 
+(epoch: 92, iters: 20, time: 30.975, data: 0.022) loss: 0.699 
+(epoch: 92, iters: 30, time: 30.955, data: 0.024) loss: 0.700 
+(epoch: 92, iters: 40, time: 30.986, data: 0.036) loss: 0.686 
+saving the model at the end of epoch 92, iters 3680
+End of epoch 92 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 92, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 93, total_steps 3681)
+(epoch: 93, iters: 10, time: 31.047, data: 0.308) loss: 0.688 
+(epoch: 93, iters: 20, time: 31.066, data: 0.037) loss: 0.690 
+(epoch: 93, iters: 30, time: 31.034, data: 0.037) loss: 0.694 
+(epoch: 93, iters: 40, time: 31.092, data: 0.052) loss: 0.699 
+saving the model at the end of epoch 93, iters 3720
+End of epoch 93 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 93, TEST ACC: [50.00%], LOSS: 0.698
+
+saving the latest model (epoch 94, total_steps 3721)
+(epoch: 94, iters: 10, time: 30.947, data: 0.241) loss: 0.701 
+(epoch: 94, iters: 20, time: 30.988, data: 0.020) loss: 0.698 
+(epoch: 94, iters: 30, time: 30.914, data: 0.021) loss: 0.692 
+(epoch: 94, iters: 40, time: 30.986, data: 0.036) loss: 0.687 
+saving the model at the end of epoch 94, iters 3760
+End of epoch 94 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 94, TEST ACC: [50.00%], LOSS: 0.699
+
+saving the latest model (epoch 95, total_steps 3761)
+(epoch: 95, iters: 10, time: 30.961, data: 0.206) loss: 0.702 
+(epoch: 95, iters: 20, time: 30.968, data: 0.021) loss: 0.701 
+(epoch: 95, iters: 30, time: 31.115, data: 0.022) loss: 0.685 
+(epoch: 95, iters: 40, time: 30.967, data: 0.020) loss: 0.685 
+saving the model at the end of epoch 95, iters 3800
+End of epoch 95 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 95, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 96, total_steps 3801)
+(epoch: 96, iters: 10, time: 31.030, data: 0.187) loss: 0.684 
+(epoch: 96, iters: 20, time: 31.074, data: 0.020) loss: 0.704 
+(epoch: 96, iters: 30, time: 30.977, data: 0.020) loss: 0.702 
+(epoch: 96, iters: 40, time: 30.916, data: 0.022) loss: 0.685 
+saving the model at the end of epoch 96, iters 3840
+End of epoch 96 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 96, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 97, total_steps 3841)
+(epoch: 97, iters: 10, time: 31.078, data: 0.308) loss: 0.705 
+(epoch: 97, iters: 20, time: 31.097, data: 0.020) loss: 0.706 
+(epoch: 97, iters: 30, time: 31.130, data: 0.020) loss: 0.703 
+(epoch: 97, iters: 40, time: 30.976, data: 0.020) loss: 0.684 
+saving the model at the end of epoch 97, iters 3880
+End of epoch 97 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 97, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 98, total_steps 3881)
+(epoch: 98, iters: 10, time: 30.968, data: 0.271) loss: 0.684 
+(epoch: 98, iters: 20, time: 31.083, data: 0.021) loss: 0.684 
+(epoch: 98, iters: 30, time: 31.002, data: 0.020) loss: 0.704 
+(epoch: 98, iters: 40, time: 30.903, data: 0.020) loss: 0.684 
+saving the model at the end of epoch 98, iters 3920
+End of epoch 98 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+epoch: 98, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 99, total_steps 3921)
+(epoch: 99, iters: 10, time: 31.151, data: 0.222) loss: 0.705 
+(epoch: 99, iters: 20, time: 31.111, data: 0.036) loss: 0.682 
+(epoch: 99, iters: 30, time: 31.035, data: 0.038) loss: 0.683 
+(epoch: 99, iters: 40, time: 31.002, data: 0.036) loss: 0.704 
+saving the model at the end of epoch 99, iters 3960
+End of epoch 99 / 200 	 Time Taken: 1244 sec
+learning rate = 0.0001980
+Running Validation
+loaded mean / std from cache
+epoch: 99, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 100, total_steps 3961)
+(epoch: 100, iters: 10, time: 30.934, data: 0.277) loss: 0.704 
+(epoch: 100, iters: 20, time: 31.113, data: 0.035) loss: 0.683 
+(epoch: 100, iters: 30, time: 30.927, data: 0.038) loss: 0.704 
+(epoch: 100, iters: 40, time: 31.052, data: 0.037) loss: 0.683 
+saving the model at the end of epoch 100, iters 4000
+End of epoch 100 / 200 	 Time Taken: 1241 sec
+learning rate = 0.0001960
+Running Validation
+loaded mean / std from cache
+epoch: 100, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 101, total_steps 4001)
+(epoch: 101, iters: 10, time: 30.964, data: 0.212) loss: 0.702 
+(epoch: 101, iters: 20, time: 30.980, data: 0.020) loss: 0.683 
+(epoch: 101, iters: 30, time: 31.099, data: 0.020) loss: 0.703 
+(epoch: 101, iters: 40, time: 31.078, data: 0.020) loss: 0.703 
+saving the model at the end of epoch 101, iters 4040
+End of epoch 101 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0001941
+Running Validation
+loaded mean / std from cache
+epoch: 101, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 102, total_steps 4041)
+(epoch: 102, iters: 10, time: 30.919, data: 0.216) loss: 0.683 
+(epoch: 102, iters: 20, time: 31.099, data: 0.020) loss: 0.703 
+(epoch: 102, iters: 30, time: 31.027, data: 0.021) loss: 0.705 
+(epoch: 102, iters: 40, time: 31.008, data: 0.020) loss: 0.683 
+saving the model at the end of epoch 102, iters 4080
+End of epoch 102 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0001921
+Running Validation
+loaded mean / std from cache
+epoch: 102, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 103, total_steps 4081)
+(epoch: 103, iters: 10, time: 31.012, data: 0.283) loss: 0.702 
+(epoch: 103, iters: 20, time: 31.050, data: 0.038) loss: 0.686 
+(epoch: 103, iters: 30, time: 30.968, data: 0.041) loss: 0.700 
+(epoch: 103, iters: 40, time: 30.978, data: 0.038) loss: 0.701 
+saving the model at the end of epoch 103, iters 4120
+End of epoch 103 / 200 	 Time Taken: 1242 sec
+learning rate = 0.0001901
+Running Validation
+loaded mean / std from cache
+epoch: 103, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 104, total_steps 4121)
+(epoch: 104, iters: 10, time: 31.030, data: 0.237) loss: 0.703 
+(epoch: 104, iters: 20, time: 31.025, data: 0.020) loss: 0.682 
+(epoch: 104, iters: 30, time: 30.975, data: 0.020) loss: 0.705 
+(epoch: 104, iters: 40, time: 30.871, data: 0.021) loss: 0.703 
+saving the model at the end of epoch 104, iters 4160
+End of epoch 104 / 200 	 Time Taken: 1243 sec
+learning rate = 0.0001881
+Running Validation
+loaded mean / std from cache
+epoch: 104, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 105, total_steps 4161)
+(epoch: 105, iters: 10, time: 31.018, data: 0.315) loss: 0.683 
+(epoch: 105, iters: 20, time: 31.059, data: 0.020) loss: 0.682 
+(epoch: 105, iters: 30, time: 31.033, data: 0.020) loss: 0.681 
+(epoch: 105, iters: 40, time: 31.691, data: 0.020) loss: 0.703 
+saving the model at the end of epoch 105, iters 4200
+End of epoch 105 / 200 	 Time Taken: 1255 sec
+learning rate = 0.0001861
+Running Validation
+loaded mean / std from cache
+epoch: 105, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 106, total_steps 4201)
+(epoch: 106, iters: 10, time: 31.543, data: 0.321) loss: 0.685 
+(epoch: 106, iters: 20, time: 31.374, data: 0.022) loss: 0.700 
+(epoch: 106, iters: 30, time: 31.559, data: 0.025) loss: 0.687 
+(epoch: 106, iters: 40, time: 31.380, data: 0.022) loss: 0.687 
+saving the model at the end of epoch 106, iters 4240
+End of epoch 106 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001842
+Running Validation
+loaded mean / std from cache
+epoch: 106, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 107, total_steps 4241)
+(epoch: 107, iters: 10, time: 31.658, data: 0.287) loss: 0.684 
+(epoch: 107, iters: 20, time: 31.357, data: 0.023) loss: 0.703 
+(epoch: 107, iters: 30, time: 31.668, data: 0.021) loss: 0.683 
+(epoch: 107, iters: 40, time: 31.425, data: 0.022) loss: 0.704 
+saving the model at the end of epoch 107, iters 4280
+End of epoch 107 / 200 	 Time Taken: 1261 sec
+learning rate = 0.0001822
+Running Validation
+loaded mean / std from cache
+epoch: 107, TEST ACC: [50.00%], LOSS: 0.705
+
+saving the latest model (epoch 108, total_steps 4281)
+(epoch: 108, iters: 10, time: 31.522, data: 0.317) loss: 0.702 
+(epoch: 108, iters: 20, time: 31.603, data: 0.038) loss: 0.698 
+(epoch: 108, iters: 30, time: 31.285, data: 0.037) loss: 0.698 
+(epoch: 108, iters: 40, time: 31.246, data: 0.038) loss: 0.686 
+saving the model at the end of epoch 108, iters 4320
+End of epoch 108 / 200 	 Time Taken: 1259 sec
+learning rate = 0.0001802
+Running Validation
+loaded mean / std from cache
+epoch: 108, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 109, total_steps 4321)
+(epoch: 109, iters: 10, time: 31.612, data: 0.300) loss: 0.685 
+(epoch: 109, iters: 20, time: 31.425, data: 0.022) loss: 0.704 
+(epoch: 109, iters: 30, time: 31.742, data: 0.020) loss: 0.680 
+(epoch: 109, iters: 40, time: 31.406, data: 0.021) loss: 0.683 
+saving the model at the end of epoch 109, iters 4360
+End of epoch 109 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001782
+Running Validation
+loaded mean / std from cache
+epoch: 109, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 110, total_steps 4361)
+(epoch: 110, iters: 10, time: 31.570, data: 0.300) loss: 0.702 
+(epoch: 110, iters: 20, time: 31.287, data: 0.039) loss: 0.686 
+(epoch: 110, iters: 30, time: 31.635, data: 0.039) loss: 0.702 
+(epoch: 110, iters: 40, time: 31.469, data: 0.038) loss: 0.686 
+saving the model at the end of epoch 110, iters 4400
+End of epoch 110 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001762
+Running Validation
+loaded mean / std from cache
+epoch: 110, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 111, total_steps 4401)
+(epoch: 111, iters: 10, time: 31.447, data: 0.306) loss: 0.685 
+(epoch: 111, iters: 20, time: 31.523, data: 0.038) loss: 0.700 
+(epoch: 111, iters: 30, time: 31.269, data: 0.037) loss: 0.683 
+(epoch: 111, iters: 40, time: 31.293, data: 0.053) loss: 0.684 
+saving the model at the end of epoch 111, iters 4440
+End of epoch 111 / 200 	 Time Taken: 1259 sec
+learning rate = 0.0001743
+Running Validation
+loaded mean / std from cache
+epoch: 111, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 112, total_steps 4441)
+(epoch: 112, iters: 10, time: 31.298, data: 0.267) loss: 0.702 
+(epoch: 112, iters: 20, time: 31.478, data: 0.020) loss: 0.686 
+(epoch: 112, iters: 30, time: 31.235, data: 0.021) loss: 0.702 
+(epoch: 112, iters: 40, time: 31.510, data: 0.020) loss: 0.684 
+saving the model at the end of epoch 112, iters 4480
+End of epoch 112 / 200 	 Time Taken: 1258 sec
+learning rate = 0.0001723
+Running Validation
+loaded mean / std from cache
+epoch: 112, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 113, total_steps 4481)
+(epoch: 113, iters: 10, time: 31.406, data: 0.266) loss: 0.686 
+(epoch: 113, iters: 20, time: 31.563, data: 0.022) loss: 0.685 
+(epoch: 113, iters: 30, time: 31.593, data: 0.021) loss: 0.702 
+(epoch: 113, iters: 40, time: 31.383, data: 0.020) loss: 0.701 
+saving the model at the end of epoch 113, iters 4520
+End of epoch 113 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001703
+Running Validation
+loaded mean / std from cache
+epoch: 113, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 114, total_steps 4521)
+(epoch: 114, iters: 10, time: 31.459, data: 0.258) loss: 0.702 
+(epoch: 114, iters: 20, time: 31.293, data: 0.020) loss: 0.701 
+(epoch: 114, iters: 30, time: 31.393, data: 0.020) loss: 0.686 
+(epoch: 114, iters: 40, time: 31.315, data: 0.021) loss: 0.702 
+saving the model at the end of epoch 114, iters 4560
+End of epoch 114 / 200 	 Time Taken: 1258 sec
+learning rate = 0.0001683
+Running Validation
+loaded mean / std from cache
+epoch: 114, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 115, total_steps 4561)
+(epoch: 115, iters: 10, time: 31.361, data: 0.305) loss: 0.687 
+(epoch: 115, iters: 20, time: 31.542, data: 0.037) loss: 0.689 
+(epoch: 115, iters: 30, time: 31.435, data: 0.038) loss: 0.686 
+(epoch: 115, iters: 40, time: 31.323, data: 0.039) loss: 0.686 
+saving the model at the end of epoch 115, iters 4600
+End of epoch 115 / 200 	 Time Taken: 1260 sec
+learning rate = 0.0001663
+Running Validation
+loaded mean / std from cache
+epoch: 115, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 116, total_steps 4601)
+(epoch: 116, iters: 10, time: 31.431, data: 0.218) loss: 0.701 
+(epoch: 116, iters: 20, time: 31.478, data: 0.020) loss: 0.702 
+(epoch: 116, iters: 30, time: 31.624, data: 0.022) loss: 0.702 
+(epoch: 116, iters: 40, time: 31.491, data: 0.020) loss: 0.701 
+saving the model at the end of epoch 116, iters 4640
+End of epoch 116 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001644
+Running Validation
+loaded mean / std from cache
+epoch: 116, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 117, total_steps 4641)
+(epoch: 117, iters: 10, time: 31.538, data: 0.327) loss: 0.701 
+(epoch: 117, iters: 20, time: 31.515, data: 0.020) loss: 0.687 
+(epoch: 117, iters: 30, time: 31.477, data: 0.021) loss: 0.701 
+(epoch: 117, iters: 40, time: 31.568, data: 0.020) loss: 0.685 
+saving the model at the end of epoch 117, iters 4680
+End of epoch 117 / 200 	 Time Taken: 1263 sec
+learning rate = 0.0001624
+Running Validation
+loaded mean / std from cache
+epoch: 117, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 118, total_steps 4681)
+(epoch: 118, iters: 10, time: 31.349, data: 0.308) loss: 0.687 
+(epoch: 118, iters: 20, time: 31.615, data: 0.041) loss: 0.701 
+(epoch: 118, iters: 30, time: 31.612, data: 0.042) loss: 0.683 
+(epoch: 118, iters: 40, time: 31.252, data: 0.036) loss: 0.684 
+saving the model at the end of epoch 118, iters 4720
+End of epoch 118 / 200 	 Time Taken: 1262 sec
+learning rate = 0.0001604
+Running Validation
+loaded mean / std from cache
+epoch: 118, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 119, total_steps 4721)
+(epoch: 119, iters: 10, time: 31.249, data: 0.325) loss: 0.684 
+(epoch: 119, iters: 20, time: 31.262, data: 0.020) loss: 0.684 
+(epoch: 119, iters: 30, time: 31.301, data: 0.022) loss: 0.684 
+(epoch: 119, iters: 40, time: 31.288, data: 0.025) loss: 0.686 
+saving the model at the end of epoch 119, iters 4760
+End of epoch 119 / 200 	 Time Taken: 1255 sec
+learning rate = 0.0001584
+Running Validation
+loaded mean / std from cache
+epoch: 119, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 120, total_steps 4761)
+(epoch: 120, iters: 10, time: 31.248, data: 0.321) loss: 0.702 
+(epoch: 120, iters: 20, time: 31.395, data: 0.035) loss: 0.702 
+(epoch: 120, iters: 30, time: 31.402, data: 0.038) loss: 0.681 
+(epoch: 120, iters: 40, time: 31.246, data: 0.036) loss: 0.703 
+saving the model at the end of epoch 120, iters 4800
+End of epoch 120 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001564
+Running Validation
+loaded mean / std from cache
+epoch: 120, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 121, total_steps 4801)
+(epoch: 121, iters: 10, time: 31.219, data: 0.265) loss: 0.684 
+(epoch: 121, iters: 20, time: 31.758, data: 0.021) loss: 0.700 
+(epoch: 121, iters: 30, time: 32.578, data: 0.021) loss: 0.686 
+(epoch: 121, iters: 40, time: 31.451, data: 0.024) loss: 0.686 
+saving the model at the end of epoch 121, iters 4840
+End of epoch 121 / 200 	 Time Taken: 1261 sec
+learning rate = 0.0001545
+Running Validation
+loaded mean / std from cache
+epoch: 121, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 122, total_steps 4841)
+(epoch: 122, iters: 10, time: 31.174, data: 0.191) loss: 0.687 
+(epoch: 122, iters: 20, time: 31.424, data: 0.020) loss: 0.696 
+(epoch: 122, iters: 30, time: 31.214, data: 0.020) loss: 0.697 
+(epoch: 122, iters: 40, time: 31.235, data: 0.023) loss: 0.698 
+saving the model at the end of epoch 122, iters 4880
+End of epoch 122 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001525
+Running Validation
+loaded mean / std from cache
+epoch: 122, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 123, total_steps 4881)
+(epoch: 123, iters: 10, time: 31.296, data: 0.310) loss: 0.701 
+(epoch: 123, iters: 20, time: 31.179, data: 0.020) loss: 0.698 
+(epoch: 123, iters: 30, time: 31.172, data: 0.020) loss: 0.687 
+(epoch: 123, iters: 40, time: 31.236, data: 0.022) loss: 0.701 
+saving the model at the end of epoch 123, iters 4920
+End of epoch 123 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001505
+Running Validation
+loaded mean / std from cache
+epoch: 123, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 124, total_steps 4921)
+(epoch: 124, iters: 10, time: 31.226, data: 0.276) loss: 0.702 
+(epoch: 124, iters: 20, time: 31.245, data: 0.020) loss: 0.700 
+(epoch: 124, iters: 30, time: 31.218, data: 0.022) loss: 0.701 
+(epoch: 124, iters: 40, time: 31.188, data: 0.022) loss: 0.684 
+saving the model at the end of epoch 124, iters 4960
+End of epoch 124 / 200 	 Time Taken: 1253 sec
+learning rate = 0.0001485
+Running Validation
+loaded mean / std from cache
+epoch: 124, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 125, total_steps 4961)
+(epoch: 125, iters: 10, time: 31.129, data: 0.293) loss: 0.703 
+(epoch: 125, iters: 20, time: 31.361, data: 0.023) loss: 0.686 
+(epoch: 125, iters: 30, time: 31.314, data: 0.023) loss: 0.701 
+(epoch: 125, iters: 40, time: 31.311, data: 0.020) loss: 0.702 
+saving the model at the end of epoch 125, iters 5000
+End of epoch 125 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001465
+Running Validation
+loaded mean / std from cache
+epoch: 125, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 126, total_steps 5001)
+(epoch: 126, iters: 10, time: 31.227, data: 0.200) loss: 0.702 
+(epoch: 126, iters: 20, time: 31.308, data: 0.025) loss: 0.686 
+(epoch: 126, iters: 30, time: 31.224, data: 0.020) loss: 0.685 
+(epoch: 126, iters: 40, time: 31.375, data: 0.022) loss: 0.700 
+saving the model at the end of epoch 126, iters 5040
+End of epoch 126 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0001446
+Running Validation
+loaded mean / std from cache
+epoch: 126, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 127, total_steps 5041)
+(epoch: 127, iters: 10, time: 31.209, data: 0.213) loss: 0.699 
+(epoch: 127, iters: 20, time: 31.300, data: 0.020) loss: 0.690 
+(epoch: 127, iters: 30, time: 31.188, data: 0.021) loss: 0.686 
+(epoch: 127, iters: 40, time: 31.171, data: 0.020) loss: 0.685 
+saving the model at the end of epoch 127, iters 5080
+End of epoch 127 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001426
+Running Validation
+loaded mean / std from cache
+epoch: 127, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 128, total_steps 5081)
+(epoch: 128, iters: 10, time: 31.116, data: 0.220) loss: 0.700 
+(epoch: 128, iters: 20, time: 31.257, data: 0.022) loss: 0.687 
+(epoch: 128, iters: 30, time: 31.115, data: 0.036) loss: 0.687 
+(epoch: 128, iters: 40, time: 31.143, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 128, iters 5120
+End of epoch 128 / 200 	 Time Taken: 1248 sec
+learning rate = 0.0001406
+Running Validation
+loaded mean / std from cache
+epoch: 128, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 129, total_steps 5121)
+(epoch: 129, iters: 10, time: 31.303, data: 0.241) loss: 0.686 
+(epoch: 129, iters: 20, time: 31.256, data: 0.022) loss: 0.701 
+(epoch: 129, iters: 30, time: 31.298, data: 0.037) loss: 0.701 
+(epoch: 129, iters: 40, time: 31.207, data: 0.020) loss: 0.686 
+saving the model at the end of epoch 129, iters 5160
+End of epoch 129 / 200 	 Time Taken: 1253 sec
+learning rate = 0.0001386
+Running Validation
+loaded mean / std from cache
+epoch: 129, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 130, total_steps 5161)
+(epoch: 130, iters: 10, time: 31.202, data: 0.196) loss: 0.701 
+(epoch: 130, iters: 20, time: 31.332, data: 0.022) loss: 0.702 
+(epoch: 130, iters: 30, time: 31.177, data: 0.020) loss: 0.685 
+(epoch: 130, iters: 40, time: 31.102, data: 0.022) loss: 0.683 
+saving the model at the end of epoch 130, iters 5200
+End of epoch 130 / 200 	 Time Taken: 1251 sec
+learning rate = 0.0001366
+Running Validation
+loaded mean / std from cache
+epoch: 130, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 131, total_steps 5201)
+(epoch: 131, iters: 10, time: 31.079, data: 0.267) loss: 0.700 
+(epoch: 131, iters: 20, time: 31.210, data: 0.039) loss: 0.701 
+(epoch: 131, iters: 30, time: 31.299, data: 0.037) loss: 0.699 
+(epoch: 131, iters: 40, time: 31.330, data: 0.036) loss: 0.687 
+saving the model at the end of epoch 131, iters 5240
+End of epoch 131 / 200 	 Time Taken: 1251 sec
+learning rate = 0.0001347
+Running Validation
+loaded mean / std from cache
+epoch: 131, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 132, total_steps 5241)
+(epoch: 132, iters: 10, time: 31.192, data: 0.292) loss: 0.684 
+(epoch: 132, iters: 20, time: 31.444, data: 0.039) loss: 0.684 
+(epoch: 132, iters: 30, time: 31.215, data: 0.051) loss: 0.686 
+(epoch: 132, iters: 40, time: 31.352, data: 0.038) loss: 0.699 
+saving the model at the end of epoch 132, iters 5280
+End of epoch 132 / 200 	 Time Taken: 1255 sec
+learning rate = 0.0001327
+Running Validation
+loaded mean / std from cache
+epoch: 132, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 133, total_steps 5281)
+(epoch: 133, iters: 10, time: 31.334, data: 0.199) loss: 0.700 
+(epoch: 133, iters: 20, time: 31.086, data: 0.022) loss: 0.701 
+(epoch: 133, iters: 30, time: 31.147, data: 0.037) loss: 0.705 
+(epoch: 133, iters: 40, time: 31.451, data: 0.021) loss: 0.703 
+saving the model at the end of epoch 133, iters 5320
+End of epoch 133 / 200 	 Time Taken: 1250 sec
+learning rate = 0.0001307
+Running Validation
+loaded mean / std from cache
+epoch: 133, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 134, total_steps 5321)
+(epoch: 134, iters: 10, time: 31.343, data: 0.251) loss: 0.687 
+(epoch: 134, iters: 20, time: 31.397, data: 0.020) loss: 0.689 
+(epoch: 134, iters: 30, time: 31.242, data: 0.037) loss: 0.701 
+(epoch: 134, iters: 40, time: 31.208, data: 0.022) loss: 0.684 
+saving the model at the end of epoch 134, iters 5360
+End of epoch 134 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0001287
+Running Validation
+loaded mean / std from cache
+epoch: 134, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 135, total_steps 5361)
+(epoch: 135, iters: 10, time: 31.237, data: 0.299) loss: 0.703 
+(epoch: 135, iters: 20, time: 31.236, data: 0.025) loss: 0.685 
+(epoch: 135, iters: 30, time: 31.169, data: 0.020) loss: 0.684 
+(epoch: 135, iters: 40, time: 31.113, data: 0.022) loss: 0.698 
+saving the model at the end of epoch 135, iters 5400
+End of epoch 135 / 200 	 Time Taken: 1251 sec
+learning rate = 0.0001267
+Running Validation
+loaded mean / std from cache
+epoch: 135, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 136, total_steps 5401)
+(epoch: 136, iters: 10, time: 31.103, data: 0.235) loss: 0.683 
+(epoch: 136, iters: 20, time: 31.280, data: 0.041) loss: 0.688 
+(epoch: 136, iters: 30, time: 31.311, data: 0.022) loss: 0.699 
+(epoch: 136, iters: 40, time: 31.458, data: 0.020) loss: 0.702 
+saving the model at the end of epoch 136, iters 5440
+End of epoch 136 / 200 	 Time Taken: 1255 sec
+learning rate = 0.0001248
+Running Validation
+loaded mean / std from cache
+epoch: 136, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 137, total_steps 5441)
+(epoch: 137, iters: 10, time: 31.353, data: 0.219) loss: 0.702 
+(epoch: 137, iters: 20, time: 31.518, data: 0.022) loss: 0.687 
+(epoch: 137, iters: 30, time: 31.297, data: 0.022) loss: 0.683 
+(epoch: 137, iters: 40, time: 31.206, data: 0.020) loss: 0.706 
+saving the model at the end of epoch 137, iters 5480
+End of epoch 137 / 200 	 Time Taken: 1257 sec
+learning rate = 0.0001228
+Running Validation
+loaded mean / std from cache
+epoch: 137, TEST ACC: [50.00%], LOSS: 0.705
+
+saving the latest model (epoch 138, total_steps 5481)
+(epoch: 138, iters: 10, time: 31.259, data: 0.242) loss: 0.702 
+(epoch: 138, iters: 20, time: 31.463, data: 0.022) loss: 0.695 
+(epoch: 138, iters: 30, time: 31.360, data: 0.020) loss: 0.686 
+(epoch: 138, iters: 40, time: 31.187, data: 0.021) loss: 0.703 
+saving the model at the end of epoch 138, iters 5520
+End of epoch 138 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001208
+Running Validation
+loaded mean / std from cache
+epoch: 138, TEST ACC: [50.00%], LOSS: 0.705
+
+saving the latest model (epoch 139, total_steps 5521)
+(epoch: 139, iters: 10, time: 31.418, data: 0.271) loss: 0.680 
+(epoch: 139, iters: 20, time: 31.557, data: 0.022) loss: 0.699 
+(epoch: 139, iters: 30, time: 31.145, data: 0.020) loss: 0.694 
+(epoch: 139, iters: 40, time: 31.482, data: 0.021) loss: 0.690 
+saving the model at the end of epoch 139, iters 5560
+End of epoch 139 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0001188
+Running Validation
+loaded mean / std from cache
+epoch: 139, TEST ACC: [50.00%], LOSS: 0.700
+
+saving the latest model (epoch 140, total_steps 5561)
+(epoch: 140, iters: 10, time: 31.222, data: 0.195) loss: 0.700 
+(epoch: 140, iters: 20, time: 31.381, data: 0.022) loss: 0.689 
+(epoch: 140, iters: 30, time: 31.388, data: 0.023) loss: 0.701 
+(epoch: 140, iters: 40, time: 31.187, data: 0.021) loss: 0.687 
+saving the model at the end of epoch 140, iters 5600
+End of epoch 140 / 200 	 Time Taken: 1252 sec
+learning rate = 0.0001168
+Running Validation
+loaded mean / std from cache
+epoch: 140, TEST ACC: [50.00%], LOSS: 0.699
+
+saving the latest model (epoch 141, total_steps 5601)
+(epoch: 141, iters: 10, time: 31.212, data: 0.242) loss: 0.686 
+(epoch: 141, iters: 20, time: 31.239, data: 0.021) loss: 0.692 
+(epoch: 141, iters: 30, time: 31.143, data: 0.023) loss: 0.705 
+(epoch: 141, iters: 40, time: 31.421, data: 0.022) loss: 0.702 
+saving the model at the end of epoch 141, iters 5640
+End of epoch 141 / 200 	 Time Taken: 1253 sec
+learning rate = 0.0001149
+Running Validation
+loaded mean / std from cache
+epoch: 141, TEST ACC: [50.00%], LOSS: 0.705
+
+saving the latest model (epoch 142, total_steps 5641)
+(epoch: 142, iters: 10, time: 31.447, data: 0.216) loss: 0.702 
+(epoch: 142, iters: 20, time: 31.362, data: 0.054) loss: 0.694 
+(epoch: 142, iters: 30, time: 31.292, data: 0.035) loss: 0.698 
+(epoch: 142, iters: 40, time: 31.365, data: 0.040) loss: 0.686 
+saving the model at the end of epoch 142, iters 5680
+End of epoch 142 / 200 	 Time Taken: 1255 sec
+learning rate = 0.0001129
+Running Validation
+loaded mean / std from cache
+epoch: 142, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 143, total_steps 5681)
+(epoch: 143, iters: 10, time: 31.259, data: 0.227) loss: 0.688 
+(epoch: 143, iters: 20, time: 31.221, data: 0.020) loss: 0.695 
+(epoch: 143, iters: 30, time: 31.254, data: 0.020) loss: 0.695 
+(epoch: 143, iters: 40, time: 31.190, data: 0.020) loss: 0.682 
+saving the model at the end of epoch 143, iters 5720
+End of epoch 143 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0001109
+Running Validation
+loaded mean / std from cache
+epoch: 143, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 144, total_steps 5721)
+(epoch: 144, iters: 10, time: 31.171, data: 0.234) loss: 0.701 
+(epoch: 144, iters: 20, time: 31.286, data: 0.021) loss: 0.701 
+(epoch: 144, iters: 30, time: 31.351, data: 0.022) loss: 0.716 
+(epoch: 144, iters: 40, time: 31.346, data: 0.021) loss: 0.711 
+saving the model at the end of epoch 144, iters 5760
+End of epoch 144 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0001089
+Running Validation
+loaded mean / std from cache
+epoch: 144, TEST ACC: [50.00%], LOSS: 0.710
+
+saving the latest model (epoch 145, total_steps 5761)
+(epoch: 145, iters: 10, time: 31.130, data: 0.247) loss: 0.682 
+(epoch: 145, iters: 20, time: 31.288, data: 0.022) loss: 0.705 
+(epoch: 145, iters: 30, time: 31.174, data: 0.022) loss: 0.683 
+(epoch: 145, iters: 40, time: 31.291, data: 0.021) loss: 0.682 
+saving the model at the end of epoch 145, iters 5800
+End of epoch 145 / 200 	 Time Taken: 1257 sec
+learning rate = 0.0001069
+Running Validation
+loaded mean / std from cache
+epoch: 145, TEST ACC: [50.00%], LOSS: 0.705
+
+saving the latest model (epoch 146, total_steps 5801)
+(epoch: 146, iters: 10, time: 31.643, data: 0.207) loss: 0.688 
+(epoch: 146, iters: 20, time: 31.758, data: 0.021) loss: 0.686 
+(epoch: 146, iters: 30, time: 31.391, data: 0.021) loss: 0.700 
+(epoch: 146, iters: 40, time: 31.293, data: 0.020) loss: 0.684 
+saving the model at the end of epoch 146, iters 5840
+End of epoch 146 / 200 	 Time Taken: 1259 sec
+learning rate = 0.0001050
+Running Validation
+loaded mean / std from cache
+epoch: 146, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 147, total_steps 5841)
+(epoch: 147, iters: 10, time: 31.186, data: 0.202) loss: 0.703 
+(epoch: 147, iters: 20, time: 31.445, data: 0.021) loss: 0.699 
+(epoch: 147, iters: 30, time: 31.325, data: 0.020) loss: 0.683 
+(epoch: 147, iters: 40, time: 31.324, data: 0.022) loss: 0.685 
+saving the model at the end of epoch 147, iters 5880
+End of epoch 147 / 200 	 Time Taken: 1257 sec
+learning rate = 0.0001030
+Running Validation
+loaded mean / std from cache
+epoch: 147, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 148, total_steps 5881)
+(epoch: 148, iters: 10, time: 31.191, data: 0.243) loss: 0.684 
+(epoch: 148, iters: 20, time: 31.501, data: 0.054) loss: 0.683 
+(epoch: 148, iters: 30, time: 31.874, data: 0.038) loss: 0.701 
+(epoch: 148, iters: 40, time: 31.434, data: 0.038) loss: 0.684 
+saving the model at the end of epoch 148, iters 5920
+End of epoch 148 / 200 	 Time Taken: 1258 sec
+learning rate = 0.0001010
+Running Validation
+loaded mean / std from cache
+epoch: 148, TEST ACC: [50.00%], LOSS: 0.704
+
+saving the latest model (epoch 149, total_steps 5921)
+(epoch: 149, iters: 10, time: 31.154, data: 0.229) loss: 0.686 
+(epoch: 149, iters: 20, time: 31.706, data: 0.020) loss: 0.705 
+(epoch: 149, iters: 30, time: 31.511, data: 0.024) loss: 0.699 
+(epoch: 149, iters: 40, time: 31.319, data: 0.022) loss: 0.706 
+saving the model at the end of epoch 149, iters 5960
+End of epoch 149 / 200 	 Time Taken: 1256 sec
+learning rate = 0.0000990
+Running Validation
+loaded mean / std from cache
+epoch: 149, TEST ACC: [50.00%], LOSS: 0.707
+
+saving the latest model (epoch 150, total_steps 5961)
+(epoch: 150, iters: 10, time: 31.501, data: 0.228) loss: 0.698 
+(epoch: 150, iters: 20, time: 31.472, data: 0.036) loss: 0.691 
+(epoch: 150, iters: 30, time: 31.285, data: 0.021) loss: 0.682 
+(epoch: 150, iters: 40, time: 31.303, data: 0.020) loss: 0.689 
+saving the model at the end of epoch 150, iters 6000
+End of epoch 150 / 200 	 Time Taken: 1259 sec
+learning rate = 0.0000970
+Running Validation
+loaded mean / std from cache
+epoch: 150, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 151, total_steps 6001)
+(epoch: 151, iters: 10, time: 31.290, data: 0.227) loss: 0.683 
+(epoch: 151, iters: 20, time: 31.461, data: 0.038) loss: 0.682 
+(epoch: 151, iters: 30, time: 31.263, data: 0.022) loss: 0.687 
+(epoch: 151, iters: 40, time: 31.225, data: 0.020) loss: 0.697 
+saving the model at the end of epoch 151, iters 6040
+End of epoch 151 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0000950
+Running Validation
+loaded mean / std from cache
+epoch: 151, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 152, total_steps 6041)
+(epoch: 152, iters: 10, time: 31.228, data: 0.223) loss: 0.701 
+(epoch: 152, iters: 20, time: 31.314, data: 0.022) loss: 0.689 
+(epoch: 152, iters: 30, time: 31.185, data: 0.022) loss: 0.701 
+(epoch: 152, iters: 40, time: 31.276, data: 0.022) loss: 0.702 
+saving the model at the end of epoch 152, iters 6080
+End of epoch 152 / 200 	 Time Taken: 1254 sec
+learning rate = 0.0000931
+Running Validation
+loaded mean / std from cache
+epoch: 152, TEST ACC: [50.00%], LOSS: 0.707
+
+saving the latest model (epoch 153, total_steps 6081)
+(epoch: 153, iters: 10, time: 31.841, data: 0.241) loss: 0.702 
+(epoch: 153, iters: 20, time: 31.716, data: 0.039) loss: 0.689 
+(epoch: 153, iters: 30, time: 31.391, data: 0.037) loss: 0.705 
+(epoch: 153, iters: 40, time: 31.272, data: 0.036) loss: 0.704 
+saving the model at the end of epoch 153, iters 6120
+End of epoch 153 / 200 	 Time Taken: 1269 sec
+learning rate = 0.0000911
+Running Validation
+loaded mean / std from cache
+epoch: 153, TEST ACC: [50.00%], LOSS: 0.702
+
+saving the latest model (epoch 154, total_steps 6121)
+(epoch: 154, iters: 10, time: 31.534, data: 0.224) loss: 0.690 
+(epoch: 154, iters: 20, time: 31.691, data: 0.035) loss: 0.698 
+(epoch: 154, iters: 30, time: 31.524, data: 0.020) loss: 0.700 
+(epoch: 154, iters: 40, time: 31.510, data: 0.021) loss: 0.684 
+saving the model at the end of epoch 154, iters 6160
+End of epoch 154 / 200 	 Time Taken: 1267 sec
+learning rate = 0.0000891
+Running Validation
+loaded mean / std from cache
+epoch: 154, TEST ACC: [50.00%], LOSS: 0.701
+
+saving the latest model (epoch 155, total_steps 6161)
+(epoch: 155, iters: 10, time: 31.410, data: 0.269) loss: 0.703 
+(epoch: 155, iters: 20, time: 31.618, data: 0.022) loss: 0.684 
+(epoch: 155, iters: 30, time: 31.615, data: 0.022) loss: 0.688 
+(epoch: 155, iters: 40, time: 31.474, data: 0.021) loss: 0.701 
+saving the model at the end of epoch 155, iters 6200
+End of epoch 155 / 200 	 Time Taken: 1264 sec
+learning rate = 0.0000871
+Running Validation
+loaded mean / std from cache
+epoch: 155, TEST ACC: [50.00%], LOSS: 0.703
+
+saving the latest model (epoch 156, total_steps 6201)
+(epoch: 156, iters: 10, time: 31.472, data: 0.268) loss: 0.702 
+(epoch: 156, iters: 20, time: 31.658, data: 0.038) loss: 0.690 
+(epoch: 156, iters: 30, time: 31.629, data: 0.038) loss: 0.707 
+(epoch: 156, iters: 40, time: 31.755, data: 0.038) loss: 0.685 
+saving the model at the end of epoch 156, iters 6240
+End of epoch 156 / 200 	 Time Taken: 1268 sec
+learning rate = 0.0000851
+Running Validation
+loaded mean / std from cache
+slurmstepd: error: *** JOB 16490 ON atenea CANCELLED AT 2022-06-16T10:19:16 ***

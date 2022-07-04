@@ -1,0 +1,1065 @@
+------------ Options -------------
+amsgrad: True
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: 0
+epoch_count: 1
+export_folder: 
+fc_n: [100]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-50-98-30K
+ncf: [16, 16, 32, 64]
+ninput_edges: 30000
+niter: 50
+niter_decay: 10
+no_vis: False
+norm: group
+num_aug: 2
+num_groups: 1
+num_threads: 2
+phase: train
+plus: True
+pool_res: [20000, 15000, 8000, 7500]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0.2
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+computing mean std from train data...
+0 of 78
+saved:  ./data/datasets/Nodule-98-30K/mean_std_cache.p
+loaded mean / std from cache
+#training meshes = 78
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.021 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+(epoch: 1, iters: 10, time: 4.961, data: 7.672) loss: 0.641 
+(epoch: 1, iters: 20, time: 5.391, data: 0.022) loss: 0.634 
+(epoch: 1, iters: 30, time: 2.878, data: 0.020) loss: 0.744 
+(epoch: 1, iters: 40, time: 3.886, data: 0.025) loss: 0.721 
+(epoch: 1, iters: 50, time: 2.861, data: 0.000) loss: 0.724 
+(epoch: 1, iters: 60, time: 3.842, data: 0.015) loss: 0.724 
+(epoch: 1, iters: 70, time: 3.789, data: 0.000) loss: 0.734 
+saving the model at the end of epoch 1, iters 78
+End of epoch 1 / 60 	, Time Taken: 330 sec, Loss: 0.742
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 1, TEST ACC: [50.00%], LOSS: 0.743
+
+saving the latest model (epoch 2, total_steps 79)
+(epoch: 2, iters: 2, time: 5.396, data: 0.016) loss: 0.742 
+(epoch: 2, iters: 12, time: 2.850, data: 0.020) loss: 0.643 
+(epoch: 2, iters: 22, time: 3.142, data: 0.015) loss: 0.617 
+(epoch: 2, iters: 32, time: 5.925, data: 0.026) loss: 0.640 
+(epoch: 2, iters: 42, time: 5.531, data: 0.034) loss: 0.651 
+(epoch: 2, iters: 52, time: 6.173, data: 0.031) loss: 0.744 
+(epoch: 2, iters: 62, time: 2.931, data: 0.025) loss: 0.624 
+(epoch: 2, iters: 72, time: 3.843, data: 0.000) loss: 0.651 
+saving the model at the end of epoch 2, iters 156
+End of epoch 2 / 60 	, Time Taken: 296 sec, Loss: 0.740
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 2, TEST ACC: [50.00%], LOSS: 0.726
+
+saving the latest model (epoch 3, total_steps 157)
+(epoch: 3, iters: 4, time: 2.882, data: 0.000) loss: 0.723 
+(epoch: 3, iters: 14, time: 3.068, data: 0.000) loss: 0.735 
+(epoch: 3, iters: 24, time: 3.105, data: 0.015) loss: 0.625 
+(epoch: 3, iters: 34, time: 5.035, data: 0.000) loss: 0.720 
+(epoch: 3, iters: 44, time: 2.895, data: 0.021) loss: 0.721 
+(epoch: 3, iters: 54, time: 3.144, data: 0.038) loss: 0.606 
+(epoch: 3, iters: 64, time: 3.625, data: 0.034) loss: 0.718 
+(epoch: 3, iters: 74, time: 3.771, data: 0.013) loss: 0.739 
+saving the model at the end of epoch 3, iters 234
+End of epoch 3 / 60 	, Time Taken: 276 sec, Loss: 0.698
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 3, TEST ACC: [50.00%], LOSS: 0.736
+
+saving the latest model (epoch 4, total_steps 235)
+(epoch: 4, iters: 6, time: 3.122, data: 0.026) loss: 0.646 
+(epoch: 4, iters: 16, time: 3.641, data: 0.000) loss: 0.696 
+(epoch: 4, iters: 26, time: 2.913, data: 0.000) loss: 0.651 
+(epoch: 4, iters: 36, time: 2.834, data: 0.000) loss: 0.676 
+(epoch: 4, iters: 46, time: 3.075, data: 0.000) loss: 0.618 
+(epoch: 4, iters: 56, time: 2.947, data: 0.013) loss: 0.692 
+(epoch: 4, iters: 66, time: 3.178, data: 0.014) loss: 0.691 
+(epoch: 4, iters: 76, time: 2.999, data: 0.035) loss: 0.812 
+saving the model at the end of epoch 4, iters 312
+End of epoch 4 / 60 	, Time Taken: 256 sec, Loss: 0.589
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 4, TEST ACC: [55.00%], LOSS: 0.787
+
+saving the latest model (epoch 5, total_steps 313)
+(epoch: 5, iters: 8, time: 3.844, data: 0.009) loss: 0.536 
+(epoch: 5, iters: 18, time: 2.993, data: 0.014) loss: 0.517 
+(epoch: 5, iters: 28, time: 2.929, data: 0.000) loss: 0.541 
+(epoch: 5, iters: 38, time: 3.038, data: 0.000) loss: 0.640 
+(epoch: 5, iters: 48, time: 3.051, data: 0.036) loss: 0.754 
+(epoch: 5, iters: 58, time: 3.015, data: 0.015) loss: 0.497 
+(epoch: 5, iters: 68, time: 2.893, data: 0.037) loss: 0.500 
+(epoch: 5, iters: 78, time: 3.071, data: 0.000) loss: 0.726 
+saving the model at the end of epoch 5, iters 390
+End of epoch 5 / 60 	, Time Taken: 244 sec, Loss: 0.726
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 5, TEST ACC: [50.00%], LOSS: 0.695
+
+saving the latest model (epoch 6, total_steps 391)
+(epoch: 6, iters: 10, time: 2.929, data: 3.888) loss: 0.723 
+(epoch: 6, iters: 20, time: 3.034, data: 0.000) loss: 0.620 
+(epoch: 6, iters: 30, time: 3.096, data: 0.000) loss: 0.682 
+(epoch: 6, iters: 40, time: 2.864, data: 0.000) loss: 0.738 
+(epoch: 6, iters: 50, time: 2.892, data: 0.013) loss: 0.704 
+(epoch: 6, iters: 60, time: 3.211, data: 0.014) loss: 0.413 
+(epoch: 6, iters: 70, time: 2.890, data: 0.013) loss: 0.588 
+saving the model at the end of epoch 6, iters 468
+End of epoch 6 / 60 	, Time Taken: 236 sec, Loss: 0.730
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 6, TEST ACC: [60.00%], LOSS: 0.664
+
+saving the latest model (epoch 7, total_steps 469)
+(epoch: 7, iters: 2, time: 3.057, data: 0.013) loss: 0.677 
+(epoch: 7, iters: 12, time: 3.038, data: 0.028) loss: 0.771 
+(epoch: 7, iters: 22, time: 3.024, data: 0.013) loss: 0.721 
+(epoch: 7, iters: 32, time: 2.883, data: 0.022) loss: 0.755 
+(epoch: 7, iters: 42, time: 3.090, data: 0.000) loss: 0.459 
+(epoch: 7, iters: 52, time: 2.910, data: 0.000) loss: 1.096 
+(epoch: 7, iters: 62, time: 2.960, data: 0.029) loss: 0.552 
+(epoch: 7, iters: 72, time: 2.941, data: 0.013) loss: 0.650 
+saving the model at the end of epoch 7, iters 546
+End of epoch 7 / 60 	, Time Taken: 233 sec, Loss: 0.476
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 7, TEST ACC: [65.00%], LOSS: 0.744
+
+saving the latest model (epoch 8, total_steps 547)
+(epoch: 8, iters: 4, time: 3.145, data: 0.000) loss: 0.977 
+(epoch: 8, iters: 14, time: 2.889, data: 0.014) loss: 0.651 
+(epoch: 8, iters: 24, time: 3.154, data: 0.035) loss: 0.569 
+(epoch: 8, iters: 34, time: 2.939, data: 0.014) loss: 0.762 
+(epoch: 8, iters: 44, time: 2.957, data: 0.000) loss: 0.534 
+(epoch: 8, iters: 54, time: 2.871, data: 0.000) loss: 0.629 
+(epoch: 8, iters: 64, time: 2.998, data: 0.013) loss: 0.379 
+(epoch: 8, iters: 74, time: 2.947, data: 0.015) loss: 0.499 
+saving the model at the end of epoch 8, iters 624
+End of epoch 8 / 60 	, Time Taken: 235 sec, Loss: 0.446
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 8, TEST ACC: [65.00%], LOSS: 0.754
+
+saving the latest model (epoch 9, total_steps 625)
+(epoch: 9, iters: 6, time: 3.074, data: 0.014) loss: 0.684 
+(epoch: 9, iters: 16, time: 3.077, data: 0.034) loss: 0.701 
+(epoch: 9, iters: 26, time: 3.105, data: 0.014) loss: 0.865 
+(epoch: 9, iters: 36, time: 2.858, data: 0.013) loss: 0.490 
+(epoch: 9, iters: 46, time: 2.898, data: 0.041) loss: 0.476 
+(epoch: 9, iters: 56, time: 2.883, data: 0.028) loss: 0.729 
+(epoch: 9, iters: 66, time: 3.110, data: 0.023) loss: 0.846 
+(epoch: 9, iters: 76, time: 2.826, data: 0.016) loss: 1.030 
+saving the model at the end of epoch 9, iters 702
+End of epoch 9 / 60 	, Time Taken: 238 sec, Loss: 0.628
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 9, TEST ACC: [50.00%], LOSS: 0.658
+
+saving the latest model (epoch 10, total_steps 703)
+(epoch: 10, iters: 8, time: 2.876, data: 0.009) loss: 0.702 
+(epoch: 10, iters: 18, time: 2.810, data: 0.034) loss: 0.409 
+(epoch: 10, iters: 28, time: 2.833, data: 0.016) loss: 0.416 
+(epoch: 10, iters: 38, time: 2.853, data: 0.013) loss: 0.401 
+(epoch: 10, iters: 48, time: 2.929, data: 0.021) loss: 0.509 
+(epoch: 10, iters: 58, time: 3.086, data: 0.016) loss: 0.489 
+(epoch: 10, iters: 68, time: 3.098, data: 0.014) loss: 0.953 
+(epoch: 10, iters: 78, time: 3.083, data: 0.000) loss: 0.567 
+saving the model at the end of epoch 10, iters 780
+End of epoch 10 / 60 	, Time Taken: 242 sec, Loss: 0.567
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 10, TEST ACC: [55.00%], LOSS: 0.562
+
+saving the latest model (epoch 11, total_steps 781)
+(epoch: 11, iters: 10, time: 2.821, data: 0.167) loss: 0.383 
+(epoch: 11, iters: 20, time: 2.913, data: 0.024) loss: 0.414 
+(epoch: 11, iters: 30, time: 2.976, data: 0.013) loss: 0.451 
+(epoch: 11, iters: 40, time: 2.936, data: 0.016) loss: 0.929 
+(epoch: 11, iters: 50, time: 2.960, data: 0.000) loss: 0.513 
+(epoch: 11, iters: 60, time: 2.944, data: 0.000) loss: 0.415 
+(epoch: 11, iters: 70, time: 3.081, data: 0.028) loss: 0.837 
+saving the model at the end of epoch 11, iters 858
+End of epoch 11 / 60 	, Time Taken: 231 sec, Loss: 0.481
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 11, TEST ACC: [50.00%], LOSS: 0.629
+
+saving the latest model (epoch 12, total_steps 859)
+(epoch: 12, iters: 2, time: 2.907, data: 0.027) loss: 0.421 
+(epoch: 12, iters: 12, time: 3.182, data: 0.051) loss: 0.505 
+(epoch: 12, iters: 22, time: 3.136, data: 0.013) loss: 0.644 
+(epoch: 12, iters: 32, time: 2.875, data: 0.053) loss: 0.433 
+(epoch: 12, iters: 42, time: 3.017, data: 0.053) loss: 0.487 
+(epoch: 12, iters: 52, time: 2.892, data: 0.050) loss: 1.018 
+(epoch: 12, iters: 62, time: 2.860, data: 0.041) loss: 0.436 
+(epoch: 12, iters: 72, time: 2.905, data: 0.014) loss: 0.745 
+saving the model at the end of epoch 12, iters 936
+End of epoch 12 / 60 	, Time Taken: 233 sec, Loss: 0.470
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 12, TEST ACC: [60.00%], LOSS: 0.899
+
+saving the latest model (epoch 13, total_steps 937)
+(epoch: 13, iters: 4, time: 3.148, data: 0.014) loss: 0.701 
+(epoch: 13, iters: 14, time: 2.965, data: 0.022) loss: 0.412 
+(epoch: 13, iters: 24, time: 3.175, data: 0.014) loss: 0.538 
+(epoch: 13, iters: 34, time: 2.939, data: 0.013) loss: 0.823 
+(epoch: 13, iters: 44, time: 3.041, data: 0.026) loss: 0.233 
+(epoch: 13, iters: 54, time: 2.914, data: 0.013) loss: 1.048 
+(epoch: 13, iters: 64, time: 2.874, data: 0.000) loss: 0.419 
+(epoch: 13, iters: 74, time: 2.875, data: 0.015) loss: 0.488 
+saving the model at the end of epoch 13, iters 1014
+End of epoch 13 / 60 	, Time Taken: 234 sec, Loss: 0.452
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 13, TEST ACC: [50.00%], LOSS: 0.646
+
+saving the latest model (epoch 14, total_steps 1015)
+(epoch: 14, iters: 6, time: 3.015, data: 0.013) loss: 0.704 
+(epoch: 14, iters: 16, time: 3.104, data: 0.035) loss: 0.533 
+(epoch: 14, iters: 26, time: 3.083, data: 0.015) loss: 0.448 
+(epoch: 14, iters: 36, time: 2.947, data: 0.014) loss: 0.276 
+(epoch: 14, iters: 46, time: 2.869, data: 0.000) loss: 0.389 
+(epoch: 14, iters: 56, time: 2.852, data: 0.000) loss: 0.396 
+(epoch: 14, iters: 66, time: 2.845, data: 0.000) loss: 0.347 
+(epoch: 14, iters: 76, time: 2.914, data: 0.000) loss: 0.452 
+saving the model at the end of epoch 14, iters 1092
+End of epoch 14 / 60 	, Time Taken: 234 sec, Loss: 0.402
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 14, TEST ACC: [55.00%], LOSS: 0.566
+
+saving the latest model (epoch 15, total_steps 1093)
+(epoch: 15, iters: 8, time: 2.854, data: 0.017) loss: 0.386 
+(epoch: 15, iters: 18, time: 2.900, data: 0.014) loss: 0.866 
+(epoch: 15, iters: 28, time: 2.859, data: 0.015) loss: 0.875 
+(epoch: 15, iters: 38, time: 3.058, data: 0.013) loss: 0.655 
+(epoch: 15, iters: 48, time: 3.066, data: 0.000) loss: 0.276 
+(epoch: 15, iters: 58, time: 2.891, data: 0.013) loss: 0.269 
+(epoch: 15, iters: 68, time: 2.927, data: 0.013) loss: 0.544 
+(epoch: 15, iters: 78, time: 3.089, data: 0.013) loss: 0.653 
+saving the model at the end of epoch 15, iters 1170
+End of epoch 15 / 60 	, Time Taken: 232 sec, Loss: 0.653
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 15, TEST ACC: [55.00%], LOSS: 0.560
+
+saving the latest model (epoch 16, total_steps 1171)
+(epoch: 16, iters: 10, time: 2.861, data: 0.171) loss: 0.363 
+(epoch: 16, iters: 20, time: 3.079, data: 0.013) loss: 1.533 
+(epoch: 16, iters: 30, time: 3.077, data: 0.015) loss: 1.247 
+(epoch: 16, iters: 40, time: 2.907, data: 0.013) loss: 0.835 
+(epoch: 16, iters: 50, time: 2.799, data: 0.023) loss: 0.307 
+(epoch: 16, iters: 60, time: 3.130, data: 0.013) loss: 0.534 
+(epoch: 16, iters: 70, time: 3.033, data: 0.013) loss: 0.875 
+saving the model at the end of epoch 16, iters 1248
+End of epoch 16 / 60 	, Time Taken: 233 sec, Loss: 0.644
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 16, TEST ACC: [55.00%], LOSS: 0.543
+
+saving the latest model (epoch 17, total_steps 1249)
+(epoch: 17, iters: 2, time: 3.096, data: 0.029) loss: 0.651 
+(epoch: 17, iters: 12, time: 2.991, data: 0.036) loss: 1.154 
+(epoch: 17, iters: 22, time: 3.108, data: 0.000) loss: 0.171 
+(epoch: 17, iters: 32, time: 2.915, data: 0.000) loss: 0.400 
+(epoch: 17, iters: 42, time: 3.086, data: 0.000) loss: 0.460 
+(epoch: 17, iters: 52, time: 2.942, data: 0.000) loss: 0.157 
+(epoch: 17, iters: 62, time: 2.845, data: 0.000) loss: 0.335 
+(epoch: 17, iters: 72, time: 2.848, data: 0.000) loss: 1.344 
+saving the model at the end of epoch 17, iters 1326
+End of epoch 17 / 60 	, Time Taken: 233 sec, Loss: 0.218
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 17, TEST ACC: [45.00%], LOSS: 0.599
+
+saving the latest model (epoch 18, total_steps 1327)
+(epoch: 18, iters: 4, time: 3.016, data: 0.000) loss: 0.321 
+(epoch: 18, iters: 14, time: 2.945, data: 0.000) loss: 0.172 
+(epoch: 18, iters: 24, time: 3.055, data: 0.013) loss: 0.773 
+(epoch: 18, iters: 34, time: 2.952, data: 0.000) loss: 0.404 
+(epoch: 18, iters: 44, time: 2.949, data: 0.028) loss: 0.355 
+(epoch: 18, iters: 54, time: 2.882, data: 0.000) loss: 0.447 
+(epoch: 18, iters: 64, time: 2.935, data: 0.027) loss: 0.226 
+(epoch: 18, iters: 74, time: 2.963, data: 0.048) loss: 0.234 
+saving the model at the end of epoch 18, iters 1404
+End of epoch 18 / 60 	, Time Taken: 233 sec, Loss: 0.415
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 18, TEST ACC: [65.00%], LOSS: 0.913
+
+saving the latest model (epoch 19, total_steps 1405)
+(epoch: 19, iters: 6, time: 3.091, data: 0.013) loss: 0.286 
+(epoch: 19, iters: 16, time: 3.049, data: 0.029) loss: 0.819 
+(epoch: 19, iters: 26, time: 3.083, data: 0.000) loss: 0.640 
+(epoch: 19, iters: 36, time: 2.851, data: 0.030) loss: 1.390 
+(epoch: 19, iters: 46, time: 2.889, data: 0.000) loss: 0.324 
+(epoch: 19, iters: 56, time: 2.909, data: 0.014) loss: 0.695 
+(epoch: 19, iters: 66, time: 2.987, data: 0.037) loss: 0.314 
+(epoch: 19, iters: 76, time: 2.944, data: 0.013) loss: 0.823 
+saving the model at the end of epoch 19, iters 1482
+End of epoch 19 / 60 	, Time Taken: 234 sec, Loss: 1.227
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 19, TEST ACC: [50.00%], LOSS: 0.656
+
+saving the latest model (epoch 20, total_steps 1483)
+(epoch: 20, iters: 8, time: 2.969, data: 0.010) loss: 0.575 
+(epoch: 20, iters: 18, time: 2.889, data: 0.015) loss: 0.329 
+(epoch: 20, iters: 28, time: 2.924, data: 0.000) loss: 0.118 
+(epoch: 20, iters: 38, time: 3.146, data: 0.000) loss: 0.176 
+(epoch: 20, iters: 48, time: 3.143, data: 0.000) loss: 0.849 
+(epoch: 20, iters: 58, time: 2.863, data: 0.000) loss: 0.227 
+(epoch: 20, iters: 68, time: 2.969, data: 0.000) loss: 0.600 
+(epoch: 20, iters: 78, time: 3.050, data: 0.000) loss: 0.785 
+saving the model at the end of epoch 20, iters 1560
+End of epoch 20 / 60 	, Time Taken: 232 sec, Loss: 0.785
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 20, TEST ACC: [45.00%], LOSS: 0.652
+
+saving the latest model (epoch 21, total_steps 1561)
+(epoch: 21, iters: 10, time: 2.953, data: 0.152) loss: 0.407 
+(epoch: 21, iters: 20, time: 3.089, data: 0.036) loss: 0.426 
+(epoch: 21, iters: 30, time: 3.070, data: 0.014) loss: 0.512 
+(epoch: 21, iters: 40, time: 2.961, data: 0.033) loss: 0.719 
+(epoch: 21, iters: 50, time: 2.951, data: 0.000) loss: 0.212 
+(epoch: 21, iters: 60, time: 3.138, data: 0.000) loss: 0.081 
+(epoch: 21, iters: 70, time: 2.948, data: 0.000) loss: 0.312 
+saving the model at the end of epoch 21, iters 1638
+End of epoch 21 / 60 	, Time Taken: 232 sec, Loss: 1.278
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 21, TEST ACC: [65.00%], LOSS: 1.219
+
+saving the latest model (epoch 22, total_steps 1639)
+(epoch: 22, iters: 2, time: 3.089, data: 0.000) loss: 0.872 
+(epoch: 22, iters: 12, time: 3.036, data: 0.016) loss: 0.474 
+(epoch: 22, iters: 22, time: 2.944, data: 0.013) loss: 1.318 
+(epoch: 22, iters: 32, time: 2.926, data: 0.034) loss: 0.596 
+(epoch: 22, iters: 42, time: 3.090, data: 0.013) loss: 0.146 
+(epoch: 22, iters: 52, time: 2.853, data: 0.022) loss: 1.332 
+(epoch: 22, iters: 62, time: 2.829, data: 0.014) loss: 0.428 
+(epoch: 22, iters: 72, time: 2.870, data: 0.000) loss: 0.413 
+saving the model at the end of epoch 22, iters 1716
+End of epoch 22 / 60 	, Time Taken: 232 sec, Loss: 1.090
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 22, TEST ACC: [45.00%], LOSS: 0.724
+
+saving the latest model (epoch 23, total_steps 1717)
+(epoch: 23, iters: 4, time: 3.086, data: 0.000) loss: 0.897 
+(epoch: 23, iters: 14, time: 2.873, data: 0.014) loss: 0.497 
+(epoch: 23, iters: 24, time: 3.059, data: 0.013) loss: 0.462 
+(epoch: 23, iters: 34, time: 2.904, data: 0.035) loss: 0.195 
+(epoch: 23, iters: 44, time: 2.905, data: 0.013) loss: 2.859 
+(epoch: 23, iters: 54, time: 2.834, data: 0.013) loss: 0.258 
+(epoch: 23, iters: 64, time: 2.801, data: 0.036) loss: 0.215 
+(epoch: 23, iters: 74, time: 2.877, data: 0.013) loss: 0.498 
+saving the model at the end of epoch 23, iters 1794
+End of epoch 23 / 60 	, Time Taken: 233 sec, Loss: 0.268
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 23, TEST ACC: [60.00%], LOSS: 0.467
+
+saving the latest model (epoch 24, total_steps 1795)
+(epoch: 24, iters: 6, time: 3.101, data: 0.013) loss: 0.240 
+(epoch: 24, iters: 16, time: 3.064, data: 0.000) loss: 0.578 
+(epoch: 24, iters: 26, time: 3.091, data: 0.000) loss: 0.405 
+(epoch: 24, iters: 36, time: 2.853, data: 0.000) loss: 0.360 
+(epoch: 24, iters: 46, time: 2.940, data: 0.028) loss: 0.114 
+(epoch: 24, iters: 56, time: 2.891, data: 0.029) loss: 0.078 
+(epoch: 24, iters: 66, time: 2.918, data: 0.014) loss: 0.766 
+(epoch: 24, iters: 76, time: 2.827, data: 0.029) loss: 0.253 
+saving the model at the end of epoch 24, iters 1872
+End of epoch 24 / 60 	, Time Taken: 231 sec, Loss: 0.276
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 24, TEST ACC: [50.00%], LOSS: 0.420
+
+saving the latest model (epoch 25, total_steps 1873)
+(epoch: 25, iters: 8, time: 2.999, data: 0.000) loss: 0.918 
+(epoch: 25, iters: 18, time: 2.838, data: 0.000) loss: 0.202 
+(epoch: 25, iters: 28, time: 2.892, data: 0.014) loss: 0.263 
+(epoch: 25, iters: 38, time: 3.166, data: 0.013) loss: 0.209 
+(epoch: 25, iters: 48, time: 3.102, data: 0.014) loss: 0.949 
+(epoch: 25, iters: 58, time: 2.919, data: 0.052) loss: 0.924 
+(epoch: 25, iters: 68, time: 2.931, data: 0.055) loss: 0.225 
+(epoch: 25, iters: 78, time: 3.011, data: 0.027) loss: 0.600 
+saving the model at the end of epoch 25, iters 1950
+End of epoch 25 / 60 	, Time Taken: 231 sec, Loss: 0.600
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 25, TEST ACC: [50.00%], LOSS: 0.772
+
+saving the latest model (epoch 26, total_steps 1951)
+(epoch: 26, iters: 10, time: 2.908, data: 0.203) loss: 0.650 
+(epoch: 26, iters: 20, time: 3.081, data: 0.036) loss: 0.239 
+(epoch: 26, iters: 30, time: 3.000, data: 0.035) loss: 0.404 
+(epoch: 26, iters: 40, time: 2.822, data: 0.000) loss: 0.223 
+(epoch: 26, iters: 50, time: 2.815, data: 0.014) loss: 0.299 
+(epoch: 26, iters: 60, time: 3.089, data: 0.036) loss: 0.438 
+(epoch: 26, iters: 70, time: 3.090, data: 0.037) loss: 2.166 
+saving the model at the end of epoch 26, iters 2028
+End of epoch 26 / 60 	, Time Taken: 232 sec, Loss: 0.929
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 26, TEST ACC: [45.00%], LOSS: 0.693
+
+saving the latest model (epoch 27, total_steps 2029)
+(epoch: 27, iters: 2, time: 3.034, data: 0.035) loss: 0.721 
+(epoch: 27, iters: 12, time: 3.122, data: 0.015) loss: 0.263 
+(epoch: 27, iters: 22, time: 2.888, data: 0.000) loss: 0.270 
+(epoch: 27, iters: 32, time: 2.810, data: 0.000) loss: 0.296 
+(epoch: 27, iters: 42, time: 3.035, data: 0.013) loss: 0.597 
+(epoch: 27, iters: 52, time: 2.905, data: 0.000) loss: 0.137 
+(epoch: 27, iters: 62, time: 2.860, data: 0.013) loss: 0.426 
+(epoch: 27, iters: 72, time: 2.820, data: 0.000) loss: 0.277 
+saving the model at the end of epoch 27, iters 2106
+End of epoch 27 / 60 	, Time Taken: 231 sec, Loss: 0.970
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 27, TEST ACC: [60.00%], LOSS: 0.505
+
+saving the latest model (epoch 28, total_steps 2107)
+(epoch: 28, iters: 4, time: 3.037, data: 0.033) loss: 0.859 
+(epoch: 28, iters: 14, time: 2.844, data: 0.036) loss: 1.393 
+(epoch: 28, iters: 24, time: 3.042, data: 0.013) loss: 0.136 
+(epoch: 28, iters: 34, time: 2.909, data: 0.034) loss: 0.132 
+(epoch: 28, iters: 44, time: 2.885, data: 0.034) loss: 0.117 
+(epoch: 28, iters: 54, time: 2.804, data: 0.027) loss: 0.247 
+(epoch: 28, iters: 64, time: 2.863, data: 0.034) loss: 1.067 
+(epoch: 28, iters: 74, time: 2.802, data: 0.034) loss: 0.305 
+saving the model at the end of epoch 28, iters 2184
+End of epoch 28 / 60 	, Time Taken: 231 sec, Loss: 0.700
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 28, TEST ACC: [45.00%], LOSS: 0.757
+
+saving the latest model (epoch 29, total_steps 2185)
+(epoch: 29, iters: 6, time: 3.033, data: 0.000) loss: 0.867 
+(epoch: 29, iters: 16, time: 3.014, data: 0.013) loss: 1.392 
+(epoch: 29, iters: 26, time: 3.062, data: 0.000) loss: 0.884 
+(epoch: 29, iters: 36, time: 2.986, data: 0.000) loss: 0.121 
+(epoch: 29, iters: 46, time: 2.933, data: 0.014) loss: 0.945 
+(epoch: 29, iters: 56, time: 2.935, data: 0.000) loss: 0.688 
+(epoch: 29, iters: 66, time: 2.837, data: 0.000) loss: 0.235 
+(epoch: 29, iters: 76, time: 2.881, data: 0.000) loss: 0.501 
+saving the model at the end of epoch 29, iters 2262
+End of epoch 29 / 60 	, Time Taken: 231 sec, Loss: 0.327
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 29, TEST ACC: [40.00%], LOSS: 0.810
+
+saving the latest model (epoch 30, total_steps 2263)
+(epoch: 30, iters: 8, time: 2.937, data: 0.020) loss: 0.072 
+(epoch: 30, iters: 18, time: 2.903, data: 0.014) loss: 0.621 
+(epoch: 30, iters: 28, time: 2.832, data: 0.000) loss: 0.286 
+(epoch: 30, iters: 38, time: 3.035, data: 0.000) loss: 0.506 
+(epoch: 30, iters: 48, time: 3.050, data: 0.000) loss: 1.564 
+(epoch: 30, iters: 58, time: 2.884, data: 0.000) loss: 0.875 
+(epoch: 30, iters: 68, time: 2.883, data: 0.000) loss: 0.469 
+(epoch: 30, iters: 78, time: 2.901, data: 0.028) loss: 0.274 
+saving the model at the end of epoch 30, iters 2340
+End of epoch 30 / 60 	, Time Taken: 231 sec, Loss: 0.274
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 30, TEST ACC: [35.00%], LOSS: 0.804
+
+saving the latest model (epoch 31, total_steps 2341)
+(epoch: 31, iters: 10, time: 2.810, data: 0.148) loss: 0.259 
+(epoch: 31, iters: 20, time: 3.060, data: 0.029) loss: 0.397 
+(epoch: 31, iters: 30, time: 2.914, data: 0.014) loss: 0.301 
+(epoch: 31, iters: 40, time: 2.902, data: 0.051) loss: 0.210 
+(epoch: 31, iters: 50, time: 2.885, data: 0.030) loss: 0.937 
+(epoch: 31, iters: 60, time: 2.889, data: 0.050) loss: 0.236 
+(epoch: 31, iters: 70, time: 3.078, data: 0.030) loss: 1.040 
+saving the model at the end of epoch 31, iters 2418
+End of epoch 31 / 60 	, Time Taken: 231 sec, Loss: 1.338
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 31, TEST ACC: [60.00%], LOSS: 0.506
+
+saving the latest model (epoch 32, total_steps 2419)
+(epoch: 32, iters: 2, time: 3.030, data: 0.013) loss: 0.459 
+(epoch: 32, iters: 12, time: 3.065, data: 0.054) loss: 0.319 
+(epoch: 32, iters: 22, time: 3.003, data: 0.013) loss: 0.783 
+(epoch: 32, iters: 32, time: 2.902, data: 0.014) loss: 0.129 
+(epoch: 32, iters: 42, time: 3.116, data: 0.027) loss: 0.070 
+(epoch: 32, iters: 52, time: 2.887, data: 0.026) loss: 0.235 
+(epoch: 32, iters: 62, time: 2.920, data: 0.013) loss: 0.236 
+(epoch: 32, iters: 72, time: 2.839, data: 0.053) loss: 1.496 
+saving the model at the end of epoch 32, iters 2496
+End of epoch 32 / 60 	, Time Taken: 230 sec, Loss: 0.748
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 32, TEST ACC: [50.00%], LOSS: 0.675
+
+saving the latest model (epoch 33, total_steps 2497)
+(epoch: 33, iters: 4, time: 2.966, data: 0.022) loss: 1.216 
+(epoch: 33, iters: 14, time: 2.840, data: 0.000) loss: 0.628 
+(epoch: 33, iters: 24, time: 3.023, data: 0.000) loss: 0.630 
+(epoch: 33, iters: 34, time: 2.881, data: 0.000) loss: 0.961 
+(epoch: 33, iters: 44, time: 2.812, data: 0.037) loss: 0.262 
+(epoch: 33, iters: 54, time: 2.838, data: 0.035) loss: 0.281 
+(epoch: 33, iters: 64, time: 2.913, data: 0.013) loss: 0.610 
+(epoch: 33, iters: 74, time: 2.885, data: 0.013) loss: 0.698 
+saving the model at the end of epoch 33, iters 2574
+End of epoch 33 / 60 	, Time Taken: 230 sec, Loss: 0.615
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 33, TEST ACC: [45.00%], LOSS: 1.010
+
+saving the latest model (epoch 34, total_steps 2575)
+(epoch: 34, iters: 6, time: 2.901, data: 0.013) loss: 1.286 
+(epoch: 34, iters: 16, time: 2.917, data: 0.013) loss: 1.313 
+(epoch: 34, iters: 26, time: 2.991, data: 0.015) loss: 0.479 
+(epoch: 34, iters: 36, time: 2.884, data: 0.023) loss: 0.564 
+(epoch: 34, iters: 46, time: 2.893, data: 0.029) loss: 0.128 
+(epoch: 34, iters: 56, time: 2.871, data: 0.014) loss: 0.267 
+(epoch: 34, iters: 66, time: 2.879, data: 0.014) loss: 0.659 
+(epoch: 34, iters: 76, time: 2.865, data: 0.013) loss: 0.995 
+saving the model at the end of epoch 34, iters 2652
+End of epoch 34 / 60 	, Time Taken: 230 sec, Loss: 0.289
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 34, TEST ACC: [50.00%], LOSS: 0.764
+
+saving the latest model (epoch 35, total_steps 2653)
+(epoch: 35, iters: 8, time: 2.857, data: 0.009) loss: 0.249 
+(epoch: 35, iters: 18, time: 2.942, data: 0.013) loss: 0.424 
+(epoch: 35, iters: 28, time: 2.884, data: 0.014) loss: 0.658 
+(epoch: 35, iters: 38, time: 3.108, data: 0.000) loss: 0.051 
+(epoch: 35, iters: 48, time: 2.934, data: 0.000) loss: 0.249 
+(epoch: 35, iters: 58, time: 2.866, data: 0.000) loss: 0.745 
+(epoch: 35, iters: 68, time: 2.903, data: 0.014) loss: 0.286 
+(epoch: 35, iters: 78, time: 3.088, data: 0.015) loss: 0.072 
+saving the model at the end of epoch 35, iters 2730
+End of epoch 35 / 60 	, Time Taken: 232 sec, Loss: 0.072
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 35, TEST ACC: [45.00%], LOSS: 0.968
+
+saving the latest model (epoch 36, total_steps 2731)
+(epoch: 36, iters: 10, time: 2.882, data: 0.198) loss: 0.247 
+(epoch: 36, iters: 20, time: 3.095, data: 0.023) loss: 0.384 
+(epoch: 36, iters: 30, time: 3.046, data: 0.000) loss: 0.432 
+(epoch: 36, iters: 40, time: 2.944, data: 0.000) loss: 0.050 
+(epoch: 36, iters: 50, time: 2.826, data: 0.000) loss: 0.262 
+(epoch: 36, iters: 60, time: 3.015, data: 0.000) loss: 0.456 
+(epoch: 36, iters: 70, time: 2.945, data: 0.000) loss: 0.332 
+saving the model at the end of epoch 36, iters 2808
+End of epoch 36 / 60 	, Time Taken: 231 sec, Loss: 0.363
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 36, TEST ACC: [55.00%], LOSS: 1.165
+
+saving the latest model (epoch 37, total_steps 2809)
+(epoch: 37, iters: 2, time: 3.019, data: 0.000) loss: 0.721 
+(epoch: 37, iters: 12, time: 3.020, data: 0.029) loss: 0.083 
+(epoch: 37, iters: 22, time: 2.927, data: 0.000) loss: 0.280 
+(epoch: 37, iters: 32, time: 2.853, data: 0.029) loss: 0.268 
+(epoch: 37, iters: 42, time: 3.026, data: 0.029) loss: 0.090 
+(epoch: 37, iters: 52, time: 2.953, data: 0.016) loss: 0.423 
+(epoch: 37, iters: 62, time: 2.956, data: 0.029) loss: 0.500 
+(epoch: 37, iters: 72, time: 2.880, data: 0.029) loss: 0.676 
+saving the model at the end of epoch 37, iters 2886
+End of epoch 37 / 60 	, Time Taken: 231 sec, Loss: 0.518
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 37, TEST ACC: [50.00%], LOSS: 0.784
+
+saving the latest model (epoch 38, total_steps 2887)
+(epoch: 38, iters: 4, time: 3.050, data: 0.013) loss: 0.124 
+(epoch: 38, iters: 14, time: 2.913, data: 0.051) loss: 0.300 
+(epoch: 38, iters: 24, time: 3.040, data: 0.053) loss: 0.555 
+(epoch: 38, iters: 34, time: 2.939, data: 0.014) loss: 0.136 
+(epoch: 38, iters: 44, time: 2.852, data: 0.013) loss: 0.616 
+(epoch: 38, iters: 54, time: 2.832, data: 0.014) loss: 1.373 
+(epoch: 38, iters: 64, time: 2.839, data: 0.000) loss: 0.249 
+(epoch: 38, iters: 74, time: 2.886, data: 0.000) loss: 0.462 
+saving the model at the end of epoch 38, iters 2964
+End of epoch 38 / 60 	, Time Taken: 231 sec, Loss: 0.352
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 38, TEST ACC: [55.00%], LOSS: 0.432
+
+saving the latest model (epoch 39, total_steps 2965)
+(epoch: 39, iters: 6, time: 2.943, data: 0.013) loss: 0.277 
+(epoch: 39, iters: 16, time: 3.105, data: 0.035) loss: 0.434 
+(epoch: 39, iters: 26, time: 3.036, data: 0.014) loss: 0.871 
+(epoch: 39, iters: 36, time: 2.855, data: 0.034) loss: 1.405 
+(epoch: 39, iters: 46, time: 2.956, data: 0.000) loss: 0.043 
+(epoch: 39, iters: 56, time: 2.882, data: 0.015) loss: 0.305 
+(epoch: 39, iters: 66, time: 2.885, data: 0.013) loss: 0.448 
+(epoch: 39, iters: 76, time: 2.859, data: 0.036) loss: 0.105 
+saving the model at the end of epoch 39, iters 3042
+End of epoch 39 / 60 	, Time Taken: 231 sec, Loss: 0.326
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 39, TEST ACC: [60.00%], LOSS: 1.629
+
+saving the latest model (epoch 40, total_steps 3043)
+(epoch: 40, iters: 8, time: 2.919, data: 0.012) loss: 0.065 
+(epoch: 40, iters: 18, time: 2.868, data: 0.000) loss: 0.250 
+(epoch: 40, iters: 28, time: 2.901, data: 0.014) loss: 0.248 
+(epoch: 40, iters: 38, time: 3.061, data: 0.000) loss: 0.304 
+(epoch: 40, iters: 48, time: 3.167, data: 0.015) loss: 1.208 
+(epoch: 40, iters: 58, time: 2.902, data: 0.034) loss: 0.489 
+(epoch: 40, iters: 68, time: 2.857, data: 0.022) loss: 1.199 
+(epoch: 40, iters: 78, time: 2.990, data: 0.034) loss: 0.609 
+saving the model at the end of epoch 40, iters 3120
+End of epoch 40 / 60 	, Time Taken: 232 sec, Loss: 0.609
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 40, TEST ACC: [60.00%], LOSS: 0.512
+
+saving the latest model (epoch 41, total_steps 3121)
+(epoch: 41, iters: 10, time: 2.892, data: 0.169) loss: 0.405 
+(epoch: 41, iters: 20, time: 3.010, data: 0.035) loss: 0.172 
+(epoch: 41, iters: 30, time: 3.059, data: 0.034) loss: 0.310 
+(epoch: 41, iters: 40, time: 2.861, data: 0.034) loss: 1.394 
+(epoch: 41, iters: 50, time: 2.831, data: 0.000) loss: 0.300 
+(epoch: 41, iters: 60, time: 3.036, data: 0.000) loss: 0.857 
+(epoch: 41, iters: 70, time: 3.057, data: 0.000) loss: 0.879 
+saving the model at the end of epoch 41, iters 3198
+End of epoch 41 / 60 	, Time Taken: 231 sec, Loss: 1.346
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 41, TEST ACC: [55.00%], LOSS: 0.529
+
+saving the latest model (epoch 42, total_steps 3199)
+(epoch: 42, iters: 2, time: 2.959, data: 0.014) loss: 0.269 
+(epoch: 42, iters: 12, time: 2.951, data: 0.038) loss: 0.270 
+(epoch: 42, iters: 22, time: 3.043, data: 0.000) loss: 0.031 
+(epoch: 42, iters: 32, time: 2.921, data: 0.000) loss: 0.917 
+(epoch: 42, iters: 42, time: 3.088, data: 0.000) loss: 0.542 
+(epoch: 42, iters: 52, time: 2.885, data: 0.027) loss: 0.809 
+(epoch: 42, iters: 62, time: 2.928, data: 0.029) loss: 1.124 
+(epoch: 42, iters: 72, time: 2.920, data: 0.000) loss: 1.062 
+saving the model at the end of epoch 42, iters 3276
+End of epoch 42 / 60 	, Time Taken: 230 sec, Loss: 0.044
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 42, TEST ACC: [60.00%], LOSS: 0.692
+
+saving the latest model (epoch 43, total_steps 3277)
+(epoch: 43, iters: 4, time: 2.978, data: 0.050) loss: 0.374 
+(epoch: 43, iters: 14, time: 2.858, data: 0.015) loss: 0.934 
+(epoch: 43, iters: 24, time: 3.060, data: 0.036) loss: 0.181 
+(epoch: 43, iters: 34, time: 2.901, data: 0.052) loss: 0.034 
+(epoch: 43, iters: 44, time: 2.878, data: 0.043) loss: 0.235 
+(epoch: 43, iters: 54, time: 2.888, data: 0.013) loss: 0.648 
+(epoch: 43, iters: 64, time: 2.829, data: 0.016) loss: 0.900 
+(epoch: 43, iters: 74, time: 2.867, data: 0.042) loss: 0.030 
+saving the model at the end of epoch 43, iters 3354
+End of epoch 43 / 60 	, Time Taken: 230 sec, Loss: 0.598
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 43, TEST ACC: [55.00%], LOSS: 0.870
+
+saving the latest model (epoch 44, total_steps 3355)
+(epoch: 44, iters: 6, time: 3.063, data: 0.013) loss: 0.149 
+(epoch: 44, iters: 16, time: 3.021, data: 0.033) loss: 0.847 
+(epoch: 44, iters: 26, time: 2.953, data: 0.014) loss: 0.317 
+(epoch: 44, iters: 36, time: 2.894, data: 0.000) loss: 0.047 
+(epoch: 44, iters: 46, time: 2.893, data: 0.000) loss: 0.032 
+(epoch: 44, iters: 56, time: 2.837, data: 0.022) loss: 0.406 
+(epoch: 44, iters: 66, time: 2.860, data: 0.000) loss: 0.226 
+(epoch: 44, iters: 76, time: 2.843, data: 0.000) loss: 0.459 
+saving the model at the end of epoch 44, iters 3432
+End of epoch 44 / 60 	, Time Taken: 230 sec, Loss: 0.297
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 44, TEST ACC: [55.00%], LOSS: 0.901
+
+saving the latest model (epoch 45, total_steps 3433)
+(epoch: 45, iters: 8, time: 2.923, data: 0.009) loss: 1.117 
+(epoch: 45, iters: 18, time: 2.955, data: 0.016) loss: 0.080 
+(epoch: 45, iters: 28, time: 2.867, data: 0.013) loss: 0.212 
+(epoch: 45, iters: 38, time: 3.077, data: 0.014) loss: 0.490 
+(epoch: 45, iters: 48, time: 3.041, data: 0.000) loss: 1.238 
+(epoch: 45, iters: 58, time: 2.862, data: 0.035) loss: 0.670 
+(epoch: 45, iters: 68, time: 2.965, data: 0.039) loss: 0.561 
+(epoch: 45, iters: 78, time: 2.997, data: 0.014) loss: 0.347 
+saving the model at the end of epoch 45, iters 3510
+End of epoch 45 / 60 	, Time Taken: 230 sec, Loss: 0.347
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 45, TEST ACC: [55.00%], LOSS: 1.002
+
+saving the latest model (epoch 46, total_steps 3511)
+(epoch: 46, iters: 10, time: 2.892, data: 0.170) loss: 0.261 
+(epoch: 46, iters: 20, time: 3.155, data: 0.028) loss: 0.882 
+(epoch: 46, iters: 30, time: 3.111, data: 0.014) loss: 0.439 
+(epoch: 46, iters: 40, time: 2.898, data: 0.023) loss: 0.295 
+(epoch: 46, iters: 50, time: 2.870, data: 0.014) loss: 1.098 
+(epoch: 46, iters: 60, time: 3.045, data: 0.000) loss: 0.061 
+(epoch: 46, iters: 70, time: 3.104, data: 0.035) loss: 0.033 
+saving the model at the end of epoch 46, iters 3588
+End of epoch 46 / 60 	, Time Taken: 231 sec, Loss: 0.834
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 46, TEST ACC: [55.00%], LOSS: 1.031
+
+saving the latest model (epoch 47, total_steps 3589)
+(epoch: 47, iters: 2, time: 3.016, data: 0.036) loss: 0.487 
+(epoch: 47, iters: 12, time: 3.054, data: 0.015) loss: 0.694 
+(epoch: 47, iters: 22, time: 3.088, data: 0.037) loss: 0.716 
+(epoch: 47, iters: 32, time: 2.892, data: 0.037) loss: 0.505 
+(epoch: 47, iters: 42, time: 3.030, data: 0.014) loss: 0.452 
+(epoch: 47, iters: 52, time: 2.879, data: 0.000) loss: 0.308 
+(epoch: 47, iters: 62, time: 2.876, data: 0.013) loss: 0.253 
+(epoch: 47, iters: 72, time: 2.905, data: 0.000) loss: 0.593 
+saving the model at the end of epoch 47, iters 3666
+End of epoch 47 / 60 	, Time Taken: 230 sec, Loss: 0.296
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 47, TEST ACC: [55.00%], LOSS: 1.423
+
+saving the latest model (epoch 48, total_steps 3667)
+(epoch: 48, iters: 4, time: 3.136, data: 0.000) loss: 0.503 
+(epoch: 48, iters: 14, time: 2.849, data: 0.026) loss: 0.039 
+(epoch: 48, iters: 24, time: 3.078, data: 0.000) loss: 0.404 
+(epoch: 48, iters: 34, time: 2.854, data: 0.035) loss: 0.209 
+(epoch: 48, iters: 44, time: 2.923, data: 0.000) loss: 1.470 
+(epoch: 48, iters: 54, time: 2.923, data: 0.000) loss: 0.845 
+(epoch: 48, iters: 64, time: 2.906, data: 0.000) loss: 0.316 
+(epoch: 48, iters: 74, time: 2.922, data: 0.000) loss: 0.572 
+saving the model at the end of epoch 48, iters 3744
+End of epoch 48 / 60 	, Time Taken: 231 sec, Loss: 0.028
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 48, TEST ACC: [50.00%], LOSS: 1.588
+
+saving the latest model (epoch 49, total_steps 3745)
+(epoch: 49, iters: 6, time: 2.933, data: 0.041) loss: 0.277 
+(epoch: 49, iters: 16, time: 3.054, data: 0.051) loss: 0.019 
+(epoch: 49, iters: 26, time: 3.032, data: 0.000) loss: 0.068 
+(epoch: 49, iters: 36, time: 2.950, data: 0.029) loss: 0.018 
+(epoch: 49, iters: 46, time: 2.872, data: 0.000) loss: 0.422 
+(epoch: 49, iters: 56, time: 2.831, data: 0.000) loss: 0.248 
+(epoch: 49, iters: 66, time: 2.895, data: 0.013) loss: 0.307 
+(epoch: 49, iters: 76, time: 2.848, data: 0.013) loss: 0.821 
+saving the model at the end of epoch 49, iters 3822
+End of epoch 49 / 60 	, Time Taken: 231 sec, Loss: 0.308
+learning rate = 0.0001818
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 49, TEST ACC: [60.00%], LOSS: 4.047
+
+saving the latest model (epoch 50, total_steps 3823)
+(epoch: 50, iters: 8, time: 2.898, data: 0.017) loss: 0.663 
+(epoch: 50, iters: 18, time: 2.914, data: 0.013) loss: 0.303 
+(epoch: 50, iters: 28, time: 2.873, data: 0.016) loss: 0.840 
+(epoch: 50, iters: 38, time: 3.038, data: 0.000) loss: 0.462 
+(epoch: 50, iters: 48, time: 3.064, data: 0.035) loss: 0.732 
+(epoch: 50, iters: 58, time: 2.977, data: 0.013) loss: 0.465 
+(epoch: 50, iters: 68, time: 2.843, data: 0.013) loss: 0.251 
+(epoch: 50, iters: 78, time: 3.074, data: 0.034) loss: 0.450 
+saving the model at the end of epoch 50, iters 3900
+End of epoch 50 / 60 	, Time Taken: 230 sec, Loss: 0.450
+learning rate = 0.0001636
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 50, TEST ACC: [50.00%], LOSS: 1.359
+
+saving the latest model (epoch 51, total_steps 3901)
+(epoch: 51, iters: 10, time: 2.819, data: 0.149) loss: 1.434 
+(epoch: 51, iters: 20, time: 3.068, data: 0.014) loss: 1.340 
+(epoch: 51, iters: 30, time: 3.032, data: 0.024) loss: 0.039 
+(epoch: 51, iters: 40, time: 2.900, data: 0.027) loss: 0.020 
+(epoch: 51, iters: 50, time: 2.887, data: 0.035) loss: 0.358 
+(epoch: 51, iters: 60, time: 3.065, data: 0.035) loss: 0.417 
+(epoch: 51, iters: 70, time: 3.068, data: 0.014) loss: 0.833 
+saving the model at the end of epoch 51, iters 3978
+End of epoch 51 / 60 	, Time Taken: 231 sec, Loss: 1.369
+learning rate = 0.0001455
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 51, TEST ACC: [50.00%], LOSS: 1.767
+
+saving the latest model (epoch 52, total_steps 3979)
+(epoch: 52, iters: 2, time: 3.043, data: 0.026) loss: 0.073 
+(epoch: 52, iters: 12, time: 3.071, data: 0.014) loss: 0.016 
+(epoch: 52, iters: 22, time: 3.123, data: 0.014) loss: 0.516 
+(epoch: 52, iters: 32, time: 2.857, data: 0.013) loss: 0.221 
+(epoch: 52, iters: 42, time: 2.936, data: 0.000) loss: 0.249 
+(epoch: 52, iters: 52, time: 2.845, data: 0.000) loss: 1.616 
+(epoch: 52, iters: 62, time: 2.890, data: 0.000) loss: 0.050 
+(epoch: 52, iters: 72, time: 2.824, data: 0.014) loss: 1.489 
+saving the model at the end of epoch 52, iters 4056
+End of epoch 52 / 60 	, Time Taken: 231 sec, Loss: 0.487
+learning rate = 0.0001273
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 52, TEST ACC: [55.00%], LOSS: 1.203
+
+saving the latest model (epoch 53, total_steps 4057)
+(epoch: 53, iters: 4, time: 3.071, data: 0.013) loss: 1.129 
+(epoch: 53, iters: 14, time: 2.883, data: 0.014) loss: 1.040 
+(epoch: 53, iters: 24, time: 3.005, data: 0.000) loss: 0.477 
+(epoch: 53, iters: 34, time: 2.847, data: 0.000) loss: 0.268 
+(epoch: 53, iters: 44, time: 2.875, data: 0.000) loss: 0.104 
+(epoch: 53, iters: 54, time: 2.835, data: 0.000) loss: 0.427 
+(epoch: 53, iters: 64, time: 2.814, data: 0.015) loss: 1.492 
+(epoch: 53, iters: 74, time: 2.886, data: 0.014) loss: 0.881 
+saving the model at the end of epoch 53, iters 4134
+End of epoch 53 / 60 	, Time Taken: 230 sec, Loss: 0.261
+learning rate = 0.0001091
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 53, TEST ACC: [50.00%], LOSS: 3.278
+
+saving the latest model (epoch 54, total_steps 4135)
+(epoch: 54, iters: 6, time: 3.006, data: 0.000) loss: 0.564 
+(epoch: 54, iters: 16, time: 3.117, data: 0.000) loss: 0.261 
+(epoch: 54, iters: 26, time: 3.022, data: 0.014) loss: 0.022 
+(epoch: 54, iters: 36, time: 2.883, data: 0.014) loss: 0.338 
+(epoch: 54, iters: 46, time: 2.920, data: 0.000) loss: 0.160 
+(epoch: 54, iters: 56, time: 2.871, data: 0.000) loss: 0.296 
+(epoch: 54, iters: 66, time: 2.911, data: 0.000) loss: 0.020 
+(epoch: 54, iters: 76, time: 2.850, data: 0.000) loss: 0.025 
+saving the model at the end of epoch 54, iters 4212
+End of epoch 54 / 60 	, Time Taken: 230 sec, Loss: 0.288
+learning rate = 0.0000909
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 54, TEST ACC: [50.00%], LOSS: 1.748
+
+saving the latest model (epoch 55, total_steps 4213)
+(epoch: 55, iters: 8, time: 2.864, data: 0.030) loss: 1.421 
+(epoch: 55, iters: 18, time: 2.876, data: 0.048) loss: 0.708 
+(epoch: 55, iters: 28, time: 2.875, data: 0.044) loss: 0.039 
+(epoch: 55, iters: 38, time: 2.915, data: 0.029) loss: 1.413 
+(epoch: 55, iters: 48, time: 3.030, data: 0.029) loss: 0.158 
+(epoch: 55, iters: 58, time: 2.848, data: 0.016) loss: 0.287 
+(epoch: 55, iters: 68, time: 2.891, data: 0.000) loss: 0.012 
+(epoch: 55, iters: 78, time: 2.996, data: 0.014) loss: 0.656 
+saving the model at the end of epoch 55, iters 4290
+End of epoch 55 / 60 	, Time Taken: 230 sec, Loss: 0.656
+learning rate = 0.0000727
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 55, TEST ACC: [50.00%], LOSS: 2.568
+
+saving the latest model (epoch 56, total_steps 4291)
+(epoch: 56, iters: 10, time: 2.843, data: 0.185) loss: 0.032 
+(epoch: 56, iters: 20, time: 3.018, data: 0.000) loss: 0.025 
+(epoch: 56, iters: 30, time: 3.048, data: 0.056) loss: 0.385 
+(epoch: 56, iters: 40, time: 2.890, data: 0.013) loss: 0.253 
+(epoch: 56, iters: 50, time: 2.843, data: 0.000) loss: 0.282 
+(epoch: 56, iters: 60, time: 2.958, data: 0.000) loss: 0.324 
+(epoch: 56, iters: 70, time: 2.929, data: 0.000) loss: 0.270 
+saving the model at the end of epoch 56, iters 4368
+End of epoch 56 / 60 	, Time Taken: 230 sec, Loss: 0.609
+learning rate = 0.0000545
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 56, TEST ACC: [55.00%], LOSS: 1.413
+
+saving the latest model (epoch 57, total_steps 4369)
+(epoch: 57, iters: 2, time: 3.031, data: 0.000) loss: 0.373 
+(epoch: 57, iters: 12, time: 2.944, data: 0.038) loss: 0.301 
+(epoch: 57, iters: 22, time: 3.038, data: 0.013) loss: 0.495 
+(epoch: 57, iters: 32, time: 2.908, data: 0.036) loss: 0.577 
+(epoch: 57, iters: 42, time: 3.067, data: 0.013) loss: 0.880 
+(epoch: 57, iters: 52, time: 2.976, data: 0.013) loss: 0.016 
+(epoch: 57, iters: 62, time: 2.807, data: 0.013) loss: 0.288 
+(epoch: 57, iters: 72, time: 2.902, data: 0.015) loss: 0.058 
+saving the model at the end of epoch 57, iters 4446
+End of epoch 57 / 60 	, Time Taken: 230 sec, Loss: 0.967
+learning rate = 0.0000364
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 57, TEST ACC: [55.00%], LOSS: 1.431
+
+saving the latest model (epoch 58, total_steps 4447)
+(epoch: 58, iters: 4, time: 3.051, data: 0.014) loss: 0.439 
+(epoch: 58, iters: 14, time: 2.933, data: 0.014) loss: 0.014 
+(epoch: 58, iters: 24, time: 2.944, data: 0.014) loss: 0.286 
+(epoch: 58, iters: 34, time: 2.815, data: 0.036) loss: 0.194 
+(epoch: 58, iters: 44, time: 2.803, data: 0.000) loss: 1.364 
+(epoch: 58, iters: 54, time: 2.846, data: 0.015) loss: 1.287 
+(epoch: 58, iters: 64, time: 2.855, data: 0.020) loss: 0.117 
+(epoch: 58, iters: 74, time: 2.973, data: 0.014) loss: 0.460 
+saving the model at the end of epoch 58, iters 4524
+End of epoch 58 / 60 	, Time Taken: 230 sec, Loss: 1.253
+learning rate = 0.0000182
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 58, TEST ACC: [55.00%], LOSS: 2.164
+
+saving the latest model (epoch 59, total_steps 4525)
+(epoch: 59, iters: 6, time: 3.060, data: 0.035) loss: 0.730 
+(epoch: 59, iters: 16, time: 3.106, data: 0.034) loss: 0.280 
+(epoch: 59, iters: 26, time: 2.964, data: 0.000) loss: 0.270 
+(epoch: 59, iters: 36, time: 2.809, data: 0.000) loss: 0.304 
+(epoch: 59, iters: 46, time: 2.855, data: 0.027) loss: 0.027 
+(epoch: 59, iters: 56, time: 2.889, data: 0.036) loss: 0.436 
+(epoch: 59, iters: 66, time: 2.927, data: 0.000) loss: 0.133 
+(epoch: 59, iters: 76, time: 2.853, data: 0.014) loss: 0.206 
+saving the model at the end of epoch 59, iters 4602
+End of epoch 59 / 60 	, Time Taken: 230 sec, Loss: 0.014
+learning rate = 0.0000000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 59, TEST ACC: [55.00%], LOSS: 2.095
+
+saving the latest model (epoch 60, total_steps 4603)
+(epoch: 60, iters: 8, time: 2.796, data: 0.017) loss: 0.191 
+(epoch: 60, iters: 18, time: 2.829, data: 0.000) loss: 0.024 
+(epoch: 60, iters: 28, time: 2.871, data: 0.000) loss: 0.246 
+(epoch: 60, iters: 38, time: 3.006, data: 0.015) loss: 0.450 
+(epoch: 60, iters: 48, time: 3.068, data: 0.015) loss: 0.403 
+(epoch: 60, iters: 58, time: 2.871, data: 0.035) loss: 0.103 
+(epoch: 60, iters: 68, time: 2.834, data: 0.023) loss: 0.677 
+(epoch: 60, iters: 78, time: 2.995, data: 0.000) loss: 0.464 
+saving the model at the end of epoch 60, iters 4680
+End of epoch 60 / 60 	, Time Taken: 230 sec, Loss: 0.464
+learning rate = -0.0000182
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-98-30K/latest_net.pth
+epoch: 60, TEST ACC: [55.00%], LOSS: 2.095
+

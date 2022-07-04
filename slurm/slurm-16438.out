@@ -1,0 +1,52 @@
+------------ Options -------------
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-50-30K
+dataset_mode: classification
+epoch_count: 1
+export_folder: 
+fc_n: 100
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-50-30K-7
+ncf: [8, 16, 32, 64, 128]
+ninput_edges: 30000
+niter: 100
+niter_decay: 100
+no_vis: False
+norm: group
+num_aug: 2
+num_groups: 1
+num_threads: 2
+phase: train
+pool_res: [20000, 15000, 13000, 8000, 7500]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0.2
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+MeshCNN layers: Using sparse pooling
+loaded mean / std from cache
+#training meshes = 40
+Using distributed classifier model with AdamW optimizer, GPU 0
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.068 M
+-----------------------------------------------
+slurmstepd: error: *** JOB 16438 ON atenea CANCELLED AT 2022-06-13T09:41:39 ***

@@ -1,0 +1,5 @@
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-50-30K/latest_net.pth
+epoch: -1, TEST ACC: [80.00%], LOSS: 0.557
+

@@ -1,0 +1,1256 @@
+------------ Options -------------
+amsgrad: True
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: 0.25
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-5
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 50
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 10
+num_groups: 1
+num_threads: 2
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 78
+---------- Network initialized -------------
+[Network] Total number of parameters : 2.059 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+(epoch: 1, iters: 10, time: 3.270, data: 4.231) loss: 0.677 
+(epoch: 1, iters: 20, time: 4.712, data: 0.016) loss: 0.709 
+(epoch: 1, iters: 30, time: 4.683, data: 0.000) loss: 0.688 
+(epoch: 1, iters: 40, time: 4.688, data: 0.000) loss: 0.730 
+(epoch: 1, iters: 50, time: 3.279, data: 0.000) loss: 0.626 
+(epoch: 1, iters: 60, time: 4.656, data: 0.000) loss: 0.739 
+(epoch: 1, iters: 70, time: 3.260, data: 0.000) loss: 0.703 
+saving the model at the end of epoch 1, iters 78
+End of epoch 1 / 60 	, Time Taken: 348 sec, Loss: 0.693
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 1, TEST ACC: [45.00%], LOSS: 0.694
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 2, total_steps 79)
+(epoch: 2, iters: 2, time: 3.241, data: 0.000) loss: 0.716 
+(epoch: 2, iters: 12, time: 3.470, data: 0.014) loss: 0.646 
+(epoch: 2, iters: 22, time: 4.720, data: 0.017) loss: 0.750 
+(epoch: 2, iters: 32, time: 4.804, data: 0.013) loss: 0.693 
+(epoch: 2, iters: 42, time: 4.726, data: 0.031) loss: 0.736 
+(epoch: 2, iters: 52, time: 4.904, data: 0.014) loss: 0.695 
+(epoch: 2, iters: 62, time: 4.680, data: 0.016) loss: 0.706 
+(epoch: 2, iters: 72, time: 3.219, data: 0.013) loss: 0.701 
+saving the model at the end of epoch 2, iters 156
+End of epoch 2 / 60 	, Time Taken: 332 sec, Loss: 0.675
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 2, TEST ACC: [50.00%], LOSS: 0.695
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 3, total_steps 157)
+(epoch: 3, iters: 4, time: 4.745, data: 0.040) loss: 0.709 
+(epoch: 3, iters: 14, time: 4.725, data: 0.014) loss: 0.702 
+(epoch: 3, iters: 24, time: 3.263, data: 0.013) loss: 0.707 
+(epoch: 3, iters: 34, time: 4.735, data: 0.040) loss: 0.672 
+(epoch: 3, iters: 44, time: 4.698, data: 0.014) loss: 0.707 
+(epoch: 3, iters: 54, time: 4.866, data: 0.013) loss: 0.668 
+(epoch: 3, iters: 64, time: 3.235, data: 0.013) loss: 0.679 
+(epoch: 3, iters: 74, time: 4.907, data: 0.054) loss: 0.713 
+saving the model at the end of epoch 3, iters 234
+End of epoch 3 / 60 	, Time Taken: 327 sec, Loss: 0.714
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 3, TEST ACC: [50.00%], LOSS: 0.692
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 4, total_steps 235)
+(epoch: 4, iters: 6, time: 3.430, data: 0.013) loss: 0.674 
+(epoch: 4, iters: 16, time: 4.687, data: 0.016) loss: 0.681 
+(epoch: 4, iters: 26, time: 3.233, data: 0.000) loss: 0.691 
+(epoch: 4, iters: 36, time: 4.690, data: 0.000) loss: 0.686 
+(epoch: 4, iters: 46, time: 3.204, data: 0.014) loss: 0.671 
+(epoch: 4, iters: 56, time: 4.706, data: 0.034) loss: 0.676 
+(epoch: 4, iters: 66, time: 3.214, data: 0.030) loss: 0.700 
+(epoch: 4, iters: 76, time: 3.310, data: 0.050) loss: 0.669 
+saving the model at the end of epoch 4, iters 312
+End of epoch 4 / 60 	, Time Taken: 318 sec, Loss: 0.672
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 4, TEST ACC: [50.00%], LOSS: 0.692
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 5, total_steps 313)
+(epoch: 5, iters: 8, time: 3.281, data: 0.009) loss: 0.678 
+(epoch: 5, iters: 18, time: 3.217, data: 0.013) loss: 0.673 
+(epoch: 5, iters: 28, time: 4.889, data: 0.000) loss: 0.717 
+(epoch: 5, iters: 38, time: 4.654, data: 0.013) loss: 0.663 
+(epoch: 5, iters: 48, time: 3.219, data: 0.013) loss: 0.757 
+(epoch: 5, iters: 58, time: 4.665, data: 0.014) loss: 0.644 
+(epoch: 5, iters: 68, time: 4.670, data: 0.015) loss: 0.440 
+(epoch: 5, iters: 78, time: 3.205, data: 0.014) loss: 0.839 
+saving the model at the end of epoch 5, iters 390
+End of epoch 5 / 60 	, Time Taken: 309 sec, Loss: 0.839
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 5, TEST ACC: [40.00%], LOSS: 0.708
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 6, total_steps 391)
+(epoch: 6, iters: 10, time: 3.213, data: 0.190) loss: 0.780 
+(epoch: 6, iters: 20, time: 3.267, data: 0.014) loss: 0.398 
+(epoch: 6, iters: 30, time: 4.765, data: 0.033) loss: 0.535 
+(epoch: 6, iters: 40, time: 3.255, data: 0.013) loss: 0.682 
+(epoch: 6, iters: 50, time: 3.227, data: 0.013) loss: 0.690 
+(epoch: 6, iters: 60, time: 3.230, data: 0.023) loss: 0.487 
+(epoch: 6, iters: 70, time: 3.323, data: 0.000) loss: 0.419 
+saving the model at the end of epoch 6, iters 468
+End of epoch 6 / 60 	, Time Taken: 299 sec, Loss: 0.459
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 6, TEST ACC: [50.00%], LOSS: 0.699
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 7, total_steps 469)
+(epoch: 7, iters: 2, time: 3.214, data: 0.035) loss: 0.734 
+(epoch: 7, iters: 12, time: 4.952, data: 0.043) loss: 0.544 
+(epoch: 7, iters: 22, time: 3.242, data: 0.033) loss: 0.996 
+(epoch: 7, iters: 32, time: 4.721, data: 0.035) loss: 0.531 
+(epoch: 7, iters: 42, time: 3.241, data: 0.000) loss: 0.690 
+(epoch: 7, iters: 52, time: 3.446, data: 0.000) loss: 0.862 
+(epoch: 7, iters: 62, time: 4.771, data: 0.023) loss: 0.249 
+(epoch: 7, iters: 72, time: 3.223, data: 0.014) loss: 0.141 
+saving the model at the end of epoch 7, iters 546
+End of epoch 7 / 60 	, Time Taken: 296 sec, Loss: 1.309
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 7, TEST ACC: [40.00%], LOSS: 0.781
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 8, total_steps 547)
+(epoch: 8, iters: 4, time: 3.246, data: 0.035) loss: 0.389 
+(epoch: 8, iters: 14, time: 4.672, data: 0.033) loss: 0.320 
+(epoch: 8, iters: 24, time: 3.337, data: 0.018) loss: 0.011 
+(epoch: 8, iters: 34, time: 3.239, data: 0.013) loss: 0.003 
+(epoch: 8, iters: 44, time: 3.223, data: 0.000) loss: 0.001 
+(epoch: 8, iters: 54, time: 3.466, data: 0.000) loss: 0.328 
+(epoch: 8, iters: 64, time: 4.708, data: 0.000) loss: 0.517 
+(epoch: 8, iters: 74, time: 4.910, data: 0.031) loss: 0.583 
+saving the model at the end of epoch 8, iters 624
+End of epoch 8 / 60 	, Time Taken: 288 sec, Loss: 0.547
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 8, TEST ACC: [40.00%], LOSS: 0.736
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 9, total_steps 625)
+(epoch: 9, iters: 6, time: 3.450, data: 0.037) loss: 0.513 
+(epoch: 9, iters: 16, time: 4.713, data: 0.000) loss: 0.588 
+(epoch: 9, iters: 26, time: 3.281, data: 0.013) loss: 0.652 
+(epoch: 9, iters: 36, time: 3.204, data: 0.000) loss: 0.593 
+(epoch: 9, iters: 46, time: 3.313, data: 0.000) loss: 0.500 
+(epoch: 9, iters: 56, time: 3.186, data: 0.013) loss: 0.538 
+(epoch: 9, iters: 66, time: 4.716, data: 0.021) loss: 0.534 
+(epoch: 9, iters: 76, time: 3.244, data: 0.033) loss: 0.135 
+saving the model at the end of epoch 9, iters 702
+End of epoch 9 / 60 	, Time Taken: 285 sec, Loss: 1.049
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 9, TEST ACC: [50.00%], LOSS: 0.700
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 10, total_steps 703)
+(epoch: 10, iters: 8, time: 3.244, data: 0.012) loss: 0.490 
+(epoch: 10, iters: 18, time: 3.236, data: 0.000) loss: 1.099 
+(epoch: 10, iters: 28, time: 3.447, data: 0.000) loss: 0.525 
+(epoch: 10, iters: 38, time: 3.244, data: 0.015) loss: 0.606 
+(epoch: 10, iters: 48, time: 3.262, data: 0.024) loss: 0.652 
+(epoch: 10, iters: 58, time: 4.741, data: 0.000) loss: 0.789 
+(epoch: 10, iters: 68, time: 3.265, data: 0.000) loss: 0.407 
+(epoch: 10, iters: 78, time: 3.229, data: 0.013) loss: 0.327 
+saving the model at the end of epoch 10, iters 780
+End of epoch 10 / 60 	, Time Taken: 294 sec, Loss: 0.327
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 10, TEST ACC: [45.00%], LOSS: 0.722
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 11, total_steps 781)
+(epoch: 11, iters: 10, time: 3.283, data: 0.178) loss: 0.524 
+(epoch: 11, iters: 20, time: 3.240, data: 0.000) loss: 0.796 
+(epoch: 11, iters: 30, time: 3.240, data: 0.013) loss: 0.706 
+(epoch: 11, iters: 40, time: 3.274, data: 0.000) loss: 0.438 
+(epoch: 11, iters: 50, time: 3.272, data: 0.000) loss: 0.124 
+(epoch: 11, iters: 60, time: 3.273, data: 0.014) loss: 1.000 
+(epoch: 11, iters: 70, time: 3.214, data: 0.000) loss: 0.479 
+saving the model at the end of epoch 11, iters 858
+End of epoch 11 / 60 	, Time Taken: 285 sec, Loss: 0.477
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 11, TEST ACC: [45.00%], LOSS: 0.722
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 12, total_steps 859)
+(epoch: 12, iters: 2, time: 3.288, data: 0.014) loss: 0.934 
+(epoch: 12, iters: 12, time: 3.436, data: 0.028) loss: 0.427 
+(epoch: 12, iters: 22, time: 3.226, data: 0.014) loss: 1.102 
+(epoch: 12, iters: 32, time: 3.216, data: 0.000) loss: 0.535 
+(epoch: 12, iters: 42, time: 3.166, data: 0.000) loss: 0.886 
+(epoch: 12, iters: 52, time: 4.990, data: 0.048) loss: 0.220 
+(epoch: 12, iters: 62, time: 3.239, data: 0.033) loss: 1.165 
+(epoch: 12, iters: 72, time: 3.238, data: 0.014) loss: 0.368 
+saving the model at the end of epoch 12, iters 936
+End of epoch 12 / 60 	, Time Taken: 278 sec, Loss: 0.502
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 12, TEST ACC: [50.00%], LOSS: 0.689
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 13, total_steps 937)
+(epoch: 13, iters: 4, time: 3.217, data: 0.000) loss: 0.860 
+(epoch: 13, iters: 14, time: 4.679, data: 0.014) loss: 0.420 
+(epoch: 13, iters: 24, time: 3.242, data: 0.013) loss: 0.409 
+(epoch: 13, iters: 34, time: 3.203, data: 0.000) loss: 1.304 
+(epoch: 13, iters: 44, time: 3.215, data: 0.000) loss: 1.073 
+(epoch: 13, iters: 54, time: 3.503, data: 0.015) loss: 0.779 
+(epoch: 13, iters: 64, time: 3.234, data: 0.000) loss: 0.173 
+(epoch: 13, iters: 74, time: 3.445, data: 0.000) loss: 1.441 
+saving the model at the end of epoch 13, iters 1014
+End of epoch 13 / 60 	, Time Taken: 277 sec, Loss: 0.919
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 13, TEST ACC: [40.00%], LOSS: 0.868
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 14, total_steps 1015)
+(epoch: 14, iters: 6, time: 3.440, data: 0.000) loss: 0.412 
+(epoch: 14, iters: 16, time: 4.687, data: 0.033) loss: 0.321 
+(epoch: 14, iters: 26, time: 3.227, data: 0.037) loss: 0.935 
+(epoch: 14, iters: 36, time: 3.251, data: 0.015) loss: 0.819 
+(epoch: 14, iters: 46, time: 3.263, data: 0.000) loss: 0.598 
+(epoch: 14, iters: 56, time: 4.707, data: 0.013) loss: 0.758 
+(epoch: 14, iters: 66, time: 3.253, data: 0.031) loss: 0.622 
+(epoch: 14, iters: 76, time: 3.269, data: 0.000) loss: 0.631 
+saving the model at the end of epoch 14, iters 1092
+End of epoch 14 / 60 	, Time Taken: 282 sec, Loss: 0.515
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 14, TEST ACC: [50.00%], LOSS: 0.692
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 15, total_steps 1093)
+(epoch: 15, iters: 8, time: 3.263, data: 0.000) loss: 0.542 
+(epoch: 15, iters: 18, time: 3.236, data: 0.014) loss: 0.522 
+(epoch: 15, iters: 28, time: 3.517, data: 0.035) loss: 0.562 
+(epoch: 15, iters: 38, time: 4.677, data: 0.052) loss: 0.333 
+(epoch: 15, iters: 48, time: 3.214, data: 0.017) loss: 0.967 
+(epoch: 15, iters: 58, time: 4.783, data: 0.013) loss: 0.350 
+(epoch: 15, iters: 68, time: 3.284, data: 0.000) loss: 1.087 
+(epoch: 15, iters: 78, time: 3.253, data: 0.022) loss: 0.672 
+saving the model at the end of epoch 15, iters 1170
+End of epoch 15 / 60 	, Time Taken: 285 sec, Loss: 0.672
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 15, TEST ACC: [30.00%], LOSS: 0.750
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 16, total_steps 1171)
+(epoch: 16, iters: 10, time: 3.285, data: 0.215) loss: 0.206 
+(epoch: 16, iters: 20, time: 3.224, data: 0.013) loss: 0.596 
+(epoch: 16, iters: 30, time: 3.254, data: 0.014) loss: 0.847 
+(epoch: 16, iters: 40, time: 3.204, data: 0.029) loss: 0.821 
+(epoch: 16, iters: 50, time: 3.263, data: 0.000) loss: 0.904 
+(epoch: 16, iters: 60, time: 3.281, data: 0.014) loss: 1.090 
+(epoch: 16, iters: 70, time: 3.232, data: 0.033) loss: 0.568 
+saving the model at the end of epoch 16, iters 1248
+End of epoch 16 / 60 	, Time Taken: 276 sec, Loss: 0.633
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 16, TEST ACC: [50.00%], LOSS: 0.712
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 17, total_steps 1249)
+(epoch: 17, iters: 2, time: 3.356, data: 0.023) loss: 0.774 
+(epoch: 17, iters: 12, time: 3.465, data: 0.014) loss: 0.109 
+(epoch: 17, iters: 22, time: 4.745, data: 0.000) loss: 0.999 
+(epoch: 17, iters: 32, time: 3.281, data: 0.013) loss: 3.266 
+(epoch: 17, iters: 42, time: 3.255, data: 0.034) loss: 0.341 
+(epoch: 17, iters: 52, time: 3.476, data: 0.015) loss: 0.603 
+(epoch: 17, iters: 62, time: 3.255, data: 0.013) loss: 0.270 
+(epoch: 17, iters: 72, time: 3.223, data: 0.013) loss: 0.434 
+saving the model at the end of epoch 17, iters 1326
+End of epoch 17 / 60 	, Time Taken: 272 sec, Loss: 1.290
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 17, TEST ACC: [50.00%], LOSS: 0.705
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 18, total_steps 1327)
+(epoch: 18, iters: 4, time: 3.326, data: 0.000) loss: 0.536 
+(epoch: 18, iters: 14, time: 3.209, data: 0.014) loss: 0.429 
+(epoch: 18, iters: 24, time: 3.203, data: 0.014) loss: 1.200 
+(epoch: 18, iters: 34, time: 3.294, data: 0.049) loss: 1.149 
+(epoch: 18, iters: 44, time: 3.263, data: 0.015) loss: 0.569 
+(epoch: 18, iters: 54, time: 4.909, data: 0.016) loss: 0.330 
+(epoch: 18, iters: 64, time: 4.747, data: 0.000) loss: 1.190 
+(epoch: 18, iters: 74, time: 3.483, data: 0.000) loss: 0.267 
+saving the model at the end of epoch 18, iters 1404
+End of epoch 18 / 60 	, Time Taken: 271 sec, Loss: 0.598
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 18, TEST ACC: [40.00%], LOSS: 0.716
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 19, total_steps 1405)
+(epoch: 19, iters: 6, time: 3.514, data: 0.000) loss: 0.532 
+(epoch: 19, iters: 16, time: 4.743, data: 0.014) loss: 0.850 
+(epoch: 19, iters: 26, time: 3.264, data: 0.016) loss: 0.027 
+(epoch: 19, iters: 36, time: 3.269, data: 0.014) loss: 1.069 
+(epoch: 19, iters: 46, time: 3.209, data: 0.000) loss: 0.330 
+(epoch: 19, iters: 56, time: 3.237, data: 0.034) loss: 0.914 
+(epoch: 19, iters: 66, time: 3.359, data: 0.033) loss: 0.531 
+(epoch: 19, iters: 76, time: 3.231, data: 0.021) loss: 0.771 
+saving the model at the end of epoch 19, iters 1482
+End of epoch 19 / 60 	, Time Taken: 270 sec, Loss: 0.155
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 19, TEST ACC: [50.00%], LOSS: 0.742
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 20, total_steps 1483)
+(epoch: 20, iters: 8, time: 3.268, data: 0.000) loss: 0.057 
+(epoch: 20, iters: 18, time: 3.256, data: 0.000) loss: 0.587 
+(epoch: 20, iters: 28, time: 4.963, data: 0.000) loss: 0.143 
+(epoch: 20, iters: 38, time: 3.277, data: 0.013) loss: 1.170 
+(epoch: 20, iters: 48, time: 3.219, data: 0.000) loss: 0.288 
+(epoch: 20, iters: 58, time: 4.691, data: 0.036) loss: 0.313 
+(epoch: 20, iters: 68, time: 3.350, data: 0.014) loss: 0.069 
+(epoch: 20, iters: 78, time: 3.269, data: 0.014) loss: 0.390 
+saving the model at the end of epoch 20, iters 1560
+End of epoch 20 / 60 	, Time Taken: 273 sec, Loss: 0.390
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 20, TEST ACC: [50.00%], LOSS: 0.808
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 21, total_steps 1561)
+(epoch: 21, iters: 10, time: 3.258, data: 0.210) loss: 0.051 
+(epoch: 21, iters: 20, time: 3.268, data: 0.022) loss: 0.079 
+(epoch: 21, iters: 30, time: 3.256, data: 0.013) loss: 0.430 
+(epoch: 21, iters: 40, time: 3.218, data: 0.000) loss: 1.343 
+(epoch: 21, iters: 50, time: 3.231, data: 0.000) loss: 0.319 
+(epoch: 21, iters: 60, time: 3.219, data: 0.000) loss: 0.667 
+(epoch: 21, iters: 70, time: 3.259, data: 0.014) loss: 0.331 
+saving the model at the end of epoch 21, iters 1638
+End of epoch 21 / 60 	, Time Taken: 268 sec, Loss: 0.414
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 21, TEST ACC: [55.00%], LOSS: 0.684
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 22, total_steps 1639)
+(epoch: 22, iters: 2, time: 3.279, data: 0.024) loss: 0.003 
+(epoch: 22, iters: 12, time: 3.488, data: 0.053) loss: 0.222 
+(epoch: 22, iters: 22, time: 3.303, data: 0.016) loss: 0.298 
+(epoch: 22, iters: 32, time: 3.252, data: 0.014) loss: 0.751 
+(epoch: 22, iters: 42, time: 3.256, data: 0.000) loss: 0.053 
+(epoch: 22, iters: 52, time: 3.553, data: 0.000) loss: 0.751 
+(epoch: 22, iters: 62, time: 3.229, data: 0.014) loss: 0.415 
+(epoch: 22, iters: 72, time: 3.236, data: 0.048) loss: 0.508 
+saving the model at the end of epoch 22, iters 1716
+End of epoch 22 / 60 	, Time Taken: 269 sec, Loss: 0.334
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 22, TEST ACC: [50.00%], LOSS: 0.731
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 23, total_steps 1717)
+(epoch: 23, iters: 4, time: 3.209, data: 0.015) loss: 1.547 
+(epoch: 23, iters: 14, time: 4.731, data: 0.015) loss: 0.428 
+(epoch: 23, iters: 24, time: 3.234, data: 0.000) loss: 1.221 
+(epoch: 23, iters: 34, time: 3.264, data: 0.000) loss: 0.269 
+(epoch: 23, iters: 44, time: 3.241, data: 0.034) loss: 0.161 
+(epoch: 23, iters: 54, time: 3.476, data: 0.037) loss: 0.307 
+(epoch: 23, iters: 64, time: 3.246, data: 0.013) loss: 0.120 
+(epoch: 23, iters: 74, time: 3.486, data: 0.022) loss: 0.353 
+saving the model at the end of epoch 23, iters 1794
+End of epoch 23 / 60 	, Time Taken: 266 sec, Loss: 0.333
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 23, TEST ACC: [55.00%], LOSS: 0.814
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 24, total_steps 1795)
+(epoch: 24, iters: 6, time: 3.474, data: 0.000) loss: 1.296 
+(epoch: 24, iters: 16, time: 3.349, data: 0.013) loss: 0.427 
+(epoch: 24, iters: 26, time: 3.211, data: 0.025) loss: 1.255 
+(epoch: 24, iters: 36, time: 3.248, data: 0.024) loss: 0.453 
+(epoch: 24, iters: 46, time: 3.247, data: 0.000) loss: 0.420 
+(epoch: 24, iters: 56, time: 3.293, data: 0.000) loss: 0.836 
+(epoch: 24, iters: 66, time: 3.297, data: 0.028) loss: 0.561 
+(epoch: 24, iters: 76, time: 3.227, data: 0.035) loss: 0.057 
+saving the model at the end of epoch 24, iters 1872
+End of epoch 24 / 60 	, Time Taken: 263 sec, Loss: 0.123
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 24, TEST ACC: [45.00%], LOSS: 0.816
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 25, total_steps 1873)
+(epoch: 25, iters: 8, time: 3.321, data: 0.010) loss: 0.336 
+(epoch: 25, iters: 18, time: 3.258, data: 0.016) loss: 0.006 
+(epoch: 25, iters: 28, time: 3.413, data: 0.014) loss: 0.255 
+(epoch: 25, iters: 38, time: 3.252, data: 0.014) loss: 0.629 
+(epoch: 25, iters: 48, time: 3.248, data: 0.000) loss: 0.165 
+(epoch: 25, iters: 58, time: 4.685, data: 0.000) loss: 0.364 
+(epoch: 25, iters: 68, time: 3.252, data: 0.000) loss: 0.005 
+(epoch: 25, iters: 78, time: 3.279, data: 0.013) loss: 0.173 
+saving the model at the end of epoch 25, iters 1950
+End of epoch 25 / 60 	, Time Taken: 267 sec, Loss: 0.173
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 25, TEST ACC: [45.00%], LOSS: 0.818
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 26, total_steps 1951)
+(epoch: 26, iters: 10, time: 3.245, data: 2.174) loss: 0.332 
+(epoch: 26, iters: 20, time: 3.229, data: 0.022) loss: 0.106 
+(epoch: 26, iters: 30, time: 4.684, data: 0.014) loss: 0.075 
+(epoch: 26, iters: 40, time: 3.213, data: 0.000) loss: 0.259 
+(epoch: 26, iters: 50, time: 3.208, data: 0.000) loss: 0.902 
+(epoch: 26, iters: 60, time: 3.285, data: 0.014) loss: 0.329 
+(epoch: 26, iters: 70, time: 3.234, data: 0.000) loss: 0.265 
+saving the model at the end of epoch 26, iters 2028
+End of epoch 26 / 60 	, Time Taken: 265 sec, Loss: 0.259
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 26, TEST ACC: [50.00%], LOSS: 0.795
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 27, total_steps 2029)
+(epoch: 27, iters: 2, time: 3.191, data: 0.000) loss: 0.179 
+(epoch: 27, iters: 12, time: 3.495, data: 0.029) loss: 0.175 
+(epoch: 27, iters: 22, time: 3.215, data: 0.013) loss: 0.156 
+(epoch: 27, iters: 32, time: 3.256, data: 0.035) loss: 0.089 
+(epoch: 27, iters: 42, time: 3.232, data: 0.014) loss: 0.028 
+(epoch: 27, iters: 52, time: 3.457, data: 0.013) loss: 0.884 
+(epoch: 27, iters: 62, time: 3.241, data: 0.028) loss: 0.469 
+(epoch: 27, iters: 72, time: 3.246, data: 0.000) loss: 0.398 
+saving the model at the end of epoch 27, iters 2106
+End of epoch 27 / 60 	, Time Taken: 263 sec, Loss: 0.197
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 27, TEST ACC: [50.00%], LOSS: 0.763
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 28, total_steps 2107)
+(epoch: 28, iters: 4, time: 4.703, data: 0.014) loss: 1.187 
+(epoch: 28, iters: 14, time: 3.262, data: 0.021) loss: 0.886 
+(epoch: 28, iters: 24, time: 3.221, data: 0.000) loss: 0.013 
+(epoch: 28, iters: 34, time: 3.248, data: 0.000) loss: 0.025 
+(epoch: 28, iters: 44, time: 3.312, data: 0.000) loss: 0.792 
+(epoch: 28, iters: 54, time: 3.430, data: 0.013) loss: 1.260 
+(epoch: 28, iters: 64, time: 3.229, data: 0.015) loss: 0.179 
+(epoch: 28, iters: 74, time: 3.456, data: 0.000) loss: 0.010 
+saving the model at the end of epoch 28, iters 2184
+End of epoch 28 / 60 	, Time Taken: 262 sec, Loss: 0.004
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 28, TEST ACC: [45.00%], LOSS: 0.810
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 29, total_steps 2185)
+(epoch: 29, iters: 6, time: 3.412, data: 0.013) loss: 0.380 
+(epoch: 29, iters: 16, time: 3.264, data: 0.014) loss: 0.002 
+(epoch: 29, iters: 26, time: 3.325, data: 0.015) loss: 0.002 
+(epoch: 29, iters: 36, time: 3.241, data: 0.014) loss: 0.000 
+(epoch: 29, iters: 46, time: 3.243, data: 0.014) loss: 0.188 
+(epoch: 29, iters: 56, time: 3.231, data: 0.000) loss: 0.592 
+(epoch: 29, iters: 66, time: 3.243, data: 0.000) loss: 0.009 
+(epoch: 29, iters: 76, time: 3.254, data: 0.024) loss: 0.019 
+saving the model at the end of epoch 29, iters 2262
+End of epoch 29 / 60 	, Time Taken: 262 sec, Loss: 0.019
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 29, TEST ACC: [45.00%], LOSS: 0.923
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 30, total_steps 2263)
+(epoch: 30, iters: 8, time: 3.238, data: 0.017) loss: 0.018 
+(epoch: 30, iters: 18, time: 3.297, data: 0.013) loss: 0.006 
+(epoch: 30, iters: 28, time: 3.443, data: 0.013) loss: 0.002 
+(epoch: 30, iters: 38, time: 3.232, data: 0.013) loss: 0.003 
+(epoch: 30, iters: 48, time: 3.238, data: 0.000) loss: 0.320 
+(epoch: 30, iters: 58, time: 4.666, data: 0.017) loss: 0.165 
+(epoch: 30, iters: 68, time: 3.199, data: 0.000) loss: 0.116 
+(epoch: 30, iters: 78, time: 3.242, data: 0.015) loss: 2.270 
+saving the model at the end of epoch 30, iters 2340
+End of epoch 30 / 60 	, Time Taken: 268 sec, Loss: 2.270
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 30, TEST ACC: [35.00%], LOSS: 1.062
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 31, total_steps 2341)
+(epoch: 31, iters: 10, time: 3.235, data: 0.168) loss: 1.454 
+(epoch: 31, iters: 20, time: 3.183, data: 0.024) loss: 0.102 
+(epoch: 31, iters: 30, time: 3.296, data: 0.034) loss: 0.003 
+(epoch: 31, iters: 40, time: 3.277, data: 0.051) loss: 1.837 
+(epoch: 31, iters: 50, time: 3.245, data: 0.022) loss: 0.340 
+(epoch: 31, iters: 60, time: 3.228, data: 0.014) loss: 0.000 
+(epoch: 31, iters: 70, time: 3.234, data: 0.013) loss: 0.389 
+saving the model at the end of epoch 31, iters 2418
+End of epoch 31 / 60 	, Time Taken: 265 sec, Loss: 1.555
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 31, TEST ACC: [35.00%], LOSS: 0.983
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 32, total_steps 2419)
+(epoch: 32, iters: 2, time: 3.226, data: 0.014) loss: 0.057 
+(epoch: 32, iters: 12, time: 3.496, data: 0.027) loss: 0.296 
+(epoch: 32, iters: 22, time: 3.296, data: 0.025) loss: 0.384 
+(epoch: 32, iters: 32, time: 3.231, data: 0.013) loss: 0.023 
+(epoch: 32, iters: 42, time: 3.217, data: 0.000) loss: 0.262 
+(epoch: 32, iters: 52, time: 3.397, data: 0.000) loss: 0.403 
+(epoch: 32, iters: 62, time: 3.241, data: 0.013) loss: 0.007 
+(epoch: 32, iters: 72, time: 3.260, data: 0.000) loss: 0.428 
+saving the model at the end of epoch 32, iters 2496
+End of epoch 32 / 60 	, Time Taken: 262 sec, Loss: 0.371
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 32, TEST ACC: [40.00%], LOSS: 0.959
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 33, total_steps 2497)
+(epoch: 33, iters: 4, time: 3.244, data: 0.000) loss: 0.310 
+(epoch: 33, iters: 14, time: 4.668, data: 0.000) loss: 0.376 
+(epoch: 33, iters: 24, time: 3.215, data: 0.000) loss: 0.033 
+(epoch: 33, iters: 34, time: 3.280, data: 0.000) loss: 1.064 
+(epoch: 33, iters: 44, time: 3.306, data: 0.000) loss: 0.005 
+(epoch: 33, iters: 54, time: 3.460, data: 0.000) loss: 0.345 
+(epoch: 33, iters: 64, time: 3.194, data: 0.000) loss: 1.391 
+(epoch: 33, iters: 74, time: 3.487, data: 0.000) loss: 0.010 
+saving the model at the end of epoch 33, iters 2574
+End of epoch 33 / 60 	, Time Taken: 265 sec, Loss: 0.240
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 33, TEST ACC: [75.00%], LOSS: 0.711
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 34, total_steps 2575)
+(epoch: 34, iters: 6, time: 3.486, data: 0.050) loss: 0.004 
+(epoch: 34, iters: 16, time: 3.184, data: 0.013) loss: 0.156 
+(epoch: 34, iters: 26, time: 3.291, data: 0.014) loss: 0.184 
+(epoch: 34, iters: 36, time: 3.217, data: 0.000) loss: 0.065 
+(epoch: 34, iters: 46, time: 3.258, data: 0.000) loss: 0.006 
+(epoch: 34, iters: 56, time: 3.235, data: 0.013) loss: 0.172 
+(epoch: 34, iters: 66, time: 3.280, data: 0.000) loss: 0.108 
+(epoch: 34, iters: 76, time: 3.197, data: 0.052) loss: 0.221 
+saving the model at the end of epoch 34, iters 2652
+End of epoch 34 / 60 	, Time Taken: 262 sec, Loss: 1.900
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 34, TEST ACC: [30.00%], LOSS: 1.050
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 35, total_steps 2653)
+(epoch: 35, iters: 8, time: 3.237, data: 0.032) loss: 0.245 
+(epoch: 35, iters: 18, time: 3.249, data: 0.014) loss: 0.633 
+(epoch: 35, iters: 28, time: 3.472, data: 0.014) loss: 0.455 
+(epoch: 35, iters: 38, time: 4.691, data: 0.000) loss: 0.008 
+(epoch: 35, iters: 48, time: 3.223, data: 0.000) loss: 0.080 
+(epoch: 35, iters: 58, time: 3.237, data: 0.000) loss: 0.114 
+(epoch: 35, iters: 68, time: 3.250, data: 0.000) loss: 0.004 
+(epoch: 35, iters: 78, time: 3.264, data: 0.000) loss: 1.660 
+saving the model at the end of epoch 35, iters 2730
+End of epoch 35 / 60 	, Time Taken: 262 sec, Loss: 1.660
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 35, TEST ACC: [30.00%], LOSS: 1.242
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 36, total_steps 2731)
+(epoch: 36, iters: 10, time: 3.258, data: 0.191) loss: 0.100 
+(epoch: 36, iters: 20, time: 3.227, data: 0.000) loss: 0.005 
+(epoch: 36, iters: 30, time: 3.230, data: 0.030) loss: 1.869 
+(epoch: 36, iters: 40, time: 3.207, data: 0.016) loss: 0.263 
+(epoch: 36, iters: 50, time: 3.256, data: 0.000) loss: 1.249 
+(epoch: 36, iters: 60, time: 3.230, data: 0.013) loss: 0.256 
+(epoch: 36, iters: 70, time: 3.273, data: 0.014) loss: 0.006 
+saving the model at the end of epoch 36, iters 2808
+End of epoch 36 / 60 	, Time Taken: 262 sec, Loss: 0.261
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 36, TEST ACC: [40.00%], LOSS: 1.190
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 37, total_steps 2809)
+(epoch: 37, iters: 2, time: 3.232, data: 0.013) loss: 0.315 
+(epoch: 37, iters: 12, time: 3.436, data: 0.013) loss: 1.900 
+(epoch: 37, iters: 22, time: 3.181, data: 0.000) loss: 0.128 
+(epoch: 37, iters: 32, time: 3.230, data: 0.048) loss: 0.006 
+(epoch: 37, iters: 42, time: 3.326, data: 0.014) loss: 0.146 
+(epoch: 37, iters: 52, time: 3.456, data: 0.013) loss: 0.666 
+(epoch: 37, iters: 62, time: 3.241, data: 0.021) loss: 0.003 
+(epoch: 37, iters: 72, time: 3.275, data: 0.013) loss: 0.418 
+saving the model at the end of epoch 37, iters 2886
+End of epoch 37 / 60 	, Time Taken: 262 sec, Loss: 0.012
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 37, TEST ACC: [30.00%], LOSS: 1.605
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 38, total_steps 2887)
+(epoch: 38, iters: 4, time: 3.254, data: 0.000) loss: 0.007 
+(epoch: 38, iters: 14, time: 3.250, data: 0.035) loss: 0.002 
+(epoch: 38, iters: 24, time: 3.246, data: 0.028) loss: 0.081 
+(epoch: 38, iters: 34, time: 3.245, data: 0.013) loss: 0.001 
+(epoch: 38, iters: 44, time: 3.216, data: 0.000) loss: 0.192 
+(epoch: 38, iters: 54, time: 3.404, data: 0.000) loss: 0.122 
+(epoch: 38, iters: 64, time: 4.724, data: 0.013) loss: 0.036 
+(epoch: 38, iters: 74, time: 3.425, data: 0.053) loss: 0.005 
+saving the model at the end of epoch 38, iters 2964
+End of epoch 38 / 60 	, Time Taken: 264 sec, Loss: 0.282
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 38, TEST ACC: [45.00%], LOSS: 2.746
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 39, total_steps 2965)
+(epoch: 39, iters: 6, time: 3.459, data: 0.000) loss: 0.020 
+(epoch: 39, iters: 16, time: 3.205, data: 0.052) loss: 0.182 
+(epoch: 39, iters: 26, time: 3.229, data: 0.017) loss: 0.062 
+(epoch: 39, iters: 36, time: 3.230, data: 0.037) loss: 0.051 
+(epoch: 39, iters: 46, time: 3.213, data: 0.013) loss: 0.000 
+(epoch: 39, iters: 56, time: 3.331, data: 0.000) loss: 0.000 
+(epoch: 39, iters: 66, time: 3.292, data: 0.000) loss: 0.961 
+(epoch: 39, iters: 76, time: 3.223, data: 0.000) loss: 0.225 
+saving the model at the end of epoch 39, iters 3042
+End of epoch 39 / 60 	, Time Taken: 259 sec, Loss: 1.079
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 39, TEST ACC: [50.00%], LOSS: 1.335
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 40, total_steps 3043)
+(epoch: 40, iters: 8, time: 3.335, data: 0.000) loss: 0.035 
+(epoch: 40, iters: 18, time: 3.224, data: 0.047) loss: 0.360 
+(epoch: 40, iters: 28, time: 3.413, data: 0.014) loss: 0.213 
+(epoch: 40, iters: 38, time: 3.252, data: 0.026) loss: 0.037 
+(epoch: 40, iters: 48, time: 3.277, data: 0.014) loss: 0.122 
+(epoch: 40, iters: 58, time: 4.726, data: 0.033) loss: 0.240 
+(epoch: 40, iters: 68, time: 3.238, data: 0.049) loss: 1.451 
+(epoch: 40, iters: 78, time: 3.190, data: 0.015) loss: 0.573 
+saving the model at the end of epoch 40, iters 3120
+End of epoch 40 / 60 	, Time Taken: 264 sec, Loss: 0.573
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 40, TEST ACC: [50.00%], LOSS: 1.255
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 41, total_steps 3121)
+(epoch: 41, iters: 10, time: 3.204, data: 0.210) loss: 0.367 
+(epoch: 41, iters: 20, time: 3.236, data: 0.030) loss: 0.008 
+(epoch: 41, iters: 30, time: 3.245, data: 0.022) loss: 0.233 
+(epoch: 41, iters: 40, time: 3.288, data: 0.014) loss: 0.334 
+(epoch: 41, iters: 50, time: 3.240, data: 0.037) loss: 0.886 
+(epoch: 41, iters: 60, time: 3.217, data: 0.053) loss: 0.140 
+(epoch: 41, iters: 70, time: 3.223, data: 0.000) loss: 0.152 
+saving the model at the end of epoch 41, iters 3198
+End of epoch 41 / 60 	, Time Taken: 259 sec, Loss: 0.139
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 41, TEST ACC: [45.00%], LOSS: 1.591
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 42, total_steps 3199)
+(epoch: 42, iters: 2, time: 3.215, data: 0.000) loss: 2.103 
+(epoch: 42, iters: 12, time: 3.453, data: 0.015) loss: 0.007 
+(epoch: 42, iters: 22, time: 3.257, data: 0.000) loss: 0.003 
+(epoch: 42, iters: 32, time: 3.235, data: 0.000) loss: 1.050 
+(epoch: 42, iters: 42, time: 3.211, data: 0.000) loss: 1.752 
+(epoch: 42, iters: 52, time: 3.465, data: 0.000) loss: 1.033 
+(epoch: 42, iters: 62, time: 3.249, data: 0.023) loss: 0.046 
+(epoch: 42, iters: 72, time: 3.259, data: 0.023) loss: 0.076 
+saving the model at the end of epoch 42, iters 3276
+End of epoch 42 / 60 	, Time Taken: 262 sec, Loss: 0.009
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 42, TEST ACC: [50.00%], LOSS: 1.210
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 43, total_steps 3277)
+(epoch: 43, iters: 4, time: 3.225, data: 0.013) loss: 0.005 
+(epoch: 43, iters: 14, time: 4.739, data: 0.015) loss: 0.001 
+(epoch: 43, iters: 24, time: 3.253, data: 0.013) loss: 0.080 
+(epoch: 43, iters: 34, time: 3.242, data: 0.015) loss: 0.044 
+(epoch: 43, iters: 44, time: 3.199, data: 0.000) loss: 0.047 
+(epoch: 43, iters: 54, time: 3.494, data: 0.000) loss: 0.257 
+(epoch: 43, iters: 64, time: 3.261, data: 0.052) loss: 1.506 
+(epoch: 43, iters: 74, time: 3.543, data: 0.035) loss: 1.183 
+saving the model at the end of epoch 43, iters 3354
+End of epoch 43 / 60 	, Time Taken: 260 sec, Loss: 0.020
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 43, TEST ACC: [45.00%], LOSS: 2.818
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 44, total_steps 3355)
+(epoch: 44, iters: 6, time: 3.409, data: 0.028) loss: 0.000 
+(epoch: 44, iters: 16, time: 3.257, data: 0.028) loss: 0.081 
+(epoch: 44, iters: 26, time: 3.276, data: 0.034) loss: 0.003 
+(epoch: 44, iters: 36, time: 3.209, data: 0.014) loss: 0.020 
+(epoch: 44, iters: 46, time: 3.192, data: 0.000) loss: 0.048 
+(epoch: 44, iters: 56, time: 3.229, data: 0.000) loss: 0.051 
+(epoch: 44, iters: 66, time: 3.251, data: 0.014) loss: 0.291 
+(epoch: 44, iters: 76, time: 3.235, data: 0.034) loss: 0.000 
+saving the model at the end of epoch 44, iters 3432
+End of epoch 44 / 60 	, Time Taken: 258 sec, Loss: 0.249
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 44, TEST ACC: [40.00%], LOSS: 3.083
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 45, total_steps 3433)
+(epoch: 45, iters: 8, time: 3.226, data: 0.000) loss: 0.002 
+(epoch: 45, iters: 18, time: 3.255, data: 0.000) loss: 0.528 
+(epoch: 45, iters: 28, time: 3.416, data: 0.034) loss: 0.046 
+(epoch: 45, iters: 38, time: 3.227, data: 0.014) loss: 2.286 
+(epoch: 45, iters: 48, time: 3.218, data: 0.014) loss: 0.231 
+(epoch: 45, iters: 58, time: 3.238, data: 0.028) loss: 0.237 
+(epoch: 45, iters: 68, time: 3.308, data: 0.015) loss: 0.037 
+(epoch: 45, iters: 78, time: 3.224, data: 0.000) loss: 0.320 
+saving the model at the end of epoch 45, iters 3510
+End of epoch 45 / 60 	, Time Taken: 259 sec, Loss: 0.320
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 45, TEST ACC: [40.00%], LOSS: 2.750
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 46, total_steps 3511)
+(epoch: 46, iters: 10, time: 3.224, data: 0.191) loss: 0.001 
+(epoch: 46, iters: 20, time: 3.264, data: 0.014) loss: 0.154 
+(epoch: 46, iters: 30, time: 3.281, data: 0.014) loss: 0.213 
+(epoch: 46, iters: 40, time: 3.252, data: 0.000) loss: 0.456 
+(epoch: 46, iters: 50, time: 3.250, data: 0.000) loss: 0.002 
+(epoch: 46, iters: 60, time: 3.211, data: 0.014) loss: 0.007 
+(epoch: 46, iters: 70, time: 3.302, data: 0.000) loss: 0.002 
+saving the model at the end of epoch 46, iters 3588
+End of epoch 46 / 60 	, Time Taken: 258 sec, Loss: 0.007
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 46, TEST ACC: [25.00%], LOSS: 2.185
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 47, total_steps 3589)
+(epoch: 47, iters: 2, time: 3.232, data: 0.013) loss: 0.417 
+(epoch: 47, iters: 12, time: 3.486, data: 0.014) loss: 3.039 
+(epoch: 47, iters: 22, time: 3.353, data: 0.014) loss: 0.988 
+(epoch: 47, iters: 32, time: 3.221, data: 0.022) loss: 0.351 
+(epoch: 47, iters: 42, time: 3.233, data: 0.051) loss: 0.209 
+(epoch: 47, iters: 52, time: 3.431, data: 0.014) loss: 1.291 
+(epoch: 47, iters: 62, time: 3.222, data: 0.014) loss: 0.189 
+(epoch: 47, iters: 72, time: 3.232, data: 0.016) loss: 0.240 
+saving the model at the end of epoch 47, iters 3666
+End of epoch 47 / 60 	, Time Taken: 261 sec, Loss: 0.001
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 47, TEST ACC: [45.00%], LOSS: 10.621
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 48, total_steps 3667)
+(epoch: 48, iters: 4, time: 3.203, data: 0.024) loss: 0.002 
+(epoch: 48, iters: 14, time: 4.774, data: 0.014) loss: 0.370 
+(epoch: 48, iters: 24, time: 3.241, data: 0.044) loss: 0.041 
+(epoch: 48, iters: 34, time: 3.225, data: 0.032) loss: 0.047 
+(epoch: 48, iters: 44, time: 3.242, data: 0.013) loss: 0.063 
+(epoch: 48, iters: 54, time: 3.530, data: 0.013) loss: 2.312 
+(epoch: 48, iters: 64, time: 3.223, data: 0.034) loss: 2.346 
+(epoch: 48, iters: 74, time: 3.391, data: 0.037) loss: 0.410 
+saving the model at the end of epoch 48, iters 3744
+End of epoch 48 / 60 	, Time Taken: 263 sec, Loss: 0.060
+learning rate = 0.0002000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 48, TEST ACC: [40.00%], LOSS: 5.855
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 49, total_steps 3745)
+(epoch: 49, iters: 6, time: 3.541, data: 0.013) loss: 0.217 
+(epoch: 49, iters: 16, time: 3.191, data: 0.014) loss: 0.070 
+(epoch: 49, iters: 26, time: 3.226, data: 0.000) loss: 0.254 
+(epoch: 49, iters: 36, time: 3.239, data: 0.014) loss: 0.001 
+(epoch: 49, iters: 46, time: 3.250, data: 0.014) loss: 0.067 
+(epoch: 49, iters: 56, time: 3.235, data: 0.035) loss: 0.000 
+(epoch: 49, iters: 66, time: 3.208, data: 0.014) loss: 0.001 
+(epoch: 49, iters: 76, time: 3.183, data: 0.014) loss: 0.047 
+saving the model at the end of epoch 49, iters 3822
+End of epoch 49 / 60 	, Time Taken: 257 sec, Loss: 0.012
+learning rate = 0.0001818
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 49, TEST ACC: [45.00%], LOSS: 2.341
+
+saving the latest model (epoch 50, total_steps 3823)
+(epoch: 50, iters: 8, time: 3.189, data: 0.000) loss: 0.046 
+(epoch: 50, iters: 18, time: 3.239, data: 0.014) loss: 0.015 
+(epoch: 50, iters: 28, time: 3.413, data: 0.024) loss: 0.275 
+(epoch: 50, iters: 38, time: 3.230, data: 0.047) loss: 0.547 
+(epoch: 50, iters: 48, time: 3.196, data: 0.014) loss: 0.000 
+(epoch: 50, iters: 58, time: 3.245, data: 0.000) loss: 0.184 
+(epoch: 50, iters: 68, time: 3.224, data: 0.000) loss: 0.152 
+(epoch: 50, iters: 78, time: 3.240, data: 0.014) loss: 1.873 
+saving the model at the end of epoch 50, iters 3900
+End of epoch 50 / 60 	, Time Taken: 256 sec, Loss: 1.873
+learning rate = 0.0001636
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 50, TEST ACC: [45.00%], LOSS: 1.296
+
+saving the latest model (epoch 51, total_steps 3901)
+(epoch: 51, iters: 10, time: 3.232, data: 0.154) loss: 0.107 
+(epoch: 51, iters: 20, time: 3.211, data: 0.014) loss: 0.098 
+(epoch: 51, iters: 30, time: 3.195, data: 0.050) loss: 0.090 
+(epoch: 51, iters: 40, time: 3.219, data: 0.000) loss: 0.001 
+(epoch: 51, iters: 50, time: 3.203, data: 0.000) loss: 0.005 
+(epoch: 51, iters: 60, time: 3.225, data: 0.014) loss: 0.116 
+(epoch: 51, iters: 70, time: 3.232, data: 0.000) loss: 0.001 
+saving the model at the end of epoch 51, iters 3978
+End of epoch 51 / 60 	, Time Taken: 255 sec, Loss: 0.526
+learning rate = 0.0001455
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 51, TEST ACC: [45.00%], LOSS: 2.077
+
+saving the latest model (epoch 52, total_steps 3979)
+(epoch: 52, iters: 2, time: 3.200, data: 0.028) loss: 0.031 
+(epoch: 52, iters: 12, time: 3.393, data: 0.016) loss: 0.231 
+(epoch: 52, iters: 22, time: 3.278, data: 0.036) loss: 0.001 
+(epoch: 52, iters: 32, time: 3.206, data: 0.015) loss: 0.280 
+(epoch: 52, iters: 42, time: 3.195, data: 0.015) loss: 0.007 
+(epoch: 52, iters: 52, time: 3.409, data: 0.000) loss: 0.025 
+(epoch: 52, iters: 62, time: 3.187, data: 0.014) loss: 2.208 
+(epoch: 52, iters: 72, time: 3.226, data: 0.015) loss: 0.125 
+saving the model at the end of epoch 52, iters 4056
+End of epoch 52 / 60 	, Time Taken: 256 sec, Loss: 0.003
+learning rate = 0.0001273
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 52, TEST ACC: [40.00%], LOSS: 1.592
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 53, total_steps 4057)
+(epoch: 53, iters: 4, time: 3.231, data: 0.000) loss: 0.362 
+(epoch: 53, iters: 14, time: 3.211, data: 0.035) loss: 0.081 
+(epoch: 53, iters: 24, time: 3.209, data: 0.000) loss: 0.020 
+(epoch: 53, iters: 34, time: 3.260, data: 0.000) loss: 0.004 
+(epoch: 53, iters: 44, time: 3.220, data: 0.037) loss: 0.118 
+(epoch: 53, iters: 54, time: 3.404, data: 0.015) loss: 0.241 
+(epoch: 53, iters: 64, time: 3.213, data: 0.000) loss: 0.192 
+(epoch: 53, iters: 74, time: 3.485, data: 0.023) loss: 0.008 
+saving the model at the end of epoch 53, iters 4134
+End of epoch 53 / 60 	, Time Taken: 259 sec, Loss: 0.005
+learning rate = 0.0001091
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 53, TEST ACC: [40.00%], LOSS: 2.245
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 54, total_steps 4135)
+(epoch: 54, iters: 6, time: 3.373, data: 0.023) loss: 3.073 
+(epoch: 54, iters: 16, time: 3.223, data: 0.015) loss: 0.011 
+(epoch: 54, iters: 26, time: 3.292, data: 0.000) loss: 0.060 
+(epoch: 54, iters: 36, time: 3.200, data: 0.015) loss: 0.187 
+(epoch: 54, iters: 46, time: 3.235, data: 0.034) loss: 0.117 
+(epoch: 54, iters: 56, time: 3.187, data: 0.017) loss: 0.000 
+(epoch: 54, iters: 66, time: 3.238, data: 0.000) loss: 0.102 
+(epoch: 54, iters: 76, time: 3.229, data: 0.000) loss: 0.199 
+saving the model at the end of epoch 54, iters 4212
+End of epoch 54 / 60 	, Time Taken: 260 sec, Loss: 0.001
+learning rate = 0.0000909
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 54, TEST ACC: [50.00%], LOSS: 2.691
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 55, total_steps 4213)
+(epoch: 55, iters: 8, time: 3.210, data: 0.019) loss: 0.011 
+(epoch: 55, iters: 18, time: 3.190, data: 0.016) loss: 0.000 
+(epoch: 55, iters: 28, time: 3.447, data: 0.029) loss: 0.022 
+(epoch: 55, iters: 38, time: 3.309, data: 0.014) loss: 0.071 
+(epoch: 55, iters: 48, time: 3.201, data: 0.033) loss: 0.197 
+(epoch: 55, iters: 58, time: 3.216, data: 0.000) loss: 0.010 
+(epoch: 55, iters: 68, time: 3.246, data: 0.051) loss: 0.087 
+(epoch: 55, iters: 78, time: 3.250, data: 0.017) loss: 0.000 
+saving the model at the end of epoch 55, iters 4290
+End of epoch 55 / 60 	, Time Taken: 259 sec, Loss: 0.000
+learning rate = 0.0000727
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 55, TEST ACC: [40.00%], LOSS: 1.608
+
+saving the latest model (epoch 56, total_steps 4291)
+(epoch: 56, iters: 10, time: 3.219, data: 0.179) loss: 0.001 
+(epoch: 56, iters: 20, time: 3.252, data: 0.039) loss: 0.007 
+(epoch: 56, iters: 30, time: 3.330, data: 0.036) loss: 0.074 
+(epoch: 56, iters: 40, time: 3.210, data: 0.015) loss: 0.000 
+(epoch: 56, iters: 50, time: 3.203, data: 0.000) loss: 0.029 
+(epoch: 56, iters: 60, time: 3.247, data: 0.000) loss: 0.119 
+(epoch: 56, iters: 70, time: 3.228, data: 0.013) loss: 0.000 
+saving the model at the end of epoch 56, iters 4368
+End of epoch 56 / 60 	, Time Taken: 256 sec, Loss: 0.028
+learning rate = 0.0000545
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 56, TEST ACC: [35.00%], LOSS: 2.129
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 57, total_steps 4369)
+(epoch: 57, iters: 2, time: 3.190, data: 0.034) loss: 0.063 
+(epoch: 57, iters: 12, time: 3.402, data: 0.014) loss: 0.001 
+(epoch: 57, iters: 22, time: 3.206, data: 0.000) loss: 0.060 
+(epoch: 57, iters: 32, time: 3.242, data: 0.000) loss: 0.001 
+(epoch: 57, iters: 42, time: 3.241, data: 0.026) loss: 0.011 
+(epoch: 57, iters: 52, time: 3.379, data: 0.023) loss: 2.528 
+(epoch: 57, iters: 62, time: 3.244, data: 0.015) loss: 0.001 
+(epoch: 57, iters: 72, time: 3.225, data: 0.000) loss: 0.701 
+saving the model at the end of epoch 57, iters 4446
+End of epoch 57 / 60 	, Time Taken: 257 sec, Loss: 0.135
+learning rate = 0.0000364
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 57, TEST ACC: [50.00%], LOSS: 3.110
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 58, total_steps 4447)
+(epoch: 58, iters: 4, time: 3.209, data: 0.014) loss: 0.000 
+(epoch: 58, iters: 14, time: 3.236, data: 0.014) loss: 0.013 
+(epoch: 58, iters: 24, time: 3.216, data: 0.047) loss: 0.001 
+(epoch: 58, iters: 34, time: 3.230, data: 0.013) loss: 0.359 
+(epoch: 58, iters: 44, time: 3.310, data: 0.000) loss: 0.018 
+(epoch: 58, iters: 54, time: 3.458, data: 0.000) loss: 0.001 
+(epoch: 58, iters: 64, time: 3.254, data: 0.014) loss: 0.000 
+(epoch: 58, iters: 74, time: 3.423, data: 0.034) loss: 0.066 
+saving the model at the end of epoch 58, iters 4524
+End of epoch 58 / 60 	, Time Taken: 258 sec, Loss: 0.000
+learning rate = 0.0000182
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 58, TEST ACC: [45.00%], LOSS: 2.249
+
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 59, total_steps 4525)
+(epoch: 59, iters: 6, time: 3.407, data: 0.014) loss: 0.000 
+(epoch: 59, iters: 16, time: 3.218, data: 0.029) loss: 0.000 
+(epoch: 59, iters: 26, time: 3.234, data: 0.000) loss: 0.009 
+(epoch: 59, iters: 36, time: 3.261, data: 0.028) loss: 0.001 
+(epoch: 59, iters: 46, time: 3.274, data: 0.015) loss: 0.034 
+(epoch: 59, iters: 56, time: 3.230, data: 0.000) loss: 0.062 
+(epoch: 59, iters: 66, time: 3.232, data: 0.000) loss: 0.000 
+(epoch: 59, iters: 76, time: 3.184, data: 0.000) loss: 0.049 
+saving the model at the end of epoch 59, iters 4602
+End of epoch 59 / 60 	, Time Taken: 257 sec, Loss: 0.019
+learning rate = 0.0000000
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 59, TEST ACC: [45.00%], LOSS: 2.296
+
+saving the latest model (epoch 60, total_steps 4603)
+(epoch: 60, iters: 8, time: 3.200, data: 0.000) loss: 0.041 
+(epoch: 60, iters: 18, time: 3.234, data: 0.000) loss: 0.001 
+(epoch: 60, iters: 28, time: 3.401, data: 0.000) loss: 3.339 
+(epoch: 60, iters: 38, time: 3.223, data: 0.014) loss: 0.033 
+(epoch: 60, iters: 48, time: 3.247, data: 0.014) loss: 0.080 
+(epoch: 60, iters: 58, time: 3.265, data: 0.053) loss: 0.008 
+(epoch: 60, iters: 68, time: 3.187, data: 0.030) loss: 0.001 
+(epoch: 60, iters: 78, time: 3.231, data: 0.014) loss: 0.000 
+saving the model at the end of epoch 60, iters 4680
+End of epoch 60 / 60 	, Time Taken: 255 sec, Loss: 0.000
+learning rate = -0.0000182
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-5/latest_net.pth
+epoch: 60, TEST ACC: [45.00%], LOSS: 2.785
+

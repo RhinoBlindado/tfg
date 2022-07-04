@@ -1,0 +1,71 @@
+------------ Options -------------
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/Nodule-50-30K
+dataset_mode: classification
+epoch_count: 1
+export_folder: 
+fc_n: 100
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-50-30K-7
+ncf: [8, 16, 32, 64, 128]
+ninput_edges: 30000
+niter: 100
+niter_decay: 100
+no_vis: False
+norm: group
+num_aug: 2
+num_groups: 1
+num_threads: 2
+phase: train
+pool_res: [20000, 15000, 13000, 8000, 7500]
+print_freq: 10
+resblocks: 0
+run_test_freq: 1
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: None
+serial_batches: False
+slide_verts: 0.2
+verbose_plot: False
+which_epoch: latest
+-------------- End ----------------
+MeshCNN layers: Using sparse pooling
+loaded mean / std from cache
+#training meshes = 40
+Using distributed classifier model with AdamW optimizer, GPU 0
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.068 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+(epoch: 1, iters: 10, time: 31.647, data: 0.267) loss: 0.827 
+(epoch: 1, iters: 20, time: 31.766, data: 0.020) loss: 0.583 
+(epoch: 1, iters: 30, time: 31.891, data: 0.020) loss: 0.827 
+(epoch: 1, iters: 40, time: 31.849, data: 0.021) loss: 0.802 
+saving the model at the end of epoch 1, iters 40
+End of epoch 1 / 200 	 Time Taken: 1276 sec
+learning rate = 0.0002000
+Running Validation
+loaded mean / std from cache
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/train.py", line 91, in <module>
+    train(local_rank,numGPUs, opt)
+  File "./networks/MeshCNNPlus/development/train.py", line 71, in train
+    acc = run_validation(model, epoch)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/test.py", line 45, in run_validation
+    acc = test_model(model, opt, dataset, epoch)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/test.py", line 28, in test_model
+    writer.update_counter(ncorrect, nexamples,  ncorrectPerClass, nexamplesPerClass )
+TypeError: update_counter() takes 3 positional arguments but 5 were given
