@@ -1,9 +1,11 @@
+from cProfile import label
 import torch
 from . import networks
 from os.path import join
 from util.util import seg_accuracy, print_network
 from tabulate import tabulate as tb
-
+import sklearn.metrics as skm
+import numpy as np
 
 class ClassifierModel:
     """ Class for training Model weights
@@ -28,6 +30,11 @@ class ClassifierModel:
 
         #
         self.nclasses = opt.nclasses
+
+        # For classification statistics...
+        self.x_test = []
+        self.pred_y_test = []
+        self.y_test = []
 
         # load/define networks
         self.net = networks.define_classifier(opt.input_nc, opt.ncf, opt.ninput_edges, opt.nclasses, opt,
@@ -61,6 +68,7 @@ class ClassifierModel:
         if self.opt.dataset_mode == 'segmentation' and not self.is_train:
             self.soft_label = torch.from_numpy(data['soft_label'])
         self.classIdx = dict(map(reversed, data['classIdx'][0].items()))
+        self.classTags = list(data['classIdx'][0].keys())
 
 
     def forward(self):
@@ -124,11 +132,11 @@ class ClassifierModel:
             pred_class = out.data.max(1)[1]
             label_class = self.labels
 
-            if(verbose):
-                meshes = []
+            if(verbose or confusion):
                 for i, mesh in enumerate(self.mesh):
-                    meshes.append([mesh.filename, self.classIdx[int(pred_class[i])], self.classIdx[int(label_class[i])]])
-                print(tb(meshes, headers=["Mesh", "Prediction", "Actual"]))
+                    self.x_test.append(mesh.filename)
+                    self.y_test.append(int(label_class[i]))
+                    self.pred_y_test.append(int(pred_class[i]))
 
             self.export_segmentation(pred_class.cpu())
             correct = self.get_accuracy(pred_class, label_class)
@@ -136,6 +144,21 @@ class ClassifierModel:
 
     def getTestLoss(self):
         out = self.forward()
+
+    def printMetrics(self, verbose, confusion):
+
+        if(verbose):
+            meshes = []
+            for i, mesh in enumerate(self.x_test):
+                meshes.append([mesh, self.classIdx[self.pred_y_test[i]], self.classIdx[self.y_test[i]]])
+            print(tb(meshes, headers=["Mesh", "Prediction", "Actual"]))
+
+        if(confusion):   
+            #print("Matriz de Confusión: \n")
+            #print(skm.confusion_matrix(self.y_test, self.pred_y_test), "\n")
+
+            print("Reporte de clasificación:")
+            print(skm.classification_report(self.y_test, self.pred_y_test, target_names=self.classTags))
 
     def get_accuracy(self, pred, labels):
         """computes accuracy for classification / segmentation """

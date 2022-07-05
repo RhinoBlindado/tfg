@@ -28,7 +28,9 @@ class TrainOptions(BaseOptions):
         self.parser.add_argument('--verbose_plot', action='store_true', help='plots network weights, etc.')
 
         # - Dropout can be added now.
-        self.parser.add_argument("--dropout", type=float, default=0, help='Percentage of DropOut to use on every hidden FC layer')
+        #self.parser.add_argument("--dropout", type=float, default=0, help='Percentage of DropOut to use on every hidden FC layer')
+        self.parser.add_argument('--dropout',nargs='+', type=float, default=[0], help='Percentage of DropOut to use on every hidden FC layer')
+
         # - AMSGrad can be set from here now.
         self.parser.add_argument('--amsgrad', action='store_true', help='Use AMSGrad on ADAM')
         # - Optimizers

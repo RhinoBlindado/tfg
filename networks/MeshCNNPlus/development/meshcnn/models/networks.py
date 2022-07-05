@@ -101,7 +101,8 @@ def define_classifier(input_nc, ncf, ninput_edges, nclasses, opt, gpu_ids, arch,
         if opt.is_train:
           dropout = opt.dropout
         else:
-          dropout = 0
+          #dropout = 0
+          dropout = len(opt.fc_n) * [0]
 
         net = MeshConvNet(norm_layer, input_nc, ncf, nclasses, ninput_edges, opt.pool_res, opt.fc_n, dropout,
                           opt.resblocks)
@@ -134,7 +135,7 @@ class MeshConvNet(nn.Module):
         super(MeshConvNet, self).__init__()
         self.k = [nf0] + conv_res
         self.res = [input_res] + pool_res
-        self.drop = nn.Dropout(dropout)
+        # self.drop = nn.Dropout(dropout)
         self.nfc = len(fc_n)
 
         norm_args = get_norm_args(norm_layer, self.k[1:])
@@ -148,9 +149,11 @@ class MeshConvNet(nn.Module):
         # self.gp = torch.nn.MaxPool1d(self.res[-1])
 
         self.fc0 = nn.Linear(self.k[-1], fc_n[0])
-
+        self.drop0 = nn.Dropout(dropout[0])
         for i, ki in enumerate(fc_n[1:], start=1):
             setattr(self, 'fc{}'.format(i), nn.Linear(fc_n[i-1], ki))
+            setattr(self, 'drop{}'.format(i), nn.Dropout(dropout[i]))
+
 
         self.last = nn.Linear(fc_n[-1], nclasses)
 
@@ -165,11 +168,13 @@ class MeshConvNet(nn.Module):
         x = x.view(-1, self.k[-1])
     
         x = F.relu(self.fc0(x))
-        x = self.drop(x)
+        x = self.drop0(x)
+        #x = self.drop(x)
 
         for i in range(1, self.nfc):
             x = F.relu(getattr(self, 'fc{}'.format(i))(x))
-            x = self.drop(x)
+            x = getattr(self, 'drop{}'.format(i)(x))
+            #x = self.drop(x)
 
         x = self.last(x)
         return x
