@@ -173,7 +173,7 @@ class MeshConvNet(nn.Module):
 
         for i in range(1, self.nfc):
             x = F.relu(getattr(self, 'fc{}'.format(i))(x))
-            x = getattr(self, 'drop{}'.format(i)(x))
+            x = getattr(self, 'drop{}'.format(i))(x)
             #x = self.drop(x)
 
         x = self.last(x)
