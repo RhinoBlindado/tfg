@@ -38,11 +38,13 @@ class BaseOptions:
         self.parser.add_argument('--export_folder', type=str, default='', help='exports intermediate collapses to this folder')
         self.initialized = True
 
-        # New Additions
         # - Can now add multiple Fully Connected layers to the network.
         self.parser.add_argument('--fc_n',nargs='+', type=int, default=[100], help='# of fc before nclasses')
         # - Check if it's MeshCNN or MeshCNNPlus
-        self.parser.add_argument('--plus', type=bool, default=False, help='Using MeshCNN or MeshCNNPlus')
+        self.parser.add_argument('--plus', action='store_true', help='Using MeshCNN or MeshCNNPlus')
+        # - Load data from CSV file        
+        self.parser.add_argument('--csv', action='store_true')
+
 
     def parse(self):
         if not self.initialized:

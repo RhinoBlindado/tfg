@@ -36,7 +36,15 @@ class ClassifierModel:
         self.criterion = networks.define_loss(opt).to(self.device)
 
         if self.is_train:
-            self.optimizer = torch.optim.Adam(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999), amsgrad=opt.amsgrad)
+            if (opt.optimizer == 'adam'):
+                self.optimizer = torch.optim.Adam(self.net.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999), amsgrad=opt.amsgrad)
+            if (opt.optimizer == 'rmsprop'):
+                self.optimizer = torch.optim.RMSprop(self.net.parameters(), lr=opt.lr)
+            if (opt.optimizer == 'sgd'):
+                self.optimizer = torch.optim.SGD(self.net.parameters(), lr=opt.lr)
+            if (opt.optimizer == 'adagrad'):
+                self.optimizer = torch.optim.Adagrad(self.net.parameters(), lr=opt.lr)
+
             self.scheduler = networks.get_scheduler(self.optimizer, opt)
             print_network(self.net)
 
@@ -104,18 +112,19 @@ class ClassifierModel:
         lr = self.optimizer.param_groups[0]['lr']
         print('learning rate = %.7f' % lr)
 
-    def test(self, soleTest):
+    def test(self, verbose=False, confusion=False):
         """tests model
         returns: number correct and total number
         """
+        actLoss = 0
         with torch.no_grad():
             out = self.forward()
-            self.loss = self.criterion(out, self.labels)
+            actLoss = self.criterion(out, self.labels)
             # compute number of correct
             pred_class = out.data.max(1)[1]
             label_class = self.labels
 
-            if(soleTest):
+            if(verbose):
                 meshes = []
                 for i, mesh in enumerate(self.mesh):
                     meshes.append([mesh.filename, self.classIdx[int(pred_class[i])], self.classIdx[int(label_class[i])]])
@@ -123,7 +132,7 @@ class ClassifierModel:
 
             self.export_segmentation(pred_class.cpu())
             correct = self.get_accuracy(pred_class, label_class)
-        return correct, len(label_class), self.loss
+        return correct, len(label_class), actLoss
 
     def getTestLoss(self):
         out = self.forward()

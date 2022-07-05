@@ -3,7 +3,7 @@ from .base_options import BaseOptions
 class TrainOptions(BaseOptions):
     def initialize(self):
         BaseOptions.initialize(self)
-        self.parser.add_argument('--print_freq', type=int, default=10, help='frequency of showing training results on console')
+        self.parser.add_argument('--print_freq', type=int, default=1000, help='frequency of showing training results on console')
         self.parser.add_argument('--save_latest_freq', type=int, default=250, help='frequency of saving the latest results')
         self.parser.add_argument('--save_epoch_freq', type=int, default=1, help='frequency of saving checkpoints at the end of epochs')
         self.parser.add_argument('--run_test_freq', type=int, default=1, help='frequency of running test in training script')
@@ -26,10 +26,16 @@ class TrainOptions(BaseOptions):
         # tensorboard visualization
         self.parser.add_argument('--no_vis', action='store_true', help='will not use tensorboard')
         self.parser.add_argument('--verbose_plot', action='store_true', help='plots network weights, etc.')
-        self.is_train = True
 
-        # New additions
         # - Dropout can be added now.
         self.parser.add_argument("--dropout", type=float, default=0, help='Percentage of DropOut to use on every hidden FC layer')
         # - AMSGrad can be set from here now.
-        self.parser.add_argument('--amsgrad', type=bool, default=False, help='Wheter to use AMSGrad on ADAM')
+        self.parser.add_argument('--amsgrad', action='store_true', help='Use AMSGrad on ADAM')
+        # - Optimizers
+        self.parser.add_argument('--optimizer', type=str, default='adam', help='Optimizers: adam|sgd|rmsprop|adagrad')
+        # - Validation
+        self.parser.add_argument('--validation', action='store_true')
+        # - Show Training (and optinally, Validation) Accuracy and Loss
+        self.parser.add_argument('--verbose_train', action='store_true')
+
+        self.is_train = True

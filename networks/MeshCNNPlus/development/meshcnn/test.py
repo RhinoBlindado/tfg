@@ -4,9 +4,6 @@ from models import create_model
 from util.writer import Writer
 
 
-def getTestLoss(model):
-    pass
-
 def run_test(epoch=-1):
     print('Running Test')
     opt = TestOptions().parse()
@@ -16,19 +13,19 @@ def run_test(epoch=-1):
     writer = Writer(opt)
     # test
 
-    if(epoch==-1):
-        soleTest=True
-    else:
-        soleTest=False
-
     writer.reset_counter()
     totalLoss = 0
     for i, data in enumerate(dataset):
         model.set_input(data)
-        ncorrect, nexamples, loss = model.test(soleTest)
+        ncorrect, nexamples, loss = model.test(verbose=opt.verbose, confusion=opt.confusion_matrix)
         writer.update_counter(ncorrect, nexamples)
-        totalLoss += loss
+
+        # Saving the loss of each batch without the average
+        totalLoss += len(data['mesh']) * loss.item()
+
+    # Calculating the average loss of the whole dataset
     totalLoss /= len(dataset)
+    model.printMetrics(opt.verbose, opt.confusion_matrix)
     writer.print_acc(epoch, writer.acc, totalLoss)
     return writer.acc
 

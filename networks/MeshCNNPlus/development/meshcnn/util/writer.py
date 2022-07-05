@@ -29,6 +29,7 @@ class Writer:
             with open(self.log_name, "a") as log_file:
                 now = time.strftime("%c")
                 log_file.write('================ Training Loss (%s) ================\n' % now)
+                log_file.write('epoch, train_acc, train_loss, val_acc, val_loss\n')
         else:
             with open(self.testacc_log, "a") as log_file:
                 now = time.strftime("%c")
@@ -39,6 +40,11 @@ class Writer:
         message = '(epoch: %d, iters: %d, time: %.3f, data: %.3f) loss: %.3f ' \
                   % (epoch, i, t, t_data, losses.item())
         print(message)
+        with open(self.log_name, "a") as log_file:
+            log_file.write('%s\n' % message)
+
+    def printTestValidationLoss(self, epoch, trainAcc, trainLoss, valAcc , valLoss, time):
+        message = "{}, {}, {}, {}, {}".format(epoch, trainAcc, trainLoss, valAcc, valLoss, time)
         with open(self.log_name, "a") as log_file:
             log_file.write('%s\n' % message)
 
