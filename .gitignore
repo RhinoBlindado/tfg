@@ -12,6 +12,7 @@ __pycache__/
 
 # Don't save output, not yet
 /output/
+/checkpoints/*
 
 # Don't save conda enviroments
 /condaEnvs/*
