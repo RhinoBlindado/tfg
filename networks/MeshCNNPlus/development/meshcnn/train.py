@@ -155,6 +155,7 @@ if __name__ == '__main__':
         # - Early Stopping
         if valLoss >= prevLoss:
             actPatience += 1
+            print("Early Stopping: val_loss did not lower, patience {}/{}".format(actPatience, maxPatience))
         else:
             actPatience = 0
         
