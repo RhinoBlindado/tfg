@@ -157,7 +157,7 @@ if __name__ == '__main__':
             actPatience += 1
             print("Early Stopping: val_loss did not lower, patience {}/{}".format(actPatience, maxPatience))
         else:
-            actPatience = 0
+            actPatience = max(0, actPatience - 1)
         
         if actPatience > maxPatience:
             print("Validation loss is stagnating, stopping.")
