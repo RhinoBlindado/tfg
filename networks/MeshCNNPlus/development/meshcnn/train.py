@@ -6,6 +6,8 @@ from models import create_model
 from util.writer import Writer
 from test import run_test
 import copy
+import numpy as np
+
 
 def getTrainAcc(model, trainDataset):
     
@@ -44,6 +46,7 @@ def validationMetrics(model, opt, hist):
 
 
 if __name__ == '__main__':
+    np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)
     
     opt = TrainOptions().parse()
 
