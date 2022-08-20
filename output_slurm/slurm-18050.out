@@ -1,0 +1,1955 @@
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_06__21_17_50
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 2.059 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 601.1869 - train_acc: 39.39% - train_loss: 1.0436 - val_acc: 58.33% - val_loss: 0.8167
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 2, total_steps 67)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 602.6585 - train_acc: 60.61% - train_loss: 0.7541 - val_acc: 66.67% - val_loss: 0.6340
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 3, total_steps 133)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 573.7891 - train_acc: 53.03% - train_loss: 0.7854 - val_acc: 33.33% - val_loss: 1.0530
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 4, total_steps 199)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 518.2064 - train_acc: 53.03% - train_loss: 0.8635 - val_acc: 41.67% - val_loss: 0.9296
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 5, total_steps 265)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 513.0663 - train_acc: 53.03% - train_loss: 0.7536 - val_acc: 50.00% - val_loss: 0.8315
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 6, total_steps 331)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 508.6317 - train_acc: 48.48% - train_loss: 0.7065 - val_acc: 50.00% - val_loss: 0.6465
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 7, total_steps 397)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 495.7373 - train_acc: 53.03% - train_loss: 0.7184 - val_acc: 58.33% - val_loss: 0.7313
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 8, total_steps 463)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 459.9419 - train_acc: 50.00% - train_loss: 0.8124 - val_acc: 66.67% - val_loss: 0.6655
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 9, total_steps 529)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 487.1115 - train_acc: 53.03% - train_loss: 0.6995 - val_acc: 50.00% - val_loss: 0.7583
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 10, total_steps 595)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 494.6885 - train_acc: 53.03% - train_loss: 0.7567 - val_acc: 50.00% - val_loss: 0.6529
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 11, total_steps 661)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 480.6220 - train_acc: 51.52% - train_loss: 0.6803 - val_acc: 66.67% - val_loss: 0.5733
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 12, total_steps 727)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 476.0089 - train_acc: 65.15% - train_loss: 0.7030 - val_acc: 58.33% - val_loss: 0.6497
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 13, total_steps 793)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 476.5666 - train_acc: 50.00% - train_loss: 0.6690 - val_acc: 58.33% - val_loss: 0.5768
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 14, total_steps 859)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 465.8196 - train_acc: 59.09% - train_loss: 0.7069 - val_acc: 75.00% - val_loss: 0.5328
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 15, total_steps 925)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 456.6598 - train_acc: 57.58% - train_loss: 0.6521 - val_acc: 58.33% - val_loss: 0.6505
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 16, total_steps 991)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 453.7922 - train_acc: 62.12% - train_loss: 0.6448 - val_acc: 58.33% - val_loss: 0.5575
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 17, total_steps 1057)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 449.2767 - train_acc: 72.73% - train_loss: 0.5952 - val_acc: 75.00% - val_loss: 0.5771
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 18, total_steps 1123)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 449.6016 - train_acc: 72.73% - train_loss: 0.5906 - val_acc: 75.00% - val_loss: 0.5299
+saving the latest model (epoch 19, total_steps 1189)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 444.6255 - train_acc: 51.52% - train_loss: 0.6591 - val_acc: 41.67% - val_loss: 0.8693
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 20, total_steps 1255)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 471.6358 - train_acc: 60.61% - train_loss: 0.6739 - val_acc: 50.00% - val_loss: 0.6530
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 21, total_steps 1321)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 460.0645 - train_acc: 68.18% - train_loss: 0.6435 - val_acc: 66.67% - val_loss: 0.6288
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 22, total_steps 1387)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 448.6130 - train_acc: 69.70% - train_loss: 0.6048 - val_acc: 83.33% - val_loss: 0.4403
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 441.1070 - train_acc: 66.67% - train_loss: 0.5925 - val_acc: 66.67% - val_loss: 0.6031
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 24, total_steps 1519)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 449.2449 - train_acc: 63.64% - train_loss: 0.6436 - val_acc: 75.00% - val_loss: 0.5017
+saving the latest model (epoch 25, total_steps 1585)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 450.3959 - train_acc: 69.70% - train_loss: 0.6143 - val_acc: 100.00% - val_loss: 0.4076
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 440.1546 - train_acc: 62.12% - train_loss: 0.6350 - val_acc: 75.00% - val_loss: 0.5009
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 27, total_steps 1717)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 444.9553 - train_acc: 71.21% - train_loss: 0.5545 - val_acc: 75.00% - val_loss: 0.4004
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 449.0781 - train_acc: 74.24% - train_loss: 0.5807 - val_acc: 75.00% - val_loss: 0.4634
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 29, total_steps 1849)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 449.3488 - train_acc: 71.21% - train_loss: 0.5762 - val_acc: 58.33% - val_loss: 0.6049
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 432.2154 - train_acc: 80.30% - train_loss: 0.5341 - val_acc: 75.00% - val_loss: 0.4679
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 31, total_steps 1981)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 442.2086 - train_acc: 72.73% - train_loss: 0.6055 - val_acc: 83.33% - val_loss: 0.3775
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 443.6437 - train_acc: 77.27% - train_loss: 0.5644 - val_acc: 75.00% - val_loss: 0.4847
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 33, total_steps 2113)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 439.6445 - train_acc: 72.73% - train_loss: 0.5435 - val_acc: 75.00% - val_loss: 0.4824
+saving the latest model (epoch 34, total_steps 2179)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 444.8563 - train_acc: 83.33% - train_loss: 0.4823 - val_acc: 66.67% - val_loss: 0.5122
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 439.7114 - train_acc: 74.24% - train_loss: 0.4843 - val_acc: 75.00% - val_loss: 0.4135
+saving the latest model (epoch 36, total_steps 2311)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 437.4218 - train_acc: 77.27% - train_loss: 0.4580 - val_acc: 75.00% - val_loss: 0.4780
+Early Stopping: val_loss did not lower, patience 1/5
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 439.6528 - train_acc: 80.30% - train_loss: 0.4623 - val_acc: 66.67% - val_loss: 0.4494
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 433.0244 - train_acc: 81.82% - train_loss: 0.4178 - val_acc: 83.33% - val_loss: 0.4117
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 437.0858 - train_acc: 78.79% - train_loss: 0.4145 - val_acc: 75.00% - val_loss: 0.4242
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 431.6386 - train_acc: 78.79% - train_loss: 0.3992 - val_acc: 83.33% - val_loss: 0.4653
+Early Stopping: val_loss did not lower, patience 2/5
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_06__21_17_50/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nodule        nodule
+475-Izq.obj  nodule        nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nodule        nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.50      0.20      0.29        10
+    nonodule       0.50      0.80      0.62        10
+
+    accuracy                           0.50        20
+   macro avg       0.50      0.50      0.45        20
+weighted avg       0.50      0.50      0.45        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 0.707
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__02_31_52
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 2.059 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+!WARNING! Queue below 100 edges on mesh 193-Izq.obj
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/meshcnn/train.py", line 101, in <module>
+    model.optimize_parameters()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 84, in optimize_parameters
+    out = self.forward()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 75, in forward
+    out = self.net(self.edge_features, self.mesh)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/networks.py", line 165, in forward
+    x = getattr(self, 'pool{}'.format(i))(x, mesh)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 21, in __call__
+    return self.forward(fe, meshes)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 34, in forward
+    self.__pool_main(mesh_index)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 51, in __pool_main
+    value, edge_id = heappop(queue)
+IndexError: index out of range
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__02_31_52/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nodule        nodule
+117-Izq.obj  nodule        nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nodule        nodule
+229-Izq.obj  nodule        nodule
+346-Izq.obj  nodule        nodule
+456-Izq.obj  nodule        nodule
+475-Izq.obj  nodule        nodule
+564-Izq.obj  nodule        nodule
+95-Izq.obj   nodule        nodule
+1-Izq.obj    nodule        nonodule
+15-Izq.obj   nodule        nonodule
+19-Izq.obj   nodule        nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nodule        nonodule
+23-Izq.obj   nodule        nonodule
+35-Izq.obj   nodule        nonodule
+43-Izq.obj   nodule        nonodule
+50-Izq.obj   nodule        nonodule
+7-Izq.obj    nodule        nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.50      1.00      0.67        10
+    nonodule       0.00      0.00      0.00        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 32.418
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__02_34_55
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.276 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 439.7376 - train_acc: 48.48% - train_loss: 0.8400 - val_acc: 50.00% - val_loss: 0.9824
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 447.6152 - train_acc: 39.39% - train_loss: 0.9293 - val_acc: 41.67% - val_loss: 0.7774
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 445.8405 - train_acc: 56.06% - train_loss: 0.7567 - val_acc: 58.33% - val_loss: 0.6576
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 443.1048 - train_acc: 51.52% - train_loss: 0.8514 - val_acc: 58.33% - val_loss: 0.6510
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 435.5116 - train_acc: 57.58% - train_loss: 0.7730 - val_acc: 66.67% - val_loss: 0.6362
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 454.7354 - train_acc: 50.00% - train_loss: 0.7933 - val_acc: 33.33% - val_loss: 0.7370
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 437.9950 - train_acc: 46.97% - train_loss: 0.7337 - val_acc: 50.00% - val_loss: 0.7818
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 439.8019 - train_acc: 40.91% - train_loss: 0.7725 - val_acc: 58.33% - val_loss: 0.5885
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 434.1394 - train_acc: 54.55% - train_loss: 0.7923 - val_acc: 58.33% - val_loss: 0.6245
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 443.3821 - train_acc: 53.03% - train_loss: 0.7457 - val_acc: 66.67% - val_loss: 0.6155
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 435.2890 - train_acc: 57.58% - train_loss: 0.6970 - val_acc: 50.00% - val_loss: 0.6664
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 435.0176 - train_acc: 48.48% - train_loss: 0.6787 - val_acc: 50.00% - val_loss: 0.7542
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 447.2591 - train_acc: 46.97% - train_loss: 0.7543 - val_acc: 75.00% - val_loss: 0.6205
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 431.7296 - train_acc: 56.06% - train_loss: 0.7180 - val_acc: 50.00% - val_loss: 0.6494
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 429.5695 - train_acc: 59.09% - train_loss: 0.6839 - val_acc: 50.00% - val_loss: 0.6347
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 429.8907 - train_acc: 48.48% - train_loss: 0.6546 - val_acc: 100.00% - val_loss: 0.5220
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 440.7843 - train_acc: 56.06% - train_loss: 0.6789 - val_acc: 50.00% - val_loss: 0.7295
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 434.4335 - train_acc: 56.06% - train_loss: 0.6762 - val_acc: 58.33% - val_loss: 0.6021
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 437.5234 - train_acc: 63.64% - train_loss: 0.6773 - val_acc: 83.33% - val_loss: 0.5685
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 445.8562 - train_acc: 68.18% - train_loss: 0.6905 - val_acc: 50.00% - val_loss: 0.6695
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 441.1619 - train_acc: 53.03% - train_loss: 0.6203 - val_acc: 50.00% - val_loss: 0.7575
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 434.5073 - train_acc: 66.67% - train_loss: 0.6481 - val_acc: 91.67% - val_loss: 0.4151
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 433.0553 - train_acc: 65.15% - train_loss: 0.5929 - val_acc: 58.33% - val_loss: 0.7627
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 431.3608 - train_acc: 65.15% - train_loss: 0.6625 - val_acc: 83.33% - val_loss: 0.4255
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 429.3747 - train_acc: 62.12% - train_loss: 0.6702 - val_acc: 91.67% - val_loss: 0.4158
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 432.4125 - train_acc: 62.12% - train_loss: 0.6477 - val_acc: 91.67% - val_loss: 0.4559
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 431.6073 - train_acc: 75.76% - train_loss: 0.6701 - val_acc: 66.67% - val_loss: 0.6400
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 432.7113 - train_acc: 60.61% - train_loss: 0.6297 - val_acc: 91.67% - val_loss: 0.4060
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 446.0051 - train_acc: 74.24% - train_loss: 0.6220 - val_acc: 75.00% - val_loss: 0.4619
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 438.8415 - train_acc: 68.18% - train_loss: 0.6156 - val_acc: 66.67% - val_loss: 0.5511
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 430.6159 - train_acc: 65.15% - train_loss: 0.5977 - val_acc: 75.00% - val_loss: 0.4451
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 431.2283 - train_acc: 72.73% - train_loss: 0.5909 - val_acc: 75.00% - val_loss: 0.4169
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 431.2246 - train_acc: 77.27% - train_loss: 0.6252 - val_acc: 66.67% - val_loss: 0.5034
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 431.5465 - train_acc: 66.67% - train_loss: 0.5628 - val_acc: 83.33% - val_loss: 0.3800
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 431.8931 - train_acc: 75.76% - train_loss: 0.5639 - val_acc: 75.00% - val_loss: 0.5401
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 444.7068 - train_acc: 80.30% - train_loss: 0.5312 - val_acc: 66.67% - val_loss: 0.5298
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 438.8974 - train_acc: 74.24% - train_loss: 0.5397 - val_acc: 66.67% - val_loss: 0.5510
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 431.6419 - train_acc: 78.79% - train_loss: 0.5280 - val_acc: 75.00% - val_loss: 0.4834
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 431.7304 - train_acc: 74.24% - train_loss: 0.4923 - val_acc: 66.67% - val_loss: 0.4580
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 431.4296 - train_acc: 71.21% - train_loss: 0.5283 - val_acc: 66.67% - val_loss: 0.4722
+Early Stopping: val_loss did not lower, patience 1/5
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__02_34_55/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 0.763
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__07_28_00
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.276 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+!WARNING! Queue below 100 edges on mesh 341-Izq.obj
+!WARNING! Queue below 100 edges on mesh 52-Izq.obj
+!WARNING! Queue below 100 edges on mesh 3-Izq.obj
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/meshcnn/train.py", line 101, in <module>
+    model.optimize_parameters()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 84, in optimize_parameters
+    out = self.forward()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 75, in forward
+    out = self.net(self.edge_features, self.mesh)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/networks.py", line 165, in forward
+    x = getattr(self, 'pool{}'.format(i))(x, mesh)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 21, in __call__
+    return self.forward(fe, meshes)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 34, in forward
+    self.__pool_main(mesh_index)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 51, in __pool_main
+    value, edge_id = heappop(queue)
+IndexError: index out of range
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__07_28_00/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 11.130
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__07_33_53
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.402 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 455.0570 - train_acc: 62.12% - train_loss: 0.8727 - val_acc: 50.00% - val_loss: 0.7624
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 458.0225 - train_acc: 60.61% - train_loss: 0.8123 - val_acc: 41.67% - val_loss: 0.8974
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 454.1575 - train_acc: 50.00% - train_loss: 0.7822 - val_acc: 50.00% - val_loss: 0.8947
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 451.6349 - train_acc: 56.06% - train_loss: 0.7476 - val_acc: 66.67% - val_loss: 0.6387
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 454.2645 - train_acc: 62.12% - train_loss: 0.7759 - val_acc: 75.00% - val_loss: 0.5079
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 456.2803 - train_acc: 62.12% - train_loss: 0.7112 - val_acc: 75.00% - val_loss: 0.4910
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 450.2767 - train_acc: 63.64% - train_loss: 0.7256 - val_acc: 66.67% - val_loss: 0.5754
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 450.2504 - train_acc: 71.21% - train_loss: 0.6161 - val_acc: 75.00% - val_loss: 0.5068
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 449.8754 - train_acc: 60.61% - train_loss: 0.6122 - val_acc: 50.00% - val_loss: 0.6075
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 453.9042 - train_acc: 56.06% - train_loss: 0.5867 - val_acc: 50.00% - val_loss: 0.8041
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 447.6958 - train_acc: 65.15% - train_loss: 0.6411 - val_acc: 58.33% - val_loss: 0.6650
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 445.6610 - train_acc: 71.21% - train_loss: 0.6085 - val_acc: 58.33% - val_loss: 0.4885
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 444.4831 - train_acc: 65.15% - train_loss: 0.5998 - val_acc: 58.33% - val_loss: 0.6216
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 443.6882 - train_acc: 80.30% - train_loss: 0.5838 - val_acc: 58.33% - val_loss: 0.5468
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 453.1602 - train_acc: 60.61% - train_loss: 0.6418 - val_acc: 58.33% - val_loss: 0.5752
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 454.1181 - train_acc: 66.67% - train_loss: 0.6255 - val_acc: 75.00% - val_loss: 0.5035
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 457.8359 - train_acc: 72.73% - train_loss: 0.6037 - val_acc: 83.33% - val_loss: 0.5390
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 457.1770 - train_acc: 69.70% - train_loss: 0.4785 - val_acc: 83.33% - val_loss: 0.5192
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 443.0814 - train_acc: 78.79% - train_loss: 0.5042 - val_acc: 75.00% - val_loss: 0.4776
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 442.8396 - train_acc: 72.73% - train_loss: 0.4543 - val_acc: 66.67% - val_loss: 0.5067
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 444.3099 - train_acc: 74.24% - train_loss: 0.5556 - val_acc: 58.33% - val_loss: 0.5791
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 452.5066 - train_acc: 78.79% - train_loss: 0.5038 - val_acc: 75.00% - val_loss: 0.4183
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 445.0826 - train_acc: 71.21% - train_loss: 0.6600 - val_acc: 91.67% - val_loss: 0.4944
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 441.4161 - train_acc: 68.18% - train_loss: 0.6065 - val_acc: 83.33% - val_loss: 0.4569
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 447.5856 - train_acc: 63.64% - train_loss: 0.4986 - val_acc: 75.00% - val_loss: 0.5724
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 445.0787 - train_acc: 84.85% - train_loss: 0.5330 - val_acc: 75.00% - val_loss: 0.5834
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 443.1042 - train_acc: 78.79% - train_loss: 0.5096 - val_acc: 83.33% - val_loss: 0.5604
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 453.6554 - train_acc: 80.30% - train_loss: 0.5069 - val_acc: 83.33% - val_loss: 0.4588
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 449.5489 - train_acc: 75.76% - train_loss: 0.4465 - val_acc: 75.00% - val_loss: 0.7626
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 440.3175 - train_acc: 77.27% - train_loss: 0.4815 - val_acc: 75.00% - val_loss: 0.5870
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 441.5253 - train_acc: 84.85% - train_loss: 0.4250 - val_acc: 75.00% - val_loss: 0.4979
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 442.2992 - train_acc: 87.88% - train_loss: 0.5338 - val_acc: 66.67% - val_loss: 0.4873
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 441.5409 - train_acc: 81.82% - train_loss: 0.3499 - val_acc: 75.00% - val_loss: 0.4943
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 444.0717 - train_acc: 84.85% - train_loss: 0.4342 - val_acc: 75.00% - val_loss: 0.5071
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 442.0292 - train_acc: 89.39% - train_loss: 0.3185 - val_acc: 75.00% - val_loss: 0.7056
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 441.4032 - train_acc: 84.85% - train_loss: 0.3441 - val_acc: 75.00% - val_loss: 0.7503
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 440.1475 - train_acc: 87.88% - train_loss: 0.3800 - val_acc: 75.00% - val_loss: 0.7008
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 442.2536 - train_acc: 89.39% - train_loss: 0.2602 - val_acc: 66.67% - val_loss: 0.7015
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 441.1395 - train_acc: 90.91% - train_loss: 0.2445 - val_acc: 66.67% - val_loss: 0.9594
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 440.3975 - train_acc: 92.42% - train_loss: 0.2487 - val_acc: 66.67% - val_loss: 0.8404
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__07_33_53/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nodule        nodule
+117-Izq.obj  nodule        nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nodule        nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nodule        nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nodule        nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.71      0.50      0.59        10
+    nonodule       0.62      0.80      0.70        10
+
+    accuracy                           0.65        20
+   macro avg       0.66      0.65      0.64        20
+weighted avg       0.66      0.65      0.64        20
+
+epoch: -1, TEST ACC: [65.00%], LOSS: 0.648
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__12_34_05
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.402 M
+-----------------------------------------------
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/numpy/core/_asarray.py:136: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return array(a, dtype, copy=False, order=order, subok=True)
+saving the latest model (epoch 1, total_steps 1)
+!WARNING! Queue below 100 edges on mesh 218-Izq.obj
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/meshcnn/train.py", line 101, in <module>
+    model.optimize_parameters()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 84, in optimize_parameters
+    out = self.forward()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 75, in forward
+    out = self.net(self.edge_features, self.mesh)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/networks.py", line 165, in forward
+    x = getattr(self, 'pool{}'.format(i))(x, mesh)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 21, in __call__
+    return self.forward(fe, meshes)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 34, in forward
+    self.__pool_main(mesh_index)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 51, in __pool_main
+    value, edge_id = heappop(queue)
+IndexError: index out of range
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__12_34_05/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 10.835
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__12_36_34
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.847 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 459.3117 - train_acc: 40.91% - train_loss: 0.8172 - val_acc: 50.00% - val_loss: 0.9429
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 455.9267 - train_acc: 57.58% - train_loss: 0.7967 - val_acc: 41.67% - val_loss: 0.7724
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 451.8929 - train_acc: 48.48% - train_loss: 0.6747 - val_acc: 50.00% - val_loss: 0.7486
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 451.0249 - train_acc: 54.55% - train_loss: 0.7760 - val_acc: 50.00% - val_loss: 0.6722
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 453.9144 - train_acc: 57.58% - train_loss: 0.7877 - val_acc: 75.00% - val_loss: 0.6111
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 464.3362 - train_acc: 60.61% - train_loss: 0.6587 - val_acc: 66.67% - val_loss: 0.6612
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 459.3632 - train_acc: 53.03% - train_loss: 0.7418 - val_acc: 50.00% - val_loss: 0.7131
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 462.4221 - train_acc: 53.03% - train_loss: 0.6946 - val_acc: 66.67% - val_loss: 0.6158
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 456.7349 - train_acc: 62.12% - train_loss: 0.6684 - val_acc: 75.00% - val_loss: 0.5616
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 456.1701 - train_acc: 57.58% - train_loss: 0.6797 - val_acc: 50.00% - val_loss: 0.6398
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 466.0043 - train_acc: 68.18% - train_loss: 0.7086 - val_acc: 75.00% - val_loss: 0.5773
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 458.5362 - train_acc: 68.18% - train_loss: 0.6233 - val_acc: 66.67% - val_loss: 0.5514
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 453.6883 - train_acc: 69.70% - train_loss: 0.6423 - val_acc: 75.00% - val_loss: 0.5830
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 456.9648 - train_acc: 56.06% - train_loss: 0.6368 - val_acc: 58.33% - val_loss: 0.7370
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 448.9576 - train_acc: 59.09% - train_loss: 0.6688 - val_acc: 58.33% - val_loss: 0.6788
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 449.0895 - train_acc: 62.12% - train_loss: 0.6332 - val_acc: 58.33% - val_loss: 0.6248
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 450.1740 - train_acc: 62.12% - train_loss: 0.6152 - val_acc: 75.00% - val_loss: 0.6800
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 452.6019 - train_acc: 78.79% - train_loss: 0.6172 - val_acc: 83.33% - val_loss: 0.4833
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 448.6299 - train_acc: 77.27% - train_loss: 0.6088 - val_acc: 75.00% - val_loss: 0.5510
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 450.5283 - train_acc: 54.55% - train_loss: 0.5097 - val_acc: 50.00% - val_loss: 0.8155
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 452.2426 - train_acc: 69.70% - train_loss: 0.6288 - val_acc: 58.33% - val_loss: 0.5970
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 452.2386 - train_acc: 66.67% - train_loss: 0.5256 - val_acc: 58.33% - val_loss: 0.6811
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 448.2890 - train_acc: 78.79% - train_loss: 0.5080 - val_acc: 66.67% - val_loss: 0.5323
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 447.0041 - train_acc: 68.18% - train_loss: 0.4936 - val_acc: 58.33% - val_loss: 0.6493
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 457.2443 - train_acc: 71.21% - train_loss: 0.5967 - val_acc: 83.33% - val_loss: 0.4223
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 457.4077 - train_acc: 80.30% - train_loss: 0.5419 - val_acc: 91.67% - val_loss: 0.3987
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 458.9058 - train_acc: 66.67% - train_loss: 0.6630 - val_acc: 58.33% - val_loss: 0.6490
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 458.2359 - train_acc: 72.73% - train_loss: 0.5779 - val_acc: 75.00% - val_loss: 0.4870
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 463.4608 - train_acc: 80.30% - train_loss: 0.4861 - val_acc: 75.00% - val_loss: 0.5376
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 466.8528 - train_acc: 78.79% - train_loss: 0.5281 - val_acc: 83.33% - val_loss: 0.3941
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 459.4592 - train_acc: 78.79% - train_loss: 0.5183 - val_acc: 75.00% - val_loss: 0.4681
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 458.2491 - train_acc: 81.82% - train_loss: 0.5371 - val_acc: 75.00% - val_loss: 0.3782
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 459.3542 - train_acc: 83.33% - train_loss: 0.4383 - val_acc: 75.00% - val_loss: 0.3835
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 460.2539 - train_acc: 81.82% - train_loss: 0.5009 - val_acc: 66.67% - val_loss: 0.5024
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 458.6444 - train_acc: 80.30% - train_loss: 0.4976 - val_acc: 75.00% - val_loss: 0.6142
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 458.8876 - train_acc: 87.88% - train_loss: 0.4283 - val_acc: 58.33% - val_loss: 0.6640
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 458.4287 - train_acc: 84.85% - train_loss: 0.3727 - val_acc: 58.33% - val_loss: 0.9464
+Early Stopping: val_loss did not lower, patience 5/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 456.0773 - train_acc: 87.88% - train_loss: 0.3472 - val_acc: 66.67% - val_loss: 0.7687
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 458.7797 - train_acc: 89.39% - train_loss: 0.3593 - val_acc: 66.67% - val_loss: 0.7003
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 456.0962 - train_acc: 83.33% - train_loss: 0.3385 - val_acc: 75.00% - val_loss: 0.6550
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__12_36_34/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nodule        nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nodule        nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.75      0.30      0.43        10
+    nonodule       0.56      0.90      0.69        10
+
+    accuracy                           0.60        20
+   macro avg       0.66      0.60      0.56        20
+weighted avg       0.66      0.60      0.56        20
+
+epoch: -1, TEST ACC: [60.00%], LOSS: 0.659
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: kaiming
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-2022_07_07__17_42_37
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 5000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.847 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+!WARNING! Queue below 100 edges on mesh 36-Izq.obj
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/meshcnn/train.py", line 104, in <module>
+    model.optimize_parameters()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 84, in optimize_parameters
+    out = self.forward()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 75, in forward
+    out = self.net(self.edge_features, self.mesh)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/networks.py", line 165, in forward
+    x = getattr(self, 'pool{}'.format(i))(x, mesh)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 21, in __call__
+    return self.forward(fe, meshes)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 34, in forward
+    self.__pool_main(mesh_index)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 51, in __pool_main
+    value, edge_id = heappop(queue)
+IndexError: index out of range
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-2022_07_07__17_42_37/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 11.592
+

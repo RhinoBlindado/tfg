@@ -1,0 +1,1883 @@
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-0
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 2.059 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 417.7087 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 412.1309 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6939
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 417.7571 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6939
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 412.6294 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6940
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 416.8126 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 425.4894 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 427.2441 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 431.2935 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 419.7909 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 418.5360 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 410.4397 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 407.5441 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 411.1515 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 415.1305 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 403.5234 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 401.0467 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 401.4826 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 406.0521 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6942
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 405.1010 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6928
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 409.9230 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 404.8111 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6913
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 403.5694 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 403.9396 - train_acc: 51.52% - train_loss: 0.6931 - val_acc: 75.00% - val_loss: 0.6867
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 409.1889 - train_acc: 60.61% - train_loss: 0.6929 - val_acc: 66.67% - val_loss: 0.6848
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 408.6743 - train_acc: 62.12% - train_loss: 0.6913 - val_acc: 83.33% - val_loss: 0.6779
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 408.3973 - train_acc: 54.55% - train_loss: 0.6906 - val_acc: 50.00% - val_loss: 0.6822
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 408.0572 - train_acc: 63.64% - train_loss: 0.6904 - val_acc: 66.67% - val_loss: 0.6721
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 406.6178 - train_acc: 65.15% - train_loss: 0.6864 - val_acc: 83.33% - val_loss: 0.6506
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 406.5377 - train_acc: 63.64% - train_loss: 0.6901 - val_acc: 66.67% - val_loss: 0.6449
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 407.5233 - train_acc: 63.64% - train_loss: 0.6654 - val_acc: 83.33% - val_loss: 0.5769
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 418.4844 - train_acc: 63.64% - train_loss: 0.6640 - val_acc: 75.00% - val_loss: 0.5672
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 414.1345 - train_acc: 68.18% - train_loss: 0.6747 - val_acc: 58.33% - val_loss: 0.6077
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 409.8400 - train_acc: 63.64% - train_loss: 0.6654 - val_acc: 83.33% - val_loss: 0.5578
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 418.4331 - train_acc: 72.73% - train_loss: 0.6706 - val_acc: 75.00% - val_loss: 0.5988
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 411.1853 - train_acc: 71.21% - train_loss: 0.6458 - val_acc: 66.67% - val_loss: 0.5949
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 404.2555 - train_acc: 69.70% - train_loss: 0.6489 - val_acc: 66.67% - val_loss: 0.5663
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 406.7948 - train_acc: 69.70% - train_loss: 0.6424 - val_acc: 66.67% - val_loss: 0.5734
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 403.3921 - train_acc: 71.21% - train_loss: 0.6503 - val_acc: 66.67% - val_loss: 0.5746
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 408.1423 - train_acc: 66.67% - train_loss: 0.6122 - val_acc: 66.67% - val_loss: 0.5771
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 405.1075 - train_acc: 68.18% - train_loss: 0.6321 - val_acc: 66.67% - val_loss: 0.5885
+Early Stopping: val_loss did not lower, patience 4/5
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-0/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 0.744
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-1
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 2.059 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 569.7641 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 586.7422 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6939
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 585.5025 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 586.9363 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6940
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 550.7680 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 578.8113 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 549.9294 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 546.7777 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 522.7701 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 525.9193 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 542.5114 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 534.2249 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 512.9950 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 499.8707 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 499.4409 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 501.0611 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 495.7093 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 540.8985 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6939
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 474.6280 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6931
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 474.9354 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 477.6609 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6922
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 460.3541 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6928
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 469.9682 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6926
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 452.1388 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 58.33% - val_loss: 0.6884
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 465.1211 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6929
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 474.6625 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 475.9085 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 456.6465 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6928
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 442.7034 - train_acc: 51.52% - train_loss: 0.6934 - val_acc: 58.33% - val_loss: 0.6889
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 426.3633 - train_acc: 51.52% - train_loss: 0.6947 - val_acc: 50.00% - val_loss: 0.6918
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 434.2056 - train_acc: 53.03% - train_loss: 0.6934 - val_acc: 58.33% - val_loss: 0.6905
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 442.2638 - train_acc: 56.06% - train_loss: 0.6923 - val_acc: 58.33% - val_loss: 0.6913
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 429.7852 - train_acc: 66.67% - train_loss: 0.6928 - val_acc: 83.33% - val_loss: 0.6821
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 436.1288 - train_acc: 66.67% - train_loss: 0.6895 - val_acc: 83.33% - val_loss: 0.6740
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 434.2368 - train_acc: 59.09% - train_loss: 0.6831 - val_acc: 50.00% - val_loss: 0.6900
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 459.3327 - train_acc: 59.09% - train_loss: 0.6761 - val_acc: 50.00% - val_loss: 0.6925
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 423.6980 - train_acc: 63.64% - train_loss: 0.6820 - val_acc: 50.00% - val_loss: 0.6770
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 418.0810 - train_acc: 72.73% - train_loss: 0.6705 - val_acc: 50.00% - val_loss: 0.6361
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 415.6750 - train_acc: 59.09% - train_loss: 0.6633 - val_acc: 58.33% - val_loss: 0.6482
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 413.7853 - train_acc: 66.67% - train_loss: 0.6623 - val_acc: 50.00% - val_loss: 0.6308
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-1/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 0.701
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-3
+ncf: [32, 64, 256, 256]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.276 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 429.3535 - train_acc: 50.00% - train_loss: 0.6944 - val_acc: 50.00% - val_loss: 0.6941
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 414.5917 - train_acc: 50.00% - train_loss: 0.6944 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 423.5486 - train_acc: 50.00% - train_loss: 0.6944 - val_acc: 50.00% - val_loss: 0.6941
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 412.1713 - train_acc: 50.00% - train_loss: 0.6943 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 406.2086 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6941
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 414.0851 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 421.2275 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6940
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 420.7608 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 433.1820 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 414.8314 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6941
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 414.6006 - train_acc: 50.00% - train_loss: 0.6943 - val_acc: 50.00% - val_loss: 0.6941
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 417.8549 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 420.9721 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 416.6185 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 413.2747 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 411.1369 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 415.1117 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 427.7764 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6941
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 431.6185 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6925
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 440.0507 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6926
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 436.8770 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 440.4397 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6930
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 425.5842 - train_acc: 50.00% - train_loss: 0.6942 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 431.2248 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6923
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 424.0664 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6910
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 418.8344 - train_acc: 50.00% - train_loss: 0.6930 - val_acc: 50.00% - val_loss: 0.6898
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 417.2594 - train_acc: 59.09% - train_loss: 0.6922 - val_acc: 75.00% - val_loss: 0.6880
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 413.1288 - train_acc: 66.67% - train_loss: 0.6923 - val_acc: 66.67% - val_loss: 0.6772
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 413.4671 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6773
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 414.4113 - train_acc: 56.06% - train_loss: 0.6881 - val_acc: 58.33% - val_loss: 0.6476
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 410.5007 - train_acc: 60.61% - train_loss: 0.6872 - val_acc: 58.33% - val_loss: 0.6538
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 424.1429 - train_acc: 68.18% - train_loss: 0.6816 - val_acc: 58.33% - val_loss: 0.6434
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 418.4938 - train_acc: 62.12% - train_loss: 0.6877 - val_acc: 66.67% - val_loss: 0.6432
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 420.4570 - train_acc: 74.24% - train_loss: 0.6771 - val_acc: 83.33% - val_loss: 0.6190
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 420.1667 - train_acc: 60.61% - train_loss: 0.6741 - val_acc: 58.33% - val_loss: 0.6412
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 418.6236 - train_acc: 65.15% - train_loss: 0.6645 - val_acc: 58.33% - val_loss: 0.6227
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 421.5704 - train_acc: 65.15% - train_loss: 0.6716 - val_acc: 50.00% - val_loss: 0.6375
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 423.0255 - train_acc: 60.61% - train_loss: 0.6621 - val_acc: 75.00% - val_loss: 0.5938
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 416.6250 - train_acc: 74.24% - train_loss: 0.6644 - val_acc: 83.33% - val_loss: 0.5893
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 417.0405 - train_acc: 63.64% - train_loss: 0.6450 - val_acc: 66.67% - val_loss: 0.5960
+Early Stopping: val_loss did not lower, patience 1/5
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-3/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nodule        nodule
+117-Izq.obj  nodule        nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nodule        nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nodule        nodule
+564-Izq.obj  nodule        nodule
+95-Izq.obj   nodule        nodule
+1-Izq.obj    nodule        nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nodule        nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nodule        nonodule
+23-Izq.obj   nodule        nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.58      0.70      0.64        10
+    nonodule       0.62      0.50      0.56        10
+
+    accuracy                           0.60        20
+   macro avg       0.60      0.60      0.60        20
+weighted avg       0.60      0.60      0.60        20
+
+epoch: -1, TEST ACC: [60.00%], LOSS: 0.669
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.25, 0.25, 0.25]
+epoch_count: 1
+export_folder: 
+fc_n: [2042, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-5
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 1.402 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 427.0066 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 423.0536 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 418.4620 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 422.6617 - train_acc: 50.00% - train_loss: 0.6934 - val_acc: 50.00% - val_loss: 0.6934
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 424.1943 - train_acc: 50.00% - train_loss: 0.6934 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 430.6940 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 420.1179 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6930
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 429.7702 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6933
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 430.9829 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6934
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 428.1897 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 435.6049 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6934
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 435.9086 - train_acc: 50.00% - train_loss: 0.6934 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 432.9456 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 426.8869 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6932
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 423.5490 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6933
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 428.0984 - train_acc: 50.00% - train_loss: 0.6934 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 434.1308 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6929
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 434.3350 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6932
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 434.5119 - train_acc: 50.00% - train_loss: 0.6934 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 430.2623 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 431.3802 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6929
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 440.1303 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6930
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 432.4703 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 5/5
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 421.5461 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 427.0710 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6930
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 426.1690 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6929
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 423.9594 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6933
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 431.9231 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 421.8112 - train_acc: 50.00% - train_loss: 0.6932 - val_acc: 50.00% - val_loss: 0.6926
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 422.5379 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6924
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 420.3821 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6930
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 416.7787 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 415.9783 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6928
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 414.1783 - train_acc: 50.00% - train_loss: 0.6929 - val_acc: 50.00% - val_loss: 0.6928
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 413.1115 - train_acc: 50.00% - train_loss: 0.6927 - val_acc: 58.33% - val_loss: 0.6917
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 414.8139 - train_acc: 51.52% - train_loss: 0.6931 - val_acc: 50.00% - val_loss: 0.6926
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 412.6111 - train_acc: 59.09% - train_loss: 0.6924 - val_acc: 75.00% - val_loss: 0.6898
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 415.2180 - train_acc: 53.03% - train_loss: 0.6918 - val_acc: 58.33% - val_loss: 0.6911
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 410.9170 - train_acc: 60.61% - train_loss: 0.6917 - val_acc: 83.33% - val_loss: 0.6901
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 410.3670 - train_acc: 66.67% - train_loss: 0.6911 - val_acc: 75.00% - val_loss: 0.6907
+Early Stopping: val_loss did not lower, patience 4/5
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-5/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nodule        nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nodule        nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nodule        nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nodule        nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nodule        nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nodule        nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.43      0.30      0.35        10
+    nonodule       0.46      0.60      0.52        10
+
+    accuracy                           0.45        20
+   macro avg       0.45      0.45      0.44        20
+weighted avg       0.45      0.45      0.44        20
+
+epoch: -1, TEST ACC: [45.00%], LOSS: 0.694
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.2
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-6
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 20
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.2
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.847 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 403.7175 - train_acc: 50.00% - train_loss: 0.6944 - val_acc: 50.00% - val_loss: 0.6939
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 402.8303 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6939
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 409.6059 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 414.5208 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 417.0687 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 407.4497 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 409.6428 - train_acc: 50.00% - train_loss: 0.6941 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 402.6803 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6937
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 403.8076 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6937
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 407.8881 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 402.9867 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 410.3445 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 413.2003 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 420.4722 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 410.5109 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 412.3912 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 409.5311 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 408.9012 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6937
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 408.1834 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 410.5492 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 407.0075 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6934
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 406.3203 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6935
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 410.1807 - train_acc: 50.00% - train_loss: 0.6935 - val_acc: 50.00% - val_loss: 0.6925
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 410.1960 - train_acc: 50.00% - train_loss: 0.6936 - val_acc: 50.00% - val_loss: 0.6927
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 408.1068 - train_acc: 50.00% - train_loss: 0.6933 - val_acc: 50.00% - val_loss: 0.6912
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 404.0771 - train_acc: 50.00% - train_loss: 0.6931 - val_acc: 50.00% - val_loss: 0.6918
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 405.1518 - train_acc: 54.55% - train_loss: 0.6929 - val_acc: 50.00% - val_loss: 0.6905
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 404.9283 - train_acc: 57.58% - train_loss: 0.6921 - val_acc: 66.67% - val_loss: 0.6862
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 402.8248 - train_acc: 65.15% - train_loss: 0.6874 - val_acc: 75.00% - val_loss: 0.6745
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 407.5996 - train_acc: 65.15% - train_loss: 0.6835 - val_acc: 58.33% - val_loss: 0.6783
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 403.5112 - train_acc: 53.03% - train_loss: 0.6585 - val_acc: 66.67% - val_loss: 0.6110
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 408.4428 - train_acc: 66.67% - train_loss: 0.6676 - val_acc: 83.33% - val_loss: 0.6363
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 415.3747 - train_acc: 68.18% - train_loss: 0.6586 - val_acc: 50.00% - val_loss: 0.6617
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 402.2778 - train_acc: 71.21% - train_loss: 0.6508 - val_acc: 75.00% - val_loss: 0.6368
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 400.9706 - train_acc: 65.15% - train_loss: 0.6226 - val_acc: 75.00% - val_loss: 0.5991
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 400.4161 - train_acc: 72.73% - train_loss: 0.6097 - val_acc: 75.00% - val_loss: 0.6288
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 401.4767 - train_acc: 72.73% - train_loss: 0.6046 - val_acc: 66.67% - val_loss: 0.6728
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 402.7923 - train_acc: 72.73% - train_loss: 0.5871 - val_acc: 66.67% - val_loss: 0.6544
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 409.1251 - train_acc: 71.21% - train_loss: 0.5878 - val_acc: 50.00% - val_loss: 0.6635
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 400.8706 - train_acc: 69.70% - train_loss: 0.5815 - val_acc: 50.00% - val_loss: 0.6475
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-6/latest_net.pth
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nonodule      nodule
+117-Izq.obj  nonodule      nodule
+161-Izq.obj  nonodule      nodule
+216-Izq.obj  nonodule      nodule
+229-Izq.obj  nonodule      nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nonodule      nodule
+475-Izq.obj  nonodule      nodule
+564-Izq.obj  nonodule      nodule
+95-Izq.obj   nonodule      nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nonodule      nonodule
+21-Izq.obj   nonodule      nonodule
+22-Izq.obj   nonodule      nonodule
+23-Izq.obj   nonodule      nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nonodule      nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.00      0.00      0.00        10
+    nonodule       0.50      1.00      0.67        10
+
+    accuracy                           0.50        20
+   macro avg       0.25      0.50      0.33        20
+weighted avg       0.25      0.50      0.33        20
+
+epoch: -1, TEST ACC: [50.00%], LOSS: 0.725
+
+------------ Options -------------
+amsgrad: False
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/Nodule-98-30K
+dataset_mode: classification
+dropout: [0.5, 0.25, 0.125]
+epoch_count: 1
+export_folder: 
+fc_n: [1024, 512, 128]
+flip_edges: 0.4
+gpu_ids: [0]
+init_gain: 0.02
+init_type: xavier
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: Nodule-98-30K-GS-7
+ncf: [256, 128, 64, 32]
+ninput_edges: 30000
+niter: 30
+niter_decay: 10
+no_vis: False
+norm: batch
+num_aug: 40
+num_groups: 16
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [20000, 15000, 10000, 7500]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: True
+seed: 16
+serial_batches: False
+slide_verts: 0.4
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 66
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.847 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 66
+learning rate = 0.0002000
+Epoch 1/40 | time: 423.8744 - train_acc: 50.00% - train_loss: 0.6944 - val_acc: 50.00% - val_loss: 0.6939
+saving the latest model (epoch 2, total_steps 67)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 132
+learning rate = 0.0002000
+Epoch 2/40 | time: 424.0632 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6939
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 3, total_steps 133)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 198
+learning rate = 0.0002000
+Epoch 3/40 | time: 433.5369 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 4, total_steps 199)
+loaded mean / std from cache
+saving the model at the end of epoch 4, iters 264
+learning rate = 0.0002000
+Epoch 4/40 | time: 428.4360 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 5, total_steps 265)
+loaded mean / std from cache
+saving the model at the end of epoch 5, iters 330
+learning rate = 0.0002000
+Epoch 5/40 | time: 430.0852 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 6, total_steps 331)
+loaded mean / std from cache
+saving the model at the end of epoch 6, iters 396
+learning rate = 0.0002000
+Epoch 6/40 | time: 425.4477 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6938
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 7, total_steps 397)
+loaded mean / std from cache
+saving the model at the end of epoch 7, iters 462
+learning rate = 0.0002000
+Epoch 7/40 | time: 423.2891 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6938
+saving the latest model (epoch 8, total_steps 463)
+loaded mean / std from cache
+saving the model at the end of epoch 8, iters 528
+learning rate = 0.0002000
+Epoch 8/40 | time: 421.3897 - train_acc: 50.00% - train_loss: 0.6939 - val_acc: 50.00% - val_loss: 0.6937
+saving the latest model (epoch 9, total_steps 529)
+loaded mean / std from cache
+saving the model at the end of epoch 9, iters 594
+learning rate = 0.0002000
+Epoch 9/40 | time: 424.9052 - train_acc: 50.00% - train_loss: 0.6940 - val_acc: 50.00% - val_loss: 0.6937
+saving the latest model (epoch 10, total_steps 595)
+loaded mean / std from cache
+saving the model at the end of epoch 10, iters 660
+learning rate = 0.0002000
+Epoch 10/40 | time: 422.0844 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6935
+saving the latest model (epoch 11, total_steps 661)
+loaded mean / std from cache
+saving the model at the end of epoch 11, iters 726
+learning rate = 0.0002000
+Epoch 11/40 | time: 421.2230 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6936
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 12, total_steps 727)
+loaded mean / std from cache
+saving the model at the end of epoch 12, iters 792
+learning rate = 0.0002000
+Epoch 12/40 | time: 418.9564 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6936
+saving the latest model (epoch 13, total_steps 793)
+loaded mean / std from cache
+saving the model at the end of epoch 13, iters 858
+learning rate = 0.0002000
+Epoch 13/40 | time: 427.3131 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6933
+saving the latest model (epoch 14, total_steps 859)
+loaded mean / std from cache
+saving the model at the end of epoch 14, iters 924
+learning rate = 0.0002000
+Epoch 14/40 | time: 424.6089 - train_acc: 50.00% - train_loss: 0.6938 - val_acc: 50.00% - val_loss: 0.6927
+saving the latest model (epoch 15, total_steps 925)
+loaded mean / std from cache
+saving the model at the end of epoch 15, iters 990
+learning rate = 0.0002000
+Epoch 15/40 | time: 422.2563 - train_acc: 50.00% - train_loss: 0.6930 - val_acc: 50.00% - val_loss: 0.6922
+saving the latest model (epoch 16, total_steps 991)
+loaded mean / std from cache
+saving the model at the end of epoch 16, iters 1056
+learning rate = 0.0002000
+Epoch 16/40 | time: 423.1054 - train_acc: 50.00% - train_loss: 0.6937 - val_acc: 50.00% - val_loss: 0.6919
+saving the latest model (epoch 17, total_steps 1057)
+loaded mean / std from cache
+saving the model at the end of epoch 17, iters 1122
+learning rate = 0.0002000
+Epoch 17/40 | time: 420.1220 - train_acc: 50.00% - train_loss: 0.6923 - val_acc: 50.00% - val_loss: 0.6912
+saving the latest model (epoch 18, total_steps 1123)
+loaded mean / std from cache
+saving the model at the end of epoch 18, iters 1188
+learning rate = 0.0002000
+Epoch 18/40 | time: 419.4975 - train_acc: 53.03% - train_loss: 0.6918 - val_acc: 50.00% - val_loss: 0.6902
+saving the latest model (epoch 19, total_steps 1189)
+loaded mean / std from cache
+saving the model at the end of epoch 19, iters 1254
+learning rate = 0.0002000
+Epoch 19/40 | time: 416.7849 - train_acc: 77.27% - train_loss: 0.6911 - val_acc: 50.00% - val_loss: 0.6871
+saving the latest model (epoch 20, total_steps 1255)
+loaded mean / std from cache
+saving the model at the end of epoch 20, iters 1320
+learning rate = 0.0002000
+Epoch 20/40 | time: 419.5389 - train_acc: 57.58% - train_loss: 0.6887 - val_acc: 50.00% - val_loss: 0.6909
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 21, total_steps 1321)
+loaded mean / std from cache
+saving the model at the end of epoch 21, iters 1386
+learning rate = 0.0002000
+Epoch 21/40 | time: 419.8854 - train_acc: 62.12% - train_loss: 0.6872 - val_acc: 75.00% - val_loss: 0.6718
+saving the latest model (epoch 22, total_steps 1387)
+loaded mean / std from cache
+saving the model at the end of epoch 22, iters 1452
+learning rate = 0.0002000
+Epoch 22/40 | time: 419.5193 - train_acc: 66.67% - train_loss: 0.6751 - val_acc: 66.67% - val_loss: 0.6750
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 23, total_steps 1453)
+loaded mean / std from cache
+saving the model at the end of epoch 23, iters 1518
+learning rate = 0.0002000
+Epoch 23/40 | time: 420.0021 - train_acc: 69.70% - train_loss: 0.6616 - val_acc: 58.33% - val_loss: 0.6653
+saving the latest model (epoch 24, total_steps 1519)
+loaded mean / std from cache
+saving the model at the end of epoch 24, iters 1584
+learning rate = 0.0002000
+Epoch 24/40 | time: 423.4966 - train_acc: 57.58% - train_loss: 0.6817 - val_acc: 75.00% - val_loss: 0.6305
+saving the latest model (epoch 25, total_steps 1585)
+loaded mean / std from cache
+saving the model at the end of epoch 25, iters 1650
+learning rate = 0.0002000
+Epoch 25/40 | time: 426.9197 - train_acc: 69.70% - train_loss: 0.6544 - val_acc: 66.67% - val_loss: 0.6163
+saving the latest model (epoch 26, total_steps 1651)
+loaded mean / std from cache
+saving the model at the end of epoch 26, iters 1716
+learning rate = 0.0002000
+Epoch 26/40 | time: 428.7541 - train_acc: 68.18% - train_loss: 0.6356 - val_acc: 50.00% - val_loss: 0.7101
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 27, total_steps 1717)
+loaded mean / std from cache
+saving the model at the end of epoch 27, iters 1782
+learning rate = 0.0002000
+Epoch 27/40 | time: 433.1908 - train_acc: 69.70% - train_loss: 0.6725 - val_acc: 50.00% - val_loss: 0.6481
+saving the latest model (epoch 28, total_steps 1783)
+loaded mean / std from cache
+saving the model at the end of epoch 28, iters 1848
+learning rate = 0.0002000
+Epoch 28/40 | time: 419.6540 - train_acc: 66.67% - train_loss: 0.6200 - val_acc: 75.00% - val_loss: 0.5857
+saving the latest model (epoch 29, total_steps 1849)
+loaded mean / std from cache
+saving the model at the end of epoch 29, iters 1914
+learning rate = 0.0001818
+Epoch 29/40 | time: 420.1764 - train_acc: 68.18% - train_loss: 0.6130 - val_acc: 58.33% - val_loss: 0.6178
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 30, total_steps 1915)
+loaded mean / std from cache
+saving the model at the end of epoch 30, iters 1980
+learning rate = 0.0001636
+Epoch 30/40 | time: 433.4739 - train_acc: 69.70% - train_loss: 0.6171 - val_acc: 50.00% - val_loss: 0.6674
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 31, total_steps 1981)
+loaded mean / std from cache
+saving the model at the end of epoch 31, iters 2046
+learning rate = 0.0001455
+Epoch 31/40 | time: 420.9551 - train_acc: 71.21% - train_loss: 0.6339 - val_acc: 58.33% - val_loss: 0.5965
+saving the latest model (epoch 32, total_steps 2047)
+loaded mean / std from cache
+saving the model at the end of epoch 32, iters 2112
+learning rate = 0.0001273
+Epoch 32/40 | time: 420.5088 - train_acc: 72.73% - train_loss: 0.6017 - val_acc: 66.67% - val_loss: 0.6078
+Early Stopping: val_loss did not lower, patience 2/5
+saving the latest model (epoch 33, total_steps 2113)
+loaded mean / std from cache
+saving the model at the end of epoch 33, iters 2178
+learning rate = 0.0001091
+Epoch 33/40 | time: 419.4417 - train_acc: 68.18% - train_loss: 0.6316 - val_acc: 58.33% - val_loss: 0.6344
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 34, total_steps 2179)
+loaded mean / std from cache
+saving the model at the end of epoch 34, iters 2244
+learning rate = 0.0000909
+Epoch 34/40 | time: 418.7710 - train_acc: 65.15% - train_loss: 0.5748 - val_acc: 66.67% - val_loss: 0.6366
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 35, total_steps 2245)
+loaded mean / std from cache
+saving the model at the end of epoch 35, iters 2310
+learning rate = 0.0000727
+Epoch 35/40 | time: 421.4621 - train_acc: 68.18% - train_loss: 0.5630 - val_acc: 58.33% - val_loss: 0.5949
+saving the latest model (epoch 36, total_steps 2311)
+loaded mean / std from cache
+saving the model at the end of epoch 36, iters 2376
+learning rate = 0.0000545
+Epoch 36/40 | time: 418.4872 - train_acc: 68.18% - train_loss: 0.5819 - val_acc: 66.67% - val_loss: 0.5497
+saving the latest model (epoch 37, total_steps 2377)
+loaded mean / std from cache
+saving the model at the end of epoch 37, iters 2442
+learning rate = 0.0000364
+Epoch 37/40 | time: 418.1079 - train_acc: 66.67% - train_loss: 0.5897 - val_acc: 66.67% - val_loss: 0.5541
+Early Stopping: val_loss did not lower, patience 3/5
+saving the latest model (epoch 38, total_steps 2443)
+loaded mean / std from cache
+saving the model at the end of epoch 38, iters 2508
+learning rate = 0.0000182
+Epoch 38/40 | time: 415.0611 - train_acc: 71.21% - train_loss: 0.5717 - val_acc: 66.67% - val_loss: 0.5641
+Early Stopping: val_loss did not lower, patience 4/5
+saving the latest model (epoch 39, total_steps 2509)
+loaded mean / std from cache
+saving the model at the end of epoch 39, iters 2574
+learning rate = 0.0000000
+Epoch 39/40 | time: 423.3835 - train_acc: 72.73% - train_loss: 0.5581 - val_acc: 66.67% - val_loss: 0.6043
+Early Stopping: val_loss did not lower, patience 5/5
+saving the latest model (epoch 40, total_steps 2575)
+loaded mean / std from cache
+saving the model at the end of epoch 40, iters 2640
+learning rate = -0.0000182
+Epoch 40/40 | time: 416.2397 - train_acc: 77.27% - train_loss: 0.5805 - val_acc: 66.67% - val_loss: 0.6110
+Early Stopping: val_loss did not lower, patience 6/5
+Validation loss is stagnating, stopping.
+Running Test
+loaded mean / std from cache
+loading the model from ./checkpoints/Nodule-98-30K-GS-7/latest_net.pth
+Mesh         Prediction    Actual
+-----------  ------------  --------
+110-Izq.obj  nodule        nodule
+117-Izq.obj  nodule        nodule
+161-Izq.obj  nodule        nodule
+216-Izq.obj  nodule        nodule
+229-Izq.obj  nodule        nodule
+346-Izq.obj  nonodule      nodule
+456-Izq.obj  nodule        nodule
+475-Izq.obj  nodule        nodule
+564-Izq.obj  nodule        nodule
+95-Izq.obj   nodule        nodule
+1-Izq.obj    nonodule      nonodule
+15-Izq.obj   nonodule      nonodule
+19-Izq.obj   nodule        nonodule
+21-Izq.obj   nodule        nonodule
+22-Izq.obj   nodule        nonodule
+23-Izq.obj   nodule        nonodule
+35-Izq.obj   nonodule      nonodule
+43-Izq.obj   nonodule      nonodule
+50-Izq.obj   nonodule      nonodule
+7-Izq.obj    nodule        nonodule
+Reporte de clasificación:
+              precision    recall  f1-score   support
+
+      nodule       0.64      0.90      0.75        10
+    nonodule       0.83      0.50      0.62        10
+
+    accuracy                           0.70        20
+   macro avg       0.74      0.70      0.69        20
+weighted avg       0.74      0.70      0.69        20
+
+epoch: -1, TEST ACC: [70.00%], LOSS: 0.734
+
+[0]: adam | xavier | 32 64 256 256 | 2042 512 128  0.25 0.25 0.25 | 0.2 20 0.2 
+[1]: adam | xavier | 32 64 256 256 | 2042 512 128  0.25 0.25 0.25 | 0.4 40 0.4 --scale_verts
+[3]: adam | xavier | 32 64 256 256 | 1024 512 128  0.5 0.25 0.125 | 0.4 40 0.4 --scale_verts
+[5]: adam | xavier | 256 128 64 32 | 2042 512 128  0.25 0.25 0.25 | 0.4 40 0.4 --scale_verts
+[6]: adam | xavier | 256 128 64 32 | 1024 512 128  0.5 0.25 0.125 | 0.2 20 0.2 
+[7]: adam | xavier | 256 128 64 32 | 1024 512 128  0.5 0.25 0.125 | 0.4 40 0.4 --scale_verts
