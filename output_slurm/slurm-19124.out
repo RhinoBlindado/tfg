@@ -1,0 +1,237 @@
+------------ Options -------------
+amsgrad: True
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/ResTest-30K
+dataset_mode: classification
+dropout: [0.0]
+epoch_count: 1
+export_folder: 
+fc_n: [100]
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MeshCN-ResTest-30K
+ncf: [64, 128, 256, 256]
+ninput_edges: 30000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [24000, 18000, 12000, 7200]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+computing mean std from train data...
+0 of 1
+saved:  ./data/datasets/ResTest-30K/mean_std_cache.p
+loaded mean / std from cache
+#training meshes = 1
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.561 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 1
+learning rate = 0.0002000
+Epoch 1/3 | time: 9.8064 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+saving the latest model (epoch 2, total_steps 2)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 2
+learning rate = 0.0000000
+Epoch 2/3 | time: 8.4177 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 3, total_steps 3)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 3
+learning rate = -0.0002000
+Epoch 3/3 | time: 8.4878 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+Early Stopping: val_loss did not lower, patience 2/5
+------------ Options -------------
+amsgrad: True
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/ResTest-50K
+dataset_mode: classification
+dropout: [0.0]
+epoch_count: 1
+export_folder: 
+fc_n: [100]
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MeshCN-ResTest-50K
+ncf: [64, 128, 256, 256]
+ninput_edges: 50000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [40000, 30000, 20000, 12000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+computing mean std from train data...
+0 of 1
+saved:  ./data/datasets/ResTest-50K/mean_std_cache.p
+loaded mean / std from cache
+#training meshes = 1
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.561 M
+-----------------------------------------------
+saving the latest model (epoch 1, total_steps 1)
+loaded mean / std from cache
+saving the model at the end of epoch 1, iters 1
+learning rate = 0.0002000
+Epoch 1/3 | time: 15.2380 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+saving the latest model (epoch 2, total_steps 2)
+loaded mean / std from cache
+saving the model at the end of epoch 2, iters 2
+learning rate = 0.0000000
+Epoch 2/3 | time: 15.1159 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+Early Stopping: val_loss did not lower, patience 1/5
+saving the latest model (epoch 3, total_steps 3)
+loaded mean / std from cache
+saving the model at the end of epoch 3, iters 3
+learning rate = -0.0002000
+Epoch 3/3 | time: 15.1453 - train_acc: 100.00% - train_loss: 0.0000 - val_acc: 100.00% - val_loss: 0.0000
+Early Stopping: val_loss did not lower, patience 2/5
+------------ Options -------------
+amsgrad: True
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+csv: True
+dataroot: ./data/datasets/ResTest-100K
+dataset_mode: classification
+dropout: [0.0]
+epoch_count: 1
+export_folder: 
+fc_n: [100]
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MeshCN-ResTest-100K
+ncf: [64, 128, 256, 256]
+ninput_edges: 100000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+optimizer: adam
+phase: train
+plus: False
+pool_res: [80000, 60000, 40000, 24000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+validation: True
+verbose_plot: False
+verbose_train: True
+which_epoch: latest
+-------------- End ----------------
+computing mean std from train data...
+0 of 1
+saved:  ./data/datasets/ResTest-100K/mean_std_cache.p
+loaded mean / std from cache
+#training meshes = 1
+---------- Network initialized -------------
+[Network] Total number of parameters : 0.561 M
+-----------------------------------------------
+Traceback (most recent call last):
+  File "./networks/MeshCNNPlus/development/meshcnn/train.py", line 106, in <module>
+    model.optimize_parameters()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 84, in optimize_parameters
+    out = self.forward()
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/mesh_classifier.py", line 75, in forward
+    out = self.net(self.edge_features, self.mesh)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/homeGPU/vlugli/condaEnvs/meshcnnplus/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/networks.py", line 165, in forward
+    x = getattr(self, 'pool{}'.format(i))(x, mesh)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 21, in __call__
+    return self.forward(fe, meshes)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 34, in forward
+    self.__pool_main(mesh_index)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_pool.py", line 59, in __pool_main
+    fe = edge_groups.rebuild_features(self.__fe[mesh_index], mask, self.__out_target)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_union.py", line 28, in rebuild_features_average
+    self.prepare_groups(features, mask)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MeshCNNPlus/development/meshcnn/models/layers/mesh_union.py", line 40, in prepare_groups
+    self.groups = torch.clamp(self.groups[tensor_mask, :], 0, 1).transpose_(1, 0)
+RuntimeError: CUDA out of memory. Tried to allocate 29.80 GiB (GPU 0; 47.46 GiB total capacity; 37.39 GiB already allocated; 9.16 GiB free; 37.42 GiB reserved in total by PyTorch)

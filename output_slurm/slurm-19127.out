@@ -1,0 +1,183 @@
+------------ Options -------------
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/ResTest-30K
+dataset_mode: classification
+epoch_count: 1
+export_folder: 
+fc_n: 100
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MedMeshCNN-ResTest-30K
+ncf: [64, 128, 256, 256]
+ninput_edges: 30000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+phase: train
+pool_res: [24000, 18000, 12000, 7200]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+verbose_plot: False
+weighted_loss: [0.25, 0.25, 0.25, 0.25]
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 1
+Traceback (most recent call last):
+  File "./networks/MedMeshCNN/train.py", line 16, in <module>
+    model = create_model(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/__init__.py", line 3, in create_model
+    model = ClassifierModel(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/mesh_classifier.py", line 33, in __init__
+    self.gpu_ids, opt.arch, opt.init_type, opt.init_gain)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 102, in define_classifier
+    opt.resblocks)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 133, in __init__
+    norm_args = get_norm_args(norm_layer, self.k[1:])
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 38, in get_norm_args
+    raise NotImplementedError('normalization layer [%s] is not found' % norm_layer.func.__name__)
+NotImplementedError: normalization layer [BatchNorm2d] is not found
+------------ Options -------------
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/ResTest-50K
+dataset_mode: classification
+epoch_count: 1
+export_folder: 
+fc_n: 100
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MedMeshCNN-ResTest-50K
+ncf: [64, 128, 256, 256]
+ninput_edges: 50000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+phase: train
+pool_res: [40000, 30000, 20000, 12000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+verbose_plot: False
+weighted_loss: [0.25, 0.25, 0.25, 0.25]
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 1
+Traceback (most recent call last):
+  File "./networks/MedMeshCNN/train.py", line 16, in <module>
+    model = create_model(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/__init__.py", line 3, in create_model
+    model = ClassifierModel(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/mesh_classifier.py", line 33, in __init__
+    self.gpu_ids, opt.arch, opt.init_type, opt.init_gain)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 102, in define_classifier
+    opt.resblocks)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 133, in __init__
+    norm_args = get_norm_args(norm_layer, self.k[1:])
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 38, in get_norm_args
+    raise NotImplementedError('normalization layer [%s] is not found' % norm_layer.func.__name__)
+NotImplementedError: normalization layer [BatchNorm2d] is not found
+------------ Options -------------
+arch: mconvnet
+batch_size: 1
+beta1: 0.9
+checkpoints_dir: ./checkpoints
+continue_train: False
+dataroot: ./data/datasets/ResTest-100K
+dataset_mode: classification
+epoch_count: 1
+export_folder: 
+fc_n: 100
+flip_edges: 0.0
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+is_train: True
+lr: 0.0002
+lr_decay_iters: 50
+lr_policy: lambda
+max_dataset_size: inf
+name: MedMeshCNN-ResTest-100K
+ncf: [64, 128, 256, 256]
+ninput_edges: 100000
+niter: 3
+niter_decay: 0
+no_vis: False
+norm: batch
+num_aug: 1
+num_groups: 1
+num_threads: 2
+phase: train
+pool_res: [80000, 60000, 40000, 24000]
+print_freq: 9999
+resblocks: 0
+run_test_freq: 9999
+save_epoch_freq: 1
+save_latest_freq: 250
+scale_verts: False
+seed: 16
+serial_batches: False
+slide_verts: 0.0
+verbose_plot: False
+weighted_loss: [0.25, 0.25, 0.25, 0.25]
+which_epoch: latest
+-------------- End ----------------
+loaded mean / std from cache
+#training meshes = 1
+Traceback (most recent call last):
+  File "./networks/MedMeshCNN/train.py", line 16, in <module>
+    model = create_model(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/__init__.py", line 3, in create_model
+    model = ClassifierModel(opt)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/mesh_classifier.py", line 33, in __init__
+    self.gpu_ids, opt.arch, opt.init_type, opt.init_gain)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 102, in define_classifier
+    opt.resblocks)
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 133, in __init__
+    norm_args = get_norm_args(norm_layer, self.k[1:])
+  File "/mnt/homeGPU/vlugli/tfg/networks/MedMeshCNN/models/networks.py", line 38, in get_norm_args
+    raise NotImplementedError('normalization layer [%s] is not found' % norm_layer.func.__name__)
+NotImplementedError: normalization layer [BatchNorm2d] is not found
