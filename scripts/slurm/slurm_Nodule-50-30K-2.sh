@@ -24,7 +24,7 @@
 #SBATCH --gres=gpu:1
 
 # Assign job to a particular node
-#SBATCH --nodelist=dionisio
+#SBATCH --nodelist=hera
 
 # Default configs for NGPU
 export PATH="/opt/anaconda/anaconda3/bin:$PATH"
@@ -40,7 +40,7 @@ conda activate /mnt/homeGPU/vlugli/condaEnvs/meshcnnplus
 trainPath=("./networks/MeshCNNPlus/development/meshcnn/train.py")
 testPath=("./networks/MeshCNNPlus/development/meshcnn/test.py")
 dataPath=("./data/datasets/Nodule-50-30K")
-testName=("Nodule-50-30K-7")
+testName=("Nodule-50-30K-2")
 
 basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges 30000")
 basicTrainParams=("--print_freq 9999 --run_test_freq 9999 --validation --verbose_train")
@@ -53,15 +53,15 @@ batchSize=("1")
 epochs=("50")
 epochsWithLRDecay=("10")
 
-conv=("32 64 256 256")
+conv=("64 128 256 256")
 pool=("20000 15000 10000 5000")
-resBlocks=("0")
+resBlocks=("1")
 normalization=("batch")
 
-dense=("2042 512 128")
-dropout=("0.5 0.5 0.5")
+dense=("100")
+dropout=("0")
 
-netArch=("--amsgrad --arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 1  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
+netArch=("--arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 1  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
 
 # Data augmentation
 ###################
