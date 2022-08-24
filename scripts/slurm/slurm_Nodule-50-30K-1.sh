@@ -53,7 +53,7 @@ batchSize=("1")
 epochs=("50")
 epochsWithLRDecay=("10")
 
-conv=("16 16 32 64")
+conv=("64 128 256 256")
 pool=("20000 15000 8000 7500")
 resBlocks=("0")
 normalization=("group")
