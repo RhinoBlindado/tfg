@@ -39,10 +39,10 @@ conda activate /mnt/homeGPU/vlugli/condaEnvs/meshcnnplus
 ##################
 trainPath=("./networks/MeshCNNPlus/development/meshcnn/train.py")
 testPath=("./networks/MeshCNNPlus/development/meshcnn/test.py")
-dataPath=("./data/datasets/Nodule-98-30K")
-testName=("Nodule-98-30K-7rev")
+dataPath=("./data/datasets/X")
+testName=("X")
 
-basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges 30000")
+basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges X")
 basicTrainParams=("--print_freq 9999 --run_test_freq 9999 --validation --verbose_train")
 
 # Network architecture

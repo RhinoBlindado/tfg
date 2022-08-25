@@ -56,12 +56,12 @@ epochsWithLRDecay=("10")
 conv=("64 128 256 256")
 pool=("20000 15000 10000 5000")
 resBlocks=("1")
-normalization=("batch")
+normalization=("group")
 
 dense=("100")
 dropout=("0")
 
-netArch=("--arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 1  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
+netArch=("--arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 16  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
 
 # Data augmentation
 ###################

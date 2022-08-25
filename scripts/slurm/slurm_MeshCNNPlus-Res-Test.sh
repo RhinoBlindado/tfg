@@ -69,7 +69,7 @@ dataAug=("--flip_edges ${edgeFlip} --num_aug ${numAug} --slide_verts ${slideVert
 # 30K Edges
 
 dataPath=("./data/datasets/ResTest-30K")
-testName=("MeshCN-ResTest-30K")
+testName=("MeshCNNPlus-ResTest-30K")
 
 basicParams=("${trainPath} --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges 30000")
 basicTrainParams=("--print_freq 9999 --run_test_freq 9999")

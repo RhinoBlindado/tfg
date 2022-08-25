@@ -1,18 +1,32 @@
 #!/bin/bash
 
-# Asigna al trabajo un nombre
-#SBATCH --job-name=N-50-30K-7
+# [CASTELLANO]
+#
+#    Entrenamiento de modelo SHREC16
+#    Asignatura: Trabajo de Fin de Grado
+#    Autor: Valentino Lugli (Github: @RhinoBlindado)
+#    2022
+#
+# [ENGLISH]
+#
+#    Training for model SHREC16
+#    Course: Bachelor's Thesis
+#    Author: Valentino Lugli (Github: @RhinoBlindado)
+#    2022
 
-# Asignar el trabajo a una partición (cola)
+# Job name
+#SBATCH --job-name=SHREC16
+
+# Assign job to a queue
 #SBATCH --partition=dios
 
-# Asignar el trabajo a un GPU
+# Use GPU
 #SBATCH --gres=gpu:1
 
-# Asignar el trabajo a un nodo en particular.
+# Assign job to a particular node
 #SBATCH --nodelist=dionisio
 
-# Configuraciones por defecto de NGPU
+# Default configs for NGPU
 export PATH="/opt/anaconda/anaconda3/bin:$PATH"
 export PATH="/opt/anaconda/bin:$PATH"
 eval "$(conda shell.bash hook)"
@@ -23,52 +37,48 @@ conda activate /mnt/homeGPU/vlugli/condaEnvs/meshcnnplus
 
 # Basic parameters
 ##################
-
 trainPath=("./networks/MeshCNNPlus/development/meshcnn/train.py")
 testPath=("./networks/MeshCNNPlus/development/meshcnn/test.py")
-dataPath=("./data/datasets/Nodule-50-30K")
-testName=("Nodule-50-30K-7")
+dataPath=("./data/datasets/shrec_16")
+testName=("shrec_16")
 
-basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges 30000")
+basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2 --ninput_edges 750")
 basicTrainParams=("--print_freq 9999 --run_test_freq 9999 --validation --verbose_train")
 
 # Network architecture
 ######################
-
 optimizer=("adam")
 
-batchSize=("1")
-epochs=("50")
-epochsWithLRDecay=("10")
+batchSize=("16")
+epochs=("100")
+epochsWithLRDecay=("200")
 
-conv=("32 64 256 256")
-pool=("20000 15000 10000 5000")
-resBlocks=("0")
-normalization=("batch")
+conv=("64 128 256 256")
+pool=("600 450 300 180")
+resBlocks=("1")
+normalization=("group")
 
-dense=("2042 512 128")
-dropout=("0.5 0.5 0.5")
+dense=("100")
+dropout=("0")
 
-netArch=("--amsgrad --arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 1  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
+netArch=("--arch mconvnet --batch_size ${batchSize} --dropout ${dropout} --fc_n ${dense} --gpu_ids 0 --ncf ${conv} --niter ${epochs} --niter_decay ${epochsWithLRDecay} --norm ${normalization} --num_groups 16  --optimizer ${optimizer} --pool_res ${pool} --resblocks ${resBlocks}")
 
 # Data augmentation
 ###################
-
 edgeFlip=("0.2")
-numAug=("2")
+numAug=("20")
 slideVerts=("0.2")
 
 dataAug=("--flip_edges ${edgeFlip} --num_aug ${numAug} --slide_verts ${slideVerts}")
 
 # Training
 ##########
-
 python $basicParams $basicTrainParams $netArch $dataAug
 
 # Test
 ######
 python $testPath $basicParams $netArch --verbose --confusion_matrix --export_folder meshes
 
-# Send mail notification
-# - No longer working.
+# Notify
+########
 #mail -s "Entrenamiento ${testName} finalizado" valentinolugli@correo.ugr.es <<< "Hora finalización: $(date)"
