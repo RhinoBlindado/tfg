@@ -56,7 +56,7 @@ epochsWithLRDecay=("50")
 conv=("16 16 32 32 64")
 pool=("20000 15000 13000 8000 7500")
 resBlocks=("0")
-normalization=("group")
+normalization=("batch")
 
 dense=("100")
 dropout=("0")
