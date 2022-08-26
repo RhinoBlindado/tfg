@@ -15,7 +15,7 @@
 #    2022
 
 # Job name
-#SBATCH --job-name=N50-30K-1
+#SBATCH --job-name=N5030K1
 
 # Assign job to a queue
 #SBATCH --partition=dios

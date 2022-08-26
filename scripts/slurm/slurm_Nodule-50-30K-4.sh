@@ -15,7 +15,7 @@
 #    2022
 
 # Job name
-#SBATCH --job-name=N50-30K-4
+#SBATCH --job-name=N5030K-4
 
 # Assign job to a queue
 #SBATCH --partition=dios
@@ -24,7 +24,7 @@
 #SBATCH --gres=gpu:1
 
 # Assign job to a particular node
-#SBATCH --nodelist=dionisio
+#SBATCH --nodelist=hera
 
 # Default configs for NGPU
 export PATH="/opt/anaconda/anaconda3/bin:$PATH"

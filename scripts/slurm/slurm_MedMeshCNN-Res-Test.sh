@@ -33,7 +33,7 @@ eval "$(conda shell.bash hook)"
 export TFHUB_CACHE_DIR=.
 
 # Activating conda enviroment
-conda activate /mnt/homeGPU/vlugli/condaEnvs/meshcnnplus
+conda activate /mnt/homeGPU/vlugli/condaEnvs/medmesh
 
 # Basic parameters
 ##################
@@ -50,7 +50,7 @@ epochsWithLRDecay=("0")
 
 conv=("64 128 256 256")
 resBlocks=("0")
-normalization=("batch")
+normalization=("none")
 
 dense=("100")
 dropout=("0")
