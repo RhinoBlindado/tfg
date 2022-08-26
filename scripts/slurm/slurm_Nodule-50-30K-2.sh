@@ -42,7 +42,7 @@ testPath=("./networks/MeshCNNPlus/development/meshcnn/test.py")
 dataPath=("./data/datasets/Nodule-50-30K")
 testName=("Nodule-50-30K-2")
 
-basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --seed 16 --ninput_edges 30000")
+basicParams=("${trainPath} --csv --dataroot ${dataPath} --name ${testName} --num_threads 2  --ninput_edges 30000")
 basicTrainParams=("--print_freq 9999 --run_test_freq 9999 --validation --verbose_train")
 
 # Network architecture
@@ -54,7 +54,7 @@ epochs=("50")
 epochsWithLRDecay=("10")
 
 conv=("64 128 256 256")
-pool=("20000 15000 10000 5000")
+pool=("24000 18000 12000 7200")
 resBlocks=("1")
 normalization=("group")
 
