@@ -1,7 +1,7 @@
 """
  [CASTELLANO]
 
-    Generar un dataset con carpetas a partir de ficheros OBJ etiquetados,
+    Generar un dataset con carpetas a partir de ficheros OBJ etiquetados.
     Asignatura: Trabajo de Fin de Grado
     Autor: Valentino Lugli (Github: @RhinoBlindado)
     2022
