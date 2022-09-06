@@ -1,0 +1,1 @@
+## Se recomienda utilizar esta carpeta para los _enviroments_ de Anaconda.

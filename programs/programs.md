@@ -1,0 +1,1 @@
+## Se recomienda utilizar esta carpeta para almacenar _Blender_ o _MeshLab_
