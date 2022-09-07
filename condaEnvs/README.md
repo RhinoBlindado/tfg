@@ -1,6 +1,6 @@
 # `condaEnvs`
 ## Information
-- Folder used to store the Anaconda environments used, not strictly necessary but the Slurm scripts reference this folder.
+- Folder used to store the Anaconda environments, not strictly necessary but Slurm scripts reference this folder.
 - The `.yml` files included contain the libraries used for each framework.
    - For MeshCNN and MeshCNNPLus: `enviroment_meshcnn_and_plus.yml`
    - For MedMeshCNN: `enviroment_medmesh.yml`
