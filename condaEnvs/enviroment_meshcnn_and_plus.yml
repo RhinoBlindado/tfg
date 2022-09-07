@@ -1,0 +1,16 @@
+name: meshcnn_plus
+channels:
+  - defaults
+dependencies:
+  - pytorch=1.2.0
+  - python=3.6.8
+  - cython=0.27.3
+  - numpy=1.15.0
+  - matplotlib=3.0.3
+  - pandas
+  - tabulate
+  - scikit-learn
+  - spyder
+  - pip:
+    - pymeshlab
+prefix: /media/valentino/Irithyll/tfg/condaEnvs/meshcnn_plus
