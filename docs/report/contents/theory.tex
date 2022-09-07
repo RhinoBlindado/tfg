@@ -1,0 +1,186 @@
+\chapter{Fundamentos Teóricos}
+Este capítulo tiene como objetivo introducir y explicar los fundamentos teóricos en los que se basan los métodos empleados en el trabajo, así como de su relevancia para la resolución del problema planteado.
+
+\section{Aprendizaje Automático}
+El Aprendizaje Automático o \textit{Machine Learning} (ML) \cite{abu-mostafa_learning_2012, mitchell_introduction_1997, 6284961} es una rama dentro de la IA centrada en desarrollar programas informáticos para resolver tareas complejas en donde no existe una solución analítica. Es decir, no es posible describir un algoritmo que dados los datos de entrada a dicho problema, los transforme a los datos de salida esperados. En esta situación, en muchas ocasiones se carece de detallados conocimientos de descripción del problema, que se pueden intentar compensar con datos relacionados al mismo. Dichos datos pueden ser utilizados para obtener una solución empírica, es decir, se está \say{aprendiendo} de los datos. De ellos se extraen patrones o reglas para construir un algoritmo aproximado, conocido como un modelo, capaz de resolver dicha tarea incluso al recibir datos nunca vistos. Se puede definir más formalmente que un programa aprende de la experiencia $E$ con respecto a alguna clase de tareas $T$ y una métrica de rendimiento $P$ si su rendimiento en las tareas $T$, medido con $P$, mejora con la experiencia $E$. Dicho aprendizaje se puede dividir en dos grandes grupos: supervisado y no supervisado. En el primero se poseen datos de entrada y su correspondiente salida correcta, mientras que en el segundo, solo se poseen los datos de entrada y se espera que el programa encuentre patrones dentro de los mismos.
+
+En general, los problemas a los que es práctico aplicar ML son aquellos donde (a) se poseen vastas bases de datos en las que se desea obtener patrones en los propios datos, lo que se conoce como minería de datos o \textit{data mining} \cite{alma991006986149704990}, (b) aquellos problemas cuyos dominios no están bien entendidos o bien donde un humano no es capaz de expresarlo de una manera descriptiva para poder desarrollar un algoritmo, por ejemplo, problemas relacionados con detección de objetos en una imagen o (c) dominios donde el programa debe adaptarse dinámicamente a condiciones cambiantes \cite{mitchell_introduction_1997}. 
+
+Puede observarse que, dada estas descripciones, al problema presente es posible aplicarle ML: se poseen datos de entrada (los huesos de la sínfisis del pubis) y se tienen unos datos de salida (que serían los atributos que posee dicho hueso dentro de las 9 categorías del método de Todd). Además los antropólogos forenses poseen el conocimiento experto para identificar dichos patrones pero no pueden expresar dicho conocimiento de forma analítica. Es un problema de aprendizaje supervisado, específicamente un problema de clasificación, pues efectivamente se tiene que clasificar cada hueso en diferentes atributos de las categorías presentadas por el método de Todd.
+
+\section{Aprendizaje Profundo}
+\label{section:DL}
+El Aprendizaje Profundo o \textit{Deep Learning} (DL) \cite{Goodfellow-et-al-2016, lecun_deep_2015, schmidhuber_deep_2015} es una técnica perteneciente a ML en la que las características relevantes de los datos del problema son aprendidas y extraídas automáticamente por el propio modelo. Esto a diferencia de otras áreas de ML donde las características son obtenidas a mano o \textit{handcrafted}, en la que un experto humano se encarga de obtenerlas utilizando su conocimiento del problema. Se ha visto que para problemas excepcionalmente complejos, las características \textit{handcrafted} tienden a ser más complejas y poseen un peor desempeño que las características extraídas automáticamente. 
+
+El modelo más utilizado en DL se conoce como red neuronal artificial o \textit{artificial neural network} (ANN) \cite{bishop_ANN, ripley_ANN}, en donde se poseen nodos de cómputo que se denominan \say{neuronas} \footnote{Su origen es bioinspirado en la corteza visual del cerebro, aunque no son modelos que simulen como tal su funcionamiento.} conectadas entre sí en capas. La red posee una capa de entrada, la cual recibe los datos en bruto y se conecta a una o varias capas \say{ocultas} que a su vez se conectan con la capa de salida. Esta serie de capas son las que permiten extraer y aprender las características relevantes de los datos, en las capas iniciales se extraen características de bajo nivel y con cada siguiente capa se va abstrayendo más y más la representación de los datos para obtener características de alto nivel que facilitan la resolución del problema propuesto. El número de capas que posee una ANN indica su profundidad, de aquí proviene el nombre de aprendizaje \textit{profundo}, al utilizar más capas, por lo general se puede aprender mejor. Un ejemplo de una ANN clásica puede visualizarse en la Figura \ref{fig:annExample}, donde también se puede observar la distinción entre una red superficial y una profunda.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/neuralNetDiagram.png}
+    \caption[Ejemplos de la estructura de una ANN]{Ejemplos típicos de la estructura de una ANN, en este caso se tiene una red superficial o \textit{shallow} y una profunda o \textit{deep} \cite{annPictureSource}.}
+    \label{fig:annExample}
+\end{figure}
+
+Cada neurona, como se ha visto, tiene varios valores de entrada y un valor de salida que es utilizado como entrada para la siguiente capa, también posee una función no lineal\footnote{De ser una función lineal, la red entera se simplificaría a una sola neurona, obteniendo un modelo lineal, esto se debe a que combinaciones de funciones lineales dan como resultado otra función lineal.} o de activación que transforma los datos de entrada en el valor de salida transmitido. La función de activación puede verse también como una especie de umbral, pues al ser no lineal, permite que la red pueda amplificar ciertos datos e ignorar otros dependiendo de lo que se desea aprender. Esto se realiza por medio de los pesos, que son valores asociados a cada entrada de cada neurona, así como un valor adicional conocido como sesgo o \textit{bias}. Variar los pesos y el sesgo permite amplificar o reducir la señal que poseen los datos al ser procesados por la función de activación, un ejemplo visual de una neurona puede observarse en la Figura \ref{fig:artificialNeuronExample}. 
+
+Existen multitud de funciones de activación, pero las más comunes y utilizadas son la función sigmoidal o logística, la función de la tangente hiperbólica y la ReLU o \textit{Rectified Linear Unit}, la decisión de utilizar alguna función en particular dependerá del problema a resolver.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/artificialNeuron.png}
+    \caption[Ejemplo de una neurona artificial]{Ejemplo de una neurona artificial, los datos de entrada son multiplicados por los pesos y su resultado, junto con el sesgo (o \textit{bias}), son combinados linealmente. A continuación, son transformados por la función no lineal para proporcionar el valor salida de la neurona \cite{artificialNeuron}.}
+    \label{fig:artificialNeuronExample}
+\end{figure}
+
+El aprendizaje de una ANN es en esencia un ajuste de los pesos y el sesgo de cada neurona para que, una vez sean transformados estos datos por la función de activación, se puedan extraer y transformar las características relevantes de los mismos. Para ello, primero se procesan los datos hacia delante, es decir, se procesan los datos desde la capa de entrada, pasando por las capas ocultas hasta llegar a la capa de salida. Esto se conoce como \textit{foward propagation}, dónde se calculan los valores de salida de cada neurona y eventualmente un valor de salida de la red entera. Aquí es donde se utiliza una función adicional e igualmente importante: la función de pérdida o error, esta función toma los valores de salida de la red y calcula un valor de error, que se puede interpretar como lo bien que la red ha aprendido de los datos. Existen múltiples funciones de pérdida dependiendo del tipo de aprendizaje y la clase de problemas que se están tratando. Utilizando este valor de error, se aplica el algoritmo de \textit{backpropagation} que obtiene las derivadas de los pesos y sesgo para cada neurona con respecto a ese error. Se recalculan los valores de los pesos haciendo uso de otro algoritmo, conocido como el optimizador u \textit{optimizer}, que usando los valores de las derivadas, calcula los nuevos valores para cada uno de los pesos de la red con el objetivo de minimizar todo lo posible el error obtenido.
+
+Este proceso iterativo se conoce como entrenamiento, y es lo que permite que los pesos se vayan ajustando a los datos de tal forma que aprendan \say{a fuerza} las características que mejor reducen el valor de error. Es importante mencionar que, dada esta forma de aprendizaje, es posible incurrir en un problema muy típico de ML que se conoce como sobreentrenamiento u \textit{overfitting}. Este fenómeno ocurre cuando el modelo se ajusta demasiado bien a los datos de entrenamiento y no es capaz de generalizar el conocimiento adquirido para aplicarlo a datos nunca antes vistos. es decir, que en los datos de entrenamiento se obtiene un valor de error muy bajo y en datos nunca vistos se obtiene un error substancialmente más alto. 
+
+\subsection{Redes Neuronales Convolucionales}
+\label{cnnDescription}
+Las redes neuronales convolucionales o \textit{convolutional neural networks} (CNN) \cite{lecun_backpropagation_1989, leCUM_CNN} son un tipo de ANN más comúnmente utilizadas en el procesamiento, clasificación y segmentación de imágenes, pero también se han descubierto que son aplicables para el procesado de texto, sonidos y, de manera más reciente, en superficies tridimensionales. A diferencia de una ANN clásica, donde todas las neuronas están totalmente conectadas entre sí, una CNN posee dos tipos de capas adicionales: capas convolucionales y capas de \textit{pooling}. La estructura básica de este modelo puede visualizarse en la Figura \ref{fig:cnnExample}, donde se puede apreciar que una CNN se encuentra dividida en dos partes: una que posee solamente capas convolucionales y de \textit{pooling} utilizada para la extracción de características y otra que se asemeja a una ANN clásica, donde se aprenden combinaciones no lineales que ayudan a la red a clasificar los datos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/cnnExample.jpeg}
+    \caption[Estructura básica de una red neuronal convolucional]{Estructura básica de una CNN donde se pueden apreciar las diferentes capas que la componen \cite{prabhu_understanding_2019}.}
+    \label{fig:cnnExample}
+\end{figure}
+
+\subsection{Capa convolucional}
+La capa convolucional es lo que caracteriza a una CNN, en estas capas cada neurona en vez de estar conectada con todas las neuronas de las capas vecinas, está solamente conectada con un vecindario local de neuronas, esto es posible al usar la operación de convolución para procesar las imágenes de entrada\footnote{De aquí en adelante, por comodidad, se explicará la CNN clásica que procesa imágenes, pero su funcionamiento es similar al procesar otros tipos de datos.}.
+
+Una convolución es el producto punto entre dos matrices: una es el conjunto de pesos que la red puede aprender y modificar que se denomina como el \textit{kernel}, filtro o núcleo de la convolución y la otra es un trozo de la imagen denominado como campo receptivo o \textit{receptive field} que son aquellos píxeles con los que el \textit{kernel} se puede multiplicar en ese momento (véase Figura \ref{fig:convolution} para un ejemplo visual). El \textit{kernel} se va desplazando por la imagen, comienza en una esquina, moviéndose hacia la otra de fila en fila hasta recorrer la imagen entera. La matriz resultante es luego procesada por la función no lineal, al igual que en una neurona clásica y al resultado se le denomina como mapa de características o de activación y servirá de entrada para la siguiente capa de la red. Por medio de este proceso, la red es capaz de capturar dependencias temporales y espaciales en los datos con la aplicación de los filtros relevantes, ya que, al aprender los valores que deben de aplicarse a los filtros, la red será capaz de extraer las características relevantes de la imagen. De forma análoga a las ANNs clásicas, las primeras capas obtienen características de bajo nivel que serán utilizadas por las siguientes capas convolucionales para poder extraer características de más alto nivel.
+
+Cabe mencionar que aplicar el operador de convolución directamente sobre la imagen, por la propia naturaleza del operador, resulta en una reducción del tamaño del mapa de activación. Esto no siempre es deseable y por lo tanto, se puede añadir relleno o \textit{padding} a la imagen de entrada utilizando información ya presente en la misma, para que el mapa de activación posea la misma dimensionalidad que la imagen de entrada. También es posible reducir aún más la salida modificando los saltos o \textit{strides} que da el filtro de convolución al recorrer la imagen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/convolution.png}
+    \caption[Ejemplo del operador de convolución]{Ejemplo de una convolución 2D con un \textit{kernel} $3 \times 3$. El campo receptivo para la neurona actual es la submatriz $3\times3$ de la imagen original con la que se está multiplicando el \textit{kernel} \cite{noauthor_what_2021}.}
+    \label{fig:convolution}
+\end{figure}
+
+\subsection{Capa de \textit{pooling}}
+
+Las capas de \textit{pooling} tienen como único objetivo reducir la dimensionalidad del mapa de activación de las capas convolucionales, y por lo tanto, se añaden justamente después de las mismas. Si bien es cierto que la propia convolución permite una reducción de la salida, se prefiere el uso de capas de \textit{pooling} para esta tarea, pues es una manera más controlada de reducir el tamaño y además provee de beneficios a la extracción de características.
+
+El \textit{pooling}, al igual que la convolución, posee un filtro o ventana que recorre los datos dado un salto o \textit{stride} al moverse por los mismos, con la diferencia que, en vez de aplicar una convolución, se pueden aplicar operaciones para obtener ya sea el valor promedio de los datos sobre el filtro, \textit{average pooling} o el valor máximo, \textit{max pooling}. En ambos casos se genera un efecto de invarianza ligera a la traslación y reducción de ruido, siendo más fuerte en la operación de \textit{max pooling}. Ejemplos de estas operaciones se pueden apreciar mejor en la Figura \ref{fig:poolingExample}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/poolingExample.png}
+    \caption[Ejemplo del operador de pooling]{Ejemplo de las operaciones de \textit{pooling} con un filtro $2\times2$ y \textit{stride} 2 \cite{pooling}.}
+    \label{fig:poolingExample}
+\end{figure}
+
+Las capas convolucionales y las capas de \textit{pooling} juntas conforman las capas de procesado y extracción de características de las CNNs, y naturalmente, dependiendo de la complejidad del problema, el número de dichas capas será ampliado o reducido para así lograr extraer las características necesarias para el aprendizaje.
+
+\subsection{Capa totalmente conectada}
+Las capas totalmente conectadas o \textit{fully connected}, también llamadas capas densas o \textit{dense} aparecen después de todas las capas de convolución y \textit{pooling}, y en esencia, estas capas forman una ANN clásica donde todas las neuronas están conectadas con las neuronas de las capas vecinas, que toma de entrada las características extraídas de los datos y de las mismas aprenderá combinaciones no lineales, para poder cumplir con el objetivo de la red, ya sea de clasificar o de estimar un valor numérico, por ejemplo.
+
+La salida de la última capa densa, siendo la salida de la red entera, es donde se evaluará la función de pérdida elegida, y al igual que en una red neuronal clásica, se utilizará este valor para ajustar los pesos de toda la red mientras se encuentre en entrenamiento, por medio del \textit{backpropagation} y el algoritmo optimizador seleccionado.
+
+\subsection{Regularización}
+\label{subsection:regularization}
+Como se ha comentado anteriormente, tanto las ANNs como las CNNs son propensas al fenómeno de sobreentrenamiento u \textit{overfitting}. La regularización es un método utilizado para combatir este fenómeno y en esencia lo que se quiere es controlar la complejidad del modelo, ya sea alterando los datos, el número de parámetros o el funcionamiento de la red. En general, la regularización es cualquier modificación que se puede realizar al modelo para que generalice mejor.
+
+Se compone de múltiples técnicas diferentes, pero las más relevantes y utilizadas en CNNs son: La normalización, \textit{data augmentation}, la inicialización de los pesos y \textit{dropout}.
+
+\subsubsection{Normalización}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/normTypes.png}
+    \caption[Tipos de normalización]{Diferentes tipos de normalización. \textbf{H,W} indican la altura y anchura de la imagen, \textbf{C} indica los canales y \textbf{N} el número de lotes \cite{wu2018group}.}
+    \label{fig:normTypes}
+\end{figure}
+
+La normalización es una técnica que estandariza los datos de manera que el valor medio de los mismos sea cercano a 0, con una desviación estándar cercana a 1, empíricamente se ha demostrado que esto mejora el rendimiento de las redes, pues evita que los pesos posean valores muy grandes, lo que afecta el cálculo de gradientes. 
+
+Por lo general la normalización se aplica a las capas convolucionales de la red y la manera típica de utilizarla es haciendo uso de la normalización por lotes o \textit{batch normalization}, en donde se aplica la estandarización a una característica $i$-ésima de entrada calculando la media y desviación típica de todas las características $i$-ésimas del lote. Existe también la normalización por capa o \textit{layer normalization} que aplica la media y desviación típica por cada capa independiente del lote, la normalización por grupo o \textit{group normalization} que aplica la normalización a un grupo de canales pero no toda la capa entera. Por último se tiene la normalización por instancia o \textit{instance normalization} que normaliza cada canal por separado. El uso de un tipo u otro de normalización depende de la tarea a cumplir, pues se sabe que empíricamente diferentes tipos producen mejores modelos en diferentes problemas. Un ejemplo visual de todos los tipos de normalización se puede observar en la Figura \ref{fig:normTypes}. 
+
+\subsubsection{\textit{Data Augmentation}}
+El aumento de datos o \textit{data augmentation}, es una técnica para aumentar la cantidad de datos que se poseen de manera artificial, significa que, se generan nuevos datos de los ya presentes mediante la aplicación de transformaciones aleatorias pero realistas. Por ejemplo, escalados no uniformes de la imagen, rotaciones, traslaciones, adición de ruido o transformaciones de perspectiva. De esta manera se poseen más muestras de entrenamiento diferentes, lo que reduce la posibilidad de \textit{overfitting} porque la red tendrá más datos con los que trabajar y las modificaciones realizadas ayudan a la red a tener una idea más general de lo que se está aprendiendo.
+
+\subsubsection{Inicialización de los pesos}
+Como ha sido mencionado, las ANNs y CNNs utilizan pesos y sesgos en cada neurona, que son modificados en el entrenamiento por un algoritmo de optimización. Estos algoritmos necesitan un valor inicial que sea diferente de 0 al comienzo de dicho entrenamiento para funcionar, y la elección de estos valores afecta de gran forma al entrenamiento de la red, por lo tanto, se considera también como una técnica de regularización.
+
+Se pueden inicializar los valores de forma aleatoria utilizando una distribución normal o uniforme que no toma en cuenta ningún parámetro de la red. Aún así, existen diversas heurísticas que se han desarrollado sobre los años que se ha comprobado mejoran el entrenamiento de los modelos. Por ejemplo, se tiene la inicialización Xavier \cite{glorot2010understanding} que parte de una distribución uniforme pero que toma en cuenta la cantidad de entradas que posee cada neurona, por lo que la inicialización está parcialmente guiada por la densidad de las capas. Otra inicialización heurística se denomina Kaiming \cite{he2015delving} y genera los valores por medio de una distribución normal acotada por el número de entradas de la capa.
+
+\subsubsection{\textit{Dropout}}
+La técnica de abandono o \textit{dropout} consiste en apagar o desactivar temporalmente cierta cantidad de neuronas en las capas totalmente conectadas de forma aleatoria durante el proceso de entrenamiento. La aplicación del \textit{dropout} hace que la red generalice mejor, pues las neuronas en una capa totalmente conectada tienden a generar una codependencia entre ellas, es decir, que ciertas neuronas se adaptan para contrarrestar los errores de otras neuronas y debido a que estos errores dependen de los datos de entrenamiento, no se generalizará bien para nuevos datos. Por lo tanto el \textit{dropout} permite evitar estas codependencias e impulsar el poder individual de cada neurona, lo cual aumenta el poder de generalización de la red.
+
+\section{Representaciones 3D en \textit{Deep Learning}}
+\label{3d_reps}
+Debido a que las CNNs fueron originalmente diseñadas para trabajar con imágenes, datos bidimensionales regulares, no existe todavía un consenso para la mejor representación de modelos 3D, ya que se tiene la complicada tarea de adaptar estos métodos y técnicas a datos tridimensionales irregulares. Adicionalmente, se trata de un área de investigación bastante reciente.
+
+Aún así, con el auge de dispositivos más accesibles para la digitalización y generación de modelos 3D a partir de objetos físicos, la abundancia de modelos generados por ordenador y del surgumiento del concurso anual SHREC \cite{noauthor_shrec2022_nodate} (\textit{3D Shape Retrieval Challenge}, Reto de Recuperación de Modelos 3D) existen hoy en día múltiples maneras en las que se han logrado representar la información 3D para ser procesada por una CNN con diferentes puntos a favor y en contra.
+
+Actualmente se distinguen 5 categorías de representaciones tridimensionales, véase la Figura \ref{fig:3dTaxonomy}: Datos en bruto, sólidos, superficies, estructuras de alto nivel y datos de múltiples vistas, adicionalmente a ello, estas representaciones pueden a su vez clasificarse en datos euclídeos y no euclídeos, es decir, si los datos poseen o no una estructura euclídea subyacente, poseen una parametrización global o un sistema de coordenadas común. Esta taxonomía fue descrita por primera vez por Ahmed et al. \cite{ahmed_survey_2019} y ampliada por Gezawa et al. \cite{gezawa_review_2020}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/theory/3Dtaxonomy.png}
+    \caption[Taxonomía de las representaciones 3D para Deep Learning]{Taxonomía de las diferentes técnicas actuales en DL utilizadas para representar datos tridimensionales \cite{gezawa_review_2020}.}
+    \label{fig:3dTaxonomy}
+\end{figure}
+
+\subsection{Datos en bruto}
+Los datos en bruto son aquellos obtenidos directamente por métodos de escaneo, por ejemplo, utilizando dispositivos como el Microsoft Kinect o con un escáner de luz estructurada, aplicando ninguna o muy pocas transformaciones a dichos datos.
+
+\subsubsection{Nube de Puntos}
+Son un conjunto de puntos sin estructura representados por coordenadas tridimensionales ya sea en coordenadas cartesianas u otro sistema, que simbolizan la geometría 3D de un objeto. Tiene su origen en fotogrametría y en tiempos más recientes, LIDAR. 
+
+Son fáciles de obtener y trabajar, siendo una de las representaciones más sencillas y cercanas a los datos en bruto, aunque su procesamiento puede ser un reto ya que se carece de información de conectividad entre puntos, por lo que pueden existir ambigüedades respecto a la forma real del objeto o bien pueden haber datos incompletos o espúreos que son difíciles de diferenciar de los datos de interés.
+
+\subsubsection{Datos RGB-D}
+Representación popularizada por el Microsoft Kinect, los objetos 3D se caracterizan con su información cromática en RGB a la que se le adiciona un canal nuevo, D, que indica la profundidad de cada píxel detectado, obteniendo información 2.5D del objeto.
+
+Su mayor ventaja es la facilidad de adquisición y de procesado, por lo tanto existen multitud de \textit{datasets} actualmente. El mayor problema que presentan es que son datos limitantes, puesto que la información que contienen no es suficiente para aprender la geometría entera de un objeto 3D.
+
+\subsubsection{Proyecciones}
+Son una manera de mapear los puntos 3D a planos 2D, se realiza utilizando proyecciones imaginarias que permiten trasladar características cruciales del objeto 3D a su proyección 2D. Las proyecciones cilíndricas y esféricas son las más populares, siendo invariante a rotaciones sobre el eje principal de dicha proyección.
+
+Su mayor ventaja es que los datos contienen las características más importantes de la superficie 3D proyectada, además, que al trabajar en el dominio 2D se pueden aplicar fácilmente modelos ya conocidos para imágenes, sin embargo, no se recomienda para tareas más complicadas sobre las superficies tridimensionales, pues mucha información de la topología se pierde al realizar la proyección.
+
+\subsection{Sólidos}
+Las representaciones de sólidos para modelos 3D proporcionan la información sobre el espacio que ocupa el objeto, es decir, la información indica si cierto espacio tridimensional está ocupado o no por el mismo.
+
+\subsubsection{Vóxeles}
+La caracterización por vóxeles se puede pensar como una rejilla regular en tres dimensiones en la cual el modelo 3D se encuentra distribuido. La información del punto de vista puede codificarse también, categorizando los vóxeles como visibles para el punto de vista u ocultos.
+
+Si bien ofrecen una representación total del modelo, el hecho de que se tienen que representar las partes del volumen que se encuentran ocupadas y vacías, conlleva a una demanda enorme e innecesaria de memoria, por lo que, no es factible utilizar esta representación para modelos de alta resolución.
+
+\subsubsection{Árbol octal}
+Se trata de una representación de vóxeles más eficiente, a diferencia de utilizar una rejilla regular, el tamaño de los vóxeles es variable. Los árboles octales modelan la información 3D como una estructura de datos jerárquica en forma de árbol que modela la ocupación del objeto en la escena 3D. Se basa en la descomposición recursiva de la escena en cubos que tienen cada uno 8 hijos, que pueden estar dentro o fuera del objeto.
+
+Su principal ventaja es que es una representación más eficiente que los vóxeles, además que, también pueden preservar mejor los detalles, pudiendo generar representaciones de alta resolución. Aún así, su mayor desventaja es la inhabilidad de mantener la geometría exacta de ciertos objetos 3D como lo sería mantener la suavidad de la superficie.
+
+\subsection{Estructuras de alto nivel}
+En las tareas de clasificación y en recuperación de formas 3D existe la necesidad de tener representaciones concisas, pero aún así, detalladas de los modelos 3D que se utilizan para describir un objeto como representativo de alguna categoría.
+
+\subsubsection{Descriptor 3D}
+En general, los descriptores 3D son representaciones simplificadas de los modelos 3D que describen las características geométricas o topológicas del mismo. Estos descriptores pueden obtenerse de la geometría, topología, superficie, textura, cualquier otra característica o una mezcla de todo lo anterior. Se pueden ver como una \say{firma} que caracteriza a un modelo 3D.
+
+Su principal ventaja es que facilitan el procesamiento y cómputo de los modelos 3D, funcionan bastante bien en las tareas de comparación, análisis y recuperación de formas tridimensionales, particularmente en aprendizaje no supervisado. Sin embargo, una de sus mayores desventajas es que la utilidad se degrada al intentar utilizarlos en aprendizaje supervisado, ya que el descriptor extrae características de los datos en bruto, lo que es una abstracción de los datos del modelo 3D. Si se utiliza un modelo de aprendizaje supervisado se estarían aprendiendo abstracciones de una abstracción, lo que puede conllevar a la pérdida de información del descriptor si la representación es muy simple o abstracta.
+
+\subsubsection{Grafos}
+Esta representación permite resumir la información tridimensional conectando las diferentes formas por medio de grafos, esto es, los nodos del grafo corresponden a los vértices del modelo y las aristas representan la conectividad entre los vértices. Los grafos pueden ser dirigidos o no dirigidos.
+
+Las redes neuronales de grafos pueden clasificarse como métodos de filtrado espectral y métodos de filtrado espacial. Los métodos de filtrado espectral utilizan la descomposición en valores y vectores propios de la laplaciana del grafo para definir un operador similar a la convolución. Por otro lado, los métodos de filtrado espacial utilizan filtros de paso alto y paso bajo como combinaciones lineales de cada capa de la red. El aprendizaje está basado en el vecindario local de cada vértice, donde se aplica una función no lineal a cada nodo del grafo.
+
+Este tipo de representación posee como ventaja que, en primer lugar es posible aplicar todos los modelos mencionados en representaciones de mallas 3D, adicionalmente, estos métodos han logrado resultados prometedores, pero son computacionalmente costosos y dependientes del grafo base utilizado, queriendo decir que la generalización entre distintos dominios es inconsistente.
+
+\subsection{Superficies}
+Este tipo de representación describe la superficie que cubre las partes internas de un objeto 3D como un conjunto de polígonos. Poseen la ventaja de ser simples, de fácil procesado y dibujado puesto que todas las superficies pueden ser caracterizadas con ecuaciones lineales. Existen muchos métodos de representación por superficies, como las subdivisiones, mallas paramétricas e implícitas aunque la representación más popular y utilizada para DL es la malla poligonal, particularmente, la malla triangular.
+
+\subsubsection{Malla 3D}
+Las mallas 3D consisten en una combinación de vértices, aristas y caras. Cada vértice posee una lista de conectividad que indica como están conectados entre sí, esta lista puede interpretarse como el conjunto de aristas, que a su vez, describen las caras de la malla.
+
+Su principal ventaja es su amplia utilización e importancia en los gráficos por ordenador tanto para almacenar descripciones de modelos 3D así como su dibujado, aunque por su irregularidad y complejidad el estudio de su aplicación para tareas de DL no había podido ser abordado satisfactoriamente hasta hace pocos años. Hoy en día se trata de una de las ramas más nuevas, con modelos que han logrado resultados satisfactorios, aunque sufren de alto uso de recursos computacionales.
+
+\subsection{Múltiples vistas}
+Consiste en la representación de un modelo 3D como un conjunto de imágenes tomadas del modelo desde diferentes puntos de vista, utilizando técnicas típicas de dibujado de gráficos por ordenador. Estas imágenes luego se utilizan como entrada para una CNN convencional.
+
+El mayor beneficio de esta representación es que se pueden aprovechar todos los métodos y técnicas ya existentes para las CNNs comunes basadas en imágenes, además, que esto permite utilizar modelos de alta resolución. Aún así, su mayor desventaja es determinar el número de puntos de vista a utilizar junto con la pérdida de información causada por modelos 3D que poseen partes que se solapan entre sí, ocultándolas del punto de vista. Adicionalmente, este tipo de representación no almacena las propiedades geométricas intrínsecas del modelo 3D y el uso de muchas vistas también tiene un coste computacional muy alto.

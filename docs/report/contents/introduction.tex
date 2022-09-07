@@ -1,0 +1,192 @@
+\chapter{Introducción}
+El presente Trabajo de Fin de Grado (TFG) se ocupa de resolver una problemática real dentro del campo de la identificación humana. En concreto, se hace uso de métodos de aprendizaje automático y visión por computador para automatizar una técnica de antropología forense empleada en tareas de estimación del perfil biológico, más específicamente, la estimación de la edad de personas fallecidas a partir de restos óseos. 
+
+Este capítulo introductorio se centra en presentar el problema en detalle, la motivación que nos lleva a enfrentarnos a él y el objetivo principal abordado en este TFG. 
+
+
+\section{Definición del Problema}
+\label{daIntro_ProblemDef}
+%Que es la antropología forense
+La antropología forense (AF) se puede definir como el área de conocimiento enfocado al análisis basado en información ósea de restos humanos con objetivos médico-legales \cite{byers_introduction_2016,RefWorks:RefID:17-christensen2019forensic}. Los expertos en esta disciplina, con sus conocimientos de antropología física\footnote{La antropología física estudia el proceso evolutivo de la especie humana, así como las condiciones de vida y salud de poblaciones pasadas y actuales por medio de estudios osteológicos y somatológicos, información que complementa al considerar aspectos sociales, culturales y de comportamiento \cite{antrofisica}.} y ramas afines, examinan dichos restos óseos para extraer la mayor información posible e identificar la persona asociada a esos restos, así como las circunstancias de su muerte, para ser aplicadas en un marco legal. 
+
+Esta área de conocimiento tiene 5 objetivos principales: 
+
+\begin{enumerate}
+    \item Determinar la ascendencia y características morfológicas de la persona fallecida.
+    \item Identificar las circunstancias y manera en que murió una persona.
+    \item Determinar el tiempo que lleva fallecida la persona.
+    \item Asistir y recuperar restos superficiales o enterrados relevantes a la investigación forense.
+    \item Proveer información útil para la identificación de personas fallecidas, gracias a que existen características morfológicas presentes en los huesos de todos los humanos.
+    \item Estudio del esqueleto de personas vivas con motivos médico-legales, por ejemplo, para la identificación de migrantes o menores desaparecidos.
+\end{enumerate}
+
+La estimación del perfil biológico (PB) es una de las áreas clave de AF y se centra principalmente en la determinación de la edad, el sexo, la altura, el origen poblacional o ascendencia, así como cualquier otra característica que permita individualizar los restos total o parcialmente esqueletizados. Esto permite la búsqueda de la identidad de la persona desaparecida, y la eventual identificación positiva de la misma. Un esquema ilustrativo del proceso de identificación forense puede apreciarse en la Figura \ref{fig:intro_1}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{imagenes/introduction/intro_1.png}
+    \caption[Proceso de identificación forense a partir de restos óseos]{Proceso de identificación forense a partir de restos óseos \cite{RefWorks:RefID:21-mesejo2020survey}.}
+    \label{fig:intro_1}
+\end{figure}
+
+Una de las tareas más importantes del PB es la determinación de la edad de los restos. Para la misma se utilizan las suturas craneales \cite{skullAF}, las costillas \cite{icscan1984age}, la cara auricular del ilion \cite{buckberry_age_2002} y la sínfisis del pubis, ambos ubicados en la pelvis. En cualquier caso, se analiza el desgaste que posee en hueso en el momento de la muerte para poder estimar la edad del individuo \cite{RefWorks:RefID:12-black2011forensic}. 
+
+El hueso más común para la estimación de la edad es la sínfisis del pubis, siendo preferido por un 95\% de los antropólogos forenses \cite{garvin_current_2012}. El método más usado se basa en el trabajo pionero de Thomas Wingate Todd \cite{RefWorks:RefID:19-todd1921age}, que describió en 1921 las alteraciones que ocurren en la sínfisis con el paso del tiempo, y cómo éstas pueden ser utilizadas para estimar un rango de edad de la persona al morir. Todd propone usar un sistema de etapas o fases de envejecimiento, del cual se han realizado numerosas revisiones, la más conocida publicada en 1990 bajo el nombre de método de Suchey-Brooks \cite{RefWorks:RefID:20-brooks1990skeletal}. Todd propone estudiar nueve características de la sínfisis del pubis. En función del estado de cada una de ellas, se pueden asociar algunos atributos categóricos a las mismas basándose en el nivel de erosión del hueso en distintas partes, para así obtener un rango estimado de la edad del fallecido. Dichas características pueden observarse en la Tabla \ref{table:themBones}, con un ejemplo visual de cada característica en la Tabla \ref{themBomes:visualExample}.
+
+\begin{table}[h]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|ll}
+\hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFC702}\textbf{Característica}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textbf{Atributo}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Crestas y Surcos}}} & \multicolumn{1}{l|}{Porosidad Regular} & \multicolumn{1}{l|}{Muy Definidas} \\ \hline
+ & \multicolumn{1}{l|}{Poco Profundas} & \multicolumn{1}{l|}{Restos de Surcos} \\ \cline{2-3} 
+ & \multicolumn{1}{l|}{No hay Surcos} &  \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Porosidad Irregular}}} & \multicolumn{1}{l|}{No} & \multicolumn{1}{l|}{Mediana} \\ \hline
+ & \multicolumn{1}{l|}{Sí} &  \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Borde Superior}}} & \multicolumn{1}{l|}{No Definido} & \multicolumn{1}{l|}{Definido} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Nódulo Óseo}}} & \multicolumn{1}{l|}{Ausente} & \multicolumn{1}{l|}{Presente} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Borde Inferior}}} & \multicolumn{1}{l|}{No Definido} & \multicolumn{1}{l|}{Definido} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Borde Dorsal}}} & \multicolumn{1}{l|}{No Definido} & \multicolumn{1}{l|}{Definido} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Plataforma Dorsal}}} & \multicolumn{1}{l|}{Ausente} & \multicolumn{1}{l|}{Presente} \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Bisel Ventral}}} & \multicolumn{1}{l|}{Ausente} & \multicolumn{1}{l|}{En Formación} \\ \hline
+ & \multicolumn{1}{l|}{Presente} &  \\ \hline
+\multicolumn{1}{|c|}{\textbf{\textit{Borde Ventral}}} & \multicolumn{1}{l|}{Ausente} & \multicolumn{1}{l|}{En Formación} \\ \hline
+ & \multicolumn{1}{l|}{Formado, Sin Excrecencias} & \multicolumn{1}{l|}{Formado, Pocas Excrecencias} \\ \cline{2-3} 
+ & \multicolumn{1}{l|}{Formado, Muchas Excrecencias} &  \\ \cline{2-2}
+\end{tabular}%
+}
+\caption[Método de Todd: Características para determinación de edad]{Características utilizadas para la determinación de la edad según el método de Todd \cite{RefWorks:RefID:19-todd1921age} y sus derivados.}
+\label{table:themBones}
+\end{table}
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFC702}}c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Característica} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Crestas y \\ Surcos\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Porosidad \\ Irregular\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Borde \\ Superior\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Nódulo \\ Óseo\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Borde \\ Inferior\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Borde \\ Dorsal\end{tabular}}} & \textit{\textbf{\begin{tabular}[c]{@{}c@{}}Plataforma \\ Dorsal\end{tabular}}} \\ \hline
+\textbf{Atributo} & Muy Definidos & Sí & Definido & Presente & Definido & Definido & Presente \\ \hline
+\textbf{Ejemplo} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd1.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd2.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd3.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd4.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd5.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd6.png} & \includegraphics[align=c, width=0.2\linewidth]{imagenes/introduction/todd7.png} \\ \hline
+\end{tabular}%
+}
+\caption[Método de Todd: Ejemplo de características]{Ejemplo de las características del método de Todd y sus derivados.}
+\label{themBomes:visualExample}
+\end{table}
+
+Cabe resaltar que la metodología utilizada en este método, así como gran parte de las metodologías en AF, depende mucho del criterio subjetivo del experto. Esto provoca, como consecuencia, la existencia de errores intraevaluador e interevaluador en la AF, pues el uso de criterios que son subjetivos y descriptivos siempre introducirá limitaciones por las diversas interpretaciones interevaluador \cite{RefWorks:RefID:12-black2011forensic}. Esto reduce la confianza y la validez de los resultados obtenidos, lo que finalmente hace perder credibilidad a los estudios forenses a la hora de ser presentados como evidencia en un juicio. Todo ello, justifica la búsqueda de herramientas y metodologías que permitan al menos reducir estas limitaciones. En este contexto, disciplinas científicas como la inteligencia artificial (IA), y en concreto el aprendizaje automático (ML, \textit{machine learning}) \cite{abu-mostafa_learning_2012, mitchell_introduction_1997}, el aprendizaje profundo (DL, \textit{deep learning}) \cite{Goodfellow-et-al-2016, chollet_deep_2021} y la visión por computador (CV, \textit{computer vision}) pueden asistir, automatizar y acelerar las tareas forenses de manera que se puedan eliminar sesgos y errores.
+
+Teniendo en cuenta todas estas consideraciones, el presente TFG aborda la clasificación automática de las características morfológicas de la sínfisis del pubis para estimar la edad a partir de modelos 3D utilizando técnicas de IA.
+
+\section{Motivación}
+En las últimas décadas, la IA ha permitido la automatización de tareas repetitivas o tediosas para los humanos, así como la superación de la capacidad humana en tareas complejas, particularmente en el área de ML y CV. En estas áreas ha habido grandes avances en lo que respecta a la detección, generación y restauración de imágenes \cite{krizhevsky_imagenet_2017}. Los beneficios que aportan estas técnicas han sido aprovechados por numerosas áreas, incluida la medicina, donde la IA ha provisto herramientas sumamente útiles para los expertos del área clínica. Por ello resulta sorprendente que hoy en día la AF siga presentando una baja sofisticación tecnológica \cite{RefWorks:RefID:21-mesejo2020survey}. Por lo tanto, una de las motivaciones de este trabajo es la modernización y automatización, desde el punto de vista tecnológico, del área de AF, y en esta obra en particular, las técnicas utilizadas para la estimación de edad.
+
+También, y como se ha mencionado anteriormente, la subjetividad característica del área de AF es un punto de crítica a los ojos de la ley, pues no siempre se posee una base científica para los análisis dado el criterio de Daubert \cite{noauthor_daubert_nodate}, que indica si es admisible el testimonio experto en un juicio. El criterio se satisface cuando (1) el resultado es reproducible y ha sido verificado por terceros, (2) posee tasas de error conocidas y (3) es aceptado por la comunidad científica forense. En este sentido, la aplicación de IA a AF permite reducir la subjetividad de las identificaciones y errores humanos, automatizar muchas tareas, permitir la obtención de conocimiento nuevo, y modelizar y estructurar el conocimiento experto humano. Lo que puede contribuir al cumplimiento del criterio de Daubert dado que ahora se proveería de una mayor base científica para los métodos que, además de ser reproducibles, se es capaz de conocer las tasas de error de los modelos entrenados.  
+
+Si nos centramos en el más amplio contexto de la identificación humana, la estimación del PB por medio de técnicas de AF cobra mayor importancia, dado que las herramientas existentes de mayor precisión y sofisticación (como pudieran ser el ADN y las huellas dactilares) presentan serias limitaciones. El ADN presenta un mayor coste y un tiempo de respuesta alto y al igual que las huellas dactilares, depende de la existencia de datos tanto ante-mortem como post-mortem. Junto con lo anterior, ambas técnicas dependen del estado de los tejidos blandos, que son justamente los más afectados por la descomposición tanto natural como artificial (daños por quemaduras, por agua, por químicos, etc.). Por lo tanto, estas técnicas no se pueden aplicar en muchos casos donde sí es posible aplicar las técnicas de AF. Esto es debido a que el tejido óseo es, en general, más resistente a los factores mencionados y, en muchos casos, es lo único que queda tras la descomposición total del tejido blando. Por ello, las técnicas basadas en AF resultan de mayor utilidad en:
+\begin{itemize}
+    \item Identificación masiva de víctimas de desastres naturales, accidentes o ataques terroristas.
+    \item Identificación de víctimas de guerras o actos de lesa humanidad, donde puede que los restos hayan sido desmembrados, desfigurados, quemados y/o mezclados.
+    \item Individuos en fosas comunes donde los restos óseos puede que hayan sido mezclados entre sí.
+    \item Identificación de personas desaparecidas no relacionadas con algún desastre o guerra en la que las condiciones del cadáver se han deteriorado al punto que no se pueden aplicar las otras técnicas mencionadas \cite{byers_introduction_2016}.
+\end{itemize}
+
+Para dar una escala al número de víctimas que se enfrentan los antropólogos forenses, solamente en el año 2019, 20 329 personas murieron por causas ligadas al terrorismo, teniendo además un promedio de 24 000 muertes por terrorismo anuales en la última década \cite{ritchie_terrorism_2013}. Así mismo, los desastres naturales acaban con 45 000 vidas de media al año \cite{ritchie_natural_2014}. En Ucrania, a la fecha de escritura de esta obra, se encuentran más de 1 600 cuerpos sin identificación, de los cuales una gran parte han sido quemados \cite{petrenko_more_2022}, y en España aún se tienen que recuperar alrededor de 20 000 víctimas de la Guerra Civil, que se encuentran en fosas y cunetas, donde apenas un tercio podrá identificarse por medio de ADN \cite{junquera_huellas_2022}. Estos datos sirven para ilustrar la necesidad y motivación del uso de la informática en este campo. Disponer de técnicas automatizadas supondría un ahorro en tiempo y dinero para poder detectar las características que permiten determinar la edad de las víctimas en situaciones donde el número de individuos a identificar es elevado y donde, además, no es posible aplicar otras técnicas.
+
+\section{Objetivos}
+Una vez descrito el problema y su motivación, el objetivo principal de este TFG es el desarrollo y validación de un modelo de aprendizaje profundo que emplee modelos 3D de la sínfisis púbica, de cara a extraer características morfológicas de dicho hueso, y contribuir a la automatización de la estimación de la edad en antropología forense.
+
+Este objetivo principal se descomponte en los siguientes objetivos parciales:
+
+\begin{enumerate}
+    \item Estudio pormenorizado de la literatura relativa a la estimación de edad a partir de restos óseos, y al procesado de modelos 3D por medio de redes neuronales profundas.
+    \item Análisis y discusión de los modelos existentes, y selección razonada de los candidatos más prometedores para el problema actual.
+    \item Creación de un prototipo y validación experimental con modelos 3D de la sínfisis del pubis.
+    \item Extracción de una o varias de las más relevantes características para poder llevar a cabo la estimación de la edad. 
+\end{enumerate}
+
+\section{Planificación del proyecto}
+
+%Un TFG consta de 12 créditos ECTS, siendo un crédito igual a 25 horas de trabajo. Se puede calcular que en total se requieren aproximadamente 300 horas totales para la realización del mismo. 
+
+%Un Trabajo de Fin de Grado consta de 12 créditos ECTS, siendo un crédito igual a 25 horas de trabajo. Se puede calcular que en total se requieren aproximadamente 300 horas para la realización del mismo. Tomando en cuenta esta estimación del tiempo requerido se realizó una planificación temporal que se puede visualizar en la Tabla \ref{table:plan1} asumiendo las 20 semanas que aproximadamente se poseen en un cuatrimestre y que se estaría trabajando unas 3 horas por día sin contar fines de semana. 
+
+El proyecto presente consiste, en esencia, en el diseño e implementación de un software de investigación. Dicho software posee unos requisitos y objetivos claros, por lo que no se espera que existan grandes cambios en su desarrollo. De cara a planificar el proyecto, resulta fundamental constatar que la asignatura del TFG consta de 12 créditos ECTS, siendo un crédito igual a 25 horas de trabajo. Esto implica que en total, se requieren aproximadamente 300 horas para la realización del mismo. Como el segundo cuatrimestre cuenta con 20 semanas aproximadamente, la realización del TFG requerirá 15 horas semanales (equivalente a 3 horas diarias, 5 días a la semana).
+
+Tomando esto en cuenta, se observa que es un proyecto de complejidad pequeña a mediana respecto a los requisitos y objetivos, por lo que se opta por utilizar la metodología de desarrollo de software en cascada \cite{pressman2005software}. Esta metodología posee las fases de análisis, diseño, codificación, pruebas y mantenimiento. Dicho esto, el modelo en cascada rara vez se utiliza de forma estricta, pues implica el no poder retroceder a una fase anterior, lo que necesita un previo y absoluto conocimiento de los requisitos, la no volatilidad de los mismos y que las etapas subsiguientes no posean errores. Por eso se utiliza el modelo en cascada con retroalimentación, que permite volver a fases anteriores para realizar pequeños ajustes, sea por errores detectados, ambigüedades, o bien porque los propios requisitos hayan cambiado.
+
+Las fases del ciclo de vida se adaptaron al proyecto de la siguiente forma:
+\begin{itemize}
+    \item Análisis de Requisitos: Consistió en las reuniones iniciales con el cliente, que en este caso, serían los directores del TFG junto con los antropólogos forenses. Se realiza también en esta fase una revisión bibliográfica extensa en el ámbito de la AF como la combinación de AF con técnicas automáticas dentro del área de la IA con la finalidad de establecer los objetivos del trabajo.
+    \item Diseño: Consistió en la investigación y selección de las técnicas aplicables al problema, lo que incluye modelos, métricas, datos y protocolo de validación experimental. Aquí también se incluyen las diversas pruebas preliminares de los modelos.
+    \item Implementación: Consintió en la adaptación del código de los modelos investigados, implementación de funcionalidades, así como la implementación de software de soporte en forma de scripts, tanto para la generación, el preprocesado de datos y obtención de diferentes métricas o estadísticas.
+    \item Pruebas: Consiste mayoritariamente en la realización de diversos experimentos con los modelos y datos seleccionados.
+\end{itemize}
+Dicho esto, se puede observar la planificación inicial del proyecto en la Tabla \ref{table:plan1}, donde se mantuvo un mes adicional para posibles imprevistos o retrasos.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|ll|llll|llll|lllll|llll|llll|}
+\hline
+\rowcolor[HTML]{FFC702} 
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textbf{Febrero}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Marzo}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Abril}} & \multicolumn{5}{c|}{\cellcolor[HTML]{FFC702}\textbf{Mayo}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Junio}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Julio}} \\ \cline{3-25} 
+\rowcolor[HTML]{FFC702} 
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}\textbf{Tarea}} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}\begin{tabular}[c]{@{}c@{}}\textbf{Semanas -}\\ \textbf{Horas}\end{tabular}} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}21} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}28} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}07} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}14} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}21} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}28} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}04} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}11} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}18} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}25} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}02} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}09} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}16} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}23} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}30} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}06} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}13} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}20} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}27} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}04} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}11} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}18} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}25} \\ \hline
+Análisis de Requisitos & 4 - 60 & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1}
+Diseño & 4 - 60 &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1}
+Implementación & 6 - 90 &  &  &  &  &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  &  &  &  &  &  \\ \cline{1-1}
+Pruebas & 6 - 90 &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  \\ \hline
+\end{tabular}%
+}
+\caption{Planificación temporal inicial del proyecto}
+\label{table:plan1}
+\end{table}
+
+Se realizó la planificación inicial con plazos relajados, tomando en cuenta que el autor estaba también realizando las Prácticas de Empresa, junto con estar cursando tres asignaturas. Aún así, ocurrieron retrasos significativos. Una causa fue el método seleccionado ya que, por una parte, es un método muy reciente por lo que la documentación del mismo es escasa y también porque el método utiliza librerías anteriormente desconocidas por el autor, lo que implicó más tiempo del planificado para estudiar y comprender su funcionamiento. Otra causa fueron los datos, pues ocurrió un retraso significativo en la obtención de los mismos, así como tiempo adicional que se utilizó para preprocesarlos, pues por diversas razones esto no se pudo automatizar completamente. Todo ello conllevó una modificación de la planificación, que puede observarse en la Tabla \ref{table:plan2}.
+
+\begin{table}[h]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|ll|llll|llll|lllll|llll|llll|}
+\hline
+\rowcolor[HTML]{FFC702} 
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textbf{Febrero}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Marzo}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Abril}} & \multicolumn{5}{c|}{\cellcolor[HTML]{FFC702}\textbf{Mayo}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Junio}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFC702}\textbf{Julio}} \\ \cline{3-25} 
+\rowcolor[HTML]{FFC702} 
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}\textbf{Tarea}} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}\begin{tabular}[c]{@{}c@{}}\textbf{Semanas -}\\ \textbf{Horas}\end{tabular}} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}21} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}28} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}07} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}14} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}21} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}28} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}04} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}11} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}18} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}25} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}02} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}09} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}16} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}23} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}30} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}06} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}13} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}20} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}27} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}04} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}11} & \multicolumn{1}{c}{\cellcolor[HTML]{FFC702}18} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}25} \\ \hline
+Análisis de Requisitos & 5 - 75 & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1}
+Diseño & 4 - 60 &  &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1}
+Implementación & 8 - 120 &  &  &  &  &  &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  \\ \cline{1-1}
+Pruebas & 5 - 75 &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  &  &  &  & \cellcolor[HTML]{9B9B9B} & \cellcolor[HTML]{9B9B9B} &  \\ \hline
+\end{tabular}%
+}
+\caption{Planificación temporal final del proyecto}
+\label{table:plan2}
+\end{table}
+
+Para el coste estimado, se asume un salario de 35\officialeuro/hora para un responsable I+D de una empresa tecnológica o un investigador senior. Se añade también el costo de los materiales, de los que resalta: el coste del portátil utilizado para el desarrollo del TFG, el coste de dispositivos de almacenamiento masivo, el costo de usar un servidor GPU de altas prestaciones, y el coste acumulado de una suscripción a Google Colab Pro por la duración del proyecto, junto a otros gastos misceláneos. Se puede observar el desglose de costes en la Tabla \ref{table:money}.
+
+Respecto al servidor GPU, se valúa con un coste de 15 000\officialeuro. Se asume una amortización con 2 años de duración, lo que implica un pago diario de 20.55\officialeuro, lo que se traduce en 3 164.70\officialeuro\space sobre la duración del proyecto. De la misma forma, la subscripción a Google Colab Pro, que cuesta 9.25\officialeuro\space al mes, se traduce a un coste de 55.50\officialeuro\space en total.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFCB2F}{Fecha inicio}} & \multicolumn{1}{l|}{21/02/2022} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFCB2F}{Fecha fin}} & \multicolumn{1}{l|}{25/07/2022} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{FFCB2F}{Duración}} & \multicolumn{1}{l|}{154 días, 110 laborables} \\ \hline
+ &  \\ \hline
+\rowcolor[HTML]{FFCB2F} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCB2F}{Item}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCB2F}{Costo}} \\ \hline
+\multicolumn{1}{|l|}{Salario} & \multicolumn{1}{l|}{11 550.00\officialeuro} \\ \hline
+\multicolumn{1}{|l|}{Portátil de Altas Prestaciones} & \multicolumn{1}{l|}{800.00\officialeuro} \\ \hline
+\multicolumn{1}{|l|}{Google Colab Pro} & \multicolumn{1}{l|}{55.50\officialeuro} \\ \hline
+\multicolumn{1}{|l|}{Servidor GPU} & \multicolumn{1}{l|}{3 164.70\officialeuro} \\ \hline
+\multicolumn{1}{|l|}{Almacenamiento} & \multicolumn{1}{l|}{150.00\officialeuro} \\ \hline
+\multicolumn{1}{|l|}{Otros} & \multicolumn{1}{l|}{300.00\officialeuro} \\ \hline
+\multicolumn{1}{|r|}{\cellcolor[HTML]{FFCB2F}{Total}} & \multicolumn{1}{l|}{  16 020.20\officialeuro} \\ \hline
+\textbf{} & 
+\end{tabular}
+\caption{Estimación de coste del proyecto}
+\label{table:money}
+\end{table}
+

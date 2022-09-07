@@ -1,0 +1,118 @@
+\chapter*{}
+%\thispagestyle{empty}
+%\cleardoublepage
+
+%\thispagestyle{empty}
+
+%\input{portada/portada_2}
+
+
+
+%\cleardoublepage
+\thispagestyle{empty}
+
+\begin{center}
+{\small \bfseries \myTitle}
+\end{center}
+\begin{center}
+\myName
+\end{center}
+
+%\vspace{0.7cm}
+\noindent{\textbf{Palabras clave}: aprendizaje automático, aprendizaje profundo, visión por computador, antropología forense, estimación del perfil biológico, estimación de edad, clasificación, malla 3D.}
+
+\noindent{\textbf{Resumen}}
+
+La estimación de la edad es una de las tareas más importantes en la antropología forense, formando parte del perfil biológico, contribuyendo a la identificación de personas vivas o muertas cuando no es posible o práctico otro tipo de técnicas (como podrían ser las huellas dactilares o el ADN). Se utiliza en casos de personas desparecidas, crisis migratorias, guerras, catástrofes naturales o crímenes sin resolver. Para lograr este objetivo, se utiliza comúnmente el hueso de la sínfisis del pubis, al que se le aplica el método de Thomas Wingate Todd propuesto en 1921. Consiste en el análisis visual de la superficie de la sínfisis para identificar 9 características, altamente subjetivas, por lo que la estimación correcta de la edad depende mucho de la interpretación personal del experto. En este sentido, cabe mencionar que existe una falta de automatización y de técnicas objetivas en esta área de estudio.
+
+Este TFG trata del desarrollo de un sistema capaz de clasificar automáticamente las características presentes en un modelo 3D de la sínfisis del pubis, para asistir en la estimación de la edad de una persona fallecida. La propuesta presenta un enfoque totalmente novedoso y nunca antes visto: un sistema que identifica y clasifica las características haciendo uso de un modelo de aprendizaje profundo para procesar directamente las mallas poligonales 3D de la sínfisis del pubis. De las 9 características del método de Todd, se estudió la conocida como \say{nódulo óseo} por recomendación de los expertos, debido a su facilidad de detección y relevancia. Para los experimentos, se utilizan 98 mallas 3D de la sínfisis del pubis, 49 con presencia y 49 ausencia de nódulo. Aún siendo de un conjunto de datos muy reducido, se logró clasificar por medio de una red neuronal convolucional la existencia del \say{nódulo óseo} en los datos de test con un 70 \% de \textit{accuracy} y una métrica F1 de 0.7, mostrando el gran potencial que posee de esta línea de investigación.
+\cleardoublepage
+
+
+\thispagestyle{empty}
+
+
+\begin{center}
+{\large\bfseries \myTitleENG} \\
+\end{center}
+\begin{center}
+\myName \\
+\end{center}
+
+\vspace{0.7cm}
+\noindent{\textbf{Keywords}: machine learning, deep learning, computer vision, forensic anthropology, biological profile estimation, age estimation, classification, 3D mesh} \\
+
+\vspace{0.7cm}
+\noindent{\textbf{Abstract}} \\
+
+Age estimation is one of the most important tasks in forensic anthropology, being part of the biological profile, which helps to identify either alive or deceased individuals when it's not possible or practical to use other techniques (such as fingerprints or DNA). It's used in missing person cases, migratory crises, wars, natural disasters or unsolved crimes. To this end, the pubic symphysis bone is used by applying a method first proposed by Thomas Wingate Todd in 1921. The pubic symphysis is analyzed visually to identify 9 highly subjective characteristics on its surface, which means that a correct age estimate depends highly on the personal interpretation of the forensic expert. There is a lack of automation and objective techniques in this field of study.
+
+This Bachelor's Thesis proposes a system capable of automatic classification of the characteristics present in a 3D model of the pubic symphysis, to assist in the age estimation process of a deceased individual. This proposal presents a new and never-before-seen approach: a system that can identify and classify the characteristics using a deep learning model to directly process the 3D meshes of the pubic symphysis. From the 9 characteristics used in Todd's Method, the forensic experts recommended the study of the \say{bony nodule} characteristic since it's easy to detect and also quite relevant. For the experiments, a total of 98 3D meshes of pubic symphyses are used, 49 have the bony nodule present and 49 don't. Although it's a small sample size, a convolutional neural network was able to classify the existence of the nodule with 70\% accuracy and a F1 metric of 0.7, showing that this line of research has great potential.
+\chapter*{}
+\thispagestyle{empty}
+
+\noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
+
+Yo, \textbf{\myName}, alumno de la titulación Grado en Ingeniería Informática de la \textbf{Escuela Técnica Superior
+de Ingenierías Informática y de Telecomunicación de la Universidad de Granada}, con pasaporte \myDNI, autorizo la
+ubicación de la siguiente copia de mi Trabajo Fin de Grado en la biblioteca del centro para que pueda ser
+consultada por las personas que lo deseen.
+
+\vspace{6cm}
+
+\noindent Fdo: \myName
+
+\vspace{2cm}
+
+\begin{flushright}
+Granada a 6 de septiembre de 2022.
+\end{flushright}
+
+
+\chapter*{}
+\thispagestyle{empty}
+
+\noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
+
+D. \textbf{\myProf}, Profesor del Departamento de Lenguajes y Sistemas Informáticos de la Universidad de Granada.
+
+\vspace{0.25cm}
+
+D. \textbf{\myOtherProf}, Profesor del Departamento de Ciencias de la Computación e Inteligencia Artificial de la Universidad de Granada.
+
+
+\vspace{0.25cm}
+
+\textbf{Informan:}
+
+\vspace{0.25cm}
+
+Que el presente trabajo, titulado \textit{\textbf{\myTitle}},
+ha sido realizado bajo su supervisión por \textbf{\myName}, y autorizamos la defensa de dicho trabajo ante el tribunal
+que corresponda.
+
+\vspace{0.5cm}
+
+Y para que conste, expiden y firman el presente informe en Granada a 6 de septiembre de 2022.
+
+\vspace{0.5cm}
+
+\textbf{Los directores:}
+
+\vspace{5cm}
+
+\noindent \textbf{\myProf \ \ \ \ \ \ \ \ \ \ \ \ \ \myOtherProf}
+
+\chapter*{Agradecimientos}
+\thispagestyle{empty}
+
+       \vspace{1cm}
+
+
+En primer lugar, quiero agradecer a mis tutores, Sergio Damas y Pablo Mesejo, por darme la oportunidad de trabajar en esta línea de investigación tan importante y fascinante. Agradezco mucho su comprensión y paciencia infinita al resolver las dudas y problemas que me surgieron en el transcurso de este trabajo, así como también su muy buen trato, sumamente amigable y alentador, que permitió la realización de un trabajo satisfactorio y novedoso. 
+
+Quiero agradecer a mis padres, Elisa Ventresca y Glauco Lugli, quienes han hecho un esfuerzo enorme para que yo lograse finalizar mis estudios en España, siempre apoyándome de cualquier forma y motivándome para seguir adelante con mis estudios. Agradezco a todos mis amigos, tanto de España como de Venezuela, quienes me han sido de grata compañía durante el transcurso de mi carrera.
+
+Hago también una mención muy especial a la futura doctora veterinaria María Belén Corredor, quien me ha acompañado desde hace años, coincidiendo con el inicio de mis estudios universitarios; siempre apoyándome, escuchándome, regañándome para que no perdiera la esperanza y siguiera adelante con todos los retos que tuve que enfrentarme, tanto fuera como dentro de la universidad. También ha tenido la valiosa oportunidad de leer esta obra cuando estaba en edición y ofrecer un punto de vista externo para el entendimiento de conceptos tan avanzados, así como múltiples correcciones de forma y fondo. Te agradezco por esto y miles de cosas más.
+
+Finalmente, agradezco a la propia Universidad de Granada por haberme dado la oportunidad de continuar con mis estudios universitarios y poderlos finalizar en tan distinguida casa de estudios.

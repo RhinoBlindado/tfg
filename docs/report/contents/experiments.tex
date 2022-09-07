@@ -1,0 +1,739 @@
+\chapter{Implementación y Experimentos}
+\section{Detalles técnicos de la implementación}
+\label{section:tech_details}
+\subsection{Entorno de desarrollo}
+Todo el proyecto ha sido desarrollado utilizando Python como lenguaje de programación principal, esto debido a que el método seleccionado, MeshCNN y sus ampliaciones, están desarrollados en el mismo. Los métodos también utilizan la librería de DL PyTorch junto con las librerías CUDA para poder ejecutar los modelos en tarjetas gráficas NVIDIA, acelerando así su ejecución. También se hizo uso de la librería Numpy para cálculos numéricos y de Pandas para el manejo cómodo de datos así como la librería scikit-learn para métricas adicionales. Se ha gestionado el uso de estas librerías junto con muchas otras de soporte por medio del gestor de entornos Anaconda. Finalmente, para mandar trabajos a un entorno de ejecución remoto se utilizó Slurm.
+
+Para la escritura de scripts se utilizó Python junto a Bash y para el control de versiones se utilizó Git y Github. El repositorio de este proyecto se puede acceder por la siguiente dirección: \url{https://github.com/RhinoBlindado/tfg} y se encuentra estructurado en diferentes carpetas:
+
+\begin{itemize}
+    \item \code{condaEnvs}, donde se almacenan los distintos entornos de Anaconda utilizados.
+    \item \code{data}, donde se encuentran los datos a utilizar, se divide en \code{datasets}, en donde se encuentran los datos ya procesados y listos para utilizar por el modelo y, \code{original} donde se encuentran los datos originales. Por motivos de confidencialidad, no se encuentran disponibles los datos de las sínfisis del pubis.
+    \item \code{docs}, donde se encuentran los distintos documentos relacionados con el proyecto, incluído este mismo documento.
+    \item \code{networks}, donde se encuentran las implementaciones de los distintos \textit{frameworks} mencionados anteriormente: \code{MeshCNN}, \code{MedMeshCNN} y \code{MeshCNNPlus}.
+    \item \code{output}, donde se encuentran todos los datos de salida de los modelos, incluidas las salidas obtenidas de Slurm.
+    \item \code{programs}, donde se encuentran todos los programas compilados de terceros que han sido utilizados de alguna manera para el desarrollo del proyecto. Se encuentran los ejecutables de \textit{Blender} y \textit{Meshlab}.
+    \item \code{scripts}, donde se encuentran todos los scripts desarrollados para el proyecto. En \code{dataPrep} se poseen aquellos que generan o alteran los datos, en \code{dataStats} aquellos que obtienen alguna métrica de los datos, en \code{colab} los \textit{notebooks} utilizados en Google Colab y en \code{slurm} los scripts utilizados para slurm.
+\end{itemize}
+
+\subsection{Obtención de los modelos 3D}
+\label{section:getting3Dmeshes}
+Los datos se encuentran en una carpeta del servicio UGRDrive, que provee almacenamiento en la nube para investigadores. Los modelos de la sínfisis del pubis izquierda y derecha se encuentran dentro de una carpeta numerada por cada individuo que posee información generada por el proceso de digitalización y el software utilizado. Por ejemplo, se poseen los materiales, texturas, historiales, mediciones y otros archivos pertenecientes al software de escaneo. Un archivo descargado de la unidad posee la estructura dispuesta en la Figura \ref{fig:rawBoneFile} en donde lo que interesa son los archivos \code{*.obj}, ya que estos son los que poseen la malla 3D del hueso. Adicionalmente a esto se proporcionó un fichero \code{.csv} con las 9 características morfológicas de cada hueso por individuo.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{4cm}
+    \dirtree{%
+     .1 \#individuo.
+     .2 Dch.
+     .3 [History].
+     .4 ....
+     .3 [Measures].
+     .4 ....
+     .3 [Scans].
+     .4 ....
+     .3 Dch.mtl.
+     .3 Dch.obj.
+     .3 Dch.sproj.
+     .3 Dch\_*.jpg.
+     .2 Izq.
+     .3 [History].
+     .4 ....
+     .3 [Measures].
+     .4 ....
+     .3 [Scans].
+     .4 ....
+     .3 Izq.mtl.
+     .3 Izq.obj.
+     .3 Izq.sproj.
+     .3 Izq\_*.jpg.
+    }
+    \end{minipage}
+    \caption[Estructura del archivo de datos]{Estructura del archivo que contiene las sínfisis del pubis escaneadas.}
+    \label{fig:rawBoneFile}
+\end{figure}
+
+Se desarrolló un script denominado \code{genBoneCSV.py} que dado el fichero \code{.csv} general genera otro \code{.csv} conteniendo solamente los huesos que poseen cierta característica, de esta manera se puede aislar distintas características para poder ser estudiadas individualmente, adicional a esto se tiene otro script, \code{extractBoneModel.py} que se encarga de aislar la malla 3D de la lateralidad deseada o ambas lateralidades del resto de información para cada individuo.
+
+\subsection{Preprocesado de los datos}
+\label{section:dataPreprocess}
+Finalizados los procedimientos descritos en la Sección anterior, se tienen las mallas 3D de las sínfisis del pubis en bruto aisladas dada una o varias características morfológicas a estudiar. Como ha sido comentado anteriormente, dado que el modelo de DL elegido posee limitaciones respecto a la cantidad máxima de aristas que es capaz de procesar por su alto consumo de memoria, y el requerimiento de que las mallas sean herméticas o \textit{watertight}, esto requiere que las mismas deban de ser selladas y reducidas en número de aristas perdiendo la mínima información topológica posible.
+
+Debido a que los modelos 3D no se encuentran perfectamente alineados con respecto a la cara del hueso que es relevante para el estudio, el trabajo de sellar las mallas tuvo que realizarse en su mayoría de forma manual. No existe una forma analítica de detectar la ubicación de la cara relevante del hueso si esta no se encuentra ubicada en un mismo rango de coordenadas para todos los huesos. Para lograrlo se tendría que volver a escanear, lo cual resulta inabordable. Se utilizó para esto el software de edición y modelado 3D gratis y de código libre llamado \textit{Blender} \cite{blender} porque permite la simplificación de las mallas, la limpieza de geometría espúrea y posee un modificador denominado Booleao o \textit{Boolean}, que dada dos mallas 3D en la escena, permite generar nueva geometría aplicando operaciones de unión, intersección o diferencia de la geometría de las mallas originales.
+
+El procedimiento para el sellado es el siguiente: (a) la malla 3D de la sínfisis del pubis se importa a \textit{Blender}. Para sellar la malla 3D y hacerla hermética, (b) se utiliza un cubo lo suficientemente grande para que pueda ofuscar la parte que no interesa de la geometría de la sínfisis, se utiliza el modificador booleano realizando una diferencia entre el cubo y la sínfisis del pubis (Figura \ref{fig:detailBoolean}) para que solamente se obtenga de resultado aquella parte del hueso que no esté dentro del cubo, automáticamente se elimina la geometría oculta y se calculan nuevas caras para sellar la malla. (c) Una vez finalizado esto, se eliminan las pequeñas superficies disconexas que puedan existir y se exporta la malla modificada. Se puede observar visualmente este proceso en la Figura \ref{fig:boneProcess} y la comparación de una malla antes y después de procesar en la Figura \ref{fig:boneBeforeAfter}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{imagenes/planningAndImplementation/3.png}
+    \caption[Detalle del operador Booleano de Blender]{Detalle del operador Booleano de \textit{Blender} con los parámetros utilizados para sellar los modelos.}
+    \label{fig:detailBoolean}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/planningAndImplementation/pre_postCut.png}
+    \caption[Resultado del sellado del modelo 3D]{Resultado del sellado del modelo 3D. Se observa el modelo por detrás de la cara de la sínfisis del pubis. A la izquierda se observa el modelo original hueco y con estructuras no relevantes, a la derecha el mismo hueso luego del proceso de sellado.}
+    \label{fig:boneBeforeAfter}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/planningAndImplementation/1.png}
+    \\ (a)
+
+    \includegraphics[width=0.8\linewidth]{imagenes/planningAndImplementation/2.png}
+    \\ (b)
+    
+    \includegraphics[width=0.8\linewidth]{imagenes/planningAndImplementation/4.png}
+    \\ (c)
+    
+    \caption[Proceso de sellado de la malla 3D de la sínfisis del pubis]{Proceso de sellado del modelo tridimensional de la sínfisis del pubis. En (a) se observa el modelo original cargarlo a \textit{Blender}, en (b) se utiliza el operador Booleano para calcular una superficie que sella el modelo y en (c) se observa el resultado obtenido.}
+    \label{fig:boneProcess}
+\end{figure}
+
+Este procedimiento, además, tiene el beneficio de reducir significativamente la cantidad de aristas que se tienen por modelo sin perder calidad de la zona de interés. Permite retener más detalles una vez que se aplique la simplificación de las mallas, esto se debe a que si se utilizara el modelo original para la simplificación se estarían colapsando más aristas en toda la malla para llegar al número deseado, potencialmente perdiendo más información de la zona de interés.
+
+Con la malla sellada, el siguiente paso ocurre dentro del script \code{meshColapse.py} que invoca a \textit{Blender} en segundo plano y se encarga de reducir la malla a un valor deseado de aristas. También se encarga de eliminar los triángulos degenerados de la superficie general de la malla de la sínfisis del pubis, puesto que esta geometría espúrea produce errores al ser procesada por el modelo de DL.
+
+\subsection{Generación de \textit{datasets}}
+\label{section:datasets}
+Una vez que los modelos se encuentran ya preprocesados, para la generación de los conjuntos de datos se utilizaron dos scripts, denominados \code{genDatasetFolders.py} y \code{genDatasetCSV.py}. El primer script permiten generar los conjuntos de entrenamiento y pruebas, típico del área de ML, de forma que los datos están separados por carpetas; mientras que el segundo genera ficheros \code{.csv} que indican a qué conjunto pertenecen basándose en la estructura de ficheros. Cabe destacar que, originalmente la implementación del código de MeshCNN no poseía la capacidad para cargar los datos por medio de un fichero en formato \code{.csv} y que además, el uso de los mismos ha permitido añadir el conjunto de validación para poder tener más certeza de la capacidades de aprendizaje de la red.
+
+Por otro lado y opcionalmente dentro de \code{genDatasetFolders.py} es posible también realizar parte del preprocesado, se posee una opción que habilita la invocación de \code{meshColapse.py} para que mientras se genera el conjunto de datos, también se reduzca la cantidad de aristas.
+
+\subsection{Estadísticas sobre los datos}
+Se escribieron un total de 7 scripts que obtienen de alguna manera u otra información relevante de los datos. Con \code{checkBoneExists.csv} se verifica la existencia de los huesos en alguna carpeta dado un \code{.csv}, en \code{checkHausdorff} se obtiene la distancia Hausdorff de las mallas poligonales, utilizado en un experimento; con \code{genLossPlot.csv} se generan los gráficos de las curvas de aprendizaje, con \code{getOBJStats.py} se obtienen estadísticas de los ficheros \code{.obj}, con \code{getParamDistr.py} se obtiene la distribución de datos de los huesos y finalmente con \code{memWatch.sh} se obtuvo el uso de memoria de VRAM durante un experimento.
+
+\subsection{Entrenamiento del modelo}
+
+Para el entrenamiento del modelo se debe de invocar al script \code{train.py} el cual recibe múliples parámetros de entrada, donde se definen las cantidad de capas convolucionales, su densidad, la reducción del \textit{pooling}, las capas totalmente conectadas así como regularización, la forma en que la red debe de inicializarse, dónde debe de leer los datos, etc. Una vez finaliza el entrenamiento, para obtener las métricas con el conjunto de test se invoca al script \code{test.py}.
+
+Para la ejecución se utilizaron tres sistemas distintos. En las pruebas preliminares se utilizó un ordenador portátil ASUS FX505DT con una CPU AMD Ryzen 7 3750H, 16 GB de RAM y una NVIDIA GeForce GTX 1650 que posee 4 GB de VRAM. Como fue comentado en la sección \ref{section:medMeshCNN}, el alto uso de memoria que posee MeshCNN al momento de procesar mallas más complejas conlleva a utilizar el entorno de ejecución de Google Colab Pro, que posee un CPU Intel Xeon CPU E5-2699, 16 GB de RAM y una NVIDIA Tesla P100 con 16 GB de VRAM. Tras varias pruebas se concluyó que, aún con el aumento de las prestaciones, poder entrenar un modelo suficientemente complejo requeriría de mayor potencia de cómputo. Por lo tanto, el tercer y final entorno de ejecución se encuentra en el clúster de servidores GPU de la Universidad de Granada denominado NGPU ubicado en el CPD Santa Lucía, al que se accedió por SSH y se gestionó el entrenamiento con Slurm. Se utilizó con preferencia el nodo \say{Dionisio} que posee dos Intel Xeon Silver 4216, 512 GB de RAM y una NVIDIA Quadro RTX 8000 con 48 GB de VRAM.
+
+Aunque los entrenamientos más complejos fueron realizados en NGPU, se utilizó también el entorno de Google Colab para realizar pruebas preliminares así como el ordenador ASUS que tuvo una función similar, además, de funcionar como el entorno para desarrollar más el \textit{framework} descrito por MeshCNN.
+
+\section{Experimentos}
+\subsection{Protocolo de validación experimental}
+
+Para el entrenamiento de los modelos se utilizó la técnica de \textit{hold-out}: se divide el conjunto de datos en dos: El conjunto de entrenamiento y el de test, dentro del conjunto de entrenamiento a su vez se subdivide para obtener el conjunto de validación. Al momento de entrenar el modelo, se utiliza este último conjunto para verificar época a época la calidad del entrenamiento comparándolo con las métricas que se obtienen del conjunto de entrenamiento. Una vez se finaliza el entrenamiento el modelo es probado con el conjunto nunca antes visto de test para poder obtener una valoración final de la calidad del aprendizaje. Véase la Figura \ref{fig:datasetDivide}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/experiments/datasetsProps.png}
+    \caption[Esquema de división de datos]{Esquema de división del conjunto de datos o \textit{dataset} en los subconjunto de entrenamiento, validación y test.}
+    \label{fig:datasetDivide}
+\end{figure}
+
+Se generaron dos \textit{datasets} denominados Nodule-50-30K y Nodule-98-30K que poseen respectivamente 50 (25 con presencia y 25 con ausencia de nódulo óseo) y 98 (49 con presencia y 49 con ausencia) muestras en total. En ambos casos se utiliza el 80\% de los datos para entrenamiento, lo que se traduce a un 40 y 78 muestras del total, con 10 y 20 muestras en test. En Nodule-50-30K, se utiliza el 15\% de las muestras de entrenamiento como validación, lo que se traduce en 6 muestras. Mientras que en Nodule-98-30K se utiliza un 12\%, es decir, 10 muestras del total.
+
+
+\subsection{Métricas}
+Debido a que se trata de un problema de clasificación binaria, se utiliza la típica función de pérdida de entropía cruzada o \textit{cross entropy loss} para ir ajustando los pesos y sesgo de las neuronas del modelo, como fue explicado en la Sección \ref{section:DL}. La función se define de la siguiente manera:
+
+\begin{equation}
+    L_{CE} = -\sum_i^n t_i \log(p_i)
+\end{equation}
+Para $n$ clases donde $t_i$ es la etiqueta verdadera y $p_i$ es la probabilidad de la $i$-ésima clase. Esta función evalúa la certeza que tiene el modelo para obtener una probabilidad alta en la clase verdadera y baja en el resto de clases para los datos que se están utilizando en el entrenamiento. Si se tiene una certeza alta, el valor de la función tenderá a cero, en caso de baja certeza podría tender a infinito positivo.
+
+Si bien esta es la métrica principal al momento de seleccionar el mejor modelo, no permite observar directamente que cómo de bien está clasificando las muestras. Para ello se utiliza la métrica de \textit{accuracy} que permite observar la proporción de muestras que se están clasificando en la etiqueta verdadera correspondiente y por lo tanto es mucho más intuitiva. La variante binaria se define como:
+
+\begin{equation}
+    \text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+Donde $TP$ y $TN$ indican verdadero positivo y verdadero negativo, esto es, las muestras clasificadas correctamente, mientras que $FP$ y $FN$ indican falso positivo y falso negativo, las muestras mal clasificadas. El \textit{accuracy} lo que obtiene es la proporción de muestras clasificadas correctamente del total de muestras, aunque no se distinguen entre clases, por lo que se pueden obtener valores sesgados si existen clases desbalanceadas.
+
+Para mitigar esto se utilizan las métricas de \textit{precision} y \textit{recall} que se definen como:
+
+\begin{align}
+    \text{Precision} &= \frac{TP}{TP + FP} \\
+    \text{Recall} &= \frac{TP}{TP + FN}
+\end{align}
+\textit{Precision} indica que porcentaje de las predicciones positivas son correctas, mientras que \textit{Recall} indica qué porcentaje de muestras que son realmente positivas fueron correctamente clasificadas. Esto permite observar si el modelo posee algún sesgo obteniendo más falsos positivos o falsos negativos. Estos dos valores se juntan para obtener el valor $F1$ que permite comparar de forma más cómoda los diferentes modelos, se define como:
+
+\begin{equation}
+    \text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+
+Se utiliza también la matriz de confusión para visualizar directamente los valores $TP$, $TN$, $FN$ y $FP$, pues resulta útil para obtener una intuición de las métricas mencionadas anteriormente.
+
+Finalmente, se incluye una métrica adicional denominada distancia Hausdorff. Esta métrica, a diferencia del resto, no es utilizada para evaluar el modelo entrenado; se utiliza para evaluar las mallas poligonales. De formal, la distancia Hausdorff se define como:
+\begin{equation}
+    d_H = \text{max}\left\{\sup_{x\in X} \inf_{y \in Y} d(x,y),  \sup_{y\in Y} \inf_{x \in X} d(x,y) \right\}
+\end{equation}
+Esta es la distancia máxima entre dos subconjuntos que se encuentran en espacio métrico. En el contexto de las mallas 3D \cite{cignoni1998metro}, se aplica esta métrica por cada triángulo de una malla buscando el triángulo más cercano en otra, permitiendo determinar qué tan diferente es la superficie de una malla respecto de otra. Se utiliza el software gratis y de código abierto \textit{MeshLab} \cite{meshlab} para calcular la distancia. Al aplicarse se obtiene la distancia media y máxima de diferencia entre las dos mallas en unidades absolutas que utilicen las mismas (metros, centímetros, etc) o como un porcentaje de diferencia relativo entre ellas.
+
+\subsection{Experimentos preliminares}
+Previo a tratar directamente con los datos proporcionados, se realizaron unos experimentos con el fin de familiarizarse con el \textit{framework} y sus derivados, el flujo de trabajo y las limitaciones frente a los datos del estudio.
+\subsubsection{Verificando funcionalidad base con SHREC16}
+Para familiarizarse con el \textit{framework} y validar su funcionamiento correcto, se repite el experimento hecho por Hanocka et al. \cite{hanocka2019meshcnn} utilizando el \textit{dataset} de SHREC16 \cite{lian2011shape}, el cual posee un total 600 mallas repartidas en 30 categorías balanceadas con una resolución de 750 aristas. Se utiliza la misma partición de datos de 80\% entrenamiento y 20\% test. Adicionalmente se incluye el conjunto de validación que hace uso de un 20\% del conjunto de entrenamiento. Se ha utilizado la misma estructura de red e hiperparámetros que los utilizados por los autores. En la Tabla \ref{table:SHREC16_hyperParams} se pueden apreciar los hiperparámetros más relevantes, en la Tabla \ref{table:SHREC16_dataAug} el aumento de datos utilizado y en la Tabla \ref{table:SHREC16_detailArch}  la arquitectura detallada del modelo.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|l|}
+\hline
+\rowcolor[HTML]{FFC702}
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFC702}{Hiperparámetro}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Valor}} \\ \hline
+Optimizador & \lstinline!optimizer! & Adam \\ \hline
+Aristas de entrada & \lstinline!ninput_edges! & 750 \\ \hline
+Tamaño de Batch & \lstinline!batch_size! & 16 \\ \hline
+Épocas & \lstinline!niter! & 100 \\ \hline
+Épocas con decaimiento de LR & \lstinline!niter_decay! & 100 \\ \hline
+LR Inicial & \lstinline!lr! & $2\times10^{-4}$ \\ \hline
+Tipo de inicialización & \lstinline!init_type! & Normal \\ \hline
+\end{tabular}
+\caption[SHREC16: Hiperparámetros]{\code{SHREC16}, Hiperparámetros.}
+\label{table:SHREC16_hyperParams}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|l|}
+\hline
+\rowcolor[HTML]{FFC702}
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFC702}{Modificación}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Valor}} \\ \hline
+Nro. Mallas aumentadas & \lstinline!num_aug! & 20 \\ \hline
+Proporción aristas a invertir & \lstinline!flip_edges! & 0.2 \\ \hline
+Proporción vértices a deslizar por superficie & \lstinline!slide_verts! & 0.2 \\ \hline
+Escalado no uniforme aleatorio de vértices & \lstinline!scale_verts! & No \\ \hline
+\end{tabular}
+\caption[SHREC16: Aumento de datos]{\code{SHREC16}, Aumento de datos.}
+\label{table:SHREC16_dataAug}
+\end{table}
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|cc|cc|}
+\hline
+\rowcolor[HTML]{FFC702}
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}{Dimensiones}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}{Canales}} \\ \cline{3-6}
+\rowcolor[HTML]{FFC702}
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}{\#}} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}{Capa}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Entrada}} & {Salida} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Entrada}} & {Salida} \\ \hline
+1 & \textit{MeshConv} $(5\times5)$ + ReLU & \multicolumn{1}{c|}{750} & 750 & \multicolumn{1}{c|}{5} & 64 \\ \hline
+2 & \textit{GroupNorm} & \multicolumn{1}{c|}{750} & 750 & \multicolumn{1}{c|}{64} & 64 \\ \hline
+3 & \textit{MeshPool} & \multicolumn{1}{c|}{750} & 600 & \multicolumn{1}{c|}{64} & 64 \\ \hline
+4 & \textit{MeshConv} $(5\times5)$ + ReLU & \multicolumn{1}{c|}{600} & 600 & \multicolumn{1}{c|}{64} & 128 \\ \hline
+5 & \textit{GroupNorm} & \multicolumn{1}{c|}{600} & 600 & \multicolumn{1}{c|}{128} & 128 \\ \hline
+6 & \textit{MeshPool} & \multicolumn{1}{c|}{600} & 450 & \multicolumn{1}{c|}{128} & 128 \\ \hline
+7 & \textit{MeshConv} $(5\times5)$ + ReLU & \multicolumn{1}{c|}{450} & 450 & \multicolumn{1}{c|}{128} & 256 \\ \hline
+8 & \textit{GroupNorm} & \multicolumn{1}{c|}{450} & 450 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+9 & \textit{MeshPool} & \multicolumn{1}{c|}{450} & 300 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+10 & \textit{MeshConv} $(5\times5)$ + ReLU & \multicolumn{1}{c|}{300} & 300 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+11 & \textit{GroupNorm} & \multicolumn{1}{c|}{300} & 300 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+12 & \textit{MeshPool} & \multicolumn{1}{c|}{300} & 180 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+13 & \textit{GlobalAvgPooling} & \multicolumn{1}{c|}{300} & 256 & \multicolumn{1}{c|}{256} & 256 \\ \hline
+14 & \textit{Dense} & \multicolumn{1}{c|}{-} & - & \multicolumn{1}{c|}{256} & 100 \\ \hline
+15 & \textit{SoftMax} & \multicolumn{1}{c|}{-} & - & \multicolumn{1}{c|}{100} & 30 \\ \hline
+\end{tabular}%
+}
+\caption[SHREC16: Arquitectura detallada]{\code{SHREC16}, Arquitectura detallada del modelo. \textit{MeshConv}: Convolución de malla, \textit{GroupNorm}: Normalización de grupo, \textit{MeshPool}: \textit{Pooling} de malla, \textit{GlobalAvgPooling}: \textit{Pooling} global promedio, \textit{SoftMax}: Capa totalmente conectada con función de activación \textit{SoftMax}.}
+\label{table:SHREC16_detailArch}
+\end{table}
+
+
+
+El modelo, que también se denominó \code{SHREC16}, se logró entrenar satisfactoriamente, además que permitió familiarizarse con el flujo de trabajo y realizar adiciones pertinentes al código. Se puede observar en la Figura \ref{fig:shrec16} que las curvas de entrenamiento y validación se encuentran juntas y con la misma tendencia, tanto en \textit{accuracy} como en el valor de error, por lo que se valida que el modelo utilizando el \textit{framework} de MeshCNN sí aprende y se obtiene un resultado similar al de los autores: un 97,5\% de \textit{accuracy} en el conjunto de test con un error de 0,126.
+
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/SHREC16_Accuracy.png}
+        \caption{\textit{Accuracy}}
+        \label{subfig:acc_shrec16}
+    \end{subfigure}
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/SHREC16_Loss.png}
+        \caption{$L_{CE}$}
+        \label{subfig:loss_shrec16}
+    \end{subfigure}
+    \caption[SHREC16: Curvas de aprendizaje]{Modelo \code{SHREC16}. Curvas de aprendizaje de \textit{accuracy} y error.}
+    \label{fig:shrec16}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|l|}
+\hline
+\rowcolor[HTML]{FFC702}
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFC702}{Capa}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Cantidad y/o densidad}} \\ \hline
+Convolución + ReLU & \lstinline!nfc! & 64, 128, 256, 256 \\ \hline
+Normalización & \lstinline!norm! & \textit{Group}, 16 \\ \hline
+\textit{Pooling} & \lstinline!pool_res! & 600, 450, 300, 180 \\ \hline
+Densa & \lstinline!fc_n! & 100 \\ \hline
+\textit{Dropout} & \lstinline!dropout! & 0.0 \\ \hline
+\end{tabular}
+\caption[SHREC16: Arquitectura resumida]{\code{SHREC16}, Arquitectura resumida del modelo}
+\label{table:SHREC16_condensedArch}
+\end{table}
+
+Dado que \code{SHREC16} es el único modelo conocido que resuelve un problema similar al de este TFG utilizando mallas poligonales, se eligió como la base de los modelos que tratarán con las sínfisis del pubis. Debido a esto, partes de la arquitectura actual serán reutilizadas sin modificación: se mantienen el tamaño de los filtros de convolución con \textit{padding}, se mantiene el \textit{pooling} global que conecta los bloques convolucionales a las capas totalmente conectadas y se mantiene la última capa con la función de activación \textit{SoftMax}. Para mayor claridad, en los siguientes experimentos, se adoptará una forma condensada de representar la arquitectura de la red, asumiendo que los detalles anteriormente mencionados se mantienen iguales. Se puede observar en la Tabla \ref{table:SHREC16_condensedArch} la representación resumida de \code{SHREC16}, siendo equivalente a la representación detallada en la Tabla \ref{table:SHREC16_detailArch}.
+
+
+\subsubsection{Explorando la interpretabilidad de los modelos}
+Con la finalidad de comprobar las posibilidades de interpretar el modelo, o de forma más coloquial, tener una idea de lo que se está fijando la red para aprender, se pueden utilizar las mallas intermedias que se producen luego de cada operación de \textit{pooling}. Como se ha explicado en la Sección \ref{section:meshcnnPooling}, este \textit{framework} realiza un \textit{pooling}  donde se mantiene detalle en las partes de la malla 3D que la red utiliza para clasificar una muestra. Se desea obtener una intuición sobre esta funcionalidad para permitir la interpretabilidad humana de las decisiones que toma el modelo.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|l|}
+\hline
+\rowcolor[HTML]{FFC702}
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFC702}{Capa}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Cantidad y/o Densidad}} \\ \hline
+Convolución & \lstinline!nfc! & 64, 128, 256, 256 \\ \hline
+Normalización & \lstinline!norm! & \textit{Group}, 2 \\ \hline
+Pooling & \lstinline!pool_res! & 900, 675, 400, 240 \\ \hline
+Densa & \lstinline!fc_n! & 100 \\ \hline
+\textit{Dropout} & \lstinline!dropout! & 0\% \\ \hline
+\end{tabular}
+\caption[SphereCubes, Arquitectura]{\code{SphereCubes}, Arquitectura.}
+\label{table:sphereCubes}
+\end{table}
+
+
+Para esto, se generó un \textit{dataset} simple que contiene 20 objetos con un máximo de 1440 aristas, 10 esferas y 10 cubos con diferentes grados de deformaciones. Se adaptan las capas de \textit{pooling} y de entrada de \code{SHREC16} manteniendo el resto de hiperparámetros iguales. Se denomina el modelo como \code{SphereCubes} con la nueva arquitectura definida en la Tabla \ref{table:sphereCubes}. Siendo datos muy sencillos, en apenas 10 épocas ya se tiene un 100\% de \textit{accuracy} en validación y test con un $L_{CE}$ de 0.4812 y 0.533 respectivamente.
+
+\begin{figure}[h]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/cube0_passes.png}
+      %  \caption{}
+      %  \label{subfig:cube0_passes}
+    \end{subfigure}
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/sphere0_passes.png}
+       % \caption{}
+       % \label{subfig:sphere0_passes}
+    \end{subfigure}
+    \caption[SphereCubes: Colapso de aristas]{\code{SphereCubes}, colapso de aristas luego de cada operación de \textit{pooling} para el cubo \code{cube0.obj} y la esfera \code{sphere0.obj}.}
+    \label{fig:sphereCube_passes}
+\end{figure}
+
+En la Figura \ref{fig:sphereCube_passes} se observa las mallas resultantes luego de cada operación de \textit{pooling} para dos muestras del conjunto de test, \code{cube0.obj} y \code{sphere0.obj}. Para cada objeto, la red está colapsando distintas aristas, esto se nota en la geometría que tienen las mallas en la última capa de \textit{pooling}. Se puede pensar que esto es una especie de mapa de activación 3D, pues muestra las partes de la malla que han sufrido menos pérdida de detalle y por lo tanto, son útiles para la red al momento de determinar si se trata de un cubo o una esfera. Para mostrar mejor las partes de la malla original que se han mantenido o perdido, se utiliza la distancia Hausdorff, midiendo la distancia entre los vértices de la malla original y la malla resultante de la última capa de \textit{pooling}. Para los objetos mencionados, se puede observar el mapa de activación obtenido en la Figuras \ref{subfig:cube0} y \ref{subfig:sphere0}, pintándose de color rojo los vértices con menor distancia entre sí, mientras que en azul se pintan los que poseen mayor distancia.
+
+\begin{figure}[p]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/cube0.png}
+        \caption{\code{cube0.obj}}
+        \label{subfig:cube0}
+    \end{subfigure}
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/sphere0.png}
+        \caption{\code{sphere0.obj}}
+        \label{subfig:sphere0}
+    \end{subfigure}
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/cube1.png}
+        \caption{\code{cube1.obj}}
+        \label{subfig:cube1}
+    \end{subfigure}
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/sphere1.png}
+        \caption{\code{sphere1.obj}}
+        \label{subfig:sphere1}
+    \end{subfigure}
+    \caption[SphereCubes: Mapas de activación]{\code{SphereCubes}, mapas de activación calculados con la distancia Hausdorff. Se pinta la malla con un gradiente desde el color rojo (menor distancia) al color azul (mayor distancia).}
+    \label{fig:sphereCubes_heatmap}
+\end{figure}
+
+Se puede observar que para el cubo, la red mantuvo más detalles en las tapas laterales así como la tapa superior pues se muestran con color rojo, mientras que las puntas han importado menos, estando coloreadas de azul. Por parte de la esfera, la superficie que la caracteriza son las tapas superior e inferior, que puede verse hasta en el modelo procesado, que se ha mantenido esa parte intacta y en efecto aparece coloreada de rojo, mientras que el centro de la esfera no ha sido de mayor importancia, estando coloreada en tonos verdes y azules. Este patrón se mantiene para otras muestras, por ejemplo, en las Figuras \ref{subfig:cube1} y \ref{subfig:sphere1} se obtiene la distancia entre otros dos objetos y en efecto, la red se fija en zonas similares de la superficie para decidir si es un cubo o una esfera, por lo que se puede concluir que las mallas obtenidas luego del \textit{pooling} permiten dar interpretabilidad a las decisiones que toma el modelo para clasificar objetos.
+
+\subsubsection{Analizando pérdida de calidad al reducir la calidad de las mallas}
+\label{section:hausdorff}
+Debido a la gran resolución de los datos obtenidos, se desea realizar un análisis para determinar si es posible utilizar mallas simplificadas para acelerar el procesado por los modelos con la mínima pérdida de información respecto a la superficie de la sínfisis del pubis.
+
+En primer lugar, se generan tres conjuntos de datos: de 30 000, 50 000 y 100 000 aristas; partiendo de los datos originales. Se realiza un análisis de la distancia Hausdorff para comprobar que tanta calidad se está perdiendo al realizar el colapso de aristas más y más fuerte, pues la pérdida de calidad de la superficie de la sínfisis puede reducir también la calidad del modelo entrenado. Se puede observar en la Tabla \ref{table:hausdorff} los resultados de comparar las 98 muestras con calidad original y las mismas muestras reducidas a dichas resoluciones. Se utiliza la diagonal caja delimitadora promedio, de 51.6024 mm para obtener el porcentaje de error.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{FFCB2F}
+{Nº Aristas} & {\begin{tabular}[c]{@{}c@{}}Distancia máxima \\ media\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}Distancia \\ media\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}Error máximo \\ medio\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}Error \\ medio\end{tabular}} \\ \hline
+30K & 0.0878 mm & 0.0067 mm & 0.1701 \% & 0.0130 \% \\ \hline
+50K & 0.0593 mm & 0.0045 mm & 0.1149 \% & 0.0087 \% \\ \hline
+100K & 0.0377 mm & 0.0024 mm & 0.0073 \% & 0.0047 \% \\ \hline
+\end{tabular}%
+}
+\caption[Distancia Hausdorff entre las mallas originales y las mallas reducidas]{Distancia Hausdorff entre las mallas originales y las mallas reducidas, medidas en unidades absolutas y relativas.}
+\label{table:hausdorff}
+\end{table}
+
+Se observa que la diferencia entre cada reducción con los datos originales es mínima en general. Lógicamente, a mayor resolución la distancia entre las superficies variará menos entre sí, pero igual es válido notar que incluso con 30 000 aristas se posee una distancia máxima de diferencia entre mallas de menos de un milímetro, lo que corresponde con un 0.1701\% de diferencia relativa al cuadro delimitador de la malla. Esto quiere decir que las mallas son muy parecidas entre sí aún siendo reducidas drásticamente, lo que permite también la posibilidad de utilizar muestras de mucha menor resolución sin miedo a una gran pérdida de información.
+
+\subsubsection{Estimando tiempo de procesado de datos}
+Habiendo ya comprobado las funcionalidades base del \textit{framework}, la interpretabilidad que provee el mismo y la factibilidad de utilizar mallas con menor resolución, ahora se desea obtener una métrica de comparación entre MeshCNN, MedMeshCNN y MeshCNN+ respecto al tiempo de procesado de una malla dependiendo de la resolución de la misma y la variante del \textit{framework} que se está utilizando.
+
+Nuevamente partiendo de la arquitectura de \code{SHREC16}, se adaptan las capas de \textit{Pooling} para aceptar una malla 3D de una sínfisis del pubis de 30 000, 50 000 y 100 000 aristas con la finalidad de evaluar el tiempo que toma procesar cada una y si se es capaz de entrenar a esas resoluciones. Se puede observar en la Tabla \ref{table:poolingResPerEdge} las capas de \textit{pooling} que se utilizaron con la misma proporción de aristas por capa de \textit{pooling} respecto al número de aristas de entrada del modelo. El entrenamiento se realizó en el nodo de cómputo de NGPU \say{Dionisio} que posee 48 GB de memoria de vídeo, el máximo disponible en el clúster. El tiempo que tomó el modelo y su uso de memoria en cada \textit{framework} se puede observar en la Tabla \ref{table:frameworkComp}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{FFC702}
+{Aristas} & \textit{{Pooling}} \\ \hline
+30K & 24000, 18000, 12000, 7200 \\ \hline
+50K & 40000 30000 20000 12000 \\ \hline
+100K & 80000, 60000, 40000, 24000 \\ \hline
+\end{tabular}
+\caption[Resoluciones de pooling para cada framework]{Resoluciones de \textit{pooling} utilizadas por cada \textit{framework} para las aristas de entrada.}
+\label{table:poolingResPerEdge}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|cc|cc|cc|}
+\hline
+\rowcolor[HTML]{FFC702}
+\cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}{MeshCNN}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}{MedMeshCNN}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}{MeshCNN+}} \\ \cline{2-7}
+\rowcolor[HTML]{FFC702}
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}{Aristas}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Tiempo}} & {VRAM} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Tiempo}} & {VRAM} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}{Tiempo}} & {VRAM} \\ \hline
+30K & \multicolumn{1}{c|}{\textbf{8.9040 s}} & 13.5 GB & \multicolumn{1}{c|}{402.3333 s} & 2.710 GB & \multicolumn{1}{c|}{23 s} & {1.792 GB} \\ \hline
+50K & \multicolumn{1}{c|}{\textbf{15.1664 s}} & 42.982 GB & \multicolumn{1}{c|}{1100 s} & 4.488 GB & \multicolumn{1}{c|}{38 s} & {2.164 GB} \\ \hline
+100K & \multicolumn{1}{c|}{-} & $> 48$ GB & \multicolumn{1}{c|}{4632.3333 s} & 8.976 GB & \multicolumn{1}{c|}{80.3333 s} & {3.288 GB} \\ \hline
+\end{tabular}%
+}
+\caption[Comparativa de frameworks respecto a tiempo y espacio]{Comparativa en tiempo y espacio de los \textit{frameworks} para procesar una malla.}
+\label{table:frameworkComp}
+\end{table}
+
+Como puede observarse, existe una gran diferencia entre el tiempo que toma cada \textit{framework} y la memoria utilizada. MeshCNN es el más rápido pero es el que más memoria gasta. Tanto así que no fue posible estimar el tiempo de procesado de 100 000 aristas porque ocupaba más memoria de la disponible. MeshCNN+ encuentra un balance, siendo más lento pero consumiendo significativamente menos memoria, mientras que MedMeshCNN obtiene el peor desempeño, siendo el \textit{framework} más lento con diferencia y con un uso ligeramente peor de memoria que MeshCNN+.
+
+\subsection{Experimentos con el Nódulo Óseo}
+Una vez realizados los experimentos anteriores, se procede a entrenar con los datos provistos. Como comentado, se generaron dos \textit{datasets} para comenzar con las pruebas mientras se terminaban de preprocesar el resto de datos, pues el proceso no puede automatizarse del todo. Así mismo, por cuestiones de planificación, se decide utilizar MeshCNN para los experimentos, puesto que, aunque sea el \textit{framework} que más consume memoria, es el más rápido y se posee cierta flexibilidad respecto al uso de memoria haciendo uso del nodo de NGPU con 30000 aristas.
+
+\subsubsection{Nodule-50-30K}
+Debido a las similaridades entre \code{SHREC16} con el problema a resolver, se realizan distintas pruebas con variaciones de la arquitectura para determinar su desempeño en la detección del nódulo óseo de la sínfisis del pubis. Los hiperparámetros se mantienen tal y como están en la Tabla \ref{table:SHREC16_hyperParams} a excepción del tamaño del \textit{batch} que se fija a 1, las aristas de entrada a 30000, las épocas se fijan a 50 manteniendo el mismo LR y 10 con decaimiento. Se mantiene el aumento de datos tal como se describe en la Tabla \ref{table:SHREC16_dataAug}.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ll|lll|}
+\hline
+\rowcolor[HTML]{FFC702}
+\multicolumn{2}{|l|}{\cellcolor[HTML]{FFC702}Capa} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFC702}\lstinline!Nodule-50-30K-1!} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFC702}\lstinline!Nodule-50-30K-2!} & \lstinline!Nodule-50-30K-3! \\ \hline
+\multicolumn{1}{|l}{Convolución} & \lstinline!nfc! & \multicolumn{1}{l|}{64, 128, 256, 256} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}64, 128, 256, 256\\ 1 salto residual\end{tabular}} & 16, 16, 32, 64 \\ \hline
+\multicolumn{1}{|l}{Normalización} & \lstinline!norm! & \multicolumn{3}{l|}{Group, 16} \\ \hline
+\multicolumn{1}{|l}{\textit{Pooling}} & \lstinline!pool_res! & \multicolumn{2}{l|}{24000, 18000, 12000, 7200} & 20000, 15000, 8000, 7500 \\ \hline
+\multicolumn{1}{|l}{Densa} & \lstinline!fc_n! & \multicolumn{3}{l|}{100} \\ \hline
+\multicolumn{1}{|l}{\textit{Dropout}} & \lstinline!dropout! & \multicolumn{3}{l|}{0.0} \\ \hline
+\multicolumn{2}{l|}{} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFC702}\lstinline!Nodule-50-30K-4!} & \multicolumn{2}{l|}{\cellcolor[HTML]{FFC702}\lstinline!Nodule-50-30K-5!} \\ \hline
+\multicolumn{1}{|l}{Convolución} & \lstinline!nfc! & \multicolumn{1}{l|}{16, 16, 32, 32, 64} & \multicolumn{2}{l|}{32, 64, 256, 256} \\ \hline
+\multicolumn{1}{|l}{Normalización} & \lstinline!norm! & \multicolumn{3}{l|}{Instancia} \\ \hline
+\multicolumn{1}{|l}{\textit{Pooling}} & \lstinline!pool_res! & \multicolumn{1}{l|}{20000, 15000, 13000, 8000, 7500} & \multicolumn{2}{l|}{20000, 15000, 10000, 5000} \\ \hline
+\multicolumn{1}{|l}{Densa} & \lstinline!fc_n! & \multicolumn{1}{l|}{100} & \multicolumn{2}{l|}{2042, 512, 128} \\ \hline
+\multicolumn{1}{|l}{\textit{Dropout}} & \lstinline!dropout! & \multicolumn{1}{l|}{0.0} & \multicolumn{2}{l|}{0.5, 0.5, 0.5} \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-50-30K-*: Arquitectura]{Modelos \code{Nodule-50-30K-*}, Arquitectura.}
+\label{table:nodule-50-30K_Arch}
+\end{table}
+
+En la Tabla \ref{table:nodule-50-30K_Arch} se pueden observar los 5 modelos más representativos de las pruebas realizadas. El 1º y 2º modelo utilizan la misma arquitectura, salvo que el segundo incluye saltos residuales entre los bloques convolucionales, añadido siguiendo el razonamiento de modelos como ResNet50 que los emplean y se sabe que funcionan bien para la detección de imágenes. El 3º modelo incluye una estructura menos densa y con unas capas de \textit{pooling} con mayor reducción de aristas con la idea de concentrar la información que la red necesite para detectar la característica, el 4º modelo utiliza una red con más convoluciones y el 5º modelo utiliza más capas totalmente conectadas y el uso de \textit{dropout} con la idea de potenciar el aprendizaje, estos dos utilizan también normalización de instancia pues obtuvo mejores resultados que la normalización de grupo para la misma estructura y misma semilla.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|cc|cc|cc|c|}
+\hline
+\rowcolor[HTML]{FFC702}
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Precision}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Recall}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}F1} & \cellcolor[HTML]{FFC702} \\ \cline{3-8}
+\rowcolor[HTML]{FFC702}
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}Modelo} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}\textit{Accuracy}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}$L_{CE}$} \\ \hline
+\lstinline!1! & 0.50 & \multicolumn{1}{c|}{0.50} & 0.50 & \multicolumn{1}{c|}{0.40} & 0.60 & \multicolumn{1}{c|}{0.44} & 0.55 & 1.420 \\ \hline
+\lstinline!2! & 0.50 & \multicolumn{1}{c|}{0.50} & 0.50 & \multicolumn{1}{c|}{0.20} & 0.80 & \multicolumn{1}{c|}{0.29} & 0.62 & 0.697 \\ \hline
+\lstinline!3! & 0.30 & \multicolumn{1}{c|}{0.33} & 0.25 & \multicolumn{1}{c|}{0.40} & 0.20 & \multicolumn{1}{c|}{0.36} & 0.22 & 1.475 \\ \hline
+\lstinline!4! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.693 \\ \hline
+\lstinline!5! & \textbf{0.70} & \multicolumn{1}{c|}{\textbf{0.75}} & \textbf{0.67} & \multicolumn{1}{c|}{\textbf{0.60}} & 0.80 & \multicolumn{1}{c|}{\textbf{0.67}} & \textbf{0.73} & \textbf{0.621} \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-50-30K-*: Resultados en test]{Modelos \code{Nodule-50-30K-*}, resultados en el conjunto de test}
+\label{table:nodule-50-30K_results}
+\end{table}
+
+En la Tabla \ref{table:nodule-50-30K_results} se pueden observar los resultados de los 5 modelos mencionados, puede verse que los modelos \code{1} a \code{4} no lograron aprender, pues se mantuvieron con un \textit{accuracy} de 0.50 o menos, con lo único notable siendo que los modelos tienden a predecir que las muestras tienen el nódulo óseo ausente. El modelo \code{Nodule-50-30K-5} a diferencia, si logró aprender, pues obtiene un \textit{accuracy} de 0.70, adicionalmente no posee una tendencia marcada para clasificar las muestras con nódulo presente o ausente, poseyendo una \textit{precision} de 0.75 y 0.67, \textit{recall} de 0.60 y 0.80 respectivamente, para mayor claridad se puede observar la matriz de confusión en \ref{table:50-30K-confusion}, donde se aprecia que es una clasificación balanceada. Se puede observar en las curvas de entrenamiento, Figura \ref{fig:nodule-50-30K-5}, que el aprendizaje ha sido ruidoso pero con tendencia ascendente, aunque se observan indicios de sobreajuste en la gráfica del error, Subfigura \ref{subfig:loss_Nodule-50-30K-5}. Es necesario, notando el buen desempeño que se ha obtenido en las muestras reducidas, hacer uso de todos los datos disponibles para explorar mejor la calidad del modelo actual.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cc|cc|}
+\cline{3-4}
+ &  & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCB2F}{Real}} \\ \cline{3-4}
+ &  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCB2F}{Presente}} & \cellcolor[HTML]{FFCB2F}{Ausente} \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFC702}} & \cellcolor[HTML]{FFC702}{Presente} & \multicolumn{1}{c|}{3} & 1 \\ \cline{2-4}
+\multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{FFC702}{Predicción}}} & \cellcolor[HTML]{FFC702}{Ausente} & \multicolumn{1}{c|}{2} & 4 \\ \hline
+\end{tabular}
+\caption[Nodule-50-30K-5: Matriz de confusión]{\lstinline!Nodule-50-30K-5!, matriz de confusión.}
+\label{table:50-30K-confusion}
+\end{table}
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/Nodule-50_Accuracy.png}
+        \caption{\textit{Accuracy}}
+        \label{subfig:acc_Nodule-50-30K-5}
+    \end{subfigure}
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/Nodule-50_Loss.png}
+        \caption{$L_{CE}$}
+        \label{subfig:loss_Nodule-50-30K-5}
+    \end{subfigure}
+    \caption[Nodule-50-30K-5: Curvas de aprendizaje]{Modelo \code{Nodule-50-30K-5}. Curvas de aprendizaje de \textit{accuracy} y error.}
+    \label{fig:nodule-50-30K-5}
+\end{figure}
+
+
+\subsubsection{Nodule-98-30K}
+Una vez obtenido el modelo \code{Nodule-50-30K-5}, el cual para 50 huesos obtuvo la mejor \textit{accuracy} de 70\%, se decide, entonces, ampliar el estudio para utilizar todos los huesos disponibles del \textit{dataset} balanceado. Se reutiliza la misma estructura del modelo, ahora denominándose \code{Nodule-98-30K-5rev}.
+
+Una vez realizado el entrenamiento con los mismos parámetros e hiperparámetros utilizados para \code{Nodule-50-30K-5}, se obtiene un \textit{accuracy} de 98.4848\% y un error de 0.0665 para los datos de entrenamiento, pero para los datos de validación se obtiene 58.3333\% de \textit{accuracy} y 1.6335 de error. En las curvas de aprendizaje del modelo, Figura \ref{fig:nodule-98-30K-7rev}, se puede observar claramente un ejemplo de sobreentrenamiento u \textit{overfitting}, sobre todo en la gráfica de la función de pérdida (\ref{subfig:loss_nodule-98-30K-7rev}). Las curvas de entrenamiento y validación comienzan juntas pero a partir de la época 20 divergen, con los valores del conjunto de entrenamiento mejorando y los valores del conjunto de validación empeorando. Esto indica que el modelo no está logrando generalizar los datos de entrenamiento y  solo los está \say{memorizando}, lo que desmejora su rendimiento con datos no vistos, en este caso los de validación. No sorprende, entonces, que al procesar los datos de test se obtiene un 55\% de \textit{accuracy} con un error de 4.248.
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/Nodule-98-50K-5rev_Accuracy.png}
+        \caption{\textit{Accuracy}}
+        \label{subfig:acc_nodule-98-30K-7rev}
+    \end{subfigure}
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/Nodule-98-50K-5rev_Loss.png}
+        \caption{$L_{CE}$}
+        \label{subfig:loss_nodule-98-30K-7rev}
+    \end{subfigure}
+    \caption[Nodule-98-30K-5rev: Curvas de aprendizaje]{Curvas de aprendizaje para el \textit{accuracy} y el error de entropía cruzada del modelo \code{Nodule-98-30K-5rev} presentando un claro caso de sobreentrenamiento.}
+    \label{fig:nodule-98-30K-7rev}
+\end{figure}
+
+Si bien no se obtuvieron resultados satisfactorios en esta primera aproximación, el hecho de que el modelo sobreentrene es una señal positiva pues indica que la red está funcionando, está aprendiendo demasiado bien los datos del conjunto de entrenamiento, lo cual es razonable dado el limitado número de muestras que se poseen.
+
+Como se mencionó en la Sección \ref{subsection:regularization}, para afrontar este fenómeno se tiene que hacer uso de la regularización. Para esto se propone una batería de pruebas, modificando distintos parámetros de la arquitectura original para obtener un modelo que mejore los resultados para el \textit{dataset} completo de nódulos óseos. En la Tabla \ref{table:nodule-98-30K-GS_hyperParams} se observan los hiperparámetros considerados.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|ll|cc|}
+\hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{FFC702}Hiperparámetro} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}Valores} \\ \hline
+Optimizador & \lstinline!optimizer! & \multicolumn{1}{c|}{AMSGrad} & RMSProp \\ \hline
+Aristas de entrada & \lstinline!ninput_edges! & \multicolumn{2}{c|}{30000} \\ \hline
+Tamaño de Batch & \lstinline!batch_size! & \multicolumn{2}{c|}{1} \\ \hline
+Épocas & \lstinline!niter! & \multicolumn{2}{c|}{40} \\ \hline
+Épocas con decaimiento de LR & \lstinline!niter_decay! & \multicolumn{2}{c|}{10} \\ \hline
+LR Inicial & \lstinline!lr! & \multicolumn{2}{c|}{$2\times10^{-4}$} \\ \hline
+Tipo de inicialización & \lstinline!init_type! & \multicolumn{1}{c|}{Xavier} & Kaiming \\ \hline
+\end{tabular}
+\caption[Nodule-98-30K-GS-*: Hiperparámetros]{\code{Nodule-98-30K-GS-*}, hiperparámetros utilizados.}
+\label{table:nodule-98-30K-GS_hyperParams}
+\end{table}
+
+Se utilizará la variante del optimizador Adam llamada AMSGrad que mejora los problemas de convergencia del original. También se ha considerado el optimizador RMSProp pues también hace uso del LR adaptativo. Otro parámetro que ayuda con el aprendizaje de las redes es la inicialización. Se sabe que al realizarla por medio de una distribución normal puede suceder que los pesos sean extremadamente grandes o, al revés, muy pequeños. Por eso se consideran los métodos Xavier y Kaiming, que intentan mantener un balance en las magnitudes de inicialización tomando en cuenta las capas del modelo. Se reduce también el número de épocas, esto se realiza para reducir el tiempo total de entrenamiento de todos los modelos.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|ll|cc|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFC702}Capa} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}Cantidad y/o Densidad} \\ \hline
+Convolución & \lstinline!nfc! & \multicolumn{1}{c|}{32, 64, 256, 256} & 256, 128, 64, 32 \\ \hline
+Normalización & \lstinline!norm! & \multicolumn{2}{c|}{Instancia} \\ \hline
+\textit{Pooling} & \lstinline!pool_res! & \multicolumn{1}{c|}{20000, 15000, 10000, 7500} & 20000, 15000, 10000, 5000 \\ \hline
+Densa & \lstinline!fc_n! & \multicolumn{1}{c|}{2042, 512, 128} & 1024, 512, 128 \\ \hline
+\textit{Dropout} & \lstinline!dropout! & \multicolumn{1}{c|}{0.25, 0.25, 0.25} & 0.5, 0.25, 0.125 \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Arquitecturas]{\code{Nodule-98-30K-GS-*}, arquitecturas utilizadas.}
+\label{table:nodule-98-30K-GS_archs}
+\end{table}
+
+Respecto a la arquitectura, en la Tabla \ref{table:nodule-98-30K-GS_archs}, se observan las variaciones utilizadas en el entrenamiento. Se utilizan densidades crecientes y decrecientes de las capas convolucionales. De esta manera, el modelo puede tener más información del nódulo óseo en las primeras capas del modelo o en las últimas. El \textit{pooling} originalmente se mantiene como el modelo \code{Nodule-98-30K-5rev} pero se observó que ciertos modelos no podían reducir la malla a 5000 aristas, así que se aumentó hasta 7500. Las capas densas poseen también una versión alternativa con menos números de neuronas, ya que también se sabe que tener muchos parámetros en un modelo conlleva al sobreentrenamiento. Por último, se utilizan dos variantes del \textit{dropout}, se utiliza un \textit{dropout} constante de 0.25 en las tres capas densas, reducido de 0.5 y un \textit{dropout} decreciente, pues se piensa que de esta manera se está regularizando de mejor forma la parte densa del modelo.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|ll|cc|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFCB2F}Alteración} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}Valor} \\ \hline
+Mallas a aumentar & \lstinline!num_aug! & \multicolumn{1}{c|}{20} & 40 \\ \hline
+Proporción de aristas a invertir & \lstinline!flip_edges! & \multicolumn{1}{c|}{20\%} & 40\% \\ \hline
+Escalar vértices no uniformemente & \lstinline!scale_verts! & \multicolumn{1}{c|}{No} & Sí \\ \hline
+Proporción de vértices a mover por superficie & \lstinline!slide_verts! & \multicolumn{1}{c|}{20\%} & 40\% \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Aumento de datos]{\code{Nodule-98-30K-GS-*}, aumento de datos utilizado.}
+\label{table:nodule-98-30K-GS_dataAug}
+\end{table}
+
+Por último, se aplica el aumento de datos descrito en la Tabla \ref{table:nodule-98-30K-GS_dataAug}. Se tiene el aumento original así como una versión más agresiva, para permitir una mejor generalización del modelo.
+
+Tomando en cuenta todas las combinaciones posibles, esto es:
+\begin{itemize}
+    \item 2 opciones de optimizador.
+    \item 2 opciones de inicialización de pesos.
+    \item 2 opciones de densidad de capas convolucionales.
+    \item 2 opciones de cantidad de neuronas en las capas densas con \textit{dropout}.
+    \item 2 opciones de aumento de datos.
+\end{itemize}
+
+Se tienen entonces, un total de $2^5=32$ modelos distintos, los cuales fueron entrenados con el \textit{dataset} en cuestión. De los 32 modelos, 4 obtienen el \textit{accuracy} máximo de 70\% para el conjunto de test: \code{Nodule-98-30K-2}, \code{7}, \code{16} y \code{25}. Los parámetros de estos modelos pueden apreciarse en la Tabla \ref{table:nodule-98-30K-GS-_bestParams} y sus resultados del conjunto de test en la Tabla \ref{table:nodule-98-30K-_bestResults}. Los parámetros para los 32 modelos se pueden observar en la Tabla \ref{table:nodule-98-30K-GS-_allParams} junto a sus resultados, que están en la Tabla \ref{table:nodule-98-30K-_completeResults}.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{FFC702}
+Modelo & Optimizador & Inicialización & Convolución & Densas + \textit{dropout} & Aumento de datos \\ \hline
+\lstinline!2! & AMSGrad & Xavier & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!7! & AMSGrad & Xavier & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!16! & RMSProp & Xavier & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!25! & RMSProp & Kaiming & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Mejores hiperparámetros]{\code{Nodule-98-30K-GS-*}, hiperparámetros de los mejores modelos}
+\label{table:nodule-98-30K-GS-_bestParams}
+\end{table}
+
+Centrándose en los parámetros, es notable encontrar que dos modelos utilizan AMSGrad y otros dos RMSProp, los que usan AMSGrad hacen uso de la inicialización Xavier y menos cantidad de neuronas densas aunque un modelo utiliza más cantidad de filtros de convolución y también utiliza más aumento de datos, lo cual tiene sentido para contrarrestar la mayor cantidad de parámetros en dicho modelo. Por parte de los modelos que utilizan RMSProp, ambos utilizan densidades crecientes con el mayor número de neuronas totalmente conectadas pero uno utiliza más aumento de datos que otro, también coincide con el único modelo que utiliza la inicialización Kaiming. De estos resultados se puede concluir que para este problema una red que tiene densidades crecientes de filtros de convolución junto con regularización Xavier y una cantidad de neuronas reducida con \textit{dropout} logra aprender y detectar patrones en la compleja superficie de la sínfisis del pubis.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|cc|cc|cc|c|}
+\hline
+\rowcolor[HTML]{FFC702}
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Precision}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Recall}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}F1} & \cellcolor[HTML]{FFC702} \\ \cline{3-8}
+\rowcolor[HTML]{FFC702}
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}Modelo} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}\textit{Accuracy}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}$L_{CE}$} \\ \hline
+\textbf{\lstinline!2!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.62 & \textbf{0.580} \\ \hline
+\textbf{\lstinline!7!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.63 & \textbf{0.580} \\ \hline
+\textbf{\lstinline!16!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.62 & 0.616 \\ \hline
+\textbf{\lstinline!25!} & \textbf{0.70} & \multicolumn{1}{c|}{\textbf{0.70}} & 0.70 & \multicolumn{1}{c|}{0.70} & \textbf{0.70} & \multicolumn{1}{c|}{0.70} & \textbf{0.70} & 0.676 \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Mejores resultados en test]{\code{Nodule-98-30K-*}, mejores resultados en el conjunto de test.}
+\label{table:nodule-98-30K-_bestResults}
+\end{table}
+
+Ahora analizando los resultados en sí con mayor detalle, los modelos que mejor valor de pérdida son el \code{2} y \code{7} con $L_{CE}=0.580$ aunque poseen un sesgo en su clasificación, pues poseen un \textit{recall} de 0.90 respecto a la presencia de nódulo óseo, es decir, que el 90\% de lo que clasifica como nódulo presente es correcto, aún así sobreestima la existencia del nódulo pues posee un \textit{precision} de 0.64, lo que quiere decir que no logra predecir correctamente la ausencia del nódulo, se puede observar la matriz de confusión en la Tabla \ref{table:2-7-16_confusion}. Este sesgo se comparte también con el modelo \code{16}, lo que indica que en el espacio de soluciones, estos tres modelos han convergido en zonas similares. Por otro lado, el modelo \code{25} posee un \textit{precision} y \textit{recall} de 0.70, por lo que predice de igual forma la existencia y ausencia de nódulo, lo cual es evidente en su matriz de confusión, que se encuentra en la Tabla \ref{tab:25_confusion}, siendo entonces el mejor modelo de los obtenidos puesto que es el más balanceado de todos en su clasificación. En la Figura \ref{fig:Nodule-98-30K-GS-25} se puede verificar que, también, se ha logrado mitigar el sobreentrenamiento, ya que las curvas de entrenamiento y validación están juntas, decreciendo en el error y creciendo en el \textit{accuracy}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cc|cc|}
+%2
+\cline{3-4}
+ &  & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}Real} \\ \cline{3-4}
+ &  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & \cellcolor[HTML]{FFC702}Ausente \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFC702}} & \cellcolor[HTML]{FFC702}Presente & \multicolumn{1}{c|}{9} & 5 \\ \cline{2-4}
+\multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{FFC702}Predicción}} & \cellcolor[HTML]{FFC702}Ausente & \multicolumn{1}{c|}{1} & 5 \\ \hline
+\end{tabular}
+    \caption[Nodule-98-30K-GS-2, 7, 16: Matriz de confusión]{\lstinline!Nodule-98-30K-GS-[2, 7, 16]!, matriz de confusión.}
+    \label{table:2-7-16_confusion}
+\end{table}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc|cc|}
+    \cline{3-4}
+     &  & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}Real} \\ \cline{3-4}
+     &  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & \cellcolor[HTML]{FFC702}Ausente \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{FFC702}} & \cellcolor[HTML]{FFC702}Presente & \multicolumn{1}{c|}{7} & 3 \\ \cline{2-4}
+    \multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{FFC702}Predicción}} & \cellcolor[HTML]{FFC702}Ausente & \multicolumn{1}{c|}{3} & 7 \\ \hline
+    \end{tabular}
+
+    \caption[Nodule-98-30K-GS-25: Matriz de confusión]{\lstinline!Nodule-98-30K-GS-25!, matriz de confusión.}
+    \label{tab:25_confusion}
+\end{table}
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/GS-25_Accuracy.png}
+        \caption{\textit{Accuracy}}
+        \label{subfig:acc_Nodule-98-30K-GS-25}
+    \end{subfigure}
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{imagenes/experiments/GS-25_Loss.png}
+        \caption{$L_{CE}$}
+        \label{subfig:loss_Nodule-98-30K-GS-25}
+    \end{subfigure}
+    \caption[Nodule-98-30K-GS-25: Curvas de aprendizaje]{Modelo \code{Nodule-98-30K-GS-25}. Curvas de aprendizaje de \textit{accuracy} y error.}
+    \label{fig:Nodule-98-30K-GS-25}
+\end{figure}
+
+Respecto a la interpretabilidad, interesa observar las partes de la sínfisis del pubis que utilizó el modelo para caracterizar la superficie. Para mayor claridad, se incluye la Figura \ref{fig:heatmap_albedo_117} que muestra la orientación en la que se muestran los mapas de activación. En la Figura \ref{fig:heatmap_present} se observan dos muestras con presencia de nódulo correctamente clasificado, mientras que en la Figura \ref{fig:heatmap_present_false} se observan dos muestras incorrectamente clasificadas con ausencia de nódulo. De forma equivalente, en las Figuras \ref{fig:heatmap_absent} y \ref{fig:heatmap_absent_false} se observan muestras con ausencia de nódulo clasificadas correcta e incorrectamente.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone117_albedo.png}
+    \caption[Orientación, mapas de activación]{Ejemplo de orientación en la que se muestran los mapas de activación. De izquierda a derecha, se muestra el hueso visto desde la izquierda, visto desde el centro-arriba, y desde la derecha.}
+    \label{fig:heatmap_albedo_117}
+\end{figure}
+
+En general, se observa que los mapas de activación son bastante ruidosos, se encuentran moteados de colores tanto rojos como azules por la totalidad de la superficie, aunque se puede notar que el borde izquierdo de la sínfisis se encuentra por lo general mejor preservado que el borde derecho, que posee mayor gama de tonos azules, así como la parte superior que también se encuentra mejor preservada. Resulta curioso que el nódulo óseo como tal no parece tener preferencia para el modelo, en una gran parte posee colores azules indicando que la malla procesada difiere a la malla original en mayor medida. Observando las Figuras \ref{fig:heatmap_present_false} y \ref{fig:heatmap_absent_false} se observa que las muestras mal clasificadas poseen activaciones diferentes, las muestras que poseen nódulo pero fueron clasificadas como ausentes poseen una activación similar a las muestras clasificadas correctamente, con el borde izquierdo teniendo una fuerte influencia; mientras que en las muestras que poseen ausencia de nódulo pero fueron clasificadas como presente poseen unos mapas de activación mucho más ruidosos, donde pareciera que existe ambigüedad en la superficie pues el mapa de activación no parece estar localizado en ninguna zona en particular.
+
+Estos resultados indican que la red no ha tomado preferencia por el nódulo óseo, y esto puede ser explicado en parte por el tamaño reducido de los datos, lo que permite que la red pueda aprender más detalles específicos de las muestras que le permitan obtener un alto \textit{accuracy} inclusive en muestras no vistas anteriormente. Esto también explicaría por qué los mapas de activación son tan ruidosos, no se ha podido generalizar lo suficiente el aprendizaje para que se observen regiones claramente de mayor o menor interés. Otra explicación es que, además de lo mencionado, existan nuevas regiones de la sínfisis del pubis que estén asociadas a la presencia o ausencia del nódulo óseo, esto tiene soporte observando los falsos positivos, que poseen una activación elevada en la zona lateral izquierda de la sínfisis del pubis.
+
+\begin{figure}[p]
+    \centering
+    \begin{subfigure}{\textwidth}  
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone117_heat.png}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone161_heat.png}
+    \end{subfigure}
+    \caption[Nódulo óseo presente, mapas de activación]{Sínfisis del pubis con presencia de nódulo óseo clasificado correctamente}
+    \label{fig:heatmap_present}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \begin{subfigure}{\textwidth}  
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone110_heat.png}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone346_heat.png}
+    \end{subfigure}
+    \caption[Nódulo óseo presente mal clasificado, mapas de activación]{Sínfisis del pubis con presencia de nódulo óseo clasificado como ausente}
+    \label{fig:heatmap_present_false}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone1_heat.png}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone22_heat.png}
+    \end{subfigure}
+    \caption[Nódulo óseo ausente, mapas de activación]{Sínfisis del pubis con ausencia de nódulo óseo clasificado correctamente}
+    \label{fig:heatmap_absent}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone21_heat.png}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}{\textwidth}
+    \includegraphics[width=\textwidth]{imagenes/experiments/bone50_heat.png}
+    \end{subfigure}
+    \caption[Nódulo óseo ausente mal clasificado, mapas de activación]{Sínfisis del pubis con ausencia de nódulo óseo clasificado como presente}
+    \label{fig:heatmap_absent_false}
+\end{figure}
+
+

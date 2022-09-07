@@ -1,0 +1,198 @@
+Loading mesh ./data/original/Nodule-98-Full-Orig/1-Izq.obj and ./data/original/Nodule-98-50K/1-Izq.obj
+Stats: {'RMS': 0.00665477616712451, 'diag_mesh_0': 60.50471878051758, 'diag_mesh_1': 60.52849644941226, 'max': 0.06701421737670898, 'mean': 0.0050561740063130856, 'min': 1.8040015703491008e-08, 'n_samples': 204976}
+Loading mesh ./data/original/Nodule-98-Full-Orig/10-Izq.obj and ./data/original/Nodule-98-50K/10-Izq.obj
+Stats: {'RMS': 0.004514644853770733, 'diag_mesh_0': 50.801780700683594, 'diag_mesh_1': 50.800319953041104, 'max': 0.08583968877792358, 'mean': 0.0034330629277974367, 'min': 0.0, 'n_samples': 169589}
+Loading mesh ./data/original/Nodule-98-Full-Orig/11-Izq.obj and ./data/original/Nodule-98-50K/11-Izq.obj
+Stats: {'RMS': 0.005539605859667063, 'diag_mesh_0': 52.3441047668457, 'diag_mesh_1': 52.35328238139916, 'max': 0.07088012993335724, 'mean': 0.004228030797094107, 'min': 0.0, 'n_samples': 155751}
+Loading mesh ./data/original/Nodule-98-Full-Orig/110-Izq.obj and ./data/original/Nodule-98-50K/110-Izq.obj
+Stats: {'RMS': 0.006253638304769993, 'diag_mesh_0': 51.30196762084961, 'diag_mesh_1': 51.32372717635333, 'max': 0.05129328742623329, 'mean': 0.004783134441822767, 'min': 4.2656012055886094e-08, 'n_samples': 165619}
+Loading mesh ./data/original/Nodule-98-Full-Orig/114-Izq.obj and ./data/original/Nodule-98-50K/114-Izq.obj
+Stats: {'RMS': 0.009845088236033916, 'diag_mesh_0': 56.185462951660156, 'diag_mesh_1': 56.20372766643135, 'max': 0.13262249529361725, 'mean': 0.0074249268509447575, 'min': 8.657498540287634e-08, 'n_samples': 212791}
+Loading mesh ./data/original/Nodule-98-Full-Orig/117-Izq.obj and ./data/original/Nodule-98-50K/117-Izq.obj
+Stats: {'RMS': 0.006372340023517609, 'diag_mesh_0': 50.0750617980957, 'diag_mesh_1': 50.06494640141893, 'max': 0.06434950977563858, 'mean': 0.004869894590228796, 'min': 6.773924354774863e-08, 'n_samples': 160907}
+Loading mesh ./data/original/Nodule-98-Full-Orig/13-Izq.obj and ./data/original/Nodule-98-50K/13-Izq.obj
+Stats: {'RMS': 0.007318045943975449, 'diag_mesh_0': 52.79896926879883, 'diag_mesh_1': 52.79523103676799, 'max': 0.07713239639997482, 'mean': 0.00551943015307188, 'min': 0.0, 'n_samples': 198745}
+Loading mesh ./data/original/Nodule-98-Full-Orig/133-Izq.obj and ./data/original/Nodule-98-50K/133-Izq.obj
+Stats: {'RMS': 0.00576166994869709, 'diag_mesh_0': 52.9233283996582, 'diag_mesh_1': 52.93023012344204, 'max': 0.06826243549585342, 'mean': 0.004390610847622156, 'min': 0.0, 'n_samples': 163660}
+Loading mesh ./data/original/Nodule-98-Full-Orig/14-Izq.obj and ./data/original/Nodule-98-50K/14-Izq.obj
+Stats: {'RMS': 0.005934159737080336, 'diag_mesh_0': 49.672691345214844, 'diag_mesh_1': 49.67675740096315, 'max': 0.03673641383647919, 'mean': 0.004561127629131079, 'min': 0.0, 'n_samples': 144415}
+Loading mesh ./data/original/Nodule-98-Full-Orig/141-Izq.obj and ./data/original/Nodule-98-50K/141-Izq.obj
+Stats: {'RMS': 0.007303968071937561, 'diag_mesh_0': 53.6652946472168, 'diag_mesh_1': 53.65676396381889, 'max': 0.06294891238212585, 'mean': 0.005569071974605322, 'min': 3.7192176449707404e-08, 'n_samples': 187242}
+Loading mesh ./data/original/Nodule-98-Full-Orig/147-Izq.obj and ./data/original/Nodule-98-50K/147-Izq.obj
+Stats: {'RMS': 0.004557630978524685, 'diag_mesh_0': 49.61943435668945, 'diag_mesh_1': 49.63374260824901, 'max': 0.06544571369886398, 'mean': 0.0034733929205685854, 'min': 0.0, 'n_samples': 135377}
+Loading mesh ./data/original/Nodule-98-Full-Orig/15-Izq.obj and ./data/original/Nodule-98-50K/15-Izq.obj
+Stats: {'RMS': 0.004746179096400738, 'diag_mesh_0': 46.57511901855469, 'diag_mesh_1': 46.57865263558147, 'max': 0.0448930561542511, 'mean': 0.0036152065731585026, 'min': 0.0, 'n_samples': 122555}
+Loading mesh ./data/original/Nodule-98-Full-Orig/151-Izq.obj and ./data/original/Nodule-98-50K/151-Izq.obj
+Stats: {'RMS': 0.00481171440333128, 'diag_mesh_0': 53.57591247558594, 'diag_mesh_1': 53.562469875130056, 'max': 0.03819282725453377, 'mean': 0.0036881198175251484, 'min': 0.0, 'n_samples': 143441}
+Loading mesh ./data/original/Nodule-98-Full-Orig/159-Izq.obj and ./data/original/Nodule-98-50K/159-Izq.obj
+Stats: {'RMS': 0.004460128489881754, 'diag_mesh_0': 50.29781723022461, 'diag_mesh_1': 50.2839091100035, 'max': 0.049472883343696594, 'mean': 0.0034125216770917177, 'min': 0.0, 'n_samples': 140245}
+Loading mesh ./data/original/Nodule-98-Full-Orig/16-Izq.obj and ./data/original/Nodule-98-50K/16-Izq.obj
+Stats: {'RMS': 0.005372279789298773, 'diag_mesh_0': 48.98676681518555, 'diag_mesh_1': 48.99424973547726, 'max': 0.03884777054190636, 'mean': 0.004115543328225613, 'min': 0.0, 'n_samples': 166959}
+Loading mesh ./data/original/Nodule-98-Full-Orig/161-Izq.obj and ./data/original/Nodule-98-50K/161-Izq.obj
+Stats: {'RMS': 0.0066038197837769985, 'diag_mesh_0': 50.540340423583984, 'diag_mesh_1': 50.54053506352686, 'max': 0.07654031366109848, 'mean': 0.0050331298261880875, 'min': 0.0, 'n_samples': 156996}
+Loading mesh ./data/original/Nodule-98-Full-Orig/17-Izq.obj and ./data/original/Nodule-98-50K/17-Izq.obj
+Stats: {'RMS': 0.004773879423737526, 'diag_mesh_0': 48.3962287902832, 'diag_mesh_1': 48.40953365866217, 'max': 0.03561368212103844, 'mean': 0.0036302399821579456, 'min': 0.0, 'n_samples': 143228}
+Loading mesh ./data/original/Nodule-98-Full-Orig/18-Izq.obj and ./data/original/Nodule-98-50K/18-Izq.obj
+Stats: {'RMS': 0.004969526547938585, 'diag_mesh_0': 51.67448043823242, 'diag_mesh_1': 51.668755488280055, 'max': 0.046955328434705734, 'mean': 0.003787716617807746, 'min': 0.0, 'n_samples': 153793}
+Loading mesh ./data/original/Nodule-98-Full-Orig/19-Izq.obj and ./data/original/Nodule-98-50K/19-Izq.obj
+Stats: {'RMS': 0.004244351759552956, 'diag_mesh_0': 53.57340621948242, 'diag_mesh_1': 53.57997554838063, 'max': 0.02894987352192402, 'mean': 0.003239232813939452, 'min': 0.0, 'n_samples': 167982}
+Loading mesh ./data/original/Nodule-98-Full-Orig/193-Izq.obj and ./data/original/Nodule-98-50K/193-Izq.obj
+Stats: {'RMS': 0.005131065379828215, 'diag_mesh_0': 52.1605339050293, 'diag_mesh_1': 52.16982562933579, 'max': 0.040087658911943436, 'mean': 0.003940871451050043, 'min': 0.0, 'n_samples': 152732}
+Loading mesh ./data/original/Nodule-98-Full-Orig/2-Izq.obj and ./data/original/Nodule-98-50K/2-Izq.obj
+Stats: {'RMS': 0.006271578371524811, 'diag_mesh_0': 50.758365631103516, 'diag_mesh_1': 50.75890989010239, 'max': 0.052417218685150146, 'mean': 0.004795729648321867, 'min': 0.0, 'n_samples': 157552}
+Loading mesh ./data/original/Nodule-98-Full-Orig/203-Izq.obj and ./data/original/Nodule-98-50K/203-Izq.obj
+Stats: {'RMS': 0.004382206592708826, 'diag_mesh_0': 46.565284729003906, 'diag_mesh_1': 46.57314151927225, 'max': 0.03772204741835594, 'mean': 0.003364559030160308, 'min': 0.0, 'n_samples': 124083}
+Loading mesh ./data/original/Nodule-98-Full-Orig/21-Izq.obj and ./data/original/Nodule-98-50K/21-Izq.obj
+Stats: {'RMS': 0.0051658800803124905, 'diag_mesh_0': 50.17152786254883, 'diag_mesh_1': 50.15958273720693, 'max': 0.06931409239768982, 'mean': 0.003952610306441784, 'min': 0.0, 'n_samples': 136193}
+Loading mesh ./data/original/Nodule-98-Full-Orig/213-Izq.obj and ./data/original/Nodule-98-50K/213-Izq.obj
+Stats: {'RMS': 0.007336559239774942, 'diag_mesh_0': 54.6201286315918, 'diag_mesh_1': 54.61349665593315, 'max': 0.053650856018066406, 'mean': 0.0056079900823533535, 'min': 0.0, 'n_samples': 172593}
+Loading mesh ./data/original/Nodule-98-Full-Orig/214-Izq.obj and ./data/original/Nodule-98-50K/214-Izq.obj
+Stats: {'RMS': 0.0072563267312943935, 'diag_mesh_0': 49.21366500854492, 'diag_mesh_1': 49.2065278152249, 'max': 0.05575023591518402, 'mean': 0.005546779837459326, 'min': 0.0, 'n_samples': 158983}
+Loading mesh ./data/original/Nodule-98-Full-Orig/216-Izq.obj and ./data/original/Nodule-98-50K/216-Izq.obj
+Stats: {'RMS': 0.0049882433377206326, 'diag_mesh_0': 47.35969543457031, 'diag_mesh_1': 47.355071696113626, 'max': 0.04219643399119377, 'mean': 0.00382130965590477, 'min': 0.0, 'n_samples': 148750}
+Loading mesh ./data/original/Nodule-98-Full-Orig/218-Izq.obj and ./data/original/Nodule-98-50K/218-Izq.obj
+Stats: {'RMS': 0.00663354666903615, 'diag_mesh_0': 54.25456237792969, 'diag_mesh_1': 54.26236710681775, 'max': 0.0550062395632267, 'mean': 0.005068965256214142, 'min': 0.0, 'n_samples': 206780}
+Loading mesh ./data/original/Nodule-98-Full-Orig/22-Izq.obj and ./data/original/Nodule-98-50K/22-Izq.obj
+Stats: {'RMS': 0.007257579825818539, 'diag_mesh_0': 52.76958084106445, 'diag_mesh_1': 52.76539248109595, 'max': 0.08572924137115479, 'mean': 0.005498043727129698, 'min': 4.3499742474750747e-08, 'n_samples': 210584}
+Loading mesh ./data/original/Nodule-98-Full-Orig/220-Izq.obj and ./data/original/Nodule-98-50K/220-Izq.obj
+Stats: {'RMS': 0.008626390248537064, 'diag_mesh_0': 57.26518630981445, 'diag_mesh_1': 57.25645698282906, 'max': 0.07627387344837189, 'mean': 0.006502856966108084, 'min': 9.366161179968913e-10, 'n_samples': 239112}
+Loading mesh ./data/original/Nodule-98-Full-Orig/229-Izq.obj and ./data/original/Nodule-98-50K/229-Izq.obj
+Stats: {'RMS': 0.007142227608710527, 'diag_mesh_0': 55.37966537475586, 'diag_mesh_1': 55.37775811359819, 'max': 0.049646977335214615, 'mean': 0.005448267795145512, 'min': 5.0140769758399983e-08, 'n_samples': 183470}
+Loading mesh ./data/original/Nodule-98-Full-Orig/23-Izq.obj and ./data/original/Nodule-98-50K/23-Izq.obj
+Stats: {'RMS': 0.006754664238542318, 'diag_mesh_0': 51.00886917114258, 'diag_mesh_1': 51.00842768053217, 'max': 0.08572924882173538, 'mean': 0.005121976602822542, 'min': 0.0, 'n_samples': 186325}
+Loading mesh ./data/original/Nodule-98-Full-Orig/239-Izq.obj and ./data/original/Nodule-98-50K/239-Izq.obj
+Stats: {'RMS': 0.005850193090736866, 'diag_mesh_0': 51.023597717285156, 'diag_mesh_1': 51.02746570171141, 'max': 0.060349561274051666, 'mean': 0.0044690947979688644, 'min': 0.0, 'n_samples': 163061}
+Loading mesh ./data/original/Nodule-98-Full-Orig/24-Izq.obj and ./data/original/Nodule-98-50K/24-Izq.obj
+Stats: {'RMS': 0.006820052862167358, 'diag_mesh_0': 57.33675003051758, 'diag_mesh_1': 57.30529996074913, 'max': 0.0527985654771328, 'mean': 0.005198486614972353, 'min': 5.3521432619163534e-08, 'n_samples': 197340}
+Loading mesh ./data/original/Nodule-98-Full-Orig/25-Izq.obj and ./data/original/Nodule-98-50K/25-Izq.obj
+Stats: {'RMS': 0.0055527351796627045, 'diag_mesh_0': 55.33254623413086, 'diag_mesh_1': 55.33594481019155, 'max': 0.04065370932221413, 'mean': 0.004227050114423037, 'min': 0.0, 'n_samples': 192509}
+Loading mesh ./data/original/Nodule-98-Full-Orig/26-Izq.obj and ./data/original/Nodule-98-50K/26-Izq.obj
+Stats: {'RMS': 0.003518158569931984, 'diag_mesh_0': 46.110679626464844, 'diag_mesh_1': 46.10924036444671, 'max': 0.03365914523601532, 'mean': 0.0026932149194180965, 'min': 0.0, 'n_samples': 103395}
+Loading mesh ./data/original/Nodule-98-Full-Orig/269-Izq.obj and ./data/original/Nodule-98-50K/269-Izq.obj
+Stats: {'RMS': 0.007779216859489679, 'diag_mesh_0': 54.90275573730469, 'diag_mesh_1': 54.90121228013935, 'max': 0.07362797111272812, 'mean': 0.0058828177861869335, 'min': 3.899062051004876e-08, 'n_samples': 201843}
+Loading mesh ./data/original/Nodule-98-Full-Orig/27-Izq.obj and ./data/original/Nodule-98-50K/27-Izq.obj
+Stats: {'RMS': 0.006575461942702532, 'diag_mesh_0': 50.401512145996094, 'diag_mesh_1': 50.407988140870636, 'max': 0.08703841269016266, 'mean': 0.00492772227153182, 'min': 0.0, 'n_samples': 167776}
+Loading mesh ./data/original/Nodule-98-Full-Orig/28-Izq.obj and ./data/original/Nodule-98-50K/28-Izq.obj
+Stats: {'RMS': 0.004135773051530123, 'diag_mesh_0': 57.62163543701172, 'diag_mesh_1': 57.61936641004257, 'max': 0.0501084141433239, 'mean': 0.003160400316119194, 'min': 0.0, 'n_samples': 175468}
+Loading mesh ./data/original/Nodule-98-Full-Orig/3-Izq.obj and ./data/original/Nodule-98-50K/3-Izq.obj
+Stats: {'RMS': 0.005376943852752447, 'diag_mesh_0': 45.514747619628906, 'diag_mesh_1': 45.51181786532053, 'max': 0.08566195517778397, 'mean': 0.004108311142772436, 'min': 0.0, 'n_samples': 118133}
+Loading mesh ./data/original/Nodule-98-Full-Orig/30-Izq.obj and ./data/original/Nodule-98-50K/30-Izq.obj
+Stats: {'RMS': 0.0054389056749641895, 'diag_mesh_0': 51.520320892333984, 'diag_mesh_1': 51.52181277812381, 'max': 0.046068355441093445, 'mean': 0.004164059646427631, 'min': 0.0, 'n_samples': 163015}
+Loading mesh ./data/original/Nodule-98-Full-Orig/31-Izq.obj and ./data/original/Nodule-98-50K/31-Izq.obj
+Stats: {'RMS': 0.005729273427277803, 'diag_mesh_0': 55.3840446472168, 'diag_mesh_1': 55.3848798432223, 'max': 0.05476013198494911, 'mean': 0.004355705808848143, 'min': 4.481411153278714e-08, 'n_samples': 214240}
+Loading mesh ./data/original/Nodule-98-Full-Orig/32-Izq.obj and ./data/original/Nodule-98-50K/32-Izq.obj
+Stats: {'RMS': 0.005316885653883219, 'diag_mesh_0': 51.77613067626953, 'diag_mesh_1': 51.78652556381524, 'max': 0.0631694346666336, 'mean': 0.00405743857845664, 'min': 0.0, 'n_samples': 142385}
+Loading mesh ./data/original/Nodule-98-Full-Orig/324-Izq.obj and ./data/original/Nodule-98-50K/324-Izq.obj
+Stats: {'RMS': 0.005250314716249704, 'diag_mesh_0': 53.78800964355469, 'diag_mesh_1': 53.77438868735459, 'max': 0.043501999229192734, 'mean': 0.00400657719001174, 'min': 0.0, 'n_samples': 174353}
+Loading mesh ./data/original/Nodule-98-Full-Orig/33-Izq.obj and ./data/original/Nodule-98-50K/33-Izq.obj
+Stats: {'RMS': 0.005690953694283962, 'diag_mesh_0': 50.94242858886719, 'diag_mesh_1': 50.955003681884385, 'max': 0.06620438396930695, 'mean': 0.004337833728641272, 'min': 0.0, 'n_samples': 155770}
+Loading mesh ./data/original/Nodule-98-Full-Orig/332-Izq.obj and ./data/original/Nodule-98-50K/332-Izq.obj
+Stats: {'RMS': 0.0056769829243421555, 'diag_mesh_0': 49.85389709472656, 'diag_mesh_1': 49.86408302701588, 'max': 0.04522867873311043, 'mean': 0.004335181787610054, 'min': 0.0, 'n_samples': 147240}
+Loading mesh ./data/original/Nodule-98-Full-Orig/333-Izq.obj and ./data/original/Nodule-98-50K/333-Izq.obj
+Stats: {'RMS': 0.006049384828656912, 'diag_mesh_0': 49.628150939941406, 'diag_mesh_1': 49.628617551557284, 'max': 0.07958656549453735, 'mean': 0.004613559227436781, 'min': 4.369197625919696e-08, 'n_samples': 153295}
+Loading mesh ./data/original/Nodule-98-Full-Orig/336-Izq.obj and ./data/original/Nodule-98-50K/336-Izq.obj
+Stats: {'RMS': 0.004991545341908932, 'diag_mesh_0': 46.5301628112793, 'diag_mesh_1': 46.53194693269721, 'max': 0.07856892049312592, 'mean': 0.0037615036126226187, 'min': 0.0, 'n_samples': 143496}
+Loading mesh ./data/original/Nodule-98-Full-Orig/34-Izq.obj and ./data/original/Nodule-98-50K/34-Izq.obj
+Stats: {'RMS': 0.003992381505668163, 'diag_mesh_0': 48.69613265991211, 'diag_mesh_1': 48.69258387077279, 'max': 0.032179735600948334, 'mean': 0.0030544267501682043, 'min': 0.0, 'n_samples': 121963}
+Loading mesh ./data/original/Nodule-98-Full-Orig/341-Izq.obj and ./data/original/Nodule-98-50K/341-Izq.obj
+Stats: {'RMS': 0.0071683768182992935, 'diag_mesh_0': 52.87312316894531, 'diag_mesh_1': 52.8714488839628, 'max': 0.0785696804523468, 'mean': 0.005471744108945131, 'min': 5.656270118947759e-09, 'n_samples': 182180}
+Loading mesh ./data/original/Nodule-98-Full-Orig/346-Izq.obj and ./data/original/Nodule-98-50K/346-Izq.obj
+Stats: {'RMS': 0.008538143709301949, 'diag_mesh_0': 51.96148681640625, 'diag_mesh_1': 51.977092037920215, 'max': 0.108515664935112, 'mean': 0.006410959642380476, 'min': 0.0, 'n_samples': 175341}
+Loading mesh ./data/original/Nodule-98-Full-Orig/35-Izq.obj and ./data/original/Nodule-98-50K/35-Izq.obj
+Stats: {'RMS': 0.004695695824921131, 'diag_mesh_0': 53.58147430419922, 'diag_mesh_1': 53.582582830148624, 'max': 0.03565015271306038, 'mean': 0.0035824317019432783, 'min': 0.0, 'n_samples': 163802}
+Loading mesh ./data/original/Nodule-98-Full-Orig/36-Izq.obj and ./data/original/Nodule-98-50K/36-Izq.obj
+Stats: {'RMS': 0.005517658777534962, 'diag_mesh_0': 52.65611267089844, 'diag_mesh_1': 52.66815040950887, 'max': 0.03960254415869713, 'mean': 0.004217610228806734, 'min': 0.0, 'n_samples': 162687}
+Loading mesh ./data/original/Nodule-98-Full-Orig/37-Izq.obj and ./data/original/Nodule-98-50K/37-Izq.obj
+Stats: {'RMS': 0.004122253507375717, 'diag_mesh_0': 45.43490982055664, 'diag_mesh_1': 45.444574522263764, 'max': 0.02857489325106144, 'mean': 0.0031517273746430874, 'min': 0.0, 'n_samples': 121856}
+Loading mesh ./data/original/Nodule-98-Full-Orig/38-Izq.obj and ./data/original/Nodule-98-50K/38-Izq.obj
+Stats: {'RMS': 0.004600318614393473, 'diag_mesh_0': 50.44868850708008, 'diag_mesh_1': 50.453018806126295, 'max': 0.04528745263814926, 'mean': 0.0034951474517583847, 'min': 0.0, 'n_samples': 156228}
+Loading mesh ./data/original/Nodule-98-Full-Orig/39-Izq.obj and ./data/original/Nodule-98-50K/39-Izq.obj
+Stats: {'RMS': 0.0037502367049455643, 'diag_mesh_0': 47.799007415771484, 'diag_mesh_1': 47.78606976520552, 'max': 0.03335816040635109, 'mean': 0.002860660431906581, 'min': 0.0, 'n_samples': 131162}
+Loading mesh ./data/original/Nodule-98-Full-Orig/399-Izq.obj and ./data/original/Nodule-98-50K/399-Izq.obj
+Stats: {'RMS': 0.005625567864626646, 'diag_mesh_0': 55.16682815551758, 'diag_mesh_1': 55.16724254978061, 'max': 0.04677852243185043, 'mean': 0.004287916701287031, 'min': 0.0, 'n_samples': 178312}
+Loading mesh ./data/original/Nodule-98-Full-Orig/4-Izq.obj and ./data/original/Nodule-98-50K/4-Izq.obj
+Stats: {'RMS': 0.006741455290466547, 'diag_mesh_0': 49.697174072265625, 'diag_mesh_1': 49.70565624333203, 'max': 0.058279674500226974, 'mean': 0.005170860327780247, 'min': 0.0, 'n_samples': 141437}
+Loading mesh ./data/original/Nodule-98-Full-Orig/40-Izq.obj and ./data/original/Nodule-98-50K/40-Izq.obj
+Stats: {'RMS': 0.007132090162485838, 'diag_mesh_0': 56.8643798828125, 'diag_mesh_1': 56.8710806191156, 'max': 0.050349608063697815, 'mean': 0.005451371893286705, 'min': 3.242751134280297e-08, 'n_samples': 213012}
+Loading mesh ./data/original/Nodule-98-Full-Orig/407-Izq.obj and ./data/original/Nodule-98-50K/407-Izq.obj
+Stats: {'RMS': 0.00337499612942338, 'diag_mesh_0': 45.109619140625, 'diag_mesh_1': 45.11598548975046, 'max': 0.02222568355500698, 'mean': 0.0025860625319182873, 'min': 0.0, 'n_samples': 111655}
+Loading mesh ./data/original/Nodule-98-Full-Orig/41-Izq.obj and ./data/original/Nodule-98-50K/41-Izq.obj
+Stats: {'RMS': 0.004643338732421398, 'diag_mesh_0': 46.004432678222656, 'diag_mesh_1': 46.0129222900866, 'max': 0.04474274441599846, 'mean': 0.003551594214513898, 'min': 0.0, 'n_samples': 124225}
+Loading mesh ./data/original/Nodule-98-Full-Orig/42-Izq.obj and ./data/original/Nodule-98-50K/42-Izq.obj
+Stats: {'RMS': 0.007136202417314053, 'diag_mesh_0': 52.625579833984375, 'diag_mesh_1': 52.629064126130174, 'max': 0.09799356758594513, 'mean': 0.0054337820038199425, 'min': 0.0, 'n_samples': 189153}
+Loading mesh ./data/original/Nodule-98-Full-Orig/422-Izq.obj and ./data/original/Nodule-98-50K/422-Izq.obj
+Stats: {'RMS': 0.0061306944116950035, 'diag_mesh_0': 50.91603088378906, 'diag_mesh_1': 50.91891186467584, 'max': 0.060990914702415466, 'mean': 0.004663879983127117, 'min': 0.0, 'n_samples': 161264}
+Loading mesh ./data/original/Nodule-98-Full-Orig/426-Izq.obj and ./data/original/Nodule-98-50K/426-Izq.obj
+Stats: {'RMS': 0.007790706120431423, 'diag_mesh_0': 53.56428527832031, 'diag_mesh_1': 53.58563683192684, 'max': 0.07246234267950058, 'mean': 0.005905328784137964, 'min': 0.0, 'n_samples': 200992}
+Loading mesh ./data/original/Nodule-98-Full-Orig/43-Izq.obj and ./data/original/Nodule-98-50K/43-Izq.obj
+Stats: {'RMS': 0.005166009999811649, 'diag_mesh_0': 55.81340789794922, 'diag_mesh_1': 55.81029386383008, 'max': 0.03194562345743179, 'mean': 0.003949279896914959, 'min': 1.8420600156332512e-08, 'n_samples': 178758}
+Loading mesh ./data/original/Nodule-98-Full-Orig/437-Izq.obj and ./data/original/Nodule-98-50K/437-Izq.obj
+Stats: {'RMS': 0.00789644569158554, 'diag_mesh_0': 49.686927795410156, 'diag_mesh_1': 49.69486712611231, 'max': 0.0828108936548233, 'mean': 0.006028489209711552, 'min': 0.0, 'n_samples': 173287}
+Loading mesh ./data/original/Nodule-98-Full-Orig/44-Izq.obj and ./data/original/Nodule-98-50K/44-Izq.obj
+Stats: {'RMS': 0.003833807772025466, 'diag_mesh_0': 48.61320877075195, 'diag_mesh_1': 48.61637532433308, 'max': 0.024484585970640182, 'mean': 0.002949930727481842, 'min': 0.0, 'n_samples': 119413}
+Loading mesh ./data/original/Nodule-98-Full-Orig/45-Izq.obj and ./data/original/Nodule-98-50K/45-Izq.obj
+Stats: {'RMS': 0.005674903746694326, 'diag_mesh_0': 51.30271911621094, 'diag_mesh_1': 51.31383734369649, 'max': 0.05224340781569481, 'mean': 0.00432865833863616, 'min': 0.0, 'n_samples': 156440}
+Loading mesh ./data/original/Nodule-98-Full-Orig/451-Izq.obj and ./data/original/Nodule-98-50K/451-Izq.obj
+Stats: {'RMS': 0.005054621957242489, 'diag_mesh_0': 49.8427734375, 'diag_mesh_1': 49.83786296694286, 'max': 0.04011193662881851, 'mean': 0.003854267532005906, 'min': 0.0, 'n_samples': 164227}
+Loading mesh ./data/original/Nodule-98-Full-Orig/456-Izq.obj and ./data/original/Nodule-98-50K/456-Izq.obj
+Stats: {'RMS': 0.005174009129405022, 'diag_mesh_0': 47.57825469970703, 'diag_mesh_1': 47.585287544480266, 'max': 0.0324428491294384, 'mean': 0.003946598619222641, 'min': 0.0, 'n_samples': 144931}
+Loading mesh ./data/original/Nodule-98-Full-Orig/46-Izq.obj and ./data/original/Nodule-98-50K/46-Izq.obj
+Stats: {'RMS': 0.007630227133631706, 'diag_mesh_0': 55.06332778930664, 'diag_mesh_1': 55.063522842063634, 'max': 0.06685362756252289, 'mean': 0.00581304170191288, 'min': 5.720761819816289e-08, 'n_samples': 183239}
+Loading mesh ./data/original/Nodule-98-Full-Orig/460-Izq.obj and ./data/original/Nodule-98-50K/460-Izq.obj
+Stats: {'RMS': 0.008827091194689274, 'diag_mesh_0': 55.74138259887695, 'diag_mesh_1': 55.74805663316614, 'max': 0.1289733648300171, 'mean': 0.006659974809736013, 'min': 4.8972971455896186e-08, 'n_samples': 257219}
+Loading mesh ./data/original/Nodule-98-Full-Orig/47-Izq.obj and ./data/original/Nodule-98-50K/47-Izq.obj
+Stats: {'RMS': 0.005093704909086227, 'diag_mesh_0': 48.33565902709961, 'diag_mesh_1': 48.3281911781254, 'max': 0.041136227548122406, 'mean': 0.0039005260914564133, 'min': 0.0, 'n_samples': 120978}
+Loading mesh ./data/original/Nodule-98-Full-Orig/471-Izq.obj and ./data/original/Nodule-98-50K/471-Izq.obj
+Stats: {'RMS': 0.006222342606633902, 'diag_mesh_0': 52.266197204589844, 'diag_mesh_1': 52.26757198951275, 'max': 0.06358283013105392, 'mean': 0.004726670682430267, 'min': 0.0, 'n_samples': 193504}
+Loading mesh ./data/original/Nodule-98-Full-Orig/475-Izq.obj and ./data/original/Nodule-98-50K/475-Izq.obj
+Stats: {'RMS': 0.004077757243067026, 'diag_mesh_0': 45.58610534667969, 'diag_mesh_1': 45.59039913575215, 'max': 0.054466117173433304, 'mean': 0.00310475192964077, 'min': 0.0, 'n_samples': 126580}
+Loading mesh ./data/original/Nodule-98-Full-Orig/48-Izq.obj and ./data/original/Nodule-98-50K/48-Izq.obj
+Stats: {'RMS': 0.003665415570139885, 'diag_mesh_0': 47.47285079956055, 'diag_mesh_1': 47.47934766492468, 'max': 0.07763706892728806, 'mean': 0.002790319500491023, 'min': 0.0, 'n_samples': 134760}
+Loading mesh ./data/original/Nodule-98-Full-Orig/49-Izq.obj and ./data/original/Nodule-98-50K/49-Izq.obj
+Stats: {'RMS': 0.00351167400367558, 'diag_mesh_0': 45.81206512451172, 'diag_mesh_1': 45.81174162373827, 'max': 0.024756990373134613, 'mean': 0.002693272428587079, 'min': 0.0, 'n_samples': 141180}
+Loading mesh ./data/original/Nodule-98-Full-Orig/5-Izq.obj and ./data/original/Nodule-98-50K/5-Izq.obj
+Stats: {'RMS': 0.004840344190597534, 'diag_mesh_0': 50.03303527832031, 'diag_mesh_1': 50.03092018476473, 'max': 0.03339120000600815, 'mean': 0.0037036212161183357, 'min': 0.0, 'n_samples': 143466}
+Loading mesh ./data/original/Nodule-98-Full-Orig/50-Izq.obj and ./data/original/Nodule-98-50K/50-Izq.obj
+Stats: {'RMS': 0.006748220883309841, 'diag_mesh_0': 48.150665283203125, 'diag_mesh_1': 48.16178281393504, 'max': 0.05689672753214836, 'mean': 0.005155288148671389, 'min': 0.0, 'n_samples': 148943}
+Loading mesh ./data/original/Nodule-98-Full-Orig/503-Izq.obj and ./data/original/Nodule-98-50K/503-Izq.obj
+Stats: {'RMS': 0.004450113046914339, 'diag_mesh_0': 48.603912353515625, 'diag_mesh_1': 48.60311220246364, 'max': 0.03812295198440552, 'mean': 0.0033962347079068422, 'min': 0.0, 'n_samples': 148706}
+Loading mesh ./data/original/Nodule-98-Full-Orig/508-Izq.obj and ./data/original/Nodule-98-50K/508-Izq.obj
+Stats: {'RMS': 0.005424523260444403, 'diag_mesh_0': 54.086944580078125, 'diag_mesh_1': 54.07459958614053, 'max': 0.06312434375286102, 'mean': 0.004060004837810993, 'min': 0.0, 'n_samples': 155213}
+Loading mesh ./data/original/Nodule-98-Full-Orig/51-Izq.obj and ./data/original/Nodule-98-50K/51-Izq.obj
+Stats: {'RMS': 0.004240036942064762, 'diag_mesh_0': 48.87628173828125, 'diag_mesh_1': 48.85686870934003, 'max': 0.034318748861551285, 'mean': 0.0032368008978664875, 'min': 0.0, 'n_samples': 133929}
+Loading mesh ./data/original/Nodule-98-Full-Orig/511-Izq.obj and ./data/original/Nodule-98-50K/511-Izq.obj
+Stats: {'RMS': 0.006855744868516922, 'diag_mesh_0': 55.24863815307617, 'diag_mesh_1': 55.248862322283145, 'max': 0.08436726778745651, 'mean': 0.005217240657657385, 'min': 0.0, 'n_samples': 189798}
+Loading mesh ./data/original/Nodule-98-Full-Orig/516-Izq.obj and ./data/original/Nodule-98-50K/516-Izq.obj
+Stats: {'RMS': 0.00377103453502059, 'diag_mesh_0': 47.02229690551758, 'diag_mesh_1': 47.027946589027366, 'max': 0.028646185994148254, 'mean': 0.0028784829191863537, 'min': 0.0, 'n_samples': 122501}
+Loading mesh ./data/original/Nodule-98-Full-Orig/52-Izq.obj and ./data/original/Nodule-98-50K/52-Izq.obj
+Stats: {'RMS': 0.004905897192656994, 'diag_mesh_0': 53.1953010559082, 'diag_mesh_1': 53.19403569624364, 'max': 0.03344332054257393, 'mean': 0.0037401660811156034, 'min': 0.0, 'n_samples': 162365}
+Loading mesh ./data/original/Nodule-98-Full-Orig/53-Izq.obj and ./data/original/Nodule-98-50K/53-Izq.obj
+Stats: {'RMS': 0.006746819708496332, 'diag_mesh_0': 54.58952713012695, 'diag_mesh_1': 54.59635063395277, 'max': 0.05751907825469971, 'mean': 0.005102761555463076, 'min': 5.118412360616276e-10, 'n_samples': 236073}
+Loading mesh ./data/original/Nodule-98-Full-Orig/538-Izq.obj and ./data/original/Nodule-98-50K/538-Izq.obj
+Stats: {'RMS': 0.0068268924951553345, 'diag_mesh_0': 50.339107513427734, 'diag_mesh_1': 50.348896420408124, 'max': 0.0873982384800911, 'mean': 0.00518630538135767, 'min': 0.0, 'n_samples': 168665}
+Loading mesh ./data/original/Nodule-98-Full-Orig/54-Izq.obj and ./data/original/Nodule-98-50K/54-Izq.obj
+Stats: {'RMS': 0.006436023861169815, 'diag_mesh_0': 55.925323486328125, 'diag_mesh_1': 55.904796137457865, 'max': 0.07053171843290329, 'mean': 0.004932528827339411, 'min': 1.8659008560462098e-08, 'n_samples': 195671}
+Loading mesh ./data/original/Nodule-98-Full-Orig/542-Izq.obj and ./data/original/Nodule-98-50K/542-Izq.obj
+Stats: {'RMS': 0.008702880702912807, 'diag_mesh_0': 59.18913650512695, 'diag_mesh_1': 59.18265713623614, 'max': 0.08740520477294922, 'mean': 0.006582189816981554, 'min': 1.0349729961944831e-09, 'n_samples': 232023}
+Loading mesh ./data/original/Nodule-98-Full-Orig/551-Izq.obj and ./data/original/Nodule-98-50K/551-Izq.obj
+Stats: {'RMS': 0.004313961137086153, 'diag_mesh_0': 50.85966873168945, 'diag_mesh_1': 50.86737195861905, 'max': 0.03935879096388817, 'mean': 0.003282263409346342, 'min': 0.0, 'n_samples': 143996}
+Loading mesh ./data/original/Nodule-98-Full-Orig/564-Izq.obj and ./data/original/Nodule-98-50K/564-Izq.obj
+Stats: {'RMS': 0.0065348041243851185, 'diag_mesh_0': 55.414955139160156, 'diag_mesh_1': 55.42325391954108, 'max': 0.08761287480592728, 'mean': 0.004962101113051176, 'min': 0.0, 'n_samples': 195122}
+Loading mesh ./data/original/Nodule-98-Full-Orig/568-Izq.obj and ./data/original/Nodule-98-50K/568-Izq.obj
+Stats: {'RMS': 0.005445260554552078, 'diag_mesh_0': 57.47602462768555, 'diag_mesh_1': 57.493731209779156, 'max': 0.06264220178127289, 'mean': 0.004124851431697607, 'min': 0.0, 'n_samples': 194030}
+Loading mesh ./data/original/Nodule-98-Full-Orig/569-Izq.obj and ./data/original/Nodule-98-50K/569-Izq.obj
+Stats: {'RMS': 0.006876989733427763, 'diag_mesh_0': 53.29250717163086, 'diag_mesh_1': 53.288077143782054, 'max': 0.11214685440063477, 'mean': 0.005137905478477478, 'min': 2.7092262655514787e-08, 'n_samples': 221362}
+Loading mesh ./data/original/Nodule-98-Full-Orig/6-Izq.obj and ./data/original/Nodule-98-50K/6-Izq.obj
+Stats: {'RMS': 0.007021505851298571, 'diag_mesh_0': 49.814388275146484, 'diag_mesh_1': 49.819739187547725, 'max': 0.0825200080871582, 'mean': 0.005328032653778791, 'min': 0.0, 'n_samples': 164119}
+Loading mesh ./data/original/Nodule-98-Full-Orig/7-Izq.obj and ./data/original/Nodule-98-50K/7-Izq.obj
+Stats: {'RMS': 0.004774448927491903, 'diag_mesh_0': 50.5140266418457, 'diag_mesh_1': 50.52648121641415, 'max': 0.035341668874025345, 'mean': 0.0036440188996493816, 'min': 0.0, 'n_samples': 152718}
+Loading mesh ./data/original/Nodule-98-Full-Orig/9-Izq.obj and ./data/original/Nodule-98-50K/9-Izq.obj
+Stats: {'RMS': 0.006702708546072245, 'diag_mesh_0': 57.048831939697266, 'diag_mesh_1': 57.057907879478115, 'max': 0.04309890419244766, 'mean': 0.005116048268973827, 'min': 0.0, 'n_samples': 199724}
+Loading mesh ./data/original/Nodule-98-Full-Orig/94-Izq.obj and ./data/original/Nodule-98-50K/94-Izq.obj
+Stats: {'RMS': 0.00794881209731102, 'diag_mesh_0': 48.06513977050781, 'diag_mesh_1': 48.05300693026225, 'max': 0.11374309659004211, 'mean': 0.006039015483111143, 'min': 0.0, 'n_samples': 142826}
+Loading mesh ./data/original/Nodule-98-Full-Orig/95-Izq.obj and ./data/original/Nodule-98-50K/95-Izq.obj
+Stats: {'RMS': 0.007834634743630886, 'diag_mesh_0': 59.64134216308594, 'diag_mesh_1': 59.6385324579213, 'max': 0.0958651453256607, 'mean': 0.005959214176982641, 'min': 0.0, 'n_samples': 189965}
+Loading mesh ./data/original/Nodule-98-Full-Orig/98-Izq.obj and ./data/original/Nodule-98-50K/98-Izq.obj
+Stats: {'RMS': 0.007005641702562571, 'diag_mesh_0': 50.42616653442383, 'diag_mesh_1': 50.430155589968, 'max': 0.08008191734552383, 'mean': 0.005336379632353783, 'min': 3.664288783511438e-08, 'n_samples': 166905}
+Overall stats: 
+{'RMS': 0.005856448204769772, 'diag_mesh_0': 51.6023947657371, 'diag_mesh_1': 51.60424816822955, 'max': 0.0592967814062627, 'min': 7.902282112117788e-09, 'mean': 0.004458798233381644}

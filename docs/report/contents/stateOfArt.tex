@@ -1,0 +1,113 @@
+\chapter{Estado del Arte}
+
+\section{Estimación de la edad}
+La estimación de la edad, al ser un componente sumamente importante a la hora de obtener el PB, ha tomado mayor interés de los investigadores a comienzos del siglo actual y teniendo una tendencia creciente en el número de publicaciones. Puede observarse en la Figura \ref{fig:scopusData} la cantidad de publicaciones existentes en la base de datos \textit{Scopus} que hacen referencia tanto a AF como a la estimación de edad\footnote{Consulta realizada: \code{(TITLE-ABS-KEY (forensic AND anthropology AND age AND estimation))}.}, desde 1977 se tienen 1144 publicaciones registradas. 
+
+Por otro lado, y afirmando lo mencionado sobre la precariedad tecnológica que posee esta área de conocimiento, existe un número muy limitado de publicaciones que hagan alguna mención no solamente de DL o ML sino de técnicas de IA en general\footnote{Consulta realizada: \code{(TITLE-ABS-KEY (((deep AND learning) OR (machine AND learning) OR (soft AND computing) OR (artificial AND intelligence) OR (data AND mining)) AND forensic AND anthropology AND age AND estimation))}.}, es decir, que incluso relajando los términos de búsqueda para englobar toda el área de IA, se tienen solamente 30 publicaciones que han surgido mayoritariamente a mediados de la década pasada. Finalmente, solo hay cinco artículos que combinan IA con modelos tridimensionales para la estimación de edad por medio de AF\footnote{Consulta realizada: \code{(TITLE-ABS-KEY ( ((deep AND learning) OR (machine AND learning) OR (soft AND computing) OR (artificial intelligence) OR (data AND mining) ) AND forensic AND anthropology AND age AND estimation AND 3d))}.}. Esto se interpreta como un indicador de lo novedoso y pionero de este trabajo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/stateOfArt/scopus_graph.png}
+    \caption[Publicaciones por año de AF, AF+IA y AF+IA+3D en Scopus]{Número de publicaciones en \textit{Scopus} en función del año, búsqueda realizada el 15/07/2022. En {\color{Blue} \textbf{azul}} se muestran las publicaciones que mencionan AF y la estimación de la edad (1144 publicaciones), en {\color{Red} \textbf{rojo}} aquellas que adicionalmente mencionan alguna técnica de IA (30 publicaciones) y en {\color{LimeGreen} \textbf{verde}} aquellas que también mencionan el uso de 3D (5 publicaciones).}
+    \label{fig:scopusData}
+\end{figure}
+
+A continuación se presenta el estado del arte de tanto en los métodos tradicionales utilizando la sínfisis del pubis y, brevemente, aquellos utilizados en otras estructuras óseas. Luego se presentan los métodos de estimación automáticos centrándose en la sínfisis del pubis con el uso de DL y modelos 3D.
+
+\subsection{Métodos tradicionales para restos óseos}
+
+Por parte del cráneo, los métodos más utilizados son el método de Meindl y Lovejoy \cite{meindl1985ectocranial}, el método de Acsádi y Nemeskéri \cite{acsadi1970history}, y el método de Mann \cite{mann1991maxillary}. Estos métodos estudian la osificación de las articulaciones fibrosas que conectan los diferentes huesos del cráneo, denominadas suturas craneales, para determinar la edad. Según una revisión reciente \cite{ruengdit2020cranial}, los métodos producen resultados erráticos con baja precisión, por lo que, se aconseja solamente utilizarlo como apoyo a métodos de otras estructuras óseas, aunque el mismo estudio comenta que la incorporación de nuevas tecnologías, como la tomografía axial computarizada ha permitido reducir los errores de estimación de los métodos, véase \cite{chiba2013age, boyd2015use}.
+
+Por parte de las costillas, el método más utilizado es el de Íşcan y Loth \cite{icscan1984age, icscan1985age} que se centra en el desgaste por el paso de los años del extremo ventral de la cuarta costilla para la estimación de la edad. El método está limitado por sesgos, poca reproducibilidad en diferentes poblaciones y errores intraevaluador e interevaluador moderados \cite{fanton2010critical, hartnett2010analysis}. Hoy en día el método también incluye el uso limitado de tomografías axiales computarizadas \cite{blaszkowska2019validation}.
+
+Por parte de la cara auricular del ilion, los métodos utilizados son el  de Lovejoy \cite{lovejoy1985chronological} y el de Buckberry y Chamberlain \cite{buckberry_age_2002}, sufren de igual manera de baja precisión y sesgos a la hora de estimar la edad del fallecido \cite{falys2006auricular, michopoulou2017auricular}. Hoy en día el método puede aumentarse con el uso de tomografías \cite{villa2013reliability, barrier2009age}, así como la adición de métodos analíticos bayesianos con resultados mixtos \cite{nikita2018evaluation}. 
+
+\subsection{Métodos tradicionales utilizando la sínfisis del pubis}
+
+La sínfisis del pubis es el hueso más utilizado para la estimación de edad, como ha sido mencionado en la Sección \ref{daIntro_ProblemDef}. Hoy en día se utiliza el método de Suchey-Brooks \cite{RefWorks:RefID:20-brooks1990skeletal}, variante del método de Todd. Estos métodos estiman la edad del fallecido dentro de rangos o intervalos y dependiendo de las características (Tabla \ref{table:themBones}) que posea la sínfisis del pubis, se clasifican dentro de un rango u otro de edad. El método original de Todd clasifica los huesos en 10 rangos mientras que el método de Suchey-Brooks lo realiza en 6 rangos nuevos que poseen solapamiento entre cada uno. Pueden observarse estos rangos en las Tablas \ref{table:age_todd_} y \ref{table:age_suchey_brooks}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{FFCB2F} 
+{Etapa} & {Rango de Edad} \\ \hline
+I & 18-19 \\ \hline
+II & 20-21 \\ \hline
+III & 22-24 \\ \hline
+IV & 25-26 \\ \hline
+V & 27-30 \\ \hline
+VI & 30-35 \\ \hline
+VII & 35-39 \\ \hline
+VIII & 39-44 \\ \hline
+IX & 45-50 \\ \hline
+X & 50+ \\ \hline
+\end{tabular}
+\caption{Rangos de edad del Método de Todd}
+\label{table:age_todd_}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{FFCB2F} 
+{Etapa} & {Rango de Edad} \\ \hline
+I & 15-23 \\ \hline
+II & 19-34 \\ \hline
+III & 21-46 \\ \hline
+IV & 23-57 \\ \hline
+V & 27-66 \\ \hline
+VI & 34-86 \\ \hline
+\end{tabular}
+\caption{Rangos de edad del Método de Suchey-Brooks}
+\label{table:age_suchey_brooks}
+\end{table}
+
+
+Según un metaanálisis \cite{schanandore2022accuracy}, el método de Suchey-Brooks es uno de los métodos con mejor exactitud al momento de determinar la edad, aún así, se recomienda su aplicación con cautela \cite{priya2017methods}. Actualmente, pueden aprovecharse las imágenes de tomografías computarizadas para aplicar directamente el método sobre los modelos volumétricos como si se tratase del hueso real. Otros investigadores \cite{wade2011preliminary,villa2013forensic,lottering2014morphometric,lopez2015image} han hecho uso de esta tecnología para observar los cambios de densidad ósea que suceden internamente en el hueso al envejecer para refinar el método. Sin embargo, pese al uso de estas nuevas tecnologías de manera limitada, seguir utilizando características subjetivas conlleva a que los expertos basen las estimaciones finales de la edad más en su experiencia que en la información provista directamente por el método, lo que reduce su efectividad y credibilidad \cite{garvin_current_2012}.
+
+\subsection{Métodos automáticos utilizando la sínfisis del pubis}
+
+%Las variaciones morfológicas de la sínfisis del pubis con modelos 3D han sido exploradas con un enfoque matemático y analítico de la superficie comenzando con los estudios de  Biwasaka et al \cite{biwasaka2013three} y Villa et al \cite{villa2015surface, villa2015quantitative}, Slice \& Algee-Hewitt \cite{slice2015modeling}, Stoyanova et al \cite{stoyanova2015enhanced} y Morante et al \cite{bravo2021correlation}.
+
+Los primeros intentos para reemplazar los métodos subjetivos surgen a los inicios de la década del 2010 con el estudio realizado por Biwasaka et al \cite{biwasaka2013three}. Se calcula de forma analítica la curvatura media de la cara de la sínfisis del pubis escaneada en 3D y se examina qué tan cóncavo o convexo es el hueso respecto al intervalo de edad que se encuentra. El estudio utilizó 145 huesos y concluye que existe una relación entre cada fase del método de Suchey-Brooks y la curvatura media, aunque el estudio no reporta ninguna métrica estadística. 
+
+En Villa et al. \cite{villa2015quantitative} se amplía el estudio anterior al generar 5 variables del análisis de curvatura del hueso: la media del valor absoluto de la curva, el 10\% de valores de curvatura más altos, el 10\% de los valores más bajos, el porcentaje de superficies con curvaturas mayores que cero (superficies convexas) y el porcentaje de superficies con curvatura entre $-0.01$ y $0.01$ (superficies planas). El estudio se realizó con dos colecciones, una de 24 huesos que obtuvo una correlación Spearman\footnote{Coeficiente de correlación de Spearman o Rho de Spearman} moderada a fuerte ($\rho=0.60–0.93$) y otra de 98 que obtuvo una correlación débil a moderada ($\rho=0.29–0.51$), valores similares a los obtenidos por técnicas manuales, por lo que los autores concluyen que esta línea de investigación tiene potencial.
+
+En Slice \& Algee-Hewitt \cite{slice2015modeling} se utilizan mallas 3D de la sínfisis del pubis para desarrollar una métrica denominada \textit{Slice Algee-Hewitt Score} (SAH-Score) que aprovecha las propiedades de las mallas 3D para realizar un análisis de componentes principales (PCA) de los vértices que forman el hueso. El valor obtenido es utilizado como un indicador de la complejidad de la superficie de la sínfisis del pubis, que se utiliza como característica para obtener un modelo de regresión lineal que estima directamente la edad del fallecido. En el estudio se utilizaron 41 huesos y se obtiene una estimación directa de la edad, donde reportan un RMSE\footnote{Error cuadrático medio} de 17.15 años, además, los valores predichos concuerdan con los intervalos descritos por Suchey-Brooks.
+
+En Stoyanova et al. \cite{stoyanova2015enhanced} se utiliza un algoritmo conocido como \textit{Thin Plate Splines} o TPS para caracterizar las mallas 3D de la sínfisis del pubis. El algoritmo calcula la energía de flexión o \textit{bending energy} (BE) que se necesitaría para doblar una hipotética placa infinitamente delgada de metal plana a la forma del hueso, el valor obtenido se utiliza para entrenar un modelo de regresión lineal. Se utilizaron 44 mallas con las que se obtuvo un RMSE de 19 años. Posteriormente en \cite{stoyanova2017computational} se caracteriza el hueso utilizando la SAH-Score, la BE y también un análisis la curvatura del borde ventral. Se utilizan 93 huesos para entrenar un modelo de regresión lineal multivariable que obtiene un RMSE entre 13.7 y 16.5 años.
+
+En Villar et al. \cite{villar2017first} se hace uso de Árboles de Decisiones Difusos o \textit{Fuzzy Decision Trees} (FDT) para inferir reglas que permiten obtener los rangos de edades utilizando las características descritas por Todd de 74 huesos, previamente etiquetados por dos expertos humanos. Se obtiene un MAE\footnote{Error absoluto medio} de 1.68 respecto al intervalo de edad del método de Todd, aunque por la baja cantidad de datos no se lograron obtener reglas de inferencia para todos los intervalos. 
+
+En Gámez-Granados et al. \cite{granados} se diseña un sistema explicable y basado en reglas. Se utiliza un algoritmo de clasificación ordinal llamado NSLVOrd \cite{gamez2016ordinal} para clasificar 892 sínfisis del pubis dentro de los 10 intervalos de Todd, donde se utilizaron las 9 características del método previamente etiquetadas por expertos. Si bien el modelo es de clasificación, puede adaptarse para obtener el valor directo de la edad, en el estudio se reporta un RMSE de 12.34 años y un MAE de 10.38 años.
+
+En Kotěrová et al. \cite{kotverova2018age} se proponen nueve métodos de regresión automáticos utilizando características extraídas por un experto de la sínfisis del pubis. Se utilizaron enfoques de regresión clásica, así como K-vecinos cercanos (KNN), modelos Bayesianos, árboles de regresión y ANNs. La regresión multilineal obtuvo los mejores resultados para los 941 huesos utilizados en el estudio, con un RMSE de 12.1 años y MAE de 9.7 años. El estudio se amplía en \cite{koterova_computational_2022} donde se utilizan modelos 3D escaneados y se propone un modelo de regresión multivariable, donde se utiliza la energía de Dirichlet para caracterizar la superficie del hueso y una CNN que tiene como entrada múltiples proyecciones 2D de la malla 3D. Se reporta que se obtiene un MAE de 11.7 y 10.6 años respectivamente, siendo los mejores resultados obtenidos de la literatura consultada.
+
+Los tres últimos estudios mencionados son los más similares a este TFG. En \cite{koterova_computational_2022} se utiliza una CNN para extraer automáticamente las características de la sínfisis del pubis de un modelo 3D, aunque es utilizado para estimar directamente la edad, a diferencia del objetivo de este proyecto, que es poder clasificar el hueso dentro de las características de Todd. En este sentido, los trabajos que hacen uso de dichas características directamente son \cite{villar2017first, granados} y se utilizan para poder obtener reglas explicables para clasificar un hueso dentro de los intervalos de edad, no permiten identificar directamente de la sínfisis del pubis las características que posee. Puede verse que este trabajo es pionero en esta área, pues no existe según la literatura consultada, otro estudio que utilice técnicas de DL para extraer las características de Todd automáticamente y utilizando modelos 3D.
+
+\section{Representaciones 3D en \textit{Deep Learning}}
+Como se observó en la Sección \ref{3d_reps}, existen múltiples maneras de representar los datos tridimensionales para ser utilizados en DL. Se realizará ahora un análisis de la representación más adecuada para la extracción automática de las características morfológicas para la estimación de la edad y se mostrarán los últimos avances en dicha representación.
+
+La representación de nube de puntos es la más sencilla de todas, pero, debido a su simplicidad el concepto de vecindario local de puntos y de conectividad no está bien definido. Esto hace que la aplicación de las operaciones típicas de una CNN sea un trabajo no trivial y conlleva a ambigüedades, lo cual reduce su efectividad en modelos con gran detalle. Debido a esto, se descarta como representación a utilizar.
+
+Por parte de la representación RGB-D, debido a que son representaciones 2.5D, no tienen el poder de representar fielmente la información que posee un modelo 3D complejo, por lo tanto, queda descartado como representación para este TFG.
+
+Las proyecciones y las múltiples vistas, aunque poseen la ventaja de poder utilizar CNNs clásicas al transformar el objeto 3D en una o varias imágenes 2D, al igual que RGB-D pierden información valiosa de la topología al realizar la proyección. Adicionalmente, resulta un problema en superficies complejas puesto que partes del modelo pueden tapar u ocluir otras partes del mismo, perdiendo más información todavía. Por lo tanto, estas dos representaciones también son descartadas.
+
+Los descriptores 3D simplifican el modelo 3D a una especie de \say{firma}, teniendo en cuenta que se desean analizar las características que posee la sínfisis del pubis y esto se traduce a que se desea analizar directamente la topología del modelo 3D, esta representación no resulta útil, al igual que los grafos, puesto que deben de transformar el modelo 3D. Adicionalmente, los descriptores poseen mejor desempeño en tareas de aprendizaje no supervisado que en supervisado, otra razón más por la que descartarlo. 
+
+Las representaciones volumétricas, como ha sido mencionado, no permiten representar exactamente los detalles que posee la superficie del modelo 3D. Además, poseen el problema de realizar operaciones en los espacios vacíos, lo que aumenta mucho el requerimiento de memoria. Por estas razones, son también descartadas.
+
+La opción seleccionada son las mallas poligonales tridimensionales, puesto que son ubicuas en informática gráfica, lo que conlleva a la existencia de multitud de métodos para transformarlas y tratarlas.  Adicionalmente, la mayoría de escáneres 3D utilizados por los expertos en AF directamente producen esta representación, lo que permite trabajar con los datos con comodidad. Son una representación eficiente y fiel de los datos, en las superficies lisas y planas se utilizan menos polígonos, mientras que en las superficies complejas existe mayor concentración para representar los detalles intrincados. A nivel de procesamiento por una CNN, poseen la ventaja que la representación provee también información de conectividad entre vértices y sus vecindarios locales.
+
+\subsection{Mallas poligonales}
+
+En el trabajo pionero de Feng et al. \cite{feng2019meshnet} se define MeshNet como el primer \textit{framework} de CNNs que procesan directamente las mallas 3D. La unidad básica de procesado es la cara triangular de la malla, porque provee la conectividad necesaria para poder realizar la convolución, siendo equivalente a un píxel en una imagen. Lo que caracteriza dicha cara se divide en características espaciales y características estructurales, esto siendo el análogo al valor RGB de cada píxel. La característica espacial toma como entrada la coordenada que se encuentra en el centro de cada triángulo, mientras que las características estructurales se dividen en dos: Una que captura la estructura interna de cada cara para obtener la información de la topología y otra que captura la estructura externa que explora los vecindarios locales de las caras.  De igual forma se modifica la convolución para que se realicen concordando con las características, tiene dos partes: la combinación de características espaciales y estructurales y la agregación de características estructurales que generan respectivamente dos características nuevas para el siguiente bloque de la red. Se utilizó el \textit{dataset} de mallas conocido como ModelNet40 \cite{wu20153d} para las pruebas, donde se reporta un 91.9\% de \textit{accuracy} de clasificación, obteniendo el mejor resultado contra otros modelos que utilizan nubes de puntos, volúmenes o múltiples vistas.
+
+En Hanocka et al. \cite{hanocka2019meshcnn} se define otro \textit{framework} denominado MeshCNN, el cual surge casi en paralelo con MeshNet, siendo ambos trabajos publicados con meses de diferencia. A diferencia de MeshNet, MeshCNN hace uso de las aristas que conectan cada vértice de las caras poligonales como la unidad convolucional, es decir, el equivalente al píxel. En vez de utilizar dos tipos de descriptores para caracterizar una cara, se utiliza un vector de 5 componentes que caracterizan una arista utilizando diferentes atributos que son únicos a cada arista y por lo tanto, son invariantes a traslación y rotación. De esta forma se puede aplicar de una forma más directa una convolución similar a la utilizada en imágenes. También, implementa la operación de \textit{pooling} de forma que la propia red aprende qué partes de la malla puede simplificar y cuáles no, para poder lograr el objetivo del aprendizaje. Los experimentos fueron realizados en diferentes \textit{datasets}, se obtuvo un 98.6\%  de \textit{accuracy} en SHREC30 \cite{lian2011shape} y un 92.16\% en un \textit{dataset} de cubos grabados con distintas formas \cite{latecki2000shape}. En ambos \textit{datasets} fue el modelo con mejores resultados comparados con técnicas de nubes de puntos y volumétricas.
+
+En Schneider et al. \cite{schneider_medmeshcnn_2021} se introduce MedMeshCNN como una ampliación para MeshCNN puesto que la implementación original posee un alto consumo de memoria. Esto se mitiga en este trabajo modificando la operación de \textit{pooling}, aunque el estudio se centra más en explorar las capacidades de segmentación del \textit{framework} para mallas 3D médicas. Para los experimentos se utilizaron 94 mallas de aneurismas intracraneales, 65 provenientes \textit{dataset} AneuRisk65 \cite{sangalli2014aneurisk65} y el resto provistas por el Hospital Universitario de Magdeburgo, Alemania. Se reporta un índice de Jaccard promedio de 63.24\% para todas las clases, con 71.4\% para la segmentación de las aneurismas en la malla. Los autores concluyen que el \textit{framework} posee potencial para el área médica. 
+
+En \cite{mandado_surface_2021}, el autor también mitiga el alto uso de memoria de MeshCNN, creando MeshCNN+ que implementa una modificación del \textit{pooling} y también permite que el entrenamiento pueda ser distribuido en diferentes ordenadores. Nuevamente centrándose en la habilidad del \textit{framework} de segmentar modelos, se utilizó un \textit{dataset} denominado ABC \cite{Koch_2019_CVPR} que contiene un millón de mallas generadas por software de Diseño Asistido por Computadora o \textit{Computer Aided Design} (CAD) reportando un \textit{accuracy} de 86.2\%, aunque notando que el modelo no logra segmentar las clases poco representadas en la superficie de las mallas.

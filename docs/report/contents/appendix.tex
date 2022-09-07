@@ -1,0 +1,103 @@
+\appendix
+
+\chapter{Nodule-98-30K: Parámetros y Resultados Completos}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{FFC702} 
+Modelo & Optimizador & Inicialización & Convolución & Densas + \textit{dropout} & Aumento de datos \\ \hline
+\lstinline!0! & AMSGrad & Xavier & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!1! & AMSGrad & Xavier & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\lstinline!2! & AMSGrad & Xavier & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!3! & AMSGrad & Xavier & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!4! & AMSGrad & Xavier & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!5! & AMSGrad & Xavier & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!6! & AMSGrad & Xavier & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\lstinline!7! & AMSGrad & Xavier & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!8! & AMSGrad & Kaiming & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!9! & AMSGrad & Kaiming & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!10! & AMSGrad & Kaiming & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!11! & AMSGrad & Kaiming & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!12! & AMSGrad & Kaiming & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!13! & AMSGrad & Kaiming & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!14! & AMSGrad & Kaiming & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!15! & AMSGrad & Kaiming & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\lstinline!16! & RMSProp & Xavier & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!17! & RMSProp & Xavier & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!18! & RMSProp & Xavier & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!19! & RMSProp & Xavier & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!20! & RMSProp & Xavier & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!21! & RMSProp & Xavier & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!22! & RMSProp & Xavier & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!23! & RMSProp & Xavier & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!24! & RMSProp & Kaiming & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\lstinline!25! & RMSProp & Kaiming & 32, 64, 256, 256 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!26! & RMSProp & Kaiming & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!27! & RMSProp & Kaiming & 32, 64, 256, 256 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!28! & RMSProp & Kaiming & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!29! & RMSProp & Kaiming & 256, 128, 64, 32 & 2042, 512, 128; 0.25, 0.25, 0.25 & 40, 0.4, Sí, 0.4 \\ \hline
+\lstinline!30! & RMSProp & Kaiming & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 20, 0.2, No, 0.2 \\ \hline
+\lstinline!31! & RMSProp & Kaiming & 256, 128, 64, 32 & 1024, 512, 128; 0.5, 0.25, 0.125 & 40, 0.4, Sí, 0.4 \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Todos los hiperparámetros]{\code{Nodule-98-30K-GS-*}, hiperparámetros para cada modelo}
+\label{table:nodule-98-30K-GS-_allParams}
+\end{table}
+
+%\chapter{Nodule-98-30K: Resultados}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|cc|cc|cc|c|}
+\hline
+\rowcolor[HTML]{FFC702} 
+\cellcolor[HTML]{FFC702} & \cellcolor[HTML]{FFC702} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Precision}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}\textit{Recall}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFC702}F1} & \cellcolor[HTML]{FFC702} \\ \cline{3-8}
+\rowcolor[HTML]{FFC702} 
+\multirow{-2}{*}{\cellcolor[HTML]{FFC702}Modelo} & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}\textit{Accuracy}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multicolumn{1}{c|}{\cellcolor[HTML]{FFC702}Presente} & Ausente & \multirow{-2}{*}{\cellcolor[HTML]{FFC702}$L_{CE}$} \\ \hline
+\lstinline!0! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.744 \\ \hline
+\lstinline!1! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.701 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\textbf{\lstinline!2!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.62 & \textbf{0.580} \\ \hline
+\lstinline!3! & 0.60 & \multicolumn{1}{c|}{0.58} & 0.62 & \multicolumn{1}{c|}{0.70} & 0.50 & \multicolumn{1}{c|}{0.64} & 0.56 & 0.669 \\ \hline
+\lstinline!4! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.753 \\ \hline
+\lstinline!5! & 0.45 & \multicolumn{1}{c|}{0.43} & 0.46 & \multicolumn{1}{c|}{0.30} & 0.60 & \multicolumn{1}{c|}{0.35} & 0.52 & 0.694 \\ \hline
+\lstinline!6! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.725 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\textbf{\lstinline!7!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.63 & \textbf{0.580} \\ \hline
+\lstinline!8! & 0.50 & \multicolumn{1}{c|}{0.50} & 0.50 & \multicolumn{1}{c|}{0.20} & 0.80 & \multicolumn{1}{c|}{0.29} & 0.62 & 0.707 \\ \hline
+\lstinline!9! & 0.45 & \multicolumn{1}{c|}{0.45} & 0.44 & \multicolumn{1}{c|}{0.50} & 0.40 & \multicolumn{1}{c|}{0.48} & 0.42 & 0.704 \\ \hline
+\lstinline!10! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.763 \\ \hline
+\lstinline!11! & 0.45 & \multicolumn{1}{c|}{0.00} & 0.47 & \multicolumn{1}{c|}{0.00} & 0.90 & \multicolumn{1}{c|}{0.00} & 0.62 & 0.847 \\ \hline
+\lstinline!12! & 0.65 & \multicolumn{1}{c|}{0.71} & 0.62 & \multicolumn{1}{c|}{0.50} & 0.80 & \multicolumn{1}{c|}{0.59} & \textbf{0.70} & 0.648 \\ \hline
+\lstinline!13! & 0.45 & \multicolumn{1}{c|}{0.44} & 0.45 & \multicolumn{1}{c|}{0.40} & 0.50 & \multicolumn{1}{c|}{0.42} & 0.48 & 0.950 \\ \hline
+\lstinline!14! & 0.60 & \multicolumn{1}{c|}{0.75} & 0.56 & \multicolumn{1}{c|}{0.30} & 0.90 & \multicolumn{1}{c|}{0.43} & 0.69 & 0.659 \\ \hline
+\lstinline!15! & 0.45 & \multicolumn{1}{c|}{0.40} & 0.47 & \multicolumn{1}{c|}{0.20} & 0.70 & \multicolumn{1}{c|}{0.27} & 0.56 & 0.767 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\textbf{\lstinline!16!} & \textbf{0.70} & \multicolumn{1}{c|}{0.64} & \textbf{0.83} & \multicolumn{1}{c|}{\textbf{0.90}} & 0.50 & \multicolumn{1}{c|}{\textbf{0.75}} & 0.62 & 0.616 \\ \hline
+\lstinline!17! & 0.45 & \multicolumn{1}{c|}{0.00} & 0.47 & \multicolumn{1}{c|}{0.00} & 0.90 & \multicolumn{1}{c|}{0.00} & 0.62 & 0.818 \\ \hline
+\lstinline!18! & 0.45 & \multicolumn{1}{c|}{0.33} & 0.74 & \multicolumn{1}{c|}{0.10} & 0.80 & \multicolumn{1}{c|}{0.15} & 0.59 & 0.675 \\ \hline
+\lstinline!19! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.688 \\ \hline
+\lstinline!20! & 0.40 & \multicolumn{1}{c|}{0.33} & 0.43 & \multicolumn{1}{c|}{0.20} & 0.60 & \multicolumn{1}{c|}{0.25} & 0.50 & 0.920 \\ \hline
+\lstinline!21! & 0.55 & \multicolumn{1}{c|}{\textbf{1.00}} & 0.53 & \multicolumn{1}{c|}{0.10} & \textbf{1.00} & \multicolumn{1}{c|}{0.18} & 0.69 & 0.661 \\ \hline
+\lstinline!22! & 0.50 & \multicolumn{1}{c|}{0.00} & 0.50 & \multicolumn{1}{c|}{0.00} & \textbf{1.00} & \multicolumn{1}{c|}{0.00} & 0.67 & 0.730 \\ \hline
+\lstinline!23! & 0.45 & \multicolumn{1}{c|}{0.33} & 0.47 & \multicolumn{1}{c|}{0.10} & 0.80 & \multicolumn{1}{c|}{0.15} & 0.59 & 0.775 \\ \hline
+\lstinline!24! & 0.65 & \multicolumn{1}{c|}{0.67} & 0.64 & \multicolumn{1}{c|}{0.60} & 0.70 & \multicolumn{1}{c|}{0.63} & 0.67 & 0.864 \\ \hline
+\rowcolor[HTML]{32CB00} 
+\textbf{\lstinline!25!} & \textbf{0.70} & \multicolumn{1}{c|}{0.70} & 0.70 & \multicolumn{1}{c|}{0.70} & 0.70 & \multicolumn{1}{c|}{0.70} & \textbf{0.70} & 0.676 \\ \hline
+\lstinline!26! & 0.50 & \multicolumn{1}{c|}{0.50} & 0.50 & \multicolumn{1}{c|}{0.20} & 0.80 & \multicolumn{1}{c|}{0.29} & 0.62 & 0.688 \\ \hline
+\lstinline!27! & 0.45 & \multicolumn{1}{c|}{0.33} & 0.47 & \multicolumn{1}{c|}{0.10} & 0.80 & \multicolumn{1}{c|}{0.15} & 0.59 & 0.784 \\ \hline
+\lstinline!28! & 0.55 & \multicolumn{1}{c|}{0.67} & 0.53 & \multicolumn{1}{c|}{0.20} & 0.90 & \multicolumn{1}{c|}{0.31} & 0.67 & 0.744 \\ \hline
+\lstinline!29! & 0.60 & \multicolumn{1}{c|}{0.75} & 0.56 & \multicolumn{1}{c|}{0.30} & 0.90 & \multicolumn{1}{c|}{0.43} & 0.69 & 0.630 \\ \hline
+\lstinline!30! & 0.55 & \multicolumn{1}{c|}{0.57} & 0.54 & \multicolumn{1}{c|}{0.40} & 0.70 & \multicolumn{1}{c|}{0.47} & 0.61 & 0.879 \\ \hline
+\lstinline!31! & 0.65 & \multicolumn{1}{c|}{0.62} & 0.71 & \multicolumn{1}{c|}{0.80} & 0.50 & \multicolumn{1}{c|}{0.70} & 0.59 & 0.864 \\ \hline
+\end{tabular}%
+}
+\caption[Nodule-98-30K-GS-*: Todos los resultados de test]{\code{Nodule-98-30K-*}, resultados en el conjunto de test.}
+\label{table:nodule-98-30K-_completeResults}
+\end{table}

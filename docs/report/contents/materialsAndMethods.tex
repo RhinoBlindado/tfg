@@ -1,0 +1,165 @@
+\chapter{Materiales y Métodos}
+
+\section{Materiales}
+Para este TFG se tiene disponible una colección de modelos 3D de la sínfisis del pubis izquierda y derecha de 571 fallecidos en formato de malla tridimensional. Estos fueron escaneados por el personal del laboratorio de Antropología Física del Departamento de Medicina Legal, Toxicología y Antropología Física de la Universidad de Granada. Además de la digitalización 3D, el personal de laboratorio examinó estas muestras y etiquetó el atributo asociado a cada una de las características que se podían observar en el modelo 3D de la sínfisis del pubis. 
+
+La edad de fallecimiento de estos 571 individuos se conoce y está representada gráficamente en la Figura \ref{fig:distrEdad}. Como se observa en dicha figura, hay muchas más muestras de individuos de edad avanzada que de jóvenes (como es lógico también desde un punto de vista demográfico). De estos individuos se decide estudiar la sínfisis del pubis izquierda para evitar la variabilidad intrapaciente, también ignorando aquellas muestras con anormalidades físicas. Existe un claro desbalanceo en los datos relacionado con el desbalanceo de la distribución de edad en la muestra. En la Figura \ref{fig:toddDistr2} se observa que cada una de las características poseen muchas más muestras en un atributo que en otro, dado que la aparición de ciertas características y atributos de las mismas es más probable conforme aumenta la edad del individuo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/methods/0_distriEdad.png}
+    \caption[Distribución de los datos por cada rango de edad]{Distribución de los datos por cada rango de edad del método de Todd. \textbf{0}: 18-19 años, \textbf{1}: 20-21 años, \textbf{2}: 22-24 años, \textbf{3}: 25-26 años, \textbf{4}: 27-30 años, \textbf{5}: 30-35 años, \textbf{6}: 35-39 años, \textbf{7}: 39-44 años, \textbf{8}: 45-50 años, \textbf{9}: 50+ años.}
+    \label{fig:distrEdad}
+\end{figure}
+
+Con el tiempo que se posee para este trabajo, se decide estudiar un conjunto reducido de las características. Se consultaron varios expertos antropólogos para determinar cuales eran relevantes pero al mismo tiempo fáciles de observar, de forma que se pudiera validar con mayor facilidad si el modelo está aprendiendo. Los expertos recomiendan las características de \say{Nódulo Óseo}, \say{Crestas y Surcos}, \say{Borde Superior} y \say{Borde Inferior} como las más sencillas y relevantes \cite{granados}, aunque entre los mismos expertos no había un consenso, nuevamente demostrando la subjetividad que posee el método manual.
+
+La característica de \say{Crestas y Surcos} (Subfigura \ref{fig:todd1}) se descarta por recomendación de los expertos, pues indicaron que depende mucho de detalles que posiblemente el escáner no pudiese detectar. Adicionalmente, posee un desbalanceo fuerte hacia la clase 4, que contiene la gran mayoría de las muestras, mientras que la clase 0 posee apenas 2. Las características restantes, \say{Borde Superior} (\ref{fig:todd3}), \say{Nódulo Óseo} (\ref{fig:todd4}) y \say{Borde Inferior} (\ref{fig:todd5}) poseen un desbalanceo similar.
+
+
+Debido a los retrasos en la obtención de los datos así como el tiempo que tardó el preprocesado (véase Sección \ref{section:getting3Dmeshes} para detalles técnicos), los datos poseen geometría espúrea y huecos en las mallas que los métodos seleccionados no son capaces de soportar. Por lo tanto, se tuvo que restringir el estudio a la característica \say{Nódulo Óseo}. Se utilizan las 49 pubis que tienen presente el nódulo óseo y las primeras 49 que no lo tienen presente, para tener datos balanceados aunque reducidos. 
+
+Estas 98 sínfisis poseen una resolución promedio de 970 611.59 triángulos o de forma equivalente, 1 457 184.4825 aristas. Si bien un enfoque es utilizar la resolución nativa, se tiene que considerar el hardware que se tiene a disposición y el tiempo de cómputo requerido para procesar cada hueso. Se observó en el experimento \ref{section:hausdorff} que aplicando operaciones de simplificación de mallas, descritas en \ref{section:datasets}, se mantiene la calidad incluso al reducir los datos a 30 000 aristas, teniendo una diferencia media de 0.0067 mm, con una diferencia máxima de 0.0878 mm entre las mallas originales y las reducidas.
+
+\begin{figure}[H]
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/1_crestasSurcos.png}
+    \caption[Distribución de Crestas y Surcos en datos]{\textbf{Crestas y Surcos}. \textbf{0}: Porosidad Regular, \textbf{1}: Muy Definida, \textbf{2}: Poco Profundas, \textbf{3}: Restos de Surcos, \textbf{4}: No hay Surcos}
+    \label{fig:todd1}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/2_porosidadIrregular.png}
+    \caption[Distribución de Porosidad Irregular en datos]{\textbf{Porosidad Irregular}. \textbf{0}: No, \textbf{1}: Mediana, \textbf{2}: Sí}
+    \label{fig:todd2}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/3_bordeSuperior.png}
+    \caption[Distribución de Borde Superior en datos]{\textbf{Borde Superior}. \textbf{0}: No Definido, \textbf{1}: Definido}
+    \label{fig:todd3}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/4_noduloOseo.png}
+    \caption[Distribución de Nódulo Óseo en datos]{\textbf{Nódulo Óseo}. \textbf{0}: Ausente, \textbf{1}: Presente}
+    \label{fig:todd4}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/5_bordeInferior.png}
+    \caption[Distribución de Borde Inferior en datos]{\textbf{Borde Inferior}. \textbf{0}: No Definido, \textbf{1}: Definido}
+    \label{fig:todd5}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/6_bordeDorsal.png}
+    \caption[Distribución de Borde Dorsal en datos]{\textbf{Borde Dorsal}. \textbf{0}: No Definido, \textbf{1}: Definido}
+    \label{fig:todd6}
+\end{subfigure}
+\phantomcaption
+\label{fig:toddDistr2}
+\end{figure}
+
+\begin{figure}[h]
+    \ContinuedFloat
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/7_plataformaDorsal.png}
+    \caption[Distribución de Plataforma Dorsal en datos]{\textbf{Plataforma Dorsal}. \textbf{0}: Ausente, \textbf{1}: Presente}
+    \label{fig:todd7}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/8_biselVentral.png}
+    \caption[Distribución de Bisel Ventral en datos]{\textbf{Bisel Ventral}. \textbf{0}: Ausente, \textbf{1}: En Formación, \textbf{2}: Presente}
+    \label{fig:todd8}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/9_bordeVentral.png}
+    \caption[Distribución de Borde Ventral en datos]{\textbf{Borde Ventral}. \textbf{0}: Ausente, \textbf{1}: En Formación, \textbf{2}: Formado, Sin Excrecencias, \textbf{3}: Formado, Pocas Excrecencias, \textbf{4}: Formado, Muchas Excrecencias}
+    \label{fig:todd9}
+\end{subfigure}
+\caption{Distribución de los datos por cada característica del método de Todd}
+\end{figure}
+
+Se puede observar un ejemplo de las mallas 3D que posee el \textit{dataset} en la Figuras \ref{fig:exampleNodule} y \ref{fig:exampleNoNodule}, donde también se resalta la ausencia o presencia del nódulo óseo en la superficie de la sínfisis.
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/methods/boneNodule.png}
+    \caption{Sínfisis del pubis con presencia de nódulo óseo.}
+    \label{fig:exampleNodule}
+    \includegraphics[width=\linewidth]{imagenes/methods/boneNoNodule.png}  
+    \caption{Sínfisis del pubis con ausencia de nódulo óseo.}
+    \label{fig:exampleNoNodule}
+\end{figure}
+
+\section{Métodos}
+\subsection{MeshCNN}
+MeshCNN \cite{hanocka2019meshcnn} es un \textit{framework} para diseñar CNNs que procesan mallas poligonales en vez de imágenes, para ello, los autores tuvieron que realizar ciertas modificaciones a las capas convolucionales y de \textit{pooling}, las cuales se explican a continuación. 
+
+\subsubsection{Capa convolucional}
+Una representación por cuadrículas (por ejemplo, una imagen) es conveniente porque provee tanto información sobre conectividad (vecindarios locales de píxeles) así como las características que posee (valor RGB de un píxel) en una sola matriz. Sin embargo, como las mallas son irregulares no es posible utilizar este formato, se tienen que definir las características de forma separada a la conectividad.
+
+Una malla 3D se define como un par $(V,E)$ donde $V=\left\{v_1, v_2, ..., v_n \right\}$, los vértices, son conjunto de coordenadas cartesianas en $\mathbb{R}^3$. Mientras que $E=\left\{e_1, e_2, ..., e_m\right\}$, las aristas, definen la conectividad por medio de duplas de vértices $e_k=(v_i, v_j)$. En el caso de mallas triangulares, un conjunto de aristas $(e_i, e_j, e_k)$ formarían una cara triangular. 
+En esta representación, asumiendo que las mallas son herméticas\footnote{Esto es, que la superficie de la malla proporciona una clara división entre lo que conforma el espacio interno del objeto y lo que conforma el espacio externo, donde no se permiten huecos que permitan pasar del espacio externo al interno sin tener que atravesar la superficie de la malla}, se garantiza que cada arista puede formar parte de dos triángulos como máximo y, por lo tanto, es adyacente a cuatro aristas vecinas. Esto provee la información sobre la conectividad de la malla de manera similar a como lo hace un píxel con los píxeles a su alrededor en una imagen. Por ello, la convolución se decide aplicar sobre las aristas.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{imagenes/methods/mesh_conv.png}
+    \caption[MeshCNN: Vecindario local de una arista]{Vecindario local de una arista $e$}
+    \label{fig:mesh_conv}
+\end{figure}
+
+En informática gráfica los vértices, y por extensión las aristas, que forman una cara, se ordenan de forma antihoraria, si se aplica la convolución directamente produciría un campo receptivo ambiguo. Por ejemplo, si se observa la Figura \ref{fig:mesh_conv}, la convolución de la arista $e$ y su vecindario podría aplicarse en el orden $(a,b,c,d)$ o $(c,d,b,a)$, lo que afectaría el aprendizaje de los filtros. Entonces, para garantizar la invarianza, se aplica la operación \ref{eq:conv_invariance} que permite obtener los mismos resultados independientemente del orden de las aristas.
+\begin{equation}
+\label{eq:conv_invariance}
+    (e^1, e^2, e^3, e^4) = (|a-c|, a+c, |b-d|, b+d)
+\end{equation}
+
+Los valores que se convolucionan son, dada una arista $e$, un vector de 5 componentes que contiene:
+\begin{itemize}
+    \item El ángulo diedro entre los dos triángulos que conforma una arista, $\phi$.
+    \item Los ángulos internos perpendiculares a la arista, $\left\{\alpha_1, \alpha_2\right\}$.
+    \item La relación entre la longitud de la arista y la longitud perpendicular de los triángulos, $\left\{\frac{|e|}{|h_1|}, \frac{|e|}{|h_2|}\right\}.$
+\end{itemize}
+Visualmente, se puede observar esto en la Figura \ref{fig:edge_feats}. Estas características son todas relativas a la arista, lo que quiere decir que es invariante a la rotación, traslación y escalado uniforme. Es el equivalente al valor RGB de un píxel en una imagen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\linewidth]{imagenes/methods/input_edge_features.png}
+    \caption[MeshCNN: Características de una arista]{Características de entrada de una arista}
+    \label{fig:edge_feats}
+\end{figure}
+
+\subsubsection{Capa de \textit{pooling}}
+\label{section:meshcnnPooling}
+Para extender la operación de \textit{pooling} a las mallas 3D se observa que la esencia general del \textit{pooling} consiste en: (1) tener una región que procesar dada por adyacencia, (2) combinar las características de cada región donde se aplica el \textit{pooling} y (3) redefinir la adyacencia de las características combinadas. En imágenes, la adyacencia está inherente en los datos al ser una matriz y por lo tanto, la región del \textit{pooling} depende del tamaño del \textit{kernel} elegido. Las características, una vez combinadas, generan otra cuadrícula uniformemente espaciada, por lo que, la adyacencia se redefine de forma inherente. Con esto se puede observar que el \textit{pooling} convencional es un caso especial del proceso general.
+
+El \textit{pooling} para mallas también es otro caso especial, donde la adyacencia se determina por la topología. A diferencia de las imágenes, que poseen un factor de reducción natural dado un \textit{kernel}, se define el \textit{pooling} como una serie de operaciones de colapso de aristas, en el cual cada operación de colapso convierte cinco aristas en dos, como se observa en la Figura \ref{fig:mesh_pool}. Por lo tanto, se puede controlar la resolución deseada de la malla después de cada operación de \textit{pooling} con un hiperparámetro que controla la cantidad de aristas que se desean obtener.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{imagenes/methods/mesh_pool_unpool.png}
+    \caption[MeshCNN: Ejemplo visual de pooling]{Ejemplo visual del \textit{average pooling} por colapso de aristas.}
+    \label{fig:mesh_pool}
+\end{figure}
+
+Las aristas se encuentran en una cola de prioridad ordenada de menor a mayor por la norma $\ell^2$ de cada una, lo que permite a la red colapsar de manera no uniforme las aristas con menor activación que posee la malla, y seleccionar aquellas que sí son relevantes para resolver el problema de aprendizaje. Las características de las dos aristas resultantes de la operación de \textit{pooling} se calculan tomando el valor promedio de la arista central y las dos aristas que se combinarán en una, como se observa en \ref{fig:mesh_pool}, que $p$ y $q$ se calculan como el promedio de $a,b,e$ y $c,d,e$ respectivamente. Finalmente, notar que en MeshCNN no es posible que se colapsen todas las aristas, un colapso de aristas que haga que la malla no sea hermética está prohibido puesto que no sería posible aplicar luego el operador de convolución debido a los huecos generados. 
+
+\subsubsection{\textit{Data Augmentation}}
+MeshCNN también posee implementado un aumento de datos nativo para las mallas 3D. Realizar simples rotaciones, traslaciones o escalados uniformes no suponen nuevos datos, debido a la invarianza que poseen las aristas. Aún así, sí se pueden crear nuevos datos al aplicar un escalado no uniforme a las mallas, ya que eso sí afecta las características. También se pueden mover los vértices por la superficie de la malla o bien, se pueden rotar o voltear ciertas aristas de la superficie para generar datos adicionales. Esto se puede controlar con diferentes parámetros que acepta el \textit{framework}.
+
+\subsection{MedMeshCNN y MeshCNN+}
+\label{section:medMeshCNN}
+
+Luego de la publicación de MeshCNN, surgen otras dos propuestas para ampliar y mejorar el \textit{framework} original, tanto añadiendo nuevas funcionalidades como intentando mitigar el principal problema de la implementación, su altísimo consumo de memoria. Estas han sido consideradas para este proyecto también.
+
+La implementación del \textit{pooling} hace uso de una matriz cuadrada para almacenar en el entrenamiento las aristas que son colapsadas, esto con la intención de poder restaurar la malla a su estado antes del \textit{pooling} para las siguientes iteraciones, ya que el \textit{pooling}, como ha sido comentado, no es uniforme. El mayor problema es que la matriz está en su mayoría llena de ceros, y además, posee una complejidad en espacio de $\mathcal{O}(\text{aristas}^2)$ por cada capa que se añada, lo se traduce en un consumo alto de memoria de vídeo, por ejemplo, una sola capa que toma de entrada una malla de 50 000 aristas asignará aproximadamente 18 GB de espacio en el peor caso \cite{mandado_surface_2021}.
+
+Schneider et al. introduce MedMeshCNN \cite{schneider_medmeshcnn_2021} como una ampliación que taclea el problema que posee la operación de \textit{pooling} en MeshCNN haciendo uso de las matrices dispersas, esto le permite poder procesar mallas de hasta 170 000 aristas en una GPU con 12GB de VRAM. Esta ampliación se centra más en explorar las posibilidades del \textit{framework} original respecto a la tarea de segmentación de modelos, por lo que, añaden métricas \textit{Intersection over Union} o IoU, conocida también como el índice de Jaccard; así como el uso de una función de pérdida que trabaja con clases desbalanceadas. Aún así, en comunicación con los autores, se confirmó que esta implementación es igual de capaz de realizar clasificación con unas ligeras modificaciones.
+
+En \cite{mandado_surface_2021} se introduce MeshCNN+, que parte de la misma premisa de MedMeshCNN e intenta también reducir el consumo de memoria de la implementación original. En este caso, además de utilizar matrices dispersas, se hace uso del entrenamiento distribuido entre varios CPUs, dado que se hace notar que además del gasto de memoria de la matriz en la capa de \textit{pooling}, existe también un cuello de botella respecto a la operación del colapso de aristas, que se hace secuencialmente y utiliza más la CPU que la GPU, por lo que sin el cómputo distribuido se desaprovecha la potencia de la GPU y aumenta el tiempo de entrenamiento. De igual manera que MedMeshCNN, este estudio se centró en la segmentación de mallas 3D, pero es posible utilizarla para clasificación.
