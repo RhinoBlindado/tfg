@@ -1,19 +1,18 @@
-# For sensitive reasons (and space reasons) can't have the data out of local storage.
-/data/*
-
-# For storage reasons also can't have the auxiliar programs
-/programs/* 
-
 # Do not save cache'd info
 __pycache__/
+
+# Data
+/data/*
+
+# Programs
+/programs/*
+
+# Enviroments
+/condaEnvs/*
 
 # Don't save ZIPs
 *.zip
 
 # Don't save output, not yet
-/output/
 /checkpoints/*
 /runs/*
-
-# Don't save conda enviroments
-/condaEnvs/*
