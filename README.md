@@ -52,7 +52,7 @@ Los _datasets_ Nodule-50-30K y Nodule-98-30K no se encuentran disponibles debido
 
 ### :nut_and_bolt: Ejecución
 
-Una lista de los parámetros que utiliza MeshCNN y sus derivados se puede observar [aquí](). 
+Una lista de los parámetros que utiliza MeshCNN y sus derivados se puede observar [aquí](https://github.com/RhinoBlindado/tfg/blob/main/docs/networkParameters.md). 
 
 Debido a que se utilizó principalmente MeshCNN para los experimentos, existen parámetros o funcionalidades que no se encuentran disponibles en los _frameworks_ restantes.
 
@@ -132,7 +132,7 @@ The SHREC16 and SphereCubes datasets are available in ZIP format at `/data/datas
 The Nodule-50-30K and Nodule-98-30K are not available due to a confidentiality agreement with the University of Granada.
  
 ### :nut_and_bolt: Execution
-A list of parameters for MeshCNN and derivatives is available [here]().
+A list of parameters for MeshCNN and derivatives is available [here](https://github.com/RhinoBlindado/tfg/blob/main/docs/networkParameters.md).
  
 Due to the fact that MeshCNN was used for the experiments, some parameters or functionalities are not available in the other frameworks.
  
