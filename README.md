@@ -96,7 +96,7 @@ En este trabajo se utilizaron los _frameworks_ de [MeshCNN](https://github.com/r
 In this Bachelor's Thesis a neural network model was developed capable of processing 3D meshes of scanned pubic symphyses, a bone located in the pelvis.
 It uses the MeshCNN framework and has an accuracy of 70% with a F1 metric of 0.7 in test data.
  
-The report is available to read [here](https://github.com/RhinoBlindado/tfg/blob/main/docs/TFG___Memoria.pdf).
+The report is available to be read [here](https://github.com/RhinoBlindado/tfg/blob/main/docs/TFG___Memoria.pdf) (Spanish).
  
 ### :gear: Installation
 Requires Anaconda.
@@ -122,7 +122,7 @@ For the experiments, the following datates were used:
    - Balanced dataset.
    - 30 000 edges max resolution.
 - Nodule-98-30K
-   - 98 Meshes: 66 para entrenamiento, 10 para validación y 20 para test.
+   - 98 Meshes: 66 for training, 10 for validation y 20 for test.
    - 2 categories, existence or absence of bony nodule in the surface of the pubic symphysis.
    - Balanced dataset.
    - 30 000 edges max resolution.
