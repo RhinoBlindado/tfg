@@ -122,12 +122,12 @@ For the experiments, the following datates were used:
    - Balanced dataset.
    - 30 000 edges max resolution.
 - Nodule-98-30K
-   - 98 Meshes: 66 for training, 10 for validation y 20 for test.
+   - 98 Meshes: 66 for training, 10 for validation and 20 for test.
    - 2 categories, existence or absence of bony nodule in the surface of the pubic symphysis.
    - Balanced dataset.
    - 30 000 edges max resolution.
  
-The SHREC16 and SphereCubes datasets are available in ZIP format at `/data/datasets/`. They need to be uncompressed before being used.
+The SHREC16 and SphereCubes datasets are available in ZIP format at `/data/datasets/`. These need to be uncompressed before being used.
  
 The Nodule-50-30K and Nodule-98-30K are not available due to a confidentiality agreement with the University of Granada.
  
